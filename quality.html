@@ -101,6 +101,17 @@
         <div class="feature"><b>Variable Sampling</b><span>Đo trên <b>thang liên tục</b> (kích thước, trọng lượng) → mức độ đạt.</span></div>
       </div>
       <p><b>Statistical Sampling</b>: kiểm tra một <b>mẫu</b> chọn theo tính toán thống kê thay vì toàn bộ — tần suất &amp; cỡ mẫu xác định ở giai đoạn Plan Quality.</p>
+      <figure class="diagram"><div class="diagram__title">Mẫu · Quality Metrics</div>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>Metric</th><th>Mục tiêu</th><th>Cách đo</th><th>Tần suất</th></tr></thead>
+          <tbody>
+            <tr><td>Mật độ lỗi</td><td>&lt; 1 lỗi / 1.000 dòng code</td><td>Static analysis + test</td><td>Mỗi sprint</td></tr>
+            <tr><td>Độ phủ test</td><td>≥ 80%</td><td>Coverage report</td><td>Mỗi build</td></tr>
+            <tr><td>Phản hồi API (p95)</td><td>&lt; 200 ms</td><td>APM monitoring</td><td>Hằng ngày</td></tr>
+            <tr><td>Tỷ lệ đơn lỗi</td><td>&lt; 0.5%</td><td>Log nghiệp vụ</td><td>Tuần</td></tr>
+          </tbody>
+        </table></div>
+        <figcaption>Quality metric mô tả <b>một thuộc tính</b> &amp; cách <b>Control Quality</b> đo nó — nên ở dạng số/tỷ lệ, dễ thu thập &amp; theo dõi.</figcaption></figure>
 
       <h3>5 mức quản lý chất lượng (tăng dần hiệu quả)</h3>
       <div class="diagram-steps"><div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Để khách tìm lỗi</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">2</span>QC: phát hiện &amp; sửa lỗi</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">3</span>QA: rà &amp; sửa quy trình</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">4</span>Quality built-in (thiết kế)</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">5</span>Văn hóa chất lượng</div></div>

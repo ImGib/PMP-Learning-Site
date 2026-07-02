@@ -71,6 +71,17 @@
       </ul>
       <div class="callout callout--warn"><span class="callout__label">Validate Scope ≠ Control Quality</span><b>Control Quality</b> → tạo <b>Verified deliverables</b> (đội QC kiểm đúng/sai — nội bộ). <b>Validate Scope</b> → tạo <b>Accepted deliverables</b> (khách/sponsor <b>ký nghiệm thu</b> — chính thức). Trình tự: kiểm chất lượng <i>trước</i>, khách nghiệm thu <i>sau</i>.</div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Verified vs Accepted</span><b>Verified = "đúng chưa?"</b> (nội bộ QC). <b>Accepted = "khách gật đầu chưa?"</b> (ký nhận). Còn <b>MoSCoW</b> để ưu tiên yêu cầu: <b>M</b>ust · <b>S</b>hould · <b>C</b>ould · <b>W</b>on't-this-time.</div>
+      <figure class="diagram"><div class="diagram__title">Mẫu · Requirements Traceability Matrix (RTM)</div>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>ID</th><th>Yêu cầu</th><th>Mục tiêu KD</th><th>Deliverable / WBS</th><th>Test case</th><th>Trạng thái</th></tr></thead>
+          <tbody>
+            <tr><td>R-01</td><td>Thêm sản phẩm vào giỏ</td><td>Tăng chuyển đổi</td><td>WP A2 · API giỏ hàng</td><td>TC-11</td><td>Đã kiểm</td></tr>
+            <tr><td>R-02</td><td>Thanh toán nội địa (VNPay)</td><td>Doanh thu online</td><td>Module B · Thanh toán</td><td>TC-20</td><td>Đang làm</td></tr>
+            <tr><td>R-03</td><td>Xuất hóa đơn điện tử</td><td>Tuân thủ thuế</td><td>WP B2 · Hóa đơn</td><td>TC-25</td><td>Mới</td></tr>
+          </tbody>
+        </table></div>
+        <figcaption>RTM truy vết mỗi yêu cầu: <b>nhu cầu KD → deliverable → test</b>, xuyên suốt vòng đời — chống scope creep &amp; sót yêu cầu.</figcaption></figure>
+
       <h3>Các loại Requirement (yêu cầu)</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Requirement</b> — a condition or capability needed by a stakeholder to solve a problem or achieve an objective, or that must be met by a solution to satisfy a contract, standard, or specification. <i>(điều kiện/năng lực cần có)</i></div>
       <div class="tbl-wrap"><table class="tbl">
