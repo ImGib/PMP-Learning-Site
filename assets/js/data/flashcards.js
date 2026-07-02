@@ -636,4 +636,29 @@ export const FLASHCARDS = [
     en: 'Brainstorming followed by ranking/voting to prioritize ideas.',
     vn: 'Brainstorm rồi bỏ phiếu xếp hạng — bản nâng cấp của brainstorming.',
   },
+  ,
+  {
+    cat: 'Stakeholder',
+    term: 'Directions of Influence',
+    en: 'Upward, Downward, Outward, Sideward — directions in which a PM manages stakeholder influence.',
+    vn: 'Upward (sếp/sponsor) · Downward (nhóm mình) · Outward (khách/NCC/cơ quan) · Sideward (PM ngang hàng).',
+  },
+  {
+    cat: 'Finance',
+    term: 'Depreciation & Working Capital',
+    en: 'Straight-line (even) vs Accelerated (double-declining, sum-of-years). Working capital = current assets − current liabilities.',
+    vn: 'Khấu hao đều vs khấu hao nhanh; vốn lưu động = tài sản NH − nợ NH.',
+  },
+  {
+    cat: 'Resource',
+    term: 'MBO & Expectancy Theory',
+    en: 'MBO: manage by agreed objectives aligned to company goals. Expectancy: effort follows expected reward.',
+    vn: 'MBO chỉ hiệu quả khi mục tiêu gắn với công ty; Expectancy = kỳ vọng phần thưởng thúc đẩy nỗ lực.',
+  },
+  {
+    cat: 'Procurement',
+    term: 'Claims administration & Fait accompli',
+    en: "Claims administration handles contested contract changes (prefer negotiation). Fait accompli is a 'done deal' negotiation tactic.",
+    vn: "Xử lý khiếu nại hợp đồng (ưu tiên đàm phán); fait accompli = chiêu 'việc đã rồi'.",
+  },
 ];
