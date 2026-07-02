@@ -214,6 +214,73 @@
         <div class="d-steps"><div class="st"><span class="s">1</span>To Do</div><div class="arw">›</div><div class="st"><span class="s">2</span>In Progress (giới hạn WIP)</div><div class="arw">›</div><div class="st"><span class="s">3</span>Done</div></div>
         <div class="d-wrap-note">Giới hạn WIP để tối ưu dòng chảy (throughput)</div>
         <figcaption>Kéo việc qua các cột; giới hạn WIP ở cột đang làm để tránh nghẽn.</figcaption></figure>
+
+      <h3>Requirement Prioritization Model</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Requirement Prioritization Model</b> — a more mathematical prioritization technique that scores each feature's benefit, penalty, cost, and risk on a relative 1–9 scale and combines them with a weighted formula. <i>(mô hình chấm điểm ưu tiên có trọng số)</i></div>
+      <ul>
+        <li><b>Khách hàng</b> chấm <b>Benefit</b> (lợi ích khi có) &amp; <b>Penalty</b> (thiệt hại khi thiếu).</li>
+        <li><b>Đội phát triển</b> chấm <b>Cost</b> (chi phí) &amp; <b>Risk</b> (rủi ro).</li>
+        <li>Tất cả trên thang <b>1–9</b>, rồi tính điểm ưu tiên bằng công thức có trọng số.</li>
+      </ul>
+      <div class="note warn"><span class="lbl">Bẫy "ai cũng High"</span>Sơ đồ đơn giản (High/Medium/Low, Priority 1-2-3) dễ hỏng vì stakeholder gán <b>mọi thứ là High</b> — vì họ biết item ưu tiên thấp hay bị cắt. Cần một <b>lý do chung, bảo vệ được</b> cho "thế nào là ưu tiên cao", hoặc dùng <b>Relative Ranking</b> (một danh sách ưu tiên tuyệt đối, chỉ hỏi "việc nào quan trọng hơn việc này?").</div>
+
+      <h3>Rủi ro như "anti-value" &amp; Risk-adjusted Backlog</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Risk-adjusted Backlog</b> — a single prioritized backlog in which risk-response activities are added and ordered alongside features based on their (anti-)value, letting the team pursue value delivery and risk reduction at the same time. <i>(backlog gộp cả việc xử lý rủi ro, ưu tiên theo anti-value)</i></div>
+      <div class="note">Một lựa chọn có thể gây <b>rework</b> hoặc vấn đề về sau <b>không tạo value thật</b> — chỉ tạo ảo giác "tiến độ sớm". Vì vậy Agile gộp mọi việc vào <b>một danh sách ưu tiên duy nhất</b>, giúp đội vừa giao value vừa giảm rủi ro cùng lúc.</div>
+
+      <h4 class="sub">Regulatory Compliance (tuân thủ quy định)</h4>
+      <p>Quy định pháp lý thường nhằm <b>đảm bảo an toàn</b>, mang tính <b>bắt buộc &amp; không thương lượng</b>. Hai cách xử lý:</p>
+      <ul>
+        <li><b>Đan xen (weave in)</b> — làm việc tuân thủ song song trong phát triển thường ngày.</li>
+        <li><b>Để sau (defer)</b> — dành thời gian sau khi tạo sản phẩm để làm hồ sơ/bằng chứng tuân thủ.</li>
+      </ul>
+
+      <h3>Theory of Constraints (Lý thuyết điểm nghẽn)</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Theory of Constraints (TOC)</b> — the principle that overall system throughput is limited by a few constraints (bottlenecks); the greatest gains come from finding and improving those constraints, not from optimizing everything. <i>(hiệu năng toàn hệ bị chặn bởi vài điểm nghẽn — hãy tập trung vào chúng)</i></div>
+      <div class="note">Thay đổi phần lớn biến số trong tổ chức chỉ tác động nhỏ tới hiệu năng tổng thể; chỉ vài biến (điểm nghẽn) mới quyết định. → Tìm <b>bottleneck</b> và tập trung cải thiện đúng nó.</div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · bài toán quán phở</span>3 bước: chần phở (1 người, 60 bát/giờ) → xếp thịt (1 người, 120 bát/giờ) → bê ra cho khách (2 người, 40 bát/giờ). Bước "bê ra" là <b>bottleneck</b> → cả quán tối đa <b>40 bát/giờ</b>, làm 100 bát mất 2,5 giờ. Muốn nhanh hơn: thêm người vào <b>đúng khâu nghẽn</b>, không phải khâu đã nhanh.</div>
+
+      <h3>Lead Time · Cycle Time · Cumulative Flow</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Lead Time</b> — the total elapsed time from when a work item is requested (enters the backlog) until it is delivered. <i>(từ lúc khách yêu cầu đến khi giao xong)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Cycle Time</b> — the elapsed time from when the team starts working on an item until it is finished; a subset of lead time. <i>(từ lúc bắt đầu làm đến khi xong — nằm trong lead time)</i></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th></th><th>Lead Time</th><th>Cycle Time</th></tr></thead>
+        <tbody>
+          <tr><td><b>Bắt đầu tính</b></td><td>Khi item được <b>yêu cầu</b> (vào backlog)</td><td>Khi team <b>bắt đầu làm</b> item</td></tr>
+          <tr><td><b>Kết thúc</b></td><td>Khi giao xong cho khách</td><td>Khi làm xong item</td></tr>
+          <tr><td><b>Quan hệ</b></td><td>Bao trùm cả thời gian chờ trong backlog</td><td>Là <b>tập con</b> của lead time</td></tr>
+        </tbody>
+      </table></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Cumulative Flow Diagram (CFD)</b> — a stacked area chart tracking the number of items in each workflow state over time; a widening band above an activity reveals a bottleneck, and it helps forecast cycle times and completion dates. <i>(biểu đồ vùng cộng dồn — vùng phình ra phía trên một hoạt động = điểm nghẽn)</i></div>
+      <div class="note"><span class="lbl">Batch nhỏ vs Continuous Flow</span>Làm theo <b>lô lớn</b> → nhiều WIP, phản hồi chậm, rủi ro rework cao. <b>Dòng chảy liên tục</b> với lô nhỏ → cycle time ngắn, phát hiện lỗi sớm, giao value đều đặn.</div>
+
+      <h3>Kiểm chứng value &amp; thực hành kỹ thuật XP</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Extreme Programming (XP)</b> — an Agile method centered on engineering practices such as test-driven development, refactoring, continuous integration, pair programming, and small/frequent releases to sustain high technical quality. <i>(phương pháp Agile nhấn mạnh thực hành kỹ thuật)</i></div>
+      <div class="legend">
+        <div class="lg"><b>TDD</b><span>Viết <b>test trước</b> khi viết code — nghĩ về cách kiểm thử hàm trước khi phát triển.</span></div>
+        <div class="lg"><b>Refactoring</b><span>Dọn thiết kế cho dễ hiểu/bảo trì <b>mà không đổi hành vi</b> của code.</span></div>
+        <div class="lg"><b>Continuous Integration</b><span>Tích hợp code mới vào repo <b>thường xuyên</b> + build &amp; unit test tự động → phát hiện lỗi sớm.</span></div>
+        <div class="lg"><b>Pair Programming</b><span>Hai người lập trình trên cùng một máy — review tức thời, lan tỏa tri thức.</span></div>
+        <div class="lg"><b>Small Releases</b><span>Giao gói nhỏ, thường xuyên để lấy feedback sớm.</span></div>
+      </div>
+      <figure class="fig"><div class="fig-title">TDD — chu trình Red · Green · Refactor</div>
+        <div class="d-steps">
+          <div class="st"><span class="s">R</span>Red<br>viết test → fail (chưa có code)</div><div class="arw">›</div>
+          <div class="st"><span class="s">G</span>Green<br>viết code đến khi test pass (code còn "bẩn")</div><div class="arw">›</div>
+          <div class="st alt"><span class="s">C</span>Refactor / Clean<br>dọn code, vẫn giữ test pass</div>
+        </div>
+        <div class="d-wrap-note">Lặp lại vòng nhỏ cho mỗi mẩu hành vi</div>
+        <figcaption>Red → Green → Refactor: test luôn "xanh" sau mỗi vòng, hành vi không đổi.</figcaption></figure>
+      <div class="en-def"><span class="lbl">EN</span><b>ATDD (Acceptance Test-Driven Development)</b> — shifts the testing focus from code to business requirements, forcing the "Definition of Done" to be discussed at a granular, per-requirement level (tools: FIT, FitNesse). <i>(kiểm thử theo yêu cầu nghiệp vụ)</i></div>
+      <div class="d-steps"><div class="st"><span class="s">1</span>Discuss</div><div class="arw">›</div><div class="st"><span class="s">2</span>Distill</div><div class="arw">›</div><div class="st"><span class="s">3</span>Develop</div><div class="arw">›</div><div class="st"><span class="s">4</span>Demo</div></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Kỹ thuật kiểm thử khác</th><th>Đặc điểm</th></tr></thead>
+        <tbody>
+          <tr><td><b>Automation Testing</b></td><td>Tự động hóa tối đa test → bỏ yếu tố con người, chạy thường xuyên, chi phí thấp.</td></tr>
+          <tr><td><b>Exploratory Testing</b></td><td>Dựa vào sự tự chủ &amp; sáng tạo của tester để phát hiện hành vi bất ngờ; bổ trợ cho scripted testing để tăng độ phủ.</td></tr>
+          <tr><td><b>Usability Testing</b></td><td>Quan sát người dùng thật lần đầu dùng hệ thống → đánh giá mức độ dễ dùng, tìm chỗ cần thiết kế lại.</td></tr>
+        </tbody>
+      </table></div>
     </section>
     <!-- ADAPTIVE -->
     <section id="adaptive">
@@ -281,7 +348,66 @@
 </svg>
 <figcaption>Đường thực tế nằm TRÊN đường lý tưởng = đang chậm so với kế hoạch sprint</figcaption></figure>
       <div class="note"><span class="lbl">Daily Standup</span>Họp đứng ngắn, <b>3 câu hỏi</b>: hôm qua làm gì / hôm nay làm gì / có <b>impediment</b> (vướng mắc) gì. <b>KHÔNG phải</b> họp báo cáo cho sếp, <b>KHÔNG phải</b> họp giải quyết vấn đề (vấn đề để bàn riêng sau).</div>
-      <div class="note warn"><span class="lbl">Vì sao Agile ra đời</span>Thống kê (Standish/Chaos): <b>64% tính năng hiếm/không bao giờ dùng</b>; ngân sách trung bình tiêu <b>156%</b>; tỷ lệ thành công ~<b>29%</b>. → Agile sinh ra để giao đúng thứ tạo value, sớm &amp; linh hoạt.</div>
+      <div class="note warn"><span class="lbl">Vì sao Agile ra đời</span>Thống kê (Standish/Chaos): <b>64% tính năng hiếm/không bao giờ dùng</b>; ngân sách trung bình tiêu <b>156%</b>; tỷ lệ thành công ~<b>29%</b> (thành công) · 53% "challenged" · 18% thất bại. → Agile sinh ra để giao đúng thứ tạo value, sớm &amp; linh hoạt.</div>
+
+      <h3>Traditional Planning vs Agile Planning</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Adaptive Planning</b> — planning done continuously throughout the project ("plan to replan") rather than up front, because trials and demos uncover the true requirements and midcourse adjustments are the norm. <i>(lập kế hoạch xuyên suốt — "plan to replan")</i></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Khía cạnh</th><th>Traditional Planning</th><th>Agile Planning</th></tr></thead>
+        <tbody>
+          <tr><td><b>Change</b></td><td>Cố gắng giảm thiểu thay đổi</td><td>Khám phá &amp; chào đón thay đổi</td></tr>
+          <tr><td><b>Approach</b></td><td>Lập kế hoạch chi tiết từ đầu</td><td>Lập vừa đủ, điều chỉnh khi thực thi</td></tr>
+          <tr><td><b>Process</b></td><td>Chốt full scope trước → suy ra lịch &amp; chi phí</td><td>Cố định thời gian &amp; nguồn lực trước → điều chỉnh scope</td></tr>
+          <tr><td><b>Documentation</b></td><td>Kế hoạch đồ sộ, tài liệu chi tiết</td><td>Artifact nhẹ &amp; đơn giản</td></tr>
+          <tr><td><b>Production</b></td><td>Hoạt động tuần tự, tuyến tính</td><td>Lặp &amp; tăng dần (iterative + incremental) ở nhiều cấp</td></tr>
+        </tbody>
+      </table></div>
+
+      <h4 class="sub">Value-Based Analysis &amp; Decomposition</h4>
+      <div class="legend">
+        <div class="lg"><b>Value-Based Analysis</b><span>Đánh giá &amp; ưu tiên <b>business value</b> của từng work item rồi lập kế hoạch theo đó — diễn ra suốt vòng đời dự án (scope, plan, schedule, develop, test, release).</span></div>
+        <div class="lg"><b>Value-Based Decomposition</b><span>Tiếp nối: <b>thu thập</b> yêu cầu từ stakeholder → <b>nhóm/chia nhỏ/xếp hạng</b> → <b>kéo</b> yêu cầu ưu tiên vào quá trình phát triển.</span></div>
+      </div>
+
+      <h3>High-level Planning: Tầm nhìn sản phẩm</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Product Vision</b> — a desired end-state described as a set of objectives and outcomes; sharing it early creates alignment throughout the project. <i>(trạng thái đích mong muốn của sản phẩm)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Elevator Statement (Elevator Pitch)</b> — a short pitch clarifying what the product is, what it is not, who it is for, and how it differs from competitors; owned by the Product Owner with whole-team input. <i>(tuyên bố "thang máy" — định vị sản phẩm ngắn gọn)</i></div>
+      <div class="note">Cú pháp elevator statement: <b>Dành cho [khách hàng mục tiêu]</b> — người có [nhu cầu] — <b>[tên sản phẩm]</b> là [nhóm sản phẩm] mà [lợi ích chính]; <b>không giống</b> [đối thủ], sản phẩm có [khác biệt độc đáo].</div>
+      <div class="note"><span class="lbl">High-level Planning · Ai / Làm gì / Output</span><b>Ai:</b> PO, sponsor, thành viên chủ chốt, stakeholder lớn. <b>Làm gì:</b> nhận diện &amp; ước lượng thô (coarse-grained) feature/story bằng affinity, T-shirt sizing, story map, roadmap — rồi tinh chỉnh dần. <b>Output:</b> backlog đã ưu tiên + ước lượng thô + <b>release goal</b> (theo value khách hàng) + <b>ngày mục tiêu</b>.</div>
+
+      <h3>Story Map &amp; Product Roadmap</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Story Map</b> — a two-dimensional arrangement of user stories used to map project priorities early: a horizontal "backbone" of essential functions with stories placed beneath in descending priority. <i>(bản đồ story sắp xếp theo ưu tiên)</i></div>
+      <div class="legend">
+        <div class="lg"><b>Backbone (xương sống)</b><span>Các story mô tả <b>chức năng thiết yếu</b> để hệ thống hoạt động — hàng trên cùng của map.</span></div>
+        <div class="lg"><b>Walking Skeleton</b><span>Phiên bản <b>nhỏ nhất chạy được</b>, đáp ứng nhu cầu <b>cơ bản nhất</b> của khách — lát ngang đầu tiên xuyên suốt backbone.</span></div>
+        <div class="lg"><b>Story còn lại</b><span>Xếp <b>giảm dần theo ưu tiên</b> bên dưới mỗi cột của backbone.</span></div>
+      </div>
+      <div class="en-def"><span class="lbl">EN</span><b>Product Roadmap</b> — a high-level plan, typically built from one or more story maps, showing what the team plans to deliver in each release by balancing customer priorities against projected capacity. <i>(lộ trình sản phẩm: giao gì ở mỗi release)</i></div>
+
+      <h3>Ước lượng thô: T-shirt Sizing &amp; Affinity</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>T-shirt Sizing</b> — a coarse-grained, high-level estimation technique used early (initiation) that sizes items on a scale from XS to XXL instead of precise numbers. <i>(ước lượng thô theo cỡ áo XS → XXL)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Affinity Estimating</b> — grouping items into similar-size categories for a fast comparative view and a reality check that similarly-estimated stories really are comparable in size. <i>(gom nhóm item cùng cỡ để đối chiếu nhanh)</i></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · dùng ước lượng nào khi nào</span><b>T-shirt / Affinity</b> = giai đoạn đầu, thô, xử lý nhiều item nhanh. <b>Planning Poker (Fibonacci)</b> = chi tiết hơn cho từng story ở release/iteration planning. Càng vào trong "củ hành", ước lượng càng mịn.</div>
+      <div class="note"><span class="lbl">Planning Poker — cách chơi</span>Trò chơi cộng tác: đọc story → đếm 1-2-3 cùng lật bài (Fibonacci). Nếu chênh lệch nhỏ &amp; đồng thuận đại khái → thường chọn <b>ước lượng lớn nhất</b>; nếu có "outlier" → thảo luận rồi chơi thêm vòng. Facilitator có thể là PO, SM hoặc thành viên.</div>
+      <div class="note"><span class="lbl">Nguyên tắc dùng Story Point</span>Team <b>tự sở hữu định nghĩa</b> điểm; điểm mang tính <b>tương đối</b>; ước lượng <b>all-inclusive</b> (gồm complexity + effort + risk); khi chia nhỏ (disaggregate) thì <b>tổng không nhất thiết khớp</b>.</div>
+
+      <h3>Iteration Planning (2 nửa)</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Nửa đầu — What</th><th>Nửa sau — How</th></tr></thead>
+        <tbody>
+          <tr><td>PO mô tả các backlog item muốn làm trong sprint; team chọn tập item mà họ tin là <b>khả thi</b>.</td><td>Team chia item thành <b>task</b> nhỏ nhất, bàn cách làm &amp; <b>cam kết</b> hoàn thành trong timebox của sprint.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Các bước: thảo luận story → chọn story cho iteration → định <b>acceptance criteria</b> &amp; viết acceptance test → chia story thành task → ước lượng task (theo <b>Ideal Time</b>).</p>
+      <div class="note"><span class="lbl">Velocity cho iteration đầu (chưa có lịch sử)</span>Dựa vào <b>capacity từng người</b>, chọn các story ưu tiên cao mà team tin hoàn thành được trong iteration 1; tổng điểm đó = <b>velocity ban đầu</b>. Vì bất định cao, nhiều team thêm <b>buffer</b> cho vài iteration đầu. Bẫy thi: Team A (38,29,38,39) vs Team B (46,36,38,36) — <b>KHÔNG so sánh velocity giữa 2 team</b> để đánh giá hiệu suất.</div>
+
+      <h3>Financial Assessment Metrics (chọn dự án)</h3>
+      <p>Đánh giá value của dự án tiềm năng <b>trước khi được duyệt</b> tiến hành:</p>
+      <div class="legend">
+        <div class="lg"><b>NPV</b><span>Net Present Value — giá trị hiện tại ròng; <b>NPV &gt; 0</b> thì đáng làm, càng cao càng tốt.</span></div>
+        <div class="lg"><b>ROI</b><span>Return on Investment — tỷ suất hoàn vốn; càng cao càng tốt.</span></div>
+        <div class="lg"><b>IRR</b><span>Internal Rate of Return — tỷ suất hoàn vốn nội bộ; càng cao càng tốt.</span></div>
+      </div>
     </section>
     <footer>
       <b>Phần III / IV</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP. <a href="phan-4-on-thi.html">Tiếp: Phần IV — Ôn thi →</a>
