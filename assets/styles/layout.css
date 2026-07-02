@@ -35,7 +35,7 @@
 .sidebar__back:hover{color:var(--accent-ink)}
 
 /* ---- hero ---- */
-.hero{border-bottom:1px solid var(--line);padding-bottom:34px;margin-bottom:8px}
+.hero{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:4px}
 .hero__eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--accent-ink);
   background:var(--accent-wash);display:inline-block;padding:4px 11px;border-radius:30px;margin-bottom:18px}
 .hero p{font-size:17px;color:var(--ink-soft);max-width:64ch;margin:0 0 8px}
@@ -54,7 +54,7 @@
 .section__head h2{font-family:var(--display);font-weight:500;font-size:30px;letter-spacing:-.015em;margin:0}
 .section__tag{font-family:var(--mono);font-size:11px;color:var(--faint);
   border:1px solid var(--line);padding:2px 8px;border-radius:20px}
-.section__desc{color:var(--muted);max-width:70ch;margin:0 0 22px;font-size:15px}
+.section__desc{color:var(--muted);max-width:70ch;margin:0 0 15px;font-size:15px}
 .section__subhead{font-size:15px;font-weight:600;color:var(--ink);margin:20px 0 8px}
 
 /* ---- footer ---- */

@@ -7,7 +7,7 @@
 
 /* feature grid (concept cards) */
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px}
-.feature{border:1px solid var(--line);border-radius:11px;padding:15px 18px;background:var(--panel)}
+.feature{border:1px solid var(--line);border-radius:11px;padding:13px 16px;background:var(--panel)}
 .feature b{display:block;font-size:14px;margin-bottom:3px;color:var(--ink)}
 .feature span{font-size:13.3px;color:var(--muted)}
 .feature__num{font-family:var(--mono);font-size:22px;color:var(--accent-ink);font-weight:600;display:block;margin-bottom:2px}
@@ -15,7 +15,7 @@
 /* table */
 .tbl-wrap{overflow-x:auto;margin-top:8px}
 .tbl{width:100%;border-collapse:collapse;font-size:14px}
-.tbl th,.tbl td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th,.tbl td{text-align:left;padding:7px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 .tbl th{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600;background:var(--rail)}
 .tbl td code{background:var(--line-soft);padding:2px 7px;border-radius:5px;font-size:12.3px}
 .tbl tr:hover td{background:var(--rail)}
