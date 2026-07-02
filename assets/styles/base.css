@@ -35,7 +35,7 @@ strong{color:var(--ink)}
 
 /* inline atoms */
 .jargon{border-bottom:1px dashed var(--accent);cursor:help;color:var(--accent-ink);font-weight:500}
-code.k{background:var(--line-soft);padding:2px 7px;border-radius:5px;font-size:12.8px;color:var(--accent-ink)}
+.inline-code{background:var(--line-soft);padding:2px 7px;border-radius:5px;font-size:12.8px;color:var(--accent-ink)}
 
 /* button */
 .btn{font-family:var(--sans);font-size:13.5px;padding:8px 15px;border-radius:8px;border:1px solid var(--line);

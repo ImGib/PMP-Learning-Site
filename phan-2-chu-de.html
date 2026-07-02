@@ -32,16 +32,16 @@
       <h1>8 chủ đề kiến thức chính</h1>
       <p>Từ Scope tới Procurement — phần chiếm tỷ trọng lớn nhất trong đề thi (domain Process ~50%). Có nhiều công thức (EVM, PERT, EMV) và cặp khái niệm dễ nhầm. Mỗi mục kèm <b>định nghĩa tiếng Anh chuẩn thi</b> và mẹo ghi nhớ.</p>
       <div class="hero__jump">
-        <a href="#scope"><span class="n">01</span>Scope</a>
-        <a href="#schedule"><span class="n">02</span>Schedule</a>
-        <a href="#finance"><span class="n">03</span>Finance/EVM</a>
-        <a href="#risk"><span class="n">06</span>Risk</a>
-        <a href="#procurement"><span class="n">08</span>Procurement</a>
+        <a href="#scope"><span class="hero__jump-num">01</span>Scope</a>
+        <a href="#schedule"><span class="hero__jump-num">02</span>Schedule</a>
+        <a href="#finance"><span class="hero__jump-num">03</span>Finance/EVM</a>
+        <a href="#risk"><span class="hero__jump-num">06</span>Risk</a>
+        <a href="#procurement"><span class="hero__jump-num">08</span>Procurement</a>
       </div>
     </div>
     <!-- SCOPE -->
     <section id="scope">
-      <div class="section__head"><h2>Scope — Phạm vi</h2><span class="tag">Phần II · chủ đề 1/8</span></div>
+      <div class="section__head"><h2>Scope — Phạm vi</h2><span class="section__tag">Phần II · chủ đề 1/8</span></div>
       <p class="section__desc">Scope trả lời câu hỏi <b>"dự án sẽ làm những gì (và KHÔNG làm gì)?"</b>. Kiểm soát scope kém là nguyên nhân thất bại số 1.</p>
 
       <h3>Product Scope vs Project Scope</h3>
@@ -65,10 +65,10 @@
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Creep vs Gold Plating</span><b>Scope Creep = khách/nhiều bên đẩy vào</b> (thay đổi lén, không kiểm soát). <b>Gold Plating = TEAM tự thêm</b> (tưởng tốt nhưng thừa). Cả hai đều xấu — luôn bám <b>change control</b>.</div>
 
       <h3>WBS — Work Breakdown Structure</h3>
-      <figure class="fig"><div class="fig-title">WBS — cây phân rã công việc</div>
-        <div class="d-hier"><span class="hlabel">Project</span>
-          <div class="quiz__prog"><span class="hlabel">Deliverable — Module A</span><div class="projs"><span class="proj">Work Package A1</span><span class="proj">Work Package A2</span></div></div>
-          <div class="quiz__prog"><span class="hlabel">Deliverable — Module B</span><div class="projs"><span class="proj">Work Package B1</span><span class="proj">Work Package B2</span></div></div>
+      <figure class="diagram"><div class="diagram__title">WBS — cây phân rã công việc</div>
+        <div class="diagram-hier"><span class="diagram-hier__label">Project</span>
+          <div class="diagram-hier__program"><span class="diagram-hier__label">Deliverable — Module A</span><div class="diagram-hier__projects"><span class="diagram-hier__project">Work Package A1</span><span class="diagram-hier__project">Work Package A2</span></div></div>
+          <div class="diagram-hier__program"><span class="diagram-hier__label">Deliverable — Module B</span><div class="diagram-hier__projects"><span class="diagram-hier__project">Work Package B1</span><span class="diagram-hier__project">Work Package B2</span></div></div>
         </div>
         <figcaption>Project phân rã thành Deliverable → Work Package (phần tử thấp nhất; tuân Rule 100%)</figcaption></figure>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Work Breakdown Structure (WBS)</b> — a hierarchical decomposition of the total scope of work to be carried out by the project team to accomplish the project objectives and create the required deliverables. <i>(cây phân rã công việc)</i></div>
@@ -118,7 +118,7 @@
 
     <!-- SCHEDULE -->
     <section id="schedule">
-      <div class="section__head"><h2>Schedule — Tiến độ</h2><span class="tag">chủ đề 2/8 · nhiều tính toán</span></div>
+      <div class="section__head"><h2>Schedule — Tiến độ</h2><span class="section__tag">chủ đề 2/8 · nhiều tính toán</span></div>
       <p class="section__desc">Schedule trả lời <b>"khi nào xong?"</b>. Đây là chủ đề có Critical Path &amp; công thức ước lượng — cần luyện tay.</p>
 
       <h3>Khái niệm nền</h3>
@@ -150,19 +150,19 @@
         <div class="feature"><b>Three-point (PERT)</b><span>Dùng 3 giá trị: <b>O</b>ptimistic · <b>M</b>ost likely · <b>P</b>essimistic.</span></div>
       </div>
       <div class="formula">
-        <div class="row"><span class="cm"># PERT — phân phối Beta (hay dùng, nhấn mạnh M)</span></div>
-        <div class="row"><b>E</b> = ( <span class="v">O</span> <span class="op">+</span> 4<span class="v">M</span> <span class="op">+</span> <span class="v">P</span> ) <span class="op">/</span> 6</div>
-        <div class="row"><span class="cm"># PERT — phân phối Triangular (trung bình đơn giản)</span></div>
-        <div class="row"><b>E</b> = ( <span class="v">O</span> <span class="op">+</span> <span class="v">M</span> <span class="op">+</span> <span class="v">P</span> ) <span class="op">/</span> 3</div>
-        <div class="row"><span class="cm"># Độ lệch chuẩn &amp; phương sai (chuẩn PMP)</span></div>
-        <div class="row"><b>SD</b> = ( <span class="v">P</span> <span class="op">−</span> <span class="v">O</span> ) <span class="op">/</span> 6&nbsp;&nbsp;&nbsp;&nbsp;<b>Variance</b> = SD²</div>
+        <div class="formula__row"><span class="formula__cm"># PERT — phân phối Beta (hay dùng, nhấn mạnh M)</span></div>
+        <div class="formula__row"><b>E</b> = ( <span class="formula__var">O</span> <span class="formula__op">+</span> 4<span class="formula__var">M</span> <span class="formula__op">+</span> <span class="formula__var">P</span> ) <span class="formula__op">/</span> 6</div>
+        <div class="formula__row"><span class="formula__cm"># PERT — phân phối Triangular (trung bình đơn giản)</span></div>
+        <div class="formula__row"><b>E</b> = ( <span class="formula__var">O</span> <span class="formula__op">+</span> <span class="formula__var">M</span> <span class="formula__op">+</span> <span class="formula__var">P</span> ) <span class="formula__op">/</span> 3</div>
+        <div class="formula__row"><span class="formula__cm"># Độ lệch chuẩn &amp; phương sai (chuẩn PMP)</span></div>
+        <div class="formula__row"><b>SD</b> = ( <span class="formula__var">P</span> <span class="formula__op">−</span> <span class="formula__var">O</span> ) <span class="formula__op">/</span> 6&nbsp;&nbsp;&nbsp;&nbsp;<b>Variance</b> = SD²</div>
       </div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · PERT</span><b>Beta có số 4 (4M) và chia 6; Triangular chia 3.</b> Nhớ: "Beta 4-6, Tri-3". Beta chính xác hơn vì đặt trọng số lớn cho "khả năng nhất" (M).</div>
 
       <h3>Critical Path Method (CPM)</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Critical Path</b> — the sequence of activities that represents the longest path through a project, which determines the shortest possible project duration. <i>(đường găng — Float = 0)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Total Float</b> — the amount of time an activity can be delayed from its early start date without delaying the project finish date. <i>(TF = LS − ES = LF − EF)</i></div>
-      <figure class="fig"><div class="fig-title">Sơ đồ mạng &amp; Đường găng</div>
+      <figure class="diagram"><div class="diagram__title">Sơ đồ mạng &amp; Đường găng</div>
 <svg viewBox="0 0 430 205" role="img" aria-label="So do mang duong gang">
 <line x1="100" y1="103" x2="180" y2="60" stroke="#c5c5cf" stroke-width="2"/>
 <line x1="100" y1="103" x2="180" y2="150" stroke="#d2604a" stroke-width="3"/>
@@ -177,9 +177,9 @@
 <figcaption>Đường găng (đỏ) A→C→D = 3+6+2 = 11 ngày · Đường A→B→D = 9 ngày (B có float 2)</figcaption></figure>
       <p><b>Critical Path</b> (đường găng) = chuỗi hoạt động <b>DÀI NHẤT</b> qua sơ đồ → chính là <b>thời gian ngắn nhất</b> có thể hoàn thành dự án. Trên đường găng, <b>Float (Slack) = 0</b> → không được trễ, trễ là trễ cả dự án.</p>
       <ul>
-        <li><b>Total Float</b> — số thời gian một việc có thể trễ mà <i>không</i> trễ cả dự án. Công thức: <code class="k">TF = LS − ES = LF − EF</code>.</li>
+        <li><b>Total Float</b> — số thời gian một việc có thể trễ mà <i>không</i> trễ cả dự án. Công thức: <code class="inline-code">TF = LS − ES = LF − EF</code>.</li>
         <li><b>Free Float</b> — trễ mà không ảnh hưởng việc kế tiếp (chỉ có khi 2+ việc chung 1 successor).</li>
-        <li><b>Forward Pass</b>: <code class="k">EF = ES + Duration − 1</code>. <b>Backward Pass</b>: <code class="k">LS = LF − Duration + 1</code>.</li>
+        <li><b>Forward Pass</b>: <code class="inline-code">EF = ES + Duration − 1</code>. <b>Backward Pass</b>: <code class="inline-code">LS = LF − Duration + 1</code>.</li>
       </ul>
 
       <h3>Rút ngắn &amp; tối ưu tài nguyên</h3>
@@ -196,10 +196,10 @@
       <div class="callout callout--warn"><span class="callout__label">Đường găng dễ bẫy</span>Critical Path là đường <b>dài nhất</b> nhưng cho ra <b>thời gian ngắn nhất</b> của dự án. Có thể có <b>nhiều hơn 1</b> đường găng (→ rủi ro cao hơn). Ước lượng thời lượng hoạt động <b>không</b> bao gồm lag.</div>
       <h3>4 "quy luật" ảnh hưởng ước lượng thời gian</h3>
       <div class="principles">
-        <div class="principle"><span class="pnum">1</span><span class="pen">Parkinson's Law</span><span class="pvn">"Work expands to fill the available time" — việc <b>phình ra</b> cho vừa thời gian được cấp. Cho dư giờ → xong đúng hạn chót chứ không sớm.</span></div>
-        <div class="principle"><span class="pnum">2</span><span class="pen">Student Syndrome</span><span class="pvn">Chần chừ tới <b>phút chót</b> mới bắt đầu (nước tới chân mới nhảy).</span></div>
-        <div class="principle"><span class="pnum">3</span><span class="pen">Murphy's Law</span><span class="pvn">"What can go wrong, will go wrong" — điều gì có thể sai thì sẽ sai.</span></div>
-        <div class="principle"><span class="pnum">4</span><span class="pen">Padding</span><span class="pvn">Team <b>độn thêm</b> giờ vào ước lượng để "phòng thân" → nên tách riêng thành reserve minh bạch.</span></div>
+        <div class="principle"><span class="principle__num">1</span><span class="principle__title">Parkinson's Law</span><span class="principle__desc">"Work expands to fill the available time" — việc <b>phình ra</b> cho vừa thời gian được cấp. Cho dư giờ → xong đúng hạn chót chứ không sớm.</span></div>
+        <div class="principle"><span class="principle__num">2</span><span class="principle__title">Student Syndrome</span><span class="principle__desc">Chần chừ tới <b>phút chót</b> mới bắt đầu (nước tới chân mới nhảy).</span></div>
+        <div class="principle"><span class="principle__num">3</span><span class="principle__title">Murphy's Law</span><span class="principle__desc">"What can go wrong, will go wrong" — điều gì có thể sai thì sẽ sai.</span></div>
+        <div class="principle"><span class="principle__num">4</span><span class="principle__title">Padding</span><span class="principle__desc">Team <b>độn thêm</b> giờ vào ước lượng để "phòng thân" → nên tách riêng thành reserve minh bạch.</span></div>
       </div>
 
       <h3>Rolling Wave &amp; Planning Package</h3>
@@ -228,7 +228,7 @@
 
     <!-- FINANCE -->
     <section id="finance">
-      <div class="section__head"><h2>Finance — Chi phí &amp; EVM</h2><span class="tag">chủ đề 3/8 · ⭐ công thức trọng tâm</span></div>
+      <div class="section__head"><h2>Finance — Chi phí &amp; EVM</h2><span class="section__tag">chủ đề 3/8 · ⭐ công thức trọng tâm</span></div>
       <p class="section__desc">Chủ đề tính toán quan trọng nhất kỳ thi. <b>EVM (Earned Value Management)</b> gần như chắc chắn xuất hiện — nắm vững phần này là "ăn điểm".</p>
 
       <h3>Phân loại chi phí</h3>
@@ -250,12 +250,12 @@
         </tbody>
       </table></div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 2 loại reserve</span><b>Cost Baseline = ước tính + Contingency.</b> <b>Project Budget = Cost Baseline + Management Reserve.</b> Nhớ: "Contingency cho cái BIẾT, PM tiêu; Management cho cái KHÔNG biết, sếp giữ".</div>
-      <figure class="fig"><div class="fig-title">Cấu trúc ngân sách dự án</div>
-        <div class="d-stack"><div class="seg" style="background:#a25a07"><b>Management Reserve</b><span class="tag">ngoài baseline</span></div><div class="seg" style="background:#5a4be0"><b>Contingency Reserve</b><span class="tag">trong baseline</span></div><div class="seg" style="background:#4434c4"><b>Ước tính chi phí</b><span class="tag">work packages</span></div></div>
+      <figure class="diagram"><div class="diagram__title">Cấu trúc ngân sách dự án</div>
+        <div class="diagram-stack"><div class="diagram-stack__seg" style="background:#a25a07"><b>Management Reserve</b><span class="diagram-stack__tag">ngoài baseline</span></div><div class="diagram-stack__seg" style="background:#5a4be0"><b>Contingency Reserve</b><span class="diagram-stack__tag">trong baseline</span></div><div class="diagram-stack__seg" style="background:#4434c4"><b>Ước tính chi phí</b><span class="diagram-stack__tag">work packages</span></div></div>
         <figcaption>Cost Baseline = ước tính + contingency · Project Budget = + management reserve</figcaption></figure>
 
       <h3 id="evm-block">⭐ Earned Value Management (EVM)</h3>
-      <figure class="fig"><div class="fig-title">Đường cong EVM — PV · EV · AC</div>
+      <figure class="diagram"><div class="diagram__title">Đường cong EVM — PV · EV · AC</div>
 <svg viewBox="0 0 470 250" role="img" aria-label="Bieu do EVM">
 <line x1="50" y1="20" x2="50" y2="212" stroke="#d8d8e0" stroke-width="1.5"/>
 <line x1="50" y1="212" x2="452" y2="212" stroke="#d8d8e0" stroke-width="1.5"/>
@@ -272,7 +272,7 @@
 <text x="335" y="120" font-size="11" fill="#197a4b" font-weight="600">EV</text>
 <text x="335" y="86" font-size="11" fill="#a25a07" font-weight="600">AC</text>
 </svg>
-<div class="d-key"><span><i style="background:#5a4be0"></i>PV — kế hoạch</span><span><i style="background:#197a4b"></i>EV — đạt được</span><span><i style="background:#a25a07"></i>AC — thực chi</span></div>
+<div class="diagram__key"><span><i style="background:#5a4be0"></i>PV — kế hoạch</span><span><i style="background:#197a4b"></i>EV — đạt được</span><span><i style="background:#a25a07"></i>AC — thực chi</span></div>
 <figcaption>AC trên EV → vượt chi; EV dưới PV → chậm tiến độ</figcaption></figure>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Planned Value (PV)</b> — the authorized budget assigned to scheduled work. <i>(giá trị công việc đã lên kế hoạch; tổng PV = BAC)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Earned Value (EV)</b> — the measure of work performed expressed in terms of the budget authorized for that work. <i>(giá trị công việc thực sự hoàn thành = % × BAC)</i></div>
@@ -284,37 +284,37 @@
         <div class="feature"><b>AC</b> — Actual Cost<span>Tiền <b>thực đã chi</b> cho công việc đã làm.</span></div>
       </div>
       <div class="formula">
-        <div class="row"><span class="cm"># VARIANCE (chênh lệch) — dùng phép TRỪ, EV luôn đứng đầu</span></div>
-        <div class="row"><b>SV</b> = <span class="v">EV</span> <span class="op">−</span> <span class="v">PV</span>&nbsp;&nbsp;<span class="cm">Schedule Variance — âm = chậm tiến độ</span></div>
-        <div class="row"><b>CV</b> = <span class="v">EV</span> <span class="op">−</span> <span class="v">AC</span>&nbsp;&nbsp;<span class="cm">Cost Variance — âm = vượt ngân sách</span></div>
-        <div class="row"> </div>
-        <div class="row"><span class="cm"># INDEX (chỉ số) — dùng phép CHIA, EV luôn ở tử số. &gt;1 tốt, &lt;1 xấu</span></div>
-        <div class="row"><b>SPI</b> = <span class="v">EV</span> <span class="op">/</span> <span class="v">PV</span>&nbsp;&nbsp;<span class="cm">Schedule Performance Index</span></div>
-        <div class="row"><b>CPI</b> = <span class="v">EV</span> <span class="op">/</span> <span class="v">AC</span>&nbsp;&nbsp;<span class="cm">Cost Performance Index</span></div>
+        <div class="formula__row"><span class="formula__cm"># VARIANCE (chênh lệch) — dùng phép TRỪ, EV luôn đứng đầu</span></div>
+        <div class="formula__row"><b>SV</b> = <span class="formula__var">EV</span> <span class="formula__op">−</span> <span class="formula__var">PV</span>&nbsp;&nbsp;<span class="formula__cm">Schedule Variance — âm = chậm tiến độ</span></div>
+        <div class="formula__row"><b>CV</b> = <span class="formula__var">EV</span> <span class="formula__op">−</span> <span class="formula__var">AC</span>&nbsp;&nbsp;<span class="formula__cm">Cost Variance — âm = vượt ngân sách</span></div>
+        <div class="formula__row"> </div>
+        <div class="formula__row"><span class="formula__cm"># INDEX (chỉ số) — dùng phép CHIA, EV luôn ở tử số. &gt;1 tốt, &lt;1 xấu</span></div>
+        <div class="formula__row"><b>SPI</b> = <span class="formula__var">EV</span> <span class="formula__op">/</span> <span class="formula__var">PV</span>&nbsp;&nbsp;<span class="formula__cm">Schedule Performance Index</span></div>
+        <div class="formula__row"><b>CPI</b> = <span class="formula__var">EV</span> <span class="formula__op">/</span> <span class="formula__var">AC</span>&nbsp;&nbsp;<span class="formula__cm">Cost Performance Index</span></div>
       </div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · EVM (quan trọng nhất)</span><b>"EV luôn đứng đầu."</b> Variance = TRỪ (EV − …), Index = CHIA (EV / …). Dấu/giá trị: <b>Cost thì so với AC, Schedule thì so với PV</b>. Kết quả <b>dương hoặc &gt;1 = TỐT</b> (đúng/vượt kế hoạch), <b>âm hoặc &lt;1 = XẤU</b>. Mẹo chữ: "<b>P</b>lanned đi với <b>S</b>chedule (SV, SPI); <b>A</b>ctual đi với <b>C</b>ost (CV, CPI)".</div>
 
       <h4 class="section__subhead">Dự báo (Forecasting) — EAC / ETC / VAC</h4>
       <p><b>BAC</b> = ngân sách gốc. <b>EAC</b> = dự báo tổng chi phí cuối cùng. <b>ETC</b> = còn cần chi bao nhiêu nữa. <b>VAC</b> = chênh lệch dự báo.</p>
       <div class="formula">
-        <div class="row"><b>VAC</b> = <span class="v">BAC</span> <span class="op">−</span> <span class="v">EAC</span>&nbsp;&nbsp;<span class="cm">dương = sẽ dưới ngân sách</span></div>
-        <div class="row"> </div>
-        <div class="row"><span class="cm"># TH1: sai lệch hiện tại còn tiếp diễn (hay dùng nhất)</span></div>
-        <div class="row"><b>EAC</b> = <span class="v">BAC</span> <span class="op">/</span> <span class="v">CPI</span></div>
-        <div class="row"><span class="cm"># TH2: phần còn lại chạy đúng kế hoạch</span></div>
-        <div class="row"><b>EAC</b> = <span class="v">AC</span> <span class="op">+</span> ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">EV</span> )</div>
-        <div class="row"><span class="cm"># TH3: ước tính gốc sai, phải tính lại phần còn lại</span></div>
-        <div class="row"><b>EAC</b> = <span class="v">AC</span> <span class="op">+</span> ETC<sub>mới</sub></div>
-        <div class="row"><span class="cm"># TH4: vượt ngân sách nhưng phải kịp deadline</span></div>
-        <div class="row"><b>EAC</b> = <span class="v">AC</span> <span class="op">+</span> ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">EV</span> ) <span class="op">/</span> ( <span class="v">CPI</span> <span class="op">×</span> <span class="v">SPI</span> )</div>
+        <div class="formula__row"><b>VAC</b> = <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EAC</span>&nbsp;&nbsp;<span class="formula__cm">dương = sẽ dưới ngân sách</span></div>
+        <div class="formula__row"> </div>
+        <div class="formula__row"><span class="formula__cm"># TH1: sai lệch hiện tại còn tiếp diễn (hay dùng nhất)</span></div>
+        <div class="formula__row"><b>EAC</b> = <span class="formula__var">BAC</span> <span class="formula__op">/</span> <span class="formula__var">CPI</span></div>
+        <div class="formula__row"><span class="formula__cm"># TH2: phần còn lại chạy đúng kế hoạch</span></div>
+        <div class="formula__row"><b>EAC</b> = <span class="formula__var">AC</span> <span class="formula__op">+</span> ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EV</span> )</div>
+        <div class="formula__row"><span class="formula__cm"># TH3: ước tính gốc sai, phải tính lại phần còn lại</span></div>
+        <div class="formula__row"><b>EAC</b> = <span class="formula__var">AC</span> <span class="formula__op">+</span> ETC<sub>mới</sub></div>
+        <div class="formula__row"><span class="formula__cm"># TH4: vượt ngân sách nhưng phải kịp deadline</span></div>
+        <div class="formula__row"><b>EAC</b> = <span class="formula__var">AC</span> <span class="formula__op">+</span> ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EV</span> ) <span class="formula__op">/</span> ( <span class="formula__var">CPI</span> <span class="formula__op">×</span> <span class="formula__var">SPI</span> )</div>
       </div>
 
       <h4 class="section__subhead">TCPI — To-Complete Performance Index</h4>
-      <p>Hiệu suất <i>cần đạt</i> cho phần còn lại để về đích. <code class="k">&gt;1 = càng khó (phải làm hiệu quả hơn); &lt;1 = dễ thở</code>.</p>
+      <p>Hiệu suất <i>cần đạt</i> cho phần còn lại để về đích. <code class="inline-code">&gt;1 = càng khó (phải làm hiệu quả hơn); &lt;1 = dễ thở</code>.</p>
       <div class="formula">
-        <div class="row"><b>TCPI</b> = ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">EV</span> ) <span class="op">/</span> ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">AC</span> )&nbsp;&nbsp;<span class="cm">bám ngân sách gốc</span></div>
-        <div class="row"><b>TCPI</b> = ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">EV</span> ) <span class="op">/</span> ( <span class="v">EAC</span> <span class="op">−</span> <span class="v">AC</span> )&nbsp;&nbsp;<span class="cm">bám dự báo mới</span></div>
-        <div class="row"><span class="cm"># Nhớ: Tử số = Work Remaining; Mẫu = Funds Remaining</span></div>
+        <div class="formula__row"><b>TCPI</b> = ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EV</span> ) <span class="formula__op">/</span> ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">AC</span> )&nbsp;&nbsp;<span class="formula__cm">bám ngân sách gốc</span></div>
+        <div class="formula__row"><b>TCPI</b> = ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EV</span> ) <span class="formula__op">/</span> ( <span class="formula__var">EAC</span> <span class="formula__op">−</span> <span class="formula__var">AC</span> )&nbsp;&nbsp;<span class="formula__cm">bám dự báo mới</span></div>
+        <div class="formula__row"><span class="formula__cm"># Nhớ: Tử số = Work Remaining; Mẫu = Funds Remaining</span></div>
       </div>
       <div class="callout callout--ok"><span class="callout__label">Ví dụ nhanh (làm được là hiểu EVM)</span>Dự án 4 giai đoạn, mỗi giai đoạn $500. Cuối tuần 2: <b>kế hoạch</b> xong 2 giai đoạn → PV = <b>$1000</b>. <b>Thực tế</b> xong 3 giai đoạn → EV = 3×500 = <b>$1500</b>. Đã chi <b>$1700</b> → AC = $1700. ⇒ SV = 1500−1000 = <b>+$500</b> (nhanh hơn tiến độ 👍), CV = 1500−1700 = <b>−$200</b> (vượt chi 👎), CPI = 1500/1700 ≈ <b>0.88</b>.</div>
 
@@ -345,7 +345,7 @@
 
     <!-- QUALITY -->
     <section id="quality">
-      <div class="section__head"><h2>Quality — Chất lượng</h2><span class="tag">chủ đề 4/8</span></div>
+      <div class="section__head"><h2>Quality — Chất lượng</h2><span class="section__tag">chủ đề 4/8</span></div>
       <p class="section__desc">Quality trả lời <b>"sản phẩm có đáp ứng yêu cầu không?"</b>. Nhiều cặp khái niệm dễ nhầm — nắm chắc từng cặp.</p>
 
       <h3>Các cặp khái niệm phải phân biệt</h3>
@@ -362,9 +362,9 @@
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · QA vs QC</span><b>QA = Assure quy trình (trước &amp; xuyên suốt); QC = Control sản phẩm (kiểm cuối).</b> QA phòng ngừa, QC bắt lỗi. Còn <b>Quality ≠ Grade</b>: "chất lượng thấp là lỗi; hạng thấp là lựa chọn".</div>
 
       <h3>Cost of Quality (COQ)</h3>
-      <figure class="fig"><div class="fig-title">Cost of Quality — 4 loại chi phí</div>
-        <div class="d-steps"><div class="st"><span class="s">1</span>Prevention</div><div class="arw">›</div><div class="st"><span class="s">2</span>Appraisal</div><div class="arw">›</div><div class="st alt"><span class="s">3</span>Internal failure</div><div class="arw">›</div><div class="st alt"><span class="s">4</span>External failure</div></div>
-        <div class="d-wrap-note">Prevention + Appraisal = Cost of Conformance · Internal + External failure = Cost of Nonconformance</div>
+      <figure class="diagram"><div class="diagram__title">Cost of Quality — 4 loại chi phí</div>
+        <div class="diagram-steps"><div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Prevention</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">2</span>Appraisal</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">3</span>Internal failure</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">4</span>External failure</div></div>
+        <div class="diagram-steps__note">Prevention + Appraisal = Cost of Conformance · Internal + External failure = Cost of Nonconformance</div>
         <figcaption>Chủ động chi để tránh lỗi (1–2) vs bị động trả giá vì lỗi (3–4)</figcaption></figure>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Cost of Quality (COQ)</b> — the total cost incurred over the life of the product in preventing nonconformance to requirements (cost of conformance) plus the cost of nonconformance (internal and external failure). <i>(tổng chi phí conformance + nonconformance)</i></div>
       <div class="tbl-wrap"><table class="tbl">
@@ -378,13 +378,13 @@
 
       <h3>7 công cụ chất lượng cơ bản (7 Basic Quality Tools)</h3>
       <div class="principles">
-        <div class="principle"><span class="pnum">1</span><span class="pen">Cause-and-Effect / Fishbone / Ishikawa</span><span class="pvn">Sơ đồ xương cá — truy tìm <b>root cause</b> (nguyên nhân gốc).</span></div>
-        <div class="principle"><span class="pnum">2</span><span class="pen">Flowchart</span><span class="pvn">Sơ đồ luồng — thấy các bước &amp; chỗ dễ phát sinh lỗi.</span></div>
-        <div class="principle"><span class="pnum">3</span><span class="pen">Checksheet</span><span class="pvn">Bảng đếm dữ liệu tại chỗ, theo thời gian thực.</span></div>
-        <div class="principle"><span class="pnum">4</span><span class="pen">Pareto Chart</span><span class="pvn">Quy tắc <b>80/20</b>: 80% vấn đề từ 20% nguyên nhân ("critical few").</span></div>
-        <div class="principle"><span class="pnum">5</span><span class="pen">Histogram</span><span class="pvn">Biểu đồ cột tần suất phân bố dữ liệu.</span></div>
-        <div class="principle"><span class="pnum">6</span><span class="pen">Control Chart</span><span class="pvn">Theo dõi quy trình có "trong tầm kiểm soát" &amp; ổn định không.</span></div>
-        <div class="principle"><span class="pnum">7</span><span class="pen">Scatter Diagram</span><span class="pvn">Biểu đồ phân tán — quan hệ giữa 2 biến.</span></div>
+        <div class="principle"><span class="principle__num">1</span><span class="principle__title">Cause-and-Effect / Fishbone / Ishikawa</span><span class="principle__desc">Sơ đồ xương cá — truy tìm <b>root cause</b> (nguyên nhân gốc).</span></div>
+        <div class="principle"><span class="principle__num">2</span><span class="principle__title">Flowchart</span><span class="principle__desc">Sơ đồ luồng — thấy các bước &amp; chỗ dễ phát sinh lỗi.</span></div>
+        <div class="principle"><span class="principle__num">3</span><span class="principle__title">Checksheet</span><span class="principle__desc">Bảng đếm dữ liệu tại chỗ, theo thời gian thực.</span></div>
+        <div class="principle"><span class="principle__num">4</span><span class="principle__title">Pareto Chart</span><span class="principle__desc">Quy tắc <b>80/20</b>: 80% vấn đề từ 20% nguyên nhân ("critical few").</span></div>
+        <div class="principle"><span class="principle__num">5</span><span class="principle__title">Histogram</span><span class="principle__desc">Biểu đồ cột tần suất phân bố dữ liệu.</span></div>
+        <div class="principle"><span class="principle__num">6</span><span class="principle__title">Control Chart</span><span class="principle__desc">Theo dõi quy trình có "trong tầm kiểm soát" &amp; ổn định không.</span></div>
+        <div class="principle"><span class="principle__num">7</span><span class="principle__title">Scatter Diagram</span><span class="principle__desc">Biểu đồ phân tán — quan hệ giữa 2 biến.</span></div>
       </div>
       <div class="callout callout--note"><span class="callout__label">Rule of Seven</span>Trên <b>Control Chart</b>: nếu có <b>7 điểm liên tiếp cùng một phía của đường trung bình</b> → quy trình "out of control" <b>dù vẫn nằm trong control limits</b>, cần điều tra. Đây là <b>Assignable/Special Cause</b> (nguyên nhân đặc biệt). Lưu ý: <b>Control limits</b> (do quy trình) khác <b>Specification limits</b> (do khách/hợp đồng).</div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · công cụ improvement</span><b>PDCA</b> (Plan-Do-Check-Act) &amp; <b>Six Sigma</b> là 2 phương pháp cải tiến phổ biến nhất. <b>Kaizen</b> = cải tiến liên tục (Nhật — cải thiện <i>con người</i> trước, sản phẩm sau). <b>Pareto = 80/20</b>: nhớ "ít nguyên nhân, nhiều hậu quả".</div>
@@ -418,21 +418,21 @@
       <p><b>Statistical Sampling</b>: kiểm tra một <b>mẫu</b> chọn theo tính toán thống kê thay vì toàn bộ — tần suất &amp; cỡ mẫu xác định ở giai đoạn Plan Quality.</p>
 
       <h3>5 mức quản lý chất lượng (tăng dần hiệu quả)</h3>
-      <div class="d-steps"><div class="st"><span class="s">1</span>Để khách tìm lỗi</div><div class="arw">›</div><div class="st"><span class="s">2</span>QC: phát hiện &amp; sửa lỗi</div><div class="arw">›</div><div class="st"><span class="s">3</span>QA: rà &amp; sửa quy trình</div><div class="arw">›</div><div class="st alt"><span class="s">4</span>Quality built-in (thiết kế)</div><div class="arw">›</div><div class="st alt"><span class="s">5</span>Văn hóa chất lượng</div></div>
+      <div class="diagram-steps"><div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Để khách tìm lỗi</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">2</span>QC: phát hiện &amp; sửa lỗi</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">3</span>QA: rà &amp; sửa quy trình</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">4</span>Quality built-in (thiết kế)</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">5</span>Văn hóa chất lượng</div></div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 5 mức</span>Từ <b>tệ nhất</b> (để khách phát hiện lỗi — mất uy tín) tới <b>tốt nhất</b> (văn hóa chất lượng toàn tổ chức). Càng lên cao càng <b>phòng ngừa</b>, càng rẻ &amp; bền.</div>
     </section>
 
     <!-- RESOURCE -->
     <section id="resource">
-      <div class="section__head"><h2>Resource — Nguồn lực &amp; Con người</h2><span class="tag">chủ đề 5/8 · nặng lý thuyết</span></div>
+      <div class="section__head"><h2>Resource — Nguồn lực &amp; Con người</h2><span class="section__tag">chủ đề 5/8 · nặng lý thuyết</span></div>
       <p class="section__desc">Chủ đề về <b>đội ngũ</b>: xây team, tạo động lực, xử lý xung đột, lãnh đạo. Ít công thức, nhiều mô hình cần nhớ tên.</p>
 
       <h3>Tuckman's Ladder — 5 giai đoạn phát triển team</h3>
-      <figure class="fig"><div class="fig-title">Tuckman — 5 giai đoạn phát triển team</div>
-        <div class="d-steps"><div class="st"><span class="s">1</span>Forming</div><div class="arw">›</div><div class="st"><span class="s">2</span>Storming</div><div class="arw">›</div><div class="st"><span class="s">3</span>Norming</div><div class="arw">›</div><div class="st"><span class="s">4</span>Performing</div><div class="arw">›</div><div class="st"><span class="s">5</span>Adjourning</div></div>
+      <figure class="diagram"><div class="diagram__title">Tuckman — 5 giai đoạn phát triển team</div>
+        <div class="diagram-steps"><div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Forming</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">2</span>Storming</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">3</span>Norming</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">4</span>Performing</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">5</span>Adjourning</div></div>
         <figcaption>Xung đột cao nhất ở Storming · năng suất cao nhất ở Performing</figcaption></figure>
-      <div class="flow"><span class="hl">Forming</span> → <span class="bd">Storming</span> → <span class="hl">Norming</span> → <span class="gd">Performing</span> → <span class="hl">Adjourning</span>
-<span class="cm"># Hình thành → Bão tố(xung đột) → Ổn định → Hiệu suất cao → Giải tán</span></div>
+      <div class="flow"><span class="flow__hl">Forming</span> → <span class="flow__bd">Storming</span> → <span class="flow__hl">Norming</span> → <span class="flow__gd">Performing</span> → <span class="flow__hl">Adjourning</span>
+<span class="flow__cm"># Hình thành → Bão tố(xung đột) → Ổn định → Hiệu suất cao → Giải tán</span></div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Tuckman</span><b>"Form – Storm – Norm – Perform – Adjourn"</b> (vần với nhau!). Xung đột <b>cao nhất ở Storming</b>; năng suất <b>cao nhất ở Performing</b>. Team mới lập luôn phải qua Storming — đừng hoảng.</div>
 
       <h3>Lý thuyết tạo động lực (Motivation Theories)</h3>
@@ -446,8 +446,8 @@
           <tr><td><b>Theory Z</b> (Ouchi)</td><td>Kiểu Nhật: trung thành, việc làm trọn đời, quan tâm phúc lợi</td></tr>
         </tbody>
       </table></div>
-      <figure class="fig"><div class="fig-title">Maslow — Tháp nhu cầu</div>
-        <div class="d-pyramid"><div class="lvl" style="width:40%;background:#4434c4">Self-actualization</div><div class="lvl" style="width:55%;background:#5a4be0">Esteem</div><div class="lvl" style="width:70%;background:#6d5df0">Love &amp; Belonging</div><div class="lvl" style="width:85%;background:#8f83f4">Safety</div><div class="lvl" style="width:100%;background:#b0a8f7">Physiological</div></div>
+      <figure class="diagram"><div class="diagram__title">Maslow — Tháp nhu cầu</div>
+        <div class="diagram-pyramid"><div class="diagram-pyramid__level" style="width:40%;background:#4434c4">Self-actualization</div><div class="diagram-pyramid__level" style="width:55%;background:#5a4be0">Esteem</div><div class="diagram-pyramid__level" style="width:70%;background:#6d5df0">Love &amp; Belonging</div><div class="diagram-pyramid__level" style="width:85%;background:#8f83f4">Safety</div><div class="diagram-pyramid__level" style="width:100%;background:#b0a8f7">Physiological</div></div>
         <figcaption>Thỏa mãn từ đáy lên: nhu cầu tầng dưới được đáp ứng mới hướng lên tầng trên</figcaption></figure>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Herzberg (hay bẫy)</span><b>Lương KHÔNG tạo động lực</b> — nó là <b>Hygiene factor</b> (thiếu thì bất mãn, có thì cũng không "sướng thêm"). Muốn tạo động lực thật phải dùng <b>Motivator</b>: ghi nhận, trách nhiệm, phát triển. Đề thi thường có đáp án "tăng lương" → thường là <b>sai</b>.</div>
 
@@ -484,9 +484,9 @@
 
       <h3>Daniel Pink — Drive (động lực nội tại)</h3>
       <div class="principles">
-        <div class="principle"><span class="pnum">1</span><span class="pen">Autonomy</span><span class="pvn">Tự chủ — được quyết cách/nơi/khi nào làm việc.</span></div>
-        <div class="principle"><span class="pnum">2</span><span class="pen">Mastery</span><span class="pvn">Tinh thông — mong muốn giỏi hơn, học hỏi, đạt mục tiêu.</span></div>
-        <div class="principle"><span class="pnum">3</span><span class="pen">Purpose</span><span class="pvn">Ý nghĩa — thấy công việc góp phần vào điều lớn hơn.</span></div>
+        <div class="principle"><span class="principle__num">1</span><span class="principle__title">Autonomy</span><span class="principle__desc">Tự chủ — được quyết cách/nơi/khi nào làm việc.</span></div>
+        <div class="principle"><span class="principle__num">2</span><span class="principle__title">Mastery</span><span class="principle__desc">Tinh thông — mong muốn giỏi hơn, học hỏi, đạt mục tiêu.</span></div>
+        <div class="principle"><span class="principle__num">3</span><span class="principle__title">Purpose</span><span class="principle__desc">Ý nghĩa — thấy công việc góp phần vào điều lớn hơn.</span></div>
       </div>
 
       <h3>RBS · Co-location vs Virtual Team · Recognition &amp; Rewards</h3>
@@ -500,7 +500,7 @@
 
     <!-- RISK -->
     <section id="risk">
-      <div class="section__head"><h2>Risk — Rủi ro</h2><span class="tag">chủ đề 6/8 · có EMV</span></div>
+      <div class="section__head"><h2>Risk — Rủi ro</h2><span class="section__tag">chủ đề 6/8 · có EMV</span></div>
       <p class="section__desc">Risk = sự kiện <b>chưa chắc chắn ở tương lai</b>, nếu xảy ra sẽ ảnh hưởng mục tiêu. PMP nhìn rủi ro cả 2 chiều: xấu (Threat) &amp; tốt (Opportunity).</p>
 
       <h3>Khái niệm nền &amp; các cặp dễ nhầm</h3>
@@ -518,16 +518,16 @@
 
       <h3>Định tính vs Định lượng</h3>
       <p><b>Qualitative Analysis</b> = <i>ưu tiên hóa</i> rủi ro (chủ quan) qua ma trận <b>Probability-Impact</b>. Làm cho <b>mọi</b> dự án. <b>Quantitative Analysis</b> = phân tích <i>bằng số</i> (EMV, Monte Carlo). Chỉ làm cho rủi ro ưu tiên cao, <b>không bắt buộc</b>.</p>
-      <figure class="fig"><div class="fig-title">Ma trận Probability–Impact</div>
-        <div class="d-quad-wrap"><div class="yaxis">Xác suất: thấp → cao</div><div><div class="d-quad"><div class="q"><b>P cao / I thấp</b>theo dõi</div><div class="q hi"><b>P cao / I cao</b>ƯU TIÊN xử lý</div><div class="q"><b>P thấp / I thấp</b>chấp nhận</div><div class="q mid"><b>P thấp / I cao</b>lập kế hoạch dự phòng</div></div><div class="d-xaxis">Tác động: thấp → cao</div></div></div>
+      <figure class="diagram"><div class="diagram__title">Ma trận Probability–Impact</div>
+        <div class="diagram-quad"><div class="diagram-quad__yaxis">Xác suất: thấp → cao</div><div><div class="diagram-quad__grid"><div class="diagram-quad__cell"><b>P cao / I thấp</b>theo dõi</div><div class="diagram-quad__cell diagram-quad__cell--hi"><b>P cao / I cao</b>ƯU TIÊN xử lý</div><div class="diagram-quad__cell"><b>P thấp / I thấp</b>chấp nhận</div><div class="diagram-quad__cell diagram-quad__cell--mid"><b>P thấp / I cao</b>lập kế hoạch dự phòng</div></div><div class="diagram-quad__xaxis">Tác động: thấp → cao</div></div></div>
         <figcaption>Ô Xác suất cao × Tác động cao là nhóm cần xử lý ưu tiên nhất</figcaption></figure>
 
       <h3>⭐ EMV — Expected Monetary Value</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Expected Monetary Value (EMV)</b> — a statistical technique that calculates the average (expected) outcome when the future includes scenarios that may or may not happen: probability × impact. <i>(dùng cho Contingency Reserve &amp; Decision Tree)</i></div>
       <div class="formula">
-        <div class="row"><b>EMV</b> = <span class="v">Probability</span> <span class="op">×</span> <span class="v">Impact</span></div>
-        <div class="row"><span class="cm"># Threat: Impact ÂM (tổn thất). Opportunity: Impact DƯƠNG (lợi ích).</span></div>
-        <div class="row"><span class="cm"># Dùng để tính Contingency Reserve và trong Decision Tree.</span></div>
+        <div class="formula__row"><b>EMV</b> = <span class="formula__var">Probability</span> <span class="formula__op">×</span> <span class="formula__var">Impact</span></div>
+        <div class="formula__row"><span class="formula__cm"># Threat: Impact ÂM (tổn thất). Opportunity: Impact DƯƠNG (lợi ích).</span></div>
+        <div class="formula__row"><span class="formula__cm"># Dùng để tính Contingency Reserve và trong Decision Tree.</span></div>
       </div>
       <div class="callout callout--ok"><span class="callout__label">Ví dụ EMV</span>Rủi ro A: 25% × (−$1000) = <b>−$250</b>. Cơ hội B: 60% × (+$500) = <b>+$300</b>. EMV tổng = +$50 → xét về kỳ vọng là <b>đáng làm</b>. Trong <b>Decision Tree</b>, chọn nhánh có EMV tốt nhất — nhớ trừ cả chi phí đầu tư của mỗi nhánh (kết quả có thể <b>đảo ngược</b> so với khi chưa trừ!).</div>
 
@@ -572,7 +572,7 @@
 
     <!-- STAKEHOLDER -->
     <section id="stakeholder">
-      <div class="section__head"><h2>Stakeholder &amp; Communication</h2><span class="tag">chủ đề 7/8 · PM dành 90% thời gian</span></div>
+      <div class="section__head"><h2>Stakeholder &amp; Communication</h2><span class="section__tag">chủ đề 7/8 · PM dành 90% thời gian</span></div>
       <p class="section__desc">PM dành <b>~90% thời gian để giao tiếp</b>. Chủ đề này gồm quản lý bên liên quan &amp; truyền thông — có 1 công thức phải thuộc.</p>
 
       <h3>Phân tích &amp; gắn kết Stakeholder</h3>
@@ -582,23 +582,23 @@
         <li><b>Power-Interest Grid</b> — lưới 2 trục Quyền lực × Quan tâm; nhóm góc cao-cao = "Manage Closely".</li>
         <li><b>Salience Model</b> — phân loại theo <b>3 thuộc tính</b>: <b>Power · Legitimacy · Urgency</b> (khác Power-Interest Grid chỉ 2 trục).</li>
       </ul>
-      <figure class="fig"><div class="fig-title">Power–Interest Grid</div>
-        <div class="d-quad-wrap"><div class="yaxis">Quyền lực →</div><div><div class="d-quad"><div class="q"><b>Keep Satisfied</b>quyền cao / quan tâm thấp</div><div class="q hi"><b>Manage Closely</b>key — quyền cao / quan tâm cao</div><div class="q"><b>Monitor</b>quyền thấp / quan tâm thấp</div><div class="q mid"><b>Keep Informed</b>quyền thấp / quan tâm cao</div></div><div class="d-xaxis">Mức quan tâm →</div></div></div>
+      <figure class="diagram"><div class="diagram__title">Power–Interest Grid</div>
+        <div class="diagram-quad"><div class="diagram-quad__yaxis">Quyền lực →</div><div><div class="diagram-quad__grid"><div class="diagram-quad__cell"><b>Keep Satisfied</b>quyền cao / quan tâm thấp</div><div class="diagram-quad__cell diagram-quad__cell--hi"><b>Manage Closely</b>key — quyền cao / quan tâm cao</div><div class="diagram-quad__cell"><b>Monitor</b>quyền thấp / quan tâm thấp</div><div class="diagram-quad__cell diagram-quad__cell--mid"><b>Keep Informed</b>quyền thấp / quan tâm cao</div></div><div class="diagram-quad__xaxis">Mức quan tâm →</div></div></div>
         <figcaption>Góc quyền cao × quan tâm cao là nhóm phải Manage Closely</figcaption></figure>
-      <figure class="fig"><div class="fig-title">Salience Model</div>
-        <div class="d-venn"><div class="c c1">Power</div><div class="c c2">Legitimacy</div><div class="c c3">Urgency</div><div class="center">Key stakeholder</div></div>
+      <figure class="diagram"><div class="diagram__title">Salience Model</div>
+        <div class="diagram-venn"><div class="diagram-venn__circle diagram-venn__circle--1">Power</div><div class="diagram-venn__circle diagram-venn__circle--2">Legitimacy</div><div class="diagram-venn__circle diagram-venn__circle--3">Urgency</div><div class="diagram-venn__center">Key stakeholder</div></div>
         <figcaption>Đủ cả 3 thuộc tính Power · Legitimacy · Urgency = key stakeholder</figcaption></figure>
       <h4 class="section__subhead">SEAM — 5 mức gắn kết (Engagement)</h4>
-      <div class="flow"><span class="hl">Unaware</span> → <span class="bd">Resistant</span> → <span class="hl">Neutral</span> → <span class="gd">Supportive</span> → <span class="gd">Leading</span>
-<span class="cm"># Không biết → Chống đối → Trung lập → Ủng hộ → Dẫn dắt</span></div>
+      <div class="flow"><span class="flow__hl">Unaware</span> → <span class="flow__bd">Resistant</span> → <span class="flow__hl">Neutral</span> → <span class="flow__gd">Supportive</span> → <span class="flow__gd">Leading</span>
+<span class="flow__cm"># Không biết → Chống đối → Trung lập → Ủng hộ → Dẫn dắt</span></div>
       <p><b>SEAM</b> (Stakeholder Engagement Assessment Matrix) đánh dấu mức hiện tại <b>C</b> (Current) &amp; mức mong muốn <b>D</b> (Desired) → tìm "gap" để lập chiến lược giao tiếp.</p>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Salience &amp; SEAM</span><b>Salience = 3 vòng tròn P.L.U.</b> (Power, Legitimacy, Urgency). <b>SEAM = từ C tới D</b>: đo hiện tại, nhắm mong muốn, đóng khoảng cách. 5 mức đọc từ tệ đến tốt: "Không biết → Chống → Trung → Ủng hộ → Dẫn dắt".</div>
 
       <h3>⭐ Công thức kênh giao tiếp</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Communication Channels</b> — the number of potential communication paths among stakeholders, calculated as N × (N − 1) / 2, where N is the number of people. <i>(nhớ cộng cả PM vào N)</i></div>
       <div class="formula">
-        <div class="row"><b>Số kênh (Channels)</b> = <span class="v">N</span> <span class="op">×</span> ( <span class="v">N</span> <span class="op">−</span> 1 ) <span class="op">/</span> 2</div>
-        <div class="row"><span class="cm"># N = tổng số người tham gia (NHỚ cộng cả PM/giảng viên vào N!)</span></div>
+        <div class="formula__row"><b>Số kênh (Channels)</b> = <span class="formula__var">N</span> <span class="formula__op">×</span> ( <span class="formula__var">N</span> <span class="formula__op">−</span> 1 ) <span class="formula__op">/</span> 2</div>
+        <div class="formula__row"><span class="formula__cm"># N = tổng số người tham gia (NHỚ cộng cả PM/giảng viên vào N!)</span></div>
       </div>
       <div class="callout callout--ok"><span class="callout__label">Ví dụ (bẫy "thêm bao nhiêu kênh")</span>16 học viên + 1 giảng viên = 17 người → 17×16/2 = <b>136 kênh</b>. Thêm 2 trợ giảng → 19 người → 19×18/2 = <b>171 kênh</b>. Câu hỏi "thêm bao nhiêu kênh?" ⇒ lấy <b>hiệu</b>: 171 − 136 = <b>35 kênh</b> (không phải 171).</div>
 
@@ -611,8 +611,8 @@
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 5C &amp; conflict</span><b>5C viết đúng</b>: <b>C</b>lear, <b>C</b>oncise, <b>C</b>orrect, <b>C</b>oherent, <b>C</b>ontrolling. <b>5 cách giải quyết xung đột</b>: <b>Collaborate/Problem-solve = Win-Win (tốt nhất)</b>; Compromise = <b>Lose-Lose</b> (mỗi bên nhường một ít); Force = Win-Lose; Smooth (né khác biệt); Withdraw (rút lui). Đề PMP luôn ưu tiên <b>Collaborate/Problem-solve</b>.</div>
       <div class="callout callout--warn"><span class="callout__label">Đừng nhầm Compromise là Win-Win</span>Nhiều người tưởng "thỏa hiệp" là tốt nhất — SAI. Compromise là <b>Lose-Lose</b> (ai cũng mất một phần). <b>Collaborate/Problem-solving</b> mới là Win-Win và là lựa chọn PMI ưu tiên.</div>
       <h3>Mô hình giao tiếp (Communication Model)</h3>
-      <figure class="fig"><div class="fig-title">Sender → encode → Message/Noise → decode → Receiver → Feedback</div>
-        <div class="d-steps"><div class="st"><span class="s">1</span>Sender</div><div class="arw">›</div><div class="st"><span class="s">2</span>Encode</div><div class="arw">›</div><div class="st alt"><span class="s">3</span>Message + Noise</div><div class="arw">›</div><div class="st"><span class="s">4</span>Decode</div><div class="arw">›</div><div class="st"><span class="s">5</span>Receiver</div></div>
+      <figure class="diagram"><div class="diagram__title">Sender → encode → Message/Noise → decode → Receiver → Feedback</div>
+        <div class="diagram-steps"><div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Sender</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">2</span>Encode</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">3</span>Message + Noise</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">4</span>Decode</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">5</span>Receiver</div></div>
         <figcaption>Feedback quay ngược từ Receiver về Sender · Noise = mọi thứ cản trở (khoảng cách, ngôn ngữ, thái độ, văn hóa)</figcaption></figure>
       <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th>Trách nhiệm Sender (người gửi)</th><th>Trách nhiệm Receiver (người nhận)</th></tr></thead>
@@ -640,7 +640,7 @@
 
     <!-- PROCUREMENT -->
     <section id="procurement">
-      <div class="section__head"><h2>Procurement — Mua sắm &amp; Hợp đồng</h2><span class="tag">chủ đề 8/8</span></div>
+      <div class="section__head"><h2>Procurement — Mua sắm &amp; Hợp đồng</h2><span class="section__tag">chủ đề 8/8</span></div>
       <p class="section__desc">Procurement = "thuê ngoài": chọn loại hợp đồng nào và <b>ai chịu rủi ro</b>. Trọng tâm thi là bảng loại hợp đồng.</p>
 
       <h3>Vai trò &amp; chứng từ</h3>
@@ -653,14 +653,14 @@
       </ul>
 
       <h3>Các loại hợp đồng &amp; phổ rủi ro</h3>
-      <figure class="fig"><div class="fig-title">Phổ rủi ro theo loại hợp đồng</div>
-        <div class="d-spectrum"><div class="ends"><span>Seller chịu rủi ro cao</span><span>Buyer chịu rủi ro cao</span></div><div class="track"></div><div class="ticks"><span>FFP</span><span>FPIF</span><span>T&amp;M</span><span>CPIF</span><span>CPFF</span><span>CPPC</span></div></div>
+      <figure class="diagram"><div class="diagram__title">Phổ rủi ro theo loại hợp đồng</div>
+        <div class="diagram-spectrum"><div class="diagram-spectrum__ends"><span>Seller chịu rủi ro cao</span><span>Buyer chịu rủi ro cao</span></div><div class="diagram-spectrum__track"></div><div class="diagram-spectrum__ticks"><span>FFP</span><span>FPIF</span><span>T&amp;M</span><span>CPIF</span><span>CPFF</span><span>CPPC</span></div></div>
         <figcaption>Càng "Fixed" seller càng gánh · càng "Cost Plus" buyer càng gánh</figcaption></figure>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Fixed Price Contract</b> — an agreement that sets a firm total price for a well-defined product or service; the seller bears most of the cost risk. <i>(giá cố định; seller gánh phát sinh)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Cost Reimbursable Contract</b> — an agreement that pays the seller for the actual (allowable) costs incurred plus a fee representing profit; the buyer bears more of the cost risk. <i>(dùng khi yêu cầu chưa rõ)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Point of Total Assumption (PTA)</b> — in a fixed-price incentive-fee (FPIF) contract, the cost above which the seller assumes all additional cost overruns. <i>(chỉ áp dụng cho FPIF)</i></div>
       <div class="flow">Seller chịu rủi ro cao  ◀━━━━━━━━━━━━━━━━━━━━━━━━━▶  Buyer chịu rủi ro cao
-   <span class="gd">FFP  FPIF</span>      <span class="hl">T&amp;M</span>      <span class="bd">CPIF  CPFF  CPPC</span>
+   <span class="flow__gd">FFP  FPIF</span>      <span class="flow__hl">T&amp;M</span>      <span class="flow__bd">CPIF  CPFF  CPPC</span>
  (Fixed Price)  (Time&amp;Material) (Cost Reimbursable)</div>
       <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th>Loại</th><th>Dùng khi</th><th>Rủi ro chính</th><th>Ghi chú</th></tr></thead>
@@ -674,9 +674,9 @@
         </tbody>
       </table></div>
       <div class="formula">
-        <div class="row"><span class="cm"># PTA — Point of Total Assumption (chỉ cho FPIF)</span></div>
-        <div class="row"><b>PTA</b> = ( <span class="v">Ceiling Price</span> <span class="op">−</span> <span class="v">Target Price</span> ) <span class="op">/</span> <span class="v">Buyer share</span> <span class="op">+</span> <span class="v">Target Cost</span></div>
-        <div class="row"><span class="cm"># Trên PTA: seller gánh 100% mọi chi phí vượt thêm</span></div>
+        <div class="formula__row"><span class="formula__cm"># PTA — Point of Total Assumption (chỉ cho FPIF)</span></div>
+        <div class="formula__row"><b>PTA</b> = ( <span class="formula__var">Ceiling Price</span> <span class="formula__op">−</span> <span class="formula__var">Target Price</span> ) <span class="formula__op">/</span> <span class="formula__var">Buyer share</span> <span class="formula__op">+</span> <span class="formula__var">Target Cost</span></div>
+        <div class="formula__row"><span class="formula__cm"># Trên PTA: seller gánh 100% mọi chi phí vượt thêm</span></div>
       </div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · chọn hợp đồng</span><b>"Rõ → Fixed Price; Mờ → Cost Reimbursable; Gấp/chưa có SOW → T&amp;M."</b> Rủi ro chuyển dần từ Seller (FP) sang Buyer (CR). Nhớ: hợp đồng <b>càng "Fixed" thì Seller càng gánh</b>; càng "Cost Plus" thì Buyer càng gánh.</div>
       <div class="callout callout--note"><span class="callout__label">Agile Contracting</span><b>Change for Free</b> (đổi tính năng miễn phí nếu tổng khối lượng không đổi), <b>Money for Nothing</b> (cho khách dừng sớm khi backlog hết giá trị), <b>Graduated Fixed-Price</b>, <b>MSA</b> (Master Service Agreement — hợp đồng khung, phần adaptive để ở phụ lục).</div>

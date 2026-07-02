@@ -31,16 +31,16 @@
       <h1>Nền tảng: hiểu dự án trước khi đi sâu</h1>
       <p>7 khái niệm gốc mọi PMP phải nắm: dự án là gì, giá trị, các bên liên quan, cách tiếp cận phát triển, vòng đời, môi trường tổ chức và quản trị. Mỗi mục kèm <b>định nghĩa tiếng Anh chuẩn thi</b> và mẹo ghi nhớ.</p>
       <div class="hero__jump">
-        <a href="#project-basics"><span class="n">01</span>Dự án &amp; Value</a>
-        <a href="#value-system"><span class="n">02</span>3 tầng</a>
-        <a href="#approaches"><span class="n">03</span>Approaches</a>
-        <a href="#environment"><span class="n">05</span>EEF/OPA</a>
-        <a href="#governance"><span class="n">07</span>Governance</a>
+        <a href="#project-basics"><span class="hero__jump-num">01</span>Dự án &amp; Value</a>
+        <a href="#value-system"><span class="hero__jump-num">02</span>3 tầng</a>
+        <a href="#approaches"><span class="hero__jump-num">03</span>Approaches</a>
+        <a href="#environment"><span class="hero__jump-num">05</span>EEF/OPA</a>
+        <a href="#governance"><span class="hero__jump-num">07</span>Governance</a>
       </div>
     </div>
     <!-- PROJECT BASICS -->
     <section id="project-basics">
-      <div class="section__head"><h2>Dự án, Value &amp; Stakeholder</h2><span class="tag">Phần I · nền tảng</span></div>
+      <div class="section__head"><h2>Dự án, Value &amp; Stakeholder</h2><span class="section__tag">Phần I · nền tảng</span></div>
       <p class="section__desc">Ba khái niệm gốc: một dự án <i>là gì</i>, nó tạo ra <i>cái gì</i>, và <i>ai</i> liên quan.</p>
 
       <h3>Project (dự án) vs Operation (vận hành)</h3>
@@ -82,7 +82,7 @@
 
     <!-- VALUE SYSTEM -->
     <section id="value-system">
-      <div class="section__head"><h2>Portfolio · Program · Project</h2><span class="tag">System for Value Delivery</span></div>
+      <div class="section__head"><h2>Portfolio · Program · Project</h2><span class="section__tag">System for Value Delivery</span></div>
       <p class="section__desc">Tổ chức giao value qua một "hệ thống" 3 tầng. Phân biệt 3 tầng này là câu hỏi kinh điển.</p>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Portfolio</b> — a collection of projects, programs, subsidiary portfolios, and operations managed as a group to achieve strategic objectives. <i>(danh mục quản lý theo chiến lược)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Program</b> — a group of related projects, subsidiary programs, and program activities managed in a coordinated manner to obtain benefits not available from managing them individually. <i>(nhóm dự án liên quan, cộng hưởng lợi ích)</i></div>
@@ -95,17 +95,17 @@
         </tbody>
       </table></div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 3 tầng</span>Hình dung một <b>hãng xe</b>: làm <b>một mẫu xe mới</b> = <i>Project</i>. Nhóm các project "ra mắt dòng xe điện" (nhà máy + pin + marketing) = <i>Program</i> (chúng liên quan, cộng hưởng lợi ích). Toàn bộ danh mục đầu tư của hãng (xe điện + xe xăng + bất động sản) = <i>Portfolio</i> (chọn cái nào đáng đầu tư theo chiến lược). <b>Program = "liên quan"; Portfolio = "chiến lược"</b>.</div>
-      <figure class="fig">
-        <div class="fig-title">Portfolio › Program › Project</div>
-        <div class="d-hier">
-          <span class="hlabel">Portfolio · Chiến lược hãng xe</span>
-          <div class="quiz__prog">
-            <span class="hlabel">Program · Dòng xe điện</span>
-            <div class="projs"><span class="proj">Nhà máy pin</span><span class="proj">App sạc</span><span class="proj">Marketing</span></div>
+      <figure class="diagram">
+        <div class="diagram__title">Portfolio › Program › Project</div>
+        <div class="diagram-hier">
+          <span class="diagram-hier__label">Portfolio · Chiến lược hãng xe</span>
+          <div class="diagram-hier__program">
+            <span class="diagram-hier__label">Program · Dòng xe điện</span>
+            <div class="diagram-hier__projects"><span class="diagram-hier__project">Nhà máy pin</span><span class="diagram-hier__project">App sạc</span><span class="diagram-hier__project">Marketing</span></div>
           </div>
-          <div class="quiz__prog">
-            <span class="hlabel">Program · Xe xăng</span>
-            <div class="projs"><span class="proj">Model X</span><span class="proj">Model Y</span></div>
+          <div class="diagram-hier__program">
+            <span class="diagram-hier__label">Program · Xe xăng</span>
+            <div class="diagram-hier__projects"><span class="diagram-hier__project">Model X</span><span class="diagram-hier__project">Model Y</span></div>
           </div>
         </div>
         <figcaption>Portfolio bám chiến lược; Program gom project liên quan để cộng hưởng lợi ích; Project tạo 1 kết quả cụ thể.</figcaption>
@@ -118,7 +118,7 @@
 
     <!-- APPROACHES -->
     <section id="approaches">
-      <div class="section__head"><h2>Development Approaches</h2><span class="tag">cách phát triển sản phẩm</span></div>
+      <div class="section__head"><h2>Development Approaches</h2><span class="section__tag">cách phát triển sản phẩm</span></div>
       <p class="section__desc">Có nhiều cách "chạy" một dự án. Chọn cách nào phụ thuộc mức độ <b>chắc chắn của yêu cầu</b>.</p>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Predictive approach</b> — a development approach in which the project scope, schedule, and cost are determined early in the life cycle and change is tightly controlled. <i>(kế hoạch cố định từ đầu, làm tuần tự)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Adaptive (Agile) approach</b> — a development approach that is iterative and incremental, refining requirements and delivering value frequently in short cycles while responding to change. <i>(lặp + tăng dần, đón nhận thay đổi)</i></div>
@@ -130,28 +130,28 @@
         <div class="feature"><b>Adaptive (Agile)</b><span>Kết hợp iterative + incremental, <b>value-driven</b>, đón nhận thay đổi. Hợp khi yêu cầu <b>mơ hồ, biến động</b>.</span></div>
         <div class="feature"><b>Hybrid (lai)</b><span>Trộn Predictive + Agile, <b>"fit-for-purpose"</b> — phần rõ thì predictive, phần mơ hồ thì agile. Rất phổ biến thực tế.</span></div>
       </div>
-      <figure class="fig">
-        <div class="fig-title">Phổ cách tiếp cận theo độ chắc chắn của yêu cầu</div>
-        <div class="d-spectrum">
-          <div class="ends"><span>Yêu cầu ỔN ĐỊNH / rõ</span><span>Yêu cầu BIẾN ĐỘNG / mơ hồ</span></div>
-          <div class="track mono"></div>
-          <div class="ticks"><span>Predictive</span><span>Iterative</span><span>Incremental</span><span>Agile</span><span>Hybrid</span></div>
+      <figure class="diagram">
+        <div class="diagram__title">Phổ cách tiếp cận theo độ chắc chắn của yêu cầu</div>
+        <div class="diagram-spectrum">
+          <div class="diagram-spectrum__ends"><span>Yêu cầu ỔN ĐỊNH / rõ</span><span>Yêu cầu BIẾN ĐỘNG / mơ hồ</span></div>
+          <div class="diagram-spectrum__track diagram-spectrum__track--mono"></div>
+          <div class="diagram-spectrum__ticks"><span>Predictive</span><span>Iterative</span><span>Incremental</span><span>Agile</span><span>Hybrid</span></div>
         </div>
         <figcaption>Yêu cầu càng rõ → càng thiên Predictive; càng mơ hồ/biến động → càng thiên Agile.</figcaption>
       </figure>
       <div class="callout callout--note"><span class="callout__label">Stacey Complexity Matrix</span>Mô hình chọn approach theo 2 trục <b>độ chắc chắn của yêu cầu</b> &amp; <b>độ chắc chắn của công nghệ</b>: <b>Simple</b> → Predictive; <b>Complicated/Complex</b> → Agile/Hybrid; <b>Anarchy</b> (hỗn loạn) → cần ổn định trước khi làm.</div>
-      <figure class="fig">
-        <div class="fig-title">Stacey đơn giản — chọn approach theo độ chắc chắn</div>
-        <div class="d-quad-wrap">
-          <div class="yaxis">Công nghệ: chắc → mơ hồ</div>
+      <figure class="diagram">
+        <div class="diagram__title">Stacey đơn giản — chọn approach theo độ chắc chắn</div>
+        <div class="diagram-quad">
+          <div class="diagram-quad__yaxis">Công nghệ: chắc → mơ hồ</div>
           <div>
-            <div class="d-quad">
-              <div class="q mid">Complicated</div>
-              <div class="q hi">Complex (Agile)</div>
-              <div class="q">Simple (Predictive)</div>
-              <div class="q mid">Anarchy</div>
+            <div class="diagram-quad__grid">
+              <div class="diagram-quad__cell diagram-quad__cell--mid">Complicated</div>
+              <div class="diagram-quad__cell diagram-quad__cell--hi">Complex (Agile)</div>
+              <div class="diagram-quad__cell">Simple (Predictive)</div>
+              <div class="diagram-quad__cell diagram-quad__cell--mid">Anarchy</div>
             </div>
-            <div class="d-xaxis">Yêu cầu: chắc → mơ hồ</div>
+            <div class="diagram-quad__xaxis">Yêu cầu: chắc → mơ hồ</div>
           </div>
         </div>
         <figcaption>Yêu cầu &amp; công nghệ càng chắc → Simple/Predictive; càng mơ hồ → Complex/Agile; góc mơ hồ cực độ → Anarchy.</figcaption>
@@ -173,28 +173,28 @@
 
     <!-- LIFECYCLE -->
     <section id="lifecycle">
-      <div class="section__head"><h2>Vòng đời dự án &amp; Phase Gate</h2><span class="tag">Project Lifecycle</span></div>
+      <div class="section__head"><h2>Vòng đời dự án &amp; Phase Gate</h2><span class="section__tag">Project Lifecycle</span></div>
       <p class="section__desc">Dự án đi qua các <b>Phase</b> (giai đoạn); giữa các phase có "cổng" quyết định.</p>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Project Life Cycle</b> — the series of phases that a project passes through from its start to its completion. <i>(chuỗi các giai đoạn từ khi bắt đầu đến khi kết thúc dự án)</i></div>
       <h3>5 Process Groups (nhóm quy trình)</h3>
-      <figure class="fig">
-        <div class="fig-title">5 Process Groups</div>
-        <div class="d-steps">
-          <div class="st"><span class="s">1</span>Initiating</div>
-          <div class="arw">›</div>
-          <div class="st"><span class="s">2</span>Planning</div>
-          <div class="arw">›</div>
-          <div class="st"><span class="s">3</span>Executing</div>
-          <div class="arw">›</div>
-          <div class="st"><span class="s">4</span>Monitoring &amp; Controlling</div>
-          <div class="arw">›</div>
-          <div class="st"><span class="s">5</span>Closing</div>
+      <figure class="diagram">
+        <div class="diagram__title">5 Process Groups</div>
+        <div class="diagram-steps">
+          <div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Initiating</div>
+          <div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">2</span>Planning</div>
+          <div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">3</span>Executing</div>
+          <div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">4</span>Monitoring &amp; Controlling</div>
+          <div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">5</span>Closing</div>
         </div>
-        <div class="d-wrap-note">Monitoring &amp; Controlling bao trùm/song song mọi giai đoạn.</div>
+        <div class="diagram-steps__note">Monitoring &amp; Controlling bao trùm/song song mọi giai đoạn.</div>
         <figcaption>Chuỗi 5 nhóm quy trình từ khởi tạo đến đóng dự án.</figcaption>
       </figure>
-      <div class="flow"><span class="hl">Initiating</span> → <span class="hl">Planning</span> → <span class="hl">Executing</span> → <span class="hl">Monitoring &amp; Controlling</span> → <span class="hl">Closing</span>
-<span class="cm"># Khởi tạo → Lập kế hoạch → Thực thi → Giám sát &amp; kiểm soát → Đóng dự án</span></div>
+      <div class="flow"><span class="flow__hl">Initiating</span> → <span class="flow__hl">Planning</span> → <span class="flow__hl">Executing</span> → <span class="flow__hl">Monitoring &amp; Controlling</span> → <span class="flow__hl">Closing</span>
+<span class="flow__cm"># Khởi tạo → Lập kế hoạch → Thực thi → Giám sát &amp; kiểm soát → Đóng dự án</span></div>
       <p><b>Monitoring &amp; Controlling</b> chạy <i>song song</i> xuyên suốt (giám sát mọi lúc), không phải một bước tuần tự.</p>
 
       <h3>Phase Gate — cổng kiểm soát</h3>
@@ -214,7 +214,7 @@
 
     <!-- ENVIRONMENT -->
     <section id="environment">
-      <div class="section__head"><h2>Môi trường doanh nghiệp · EEF/OPA · AI</h2><span class="tag">Business Environment</span></div>
+      <div class="section__head"><h2>Môi trường doanh nghiệp · EEF/OPA · AI</h2><span class="section__tag">Business Environment</span></div>
       <p class="section__desc">Dự án không chạy trong chân không — nó bị ảnh hưởng bởi môi trường (EEF) và dùng tài sản của tổ chức (OPA). Đây là cặp khái niệm xuất hiện khắp PMBOK.</p>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Enterprise Environmental Factors (EEF)</b> — conditions, not under the immediate control of the project team, that influence, constrain, or direct the project (e.g., culture, market conditions, laws, IT infrastructure). <i>(yếu tố môi trường ngoài tầm kiểm soát của team)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Organizational Process Assets (OPA)</b> — plans, processes, policies, procedures, and knowledge bases specific to and used by the performing organization. <i>(tài sản quy trình của tổ chức: mẫu biểu, quy trình, tri thức)</i></div>
@@ -262,14 +262,14 @@
 
     <!-- ORG STRUCTURE -->
     <section id="org-structure">
-      <div class="section__head"><h2>Cơ cấu tổ chức &amp; PMO</h2><span class="tag">quyền lực của PM</span></div>
+      <div class="section__head"><h2>Cơ cấu tổ chức &amp; PMO</h2><span class="section__tag">quyền lực của PM</span></div>
       <p class="section__desc">Cơ cấu tổ chức quyết định PM có <b>bao nhiêu quyền</b>. Đây là câu hỏi "PM có được quyết định không?" rất hay gặp.</p>
-      <figure class="fig">
-        <div class="fig-title">Quyền của PM theo cơ cấu tổ chức</div>
-        <div class="d-spectrum">
-          <div class="ends"><span>PM quyền THẤP</span><span>PM quyền CAO</span></div>
-          <div class="track"></div>
-          <div class="ticks"><span>Functional</span><span>Weak Matrix</span><span>Balanced Matrix</span><span>Strong Matrix</span><span>Projectized</span></div>
+      <figure class="diagram">
+        <div class="diagram__title">Quyền của PM theo cơ cấu tổ chức</div>
+        <div class="diagram-spectrum">
+          <div class="diagram-spectrum__ends"><span>PM quyền THẤP</span><span>PM quyền CAO</span></div>
+          <div class="diagram-spectrum__track"></div>
+          <div class="diagram-spectrum__ticks"><span>Functional</span><span>Weak Matrix</span><span>Balanced Matrix</span><span>Strong Matrix</span><span>Projectized</span></div>
         </div>
         <figcaption>Càng dịch sang phải, quyền lực &amp; sự chủ động của PM càng lớn.</figcaption>
       </figure>
@@ -328,7 +328,7 @@
 
     <!-- GOVERNANCE -->
     <section id="governance">
-      <div class="section__head"><h2>Governance &amp; Tích hợp dự án</h2><span class="tag">Integration · điều phối tổng thể</span></div>
+      <div class="section__head"><h2>Governance &amp; Tích hợp dự án</h2><span class="section__tag">Integration · điều phối tổng thể</span></div>
       <p class="section__desc">Governance là "khung luật chơi" điều phối mọi quyết định để tối ưu value. Đây cũng là nơi diễn ra <b>quản lý thay đổi</b> — chủ đề cực hay ra thi.</p>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Project Governance</b> — the framework, functions, and processes that guide project management activities in order to create a unique product, service, or result to meet organizational, strategic, and operational goals. <i>(khung quản trị điều phối các quyết định dự án)</i></div>
 
@@ -337,8 +337,8 @@
       <p><b>Project Management Plan</b> (kế hoạch tổng — "master plan") gom mọi kế hoạch con (scope, schedule, cost, quality, risk, communication...) và <b>3 baselines</b> (đường mốc so sánh): <b>Scope · Schedule · Cost</b>. Baseline chỉ được đổi qua <b>quy trình kiểm soát thay đổi chính thức</b>.</p>
 
       <h3>Chuỗi dữ liệu hiệu suất: WPD → WPI → WPR</h3>
-      <div class="flow"><span class="hl">Work Performance Data</span> → <span class="hl">Work Performance Information</span> → <span class="hl">Work Performance Reports</span>
-<span class="cm"># Dữ liệu thô  →  Thông tin (đã phân tích)  →  Báo cáo (đã phân phối cho stakeholder)</span></div>
+      <div class="flow"><span class="flow__hl">Work Performance Data</span> → <span class="flow__hl">Work Performance Information</span> → <span class="flow__hl">Work Performance Reports</span>
+<span class="flow__cm"># Dữ liệu thô  →  Thông tin (đã phân tích)  →  Báo cáo (đã phân phối cho stakeholder)</span></div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · WPD/WPI/WPR</span><b>Data thô → Information có nghĩa → Report gửi đi.</b> Ví dụ: "đã xong 5/10 task" = Data; "dự án chậm 10%" = Information; "email tình hình gửi sếp" = Report.</div>
 
       <h3>Perform Integrated Change Control (kiểm soát thay đổi tích hợp)</h3>
@@ -393,14 +393,14 @@
       </div>
 
       <h3>Configuration Management — 4 hoạt động</h3>
-      <div class="d-steps">
-        <div class="st"><span class="s">1</span>Configuration identification</div>
-        <div class="arw">›</div>
-        <div class="st"><span class="s">2</span>Configuration change control</div>
-        <div class="arw">›</div>
-        <div class="st"><span class="s">3</span>Status accounting</div>
-        <div class="arw">›</div>
-        <div class="st"><span class="s">4</span>Configuration audit</div>
+      <div class="diagram-steps">
+        <div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Configuration identification</div>
+        <div class="diagram-steps__arrow">›</div>
+        <div class="diagram-steps__step"><span class="diagram-steps__num">2</span>Configuration change control</div>
+        <div class="diagram-steps__arrow">›</div>
+        <div class="diagram-steps__step"><span class="diagram-steps__num">3</span>Status accounting</div>
+        <div class="diagram-steps__arrow">›</div>
+        <div class="diagram-steps__step"><span class="diagram-steps__num">4</span>Configuration audit</div>
       </div>
       <div class="features">
         <div class="feature"><b>Identification</b><span>Định danh sản phẩm &amp; tài liệu cấu hình.</span></div>
@@ -410,12 +410,12 @@
       </div>
 
       <h3>Change Management — 5 hoạt động</h3>
-      <div class="d-steps">
-        <div class="st"><span class="s">1</span>Identify</div><div class="arw">›</div>
-        <div class="st"><span class="s">2</span>Document</div><div class="arw">›</div>
-        <div class="st"><span class="s">3</span>Decide</div><div class="arw">›</div>
-        <div class="st"><span class="s">4</span>Track</div><div class="arw">›</div>
-        <div class="st"><span class="s">5</span>Notify stakeholders</div>
+      <div class="diagram-steps">
+        <div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Identify</div><div class="diagram-steps__arrow">›</div>
+        <div class="diagram-steps__step"><span class="diagram-steps__num">2</span>Document</div><div class="diagram-steps__arrow">›</div>
+        <div class="diagram-steps__step"><span class="diagram-steps__num">3</span>Decide</div><div class="diagram-steps__arrow">›</div>
+        <div class="diagram-steps__step"><span class="diagram-steps__num">4</span>Track</div><div class="diagram-steps__arrow">›</div>
+        <div class="diagram-steps__step"><span class="diagram-steps__num">5</span>Notify stakeholders</div>
       </div>
       <div class="callout callout--note"><span class="callout__label">Đổi baseline</span>Thay đổi baseline chỉ áp dụng <b>từ baseline gần nhất về sau (forward)</b>; <b>hiệu suất quá khứ không đổi</b>. Trạng thái mọi change (approved, deferred hay rejected) đều được ghi vào <b>Change Log</b>. Change bị hoãn/từ chối phải được thông báo lại cho người đề xuất.</div>
 

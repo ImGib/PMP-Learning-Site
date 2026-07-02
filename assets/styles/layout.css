@@ -47,12 +47,12 @@
 .hero__jump a{font-size:13.5px;padding:8px 14px;border:1px solid var(--line);border-radius:9px;
   background:#fff;color:var(--ink-soft);transition:.15s}
 .hero__jump a:hover{border-color:var(--accent);color:var(--accent-ink);transform:translateY(-1px)}
-.hero__jump a .n{font-family:var(--mono);color:var(--faint);margin-right:7px;font-size:12px}
+.hero__jump a .hero__jump-num{font-family:var(--mono);color:var(--faint);margin-right:7px;font-size:12px}
 
 /* ---- section head ---- */
 .section__head{display:flex;align-items:baseline;gap:13px;margin-bottom:6px;flex-wrap:wrap}
 .section__head h2{font-family:var(--display);font-weight:500;font-size:30px;letter-spacing:-.015em;margin:0}
-.section__head .tag{font-family:var(--mono);font-size:11px;color:var(--faint);
+.section__tag{font-family:var(--mono);font-size:11px;color:var(--faint);
   border:1px solid var(--line);padding:2px 8px;border-radius:20px}
 .section__desc{color:var(--muted);max-width:70ch;margin:0 0 22px;font-size:15px}
 .section__subhead{font-size:15px;font-weight:600;color:var(--ink);margin:20px 0 8px}
