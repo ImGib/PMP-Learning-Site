@@ -2,6 +2,7 @@
 // Reuses the QUIZ bank. No-op if there is no #exam-root on the page.
 import { esc, qs } from '../lib/dom.js';
 import { QUIZ } from '../data/quiz.js';
+import { loadHistory, addHistory, clearHistory } from '../data/exam-history.js';
 
 const PER_Q_SECONDS = 75; // ~1.25 phút/câu (gần tỉ lệ thật 230 phút / 180 câu)
 const PASS = 0.7; // ngưỡng luyện tập (không phải điểm chính thức của PMI)
@@ -59,12 +60,63 @@ function renderSetup() {
         </label>
       </div>
       <button class="btn btn--primary" id="examStart">Bắt đầu làm bài →</button>
-    </div>`;
+    </div>
+    ${renderHistory()}`;
   qs('#examStart', root).addEventListener('click', () => {
     const count = parseInt(qs('#examCount', root).value, 10);
     const cat = qs('#examCat', root).value;
     startExam(count, cat);
   });
+  const clr = qs('#examClear', root);
+  if (clr)
+    clr.addEventListener('click', () => {
+      if (confirm('Xóa toàn bộ lịch sử điểm đề thi thử?')) {
+        clearHistory();
+        renderSetup();
+      }
+    });
+}
+
+function renderHistory() {
+  const h = loadHistory();
+  if (!h.length) return '';
+  const pcts = h.map((r) => r.pct);
+  const best = Math.max(...pcts);
+  const avg = Math.round(pcts.reduce((a, b) => a + b, 0) / pcts.length);
+  const last = h[0].pct;
+  const trend = h
+    .slice(0, 14)
+    .reverse()
+    .map(
+      (r) =>
+        `<span class="exam__bar ${r.passed ? 'is-pass' : 'is-fail'}" style="height:${Math.max(6, r.pct)}%" title="${r.pct}% · ${esc(r.cat)}"></span>`
+    )
+    .join('');
+  const rows = h
+    .map((r) => {
+      const d = new Date(r.ts);
+      const ds = `${d.getDate()}/${d.getMonth() + 1} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+      return `<tr><td>${ds}</td><td>${esc(r.cat)}</td><td>${r.correct}/${r.total}</td><td><b class="${r.passed ? 'exam__pct--pass' : 'exam__pct--fail'}">${r.pct}%</b></td><td>${fmt(r.time)}</td></tr>`;
+    })
+    .join('');
+  return `
+    <div class="exam__history">
+      <div class="exam__history-head">
+        <h3>Lịch sử &amp; tiến bộ</h3>
+        <button class="btn exam__clear" id="examClear" type="button">Xóa lịch sử</button>
+      </div>
+      <div class="exam__stats">
+        <div class="exam__stat"><b>${h.length}</b><span>lần làm</span></div>
+        <div class="exam__stat"><b>${best}%</b><span>cao nhất</span></div>
+        <div class="exam__stat"><b>${avg}%</b><span>trung bình</span></div>
+        <div class="exam__stat"><b>${last}%</b><span>gần nhất</span></div>
+      </div>
+      <div class="exam__trend" title="Điểm các lần gần đây (cũ → mới)">${trend}</div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Thời điểm</th><th>Chủ đề</th><th>Đúng</th><th>Điểm</th><th>Thời gian</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+    </div>`;
 }
 
 /* ---------- run ---------- */
@@ -87,6 +139,7 @@ function startExam(count, cat) {
     answers: new Array(n).fill(null),
     remaining: n * PER_Q_SECONDS,
     submitted: false,
+    cat: cat || 'Tất cả',
   };
   renderRunning();
   timerId = setInterval(tick, 1000);
@@ -173,6 +226,7 @@ function submitExam() {
   const pct = Math.round((correct / total) * 100);
   const passed = correct / total >= PASS;
   const timeUsed = total * PER_Q_SECONDS - Math.max(0, state.remaining);
+  addHistory({ ts: Date.now(), cat: state.cat, correct, total, pct, time: timeUsed, passed });
 
   const review = state.questions
     .map((item, qi) => {
