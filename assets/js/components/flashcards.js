@@ -1,4 +1,4 @@
-// components/flashcards.js — flip-card deck + in-browser add/delete/export
+// components/flashcards.js — flip-card deck + topic filter + in-browser add/delete/export
 import { esc, qs, qsa } from '../lib/dom.js';
 import { FLASHCARDS } from '../data/flashcards.js';
 import { MY_FLASHCARDS } from '../data/my-cards.js';
@@ -9,13 +9,15 @@ export function initFlashcards() {
   if (!grid) return;
 
   const fileCards = FLASHCARDS.concat(MY_FLASHCARDS || []);
-  let data = [];
+  let allData = [];
+  let activeCat = null;
 
   const build = () => {
     const mine = loadMine().map((c) => ({ ...c, _mine: true }));
-    data = fileCards.concat(mine);
-    return data;
+    allData = fileCards.concat(mine);
+    return allData;
   };
+  const view = () => (activeCat ? allData.filter((c) => (c.cat || 'Khác') === activeCat) : allData);
 
   const render = (list) => {
     grid.innerHTML = '';
@@ -43,18 +45,31 @@ export function initFlashcards() {
   };
 
   const counts = () => {
-    const c = qs('#fcCount'); if (c) c.textContent = data.length;
+    const c = qs('#fcCount'); if (c) c.textContent = view().length;
     const m = qs('#fcMineCount'); if (m) m.textContent = loadMine().length;
   };
 
-  const refresh = () => { build(); render(data); counts(); };
+  const filterEl = qs('#fcFilter');
+  const renderFilter = () => {
+    if (!filterEl) return;
+    const order = [], cnt = {};
+    allData.forEach((c) => { const k = c.cat || 'Khác'; if (cnt[k] === undefined) { cnt[k] = 0; order.push(k); } cnt[k]++; });
+    let html = '<span class="flashcard-filter__label">Chủ đề:</span>';
+    html += `<button class="btn${activeCat === null ? ' btn--primary' : ''}" data-cat="">Tất cả (${allData.length})</button>`;
+    order.forEach((k) => { html += `<button class="btn${activeCat === k ? ' btn--primary' : ''}" data-cat="${esc(k)}">${esc(k)} (${cnt[k]})</button>`; });
+    filterEl.innerHTML = html;
+    filterEl.querySelectorAll('button').forEach((b) =>
+      b.addEventListener('click', () => { activeCat = b.getAttribute('data-cat') || null; renderFilter(); render(view()); counts(); }));
+  };
+
+  const refresh = () => { build(); renderFilter(); render(view()); counts(); };
   refresh();
 
   const sh = qs('#fcShuffle');
   if (sh) sh.addEventListener('click', () => {
-    const n = data.length; if (!n) return;
-    const k = (parseInt(sh.dataset.k || '0', 10) + 5) % n; sh.dataset.k = k;
-    data = data.slice(k).concat(data.slice(0, k)); render(data);
+    const v = view(); const n = v.length; if (!n) return;
+    const k = (parseInt(sh.dataset.k || '0', 10) + 3) % n; sh.dataset.k = k;
+    render(v.slice(k).concat(v.slice(0, k)));
   });
 
   const flip = qs('#fcFlip');
@@ -67,9 +82,9 @@ export function initFlashcards() {
 
   const toggle = qs('#fcAddToggle'), panel = qs('#fcForm');
   if (toggle && panel) toggle.addEventListener('click', () => {
-    const open = panel.style.display === 'block';
-    panel.style.display = open ? 'none' : 'block';
-    toggle.textContent = open ? '➕ Thêm thẻ mới' : '✕ Đóng';
+    const isOpen = panel.style.display === 'block';
+    panel.style.display = isOpen ? 'none' : 'block';
+    toggle.textContent = isOpen ? '➕ Thêm thẻ mới' : '✕ Đóng';
   });
 
   const add = qs('#fcAdd');

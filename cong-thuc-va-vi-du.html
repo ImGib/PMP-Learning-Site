@@ -16,6 +16,7 @@
     <a class="sidebar__back" href="index.html">← Trang chủ</a>
     <h4>Bảng công thức</h4>
     <a href="#cheatsheet"><span class="sidebar__num">∑</span>Tất cả công thức</a>
+    <a href="#logic"><span class="sidebar__num">◆</span>Nhớ theo logic</a>
     <h4>Ví dụ giải từng bước</h4>
     <a href="#ex-evm"><span class="sidebar__num">01</span>EVM — Earned Value</a>
     <a href="#ex-pert"><span class="sidebar__num">02</span>PERT — 3 điểm</a>
@@ -73,6 +74,46 @@
         <div class="formula__row"><b>═══ Procurement ═══</b></div>
         <div class="formula__row"><b>PTA</b> = (Ceiling − Target Price)/Buyer share + Target Cost</div>
       </div>
+    </section>
+
+    <!-- LOGIC -->
+    <section id="logic">
+      <div class="section__head"><h2>Nhớ công thức theo LOGIC (không học vẹt)</h2><span class="section__tag">hiểu &amp; suy ra</span></div>
+      <p class="section__desc">Đừng nhồi nhét. Hiểu <b>vì sao</b> công thức có dạng đó → tự suy lại được cả khi quên.</p>
+
+      <h3>① EVM — chỉ cần 1 quy tắc gốc</h3>
+      <div class="callout callout--tip"><span class="callout__label">Quy tắc vàng · EVM</span><b>"EV luôn đứng đầu; so với PV là TIẾN ĐỘ, so với AC là CHI PHÍ."</b> Từ đó suy ra tất cả:
+      <ul>
+        <li><b>Variance = phép TRỪ</b> (chênh lệch tuyệt đối): SV = EV−PV, CV = EV−AC.</li>
+        <li><b>Index = phép CHIA</b> (tỷ lệ hiệu quả): SPI = EV/PV, CPI = EV/AC.</li>
+        <li><b>Dương / &gt;1 = TỐT</b> (đạt nhiều hơn tiêu/kế hoạch), <b>âm / &lt;1 = XẤU</b>.</li>
+      </ul></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Muốn biết</th><th>So EV với</th><th>Variance (trừ)</th><th>Index (chia)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Tiến độ</b> (Schedule)</td><td><b>PV</b></td><td>SV = EV − PV</td><td>SPI = EV / PV</td></tr>
+          <tr><td><b>Chi phí</b> (Cost)</td><td><b>AC</b></td><td>CV = EV − AC</td><td>CPI = EV / AC</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout callout--note"><span class="callout__label">Chọn công thức EAC nào?</span>Hỏi 1 câu: <b>"Sai lệch hiện tại có tiếp diễn không?"</b>
+      <ul>
+        <li><b>Có, theo tỷ lệ CPI</b> (thường gặp) → <b>EAC = BAC / CPI</b>.</li>
+        <li><b>Không, phần còn lại đúng kế hoạch</b> → <b>EAC = AC + (BAC − EV)</b>.</li>
+        <li><b>Vừa chậm vừa vượt chi, phải kịp deadline</b> → chia cho <b>CPI × SPI</b>.</li>
+      </ul>
+      Nhớ: <b>ETC</b> = "còn phải chi" = EAC − AC; <b>VAC</b> = "lệch cuối cùng" = BAC − EAC.</div>
+
+      <h3>② PERT — trung bình có trọng số</h3>
+      <div class="callout callout--tip"><span class="callout__label">Logic · PERT</span>Chỉ là <b>trung bình</b> của 3 kịch bản O/M/P, nhưng <b>tin "khả năng nhất" (M) gấp 4 lần</b> → nhân 4M, cộng O và P, chia tổng trọng số <b>(4+1+1)=6</b>: <b>E = (O + 4M + P) / 6</b>. Độ lệch chuẩn = <b>khoảng dao động chia 6</b>: <b>SD = (P − O) / 6</b> (P và O cách nhau ~6σ). Triangular = tin đều 3 kịch bản → chia 3.</div>
+
+      <h3>③ EMV, kênh giao tiếp, Little's Law</h3>
+      <div class="features">
+        <div class="feature"><b>EMV = P × Impact</b><span>Giá trị <i>kỳ vọng</i> = xác suất × hậu quả. Threat mang dấu âm, opportunity dương. Nhiều rủi ro → cộng lại.</span></div>
+        <div class="feature"><b>Channels = n(n−1)/2</b><span>Đếm số <i>cặp</i> người: mỗi người nối n−1 người khác → n(n−1), chia 2 vì cặp A-B = B-A. "Thêm bao nhiêu" → lấy hiệu.</span></div>
+        <div class="feature"><b>Cycle Time = WIP / Throughput</b><span>Little's Law: hàng dài (WIP) chia tốc độ xử lý (throughput) = thời gian chờ. Muốn nhanh → giảm WIP hoặc tăng throughput.</span></div>
+        <div class="feature"><b>Float = LS − ES</b><span>Dư địa trễ = "muộn nhất được phép" − "sớm nhất có thể". Bằng 0 → nằm trên đường găng.</span></div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo phòng thi</span>Đầu giờ, chép <b>1 quy tắc gốc EVM</b> + <b>công thức PERT</b> ra giấy nháp. Mọi công thức còn lại suy ra được → không cần thuộc lòng 15 công thức rời rạc.</div>
     </section>
 
     <!-- EVM -->

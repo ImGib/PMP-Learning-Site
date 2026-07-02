@@ -108,6 +108,42 @@
       <h3>5 mức quản lý chất lượng (tăng dần hiệu quả)</h3>
       <div class="diagram-steps"><div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Để khách tìm lỗi</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">2</span>QC: phát hiện &amp; sửa lỗi</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">3</span>QA: rà &amp; sửa quy trình</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">4</span>Quality built-in (thiết kế)</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">5</span>Văn hóa chất lượng</div></div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 5 mức</span>Từ <b>tệ nhất</b> (để khách phát hiện lỗi — mất uy tín) tới <b>tốt nhất</b> (văn hóa chất lượng toàn tổ chức). Càng lên cao càng <b>phòng ngừa</b>, càng rẻ &amp; bền.</div>
+
+      <h3>Quy trình giải quyết vấn đề chất lượng</h3>
+      <figure class="diagram"><div class="diagram__title">Problem Solving — từ vấn đề đến đóng</div>
+        <div class="diagram-steps">
+          <div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Define problem<br>(xác định vấn đề)</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">2</span>Root cause<br>(5 Whys / Fishbone)</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">3</span>Identify solutions</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">4</span>Choose best</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">5</span>Implement</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">6</span>Verify / Check</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">7</span>Close</div>
+        </div>
+        <div class="diagram-steps__note">Bước 2 (root cause) dùng <b>5 Whys</b> hoặc sơ đồ xương cá <b>Ishikawa</b>; bước 6 kiểm chứng hiệu quả trước khi đóng.</div>
+      </figure>
+
+      <h4 class="section__subhead">2 chu trình cải tiến hay dùng</h4>
+      <figure class="diagram"><div class="diagram__title">PDCA (Deming Cycle)</div>
+        <div class="diagram-steps">
+          <div class="diagram-steps__step"><span class="diagram-steps__num">P</span>Plan</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">D</span>Do</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">C</span>Check</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">A</span>Act</div>
+        </div>
+        <div class="diagram-steps__note">Lặp liên tục (Kaizen): Act = chuẩn hóa nếu tốt / điều chỉnh &amp; lặp lại nếu chưa đạt.</div>
+      </figure>
+      <figure class="diagram"><div class="diagram__title">DMAIC (Six Sigma)</div>
+        <div class="diagram-steps">
+          <div class="diagram-steps__step"><span class="diagram-steps__num">D</span>Define</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">M</span>Measure</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">A</span>Analyze</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">I</span>Improve</div><div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">C</span>Control</div>
+        </div>
+        <div class="diagram-steps__note">Define vấn đề/CTQ → Measure baseline → Analyze root cause → Improve → Control (duy trì bằng control chart).</div>
+      </figure>
+      <div class="callout callout--note"><span class="callout__label">Manage Quality (QA) vs Control Quality (QC)</span><b>Manage Quality (QA)</b> — hướng <i>process</i>, phòng ngừa, cả vòng đời: audit chất lượng, phân tích &amp; cải tiến quy trình (PDCA/Six Sigma), "làm đúng cách". <b>Control Quality (QC)</b> — hướng <i>product</i>, phần kiểm thử: đo/inspection, statistical sampling, đọc control chart → ra <b>verified deliverables</b>. Thứ tự: QC (verified) <b>trước</b> → Validate Scope (accepted, khách nghiệm thu) <b>sau</b>.</div>
     </section>
     <footer>
       <b>Phần II · Quality — Chất lượng</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.<br><a href="finance.html">← Finance — Chi phí &amp; EVM</a> · <a href="resource.html">Resource — Nguồn lực &amp; Con người →</a>
