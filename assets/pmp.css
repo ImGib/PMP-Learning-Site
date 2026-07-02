@@ -378,6 +378,23 @@ code.k{background:var(--line-soft);padding:2px 7px;border-radius:5px;font-size:1
 .d-venn .c3{background:#ffcf9e;bottom:0;right:0}
 .d-venn .center{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);font-size:11px;font-weight:700;color:var(--ink);z-index:2}
 
+/* 12 Agile principles — card grid */
+.p-group{margin:18px 0}
+.p-group-h{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:16.5px;color:var(--ink);margin:0 0 11px}
+.p-group-h .gtag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.principle{position:relative;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:11px;
+  padding:13px 16px 14px 48px;background:#fff;transition:.16s box-shadow,.16s border-color}
+.principle:hover{box-shadow:0 6px 24px -16px rgba(40,36,90,.5)}
+.principle .pnum{position:absolute;left:12px;top:13px;width:27px;height:27px;border-radius:50%;
+  display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;font-weight:600;color:#fff;background:var(--accent)}
+.principle .pen{display:block;font-weight:600;color:var(--ink);font-size:13.7px;line-height:1.35;margin-bottom:5px}
+.principle .pvn{display:block;font-size:12.8px;color:var(--muted);line-height:1.45}
+.p-group.g1 .principle{border-left-color:#5a4be0} .p-group.g1 .pnum{background:#5a4be0} .p-group.g1 .gtag{background:var(--accent-wash);color:var(--accent-ink)}
+.p-group.g2 .principle{border-left-color:#0d7d6c} .p-group.g2 .pnum{background:#0d7d6c} .p-group.g2 .gtag{background:var(--flag-wash);color:var(--flag)}
+.p-group.g3 .principle{border-left-color:#a25a07} .p-group.g3 .pnum{background:#a25a07} .p-group.g3 .gtag{background:var(--gate-wash);color:var(--gate)}
+.p-group.g4 .principle{border-left-color:#b0125e} .p-group.g4 .pnum{background:#b0125e} .p-group.g4 .gtag{background:var(--tip-wash);color:var(--tip)}
+
 /* mini legend row under a diagram */
 .d-key{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px;font-size:11.5px;color:var(--ink-soft)}
 .d-key span{display:inline-flex;align-items:center;gap:6px}
