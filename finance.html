@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance — Chi phí & EVM — Phần II · Học PMP với PMBOK 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+<div id="site-navbar"></div>
+<div class="shell" id="top">
+  <aside class="sidebar" id="side">
+    <a class="sidebar__back" href="phan-2-chu-de.html">← Phần II · Mục lục</a>
+    <h4>8 chủ đề kiến thức</h4>
+    <a href="scope.html"><span class="sidebar__num">01</span>Scope</a>
+    <a href="schedule.html"><span class="sidebar__num">02</span>Schedule</a>
+    <a href="finance.html" class="is-active"><span class="sidebar__num">03</span>Finance</a>
+    <a href="quality.html"><span class="sidebar__num">04</span>Quality</a>
+    <a href="resource.html"><span class="sidebar__num">05</span>Resource</a>
+    <a href="risk.html"><span class="sidebar__num">06</span>Risk</a>
+    <a href="stakeholder.html"><span class="sidebar__num">07</span>Stakeholder &amp; …</a>
+    <a href="procurement.html"><span class="sidebar__num">08</span>Procurement</a>
+    <h4>Liên quan</h4>
+    <a href="cong-thuc-va-vi-du.html"><span class="sidebar__num">∑</span>Công thức &amp; ví dụ</a>
+    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard &amp; Quiz</a>
+  </aside>
+  <main>
+    <div class="hero">
+      <span class="hero__eyebrow">Phần II · Chủ đề 03/08 — 8 Performance Domains</span>
+      <h1>Finance — Chi phí &amp; EVM</h1>
+      <p>EVM (SV/CV/CPI/SPI/EAC), reserves, dự báo — chủ đề tính toán trọng tâm.</p>
+    </div>
+    <section id="finance">
+      <p class="section__desc">Chủ đề tính toán quan trọng nhất kỳ thi. <b>EVM (Earned Value Management)</b> gần như chắc chắn xuất hiện — nắm vững phần này là "ăn điểm".</p>
+
+      <h3>Phân loại chi phí</h3>
+      <ul>
+        <li><b>CapEx</b> (Capital Expenditure) — mua/nâng cấp tài sản (nhà xưởng, máy móc). <b>OpEx</b> (Operational Expenditure) — chi phí vận hành hằng ngày (lương, điện, thuê).</li>
+        <li><b>Direct</b> (trực tiếp cho dự án) vs <b>Indirect</b> (chi phí chung, chia nhiều dự án). Độc lập với: <b>Fixed</b> (cố định) vs <b>Variable</b> (biến đổi theo khối lượng).</li>
+      </ul>
+      <div class="callout callout--note"><span class="callout__label">3 mức độ chính xác ước tính</span><b>ROM</b> (Rough Order of Magnitude): <code>−25% đến +75%</code> (giai đoạn đầu). <b>Budget Estimate</b>: <code>−10% đến +25%</code>. <b>Definitive</b>: <code>−5% đến +10%</code> (càng về sau càng chính xác).</div>
+
+      <h3>Contingency vs Management Reserve — bẫy kinh điển</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Contingency Reserve</b> — time or money allocated in the schedule or cost baseline to handle identified risks ("known-unknowns"); part of the cost baseline and managed by the PM. <i>(dự phòng cho rủi ro đã biết)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Management Reserve</b> — an amount of the project budget withheld for unforeseen work ("unknown-unknowns"); outside the cost baseline and requires management approval to use. <i>(dự phòng cho rủi ro chưa biết)</i></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th></th><th>Contingency Reserve</th><th>Management Reserve</th></tr></thead>
+        <tbody>
+          <tr><td><b>Dành cho</b></td><td><b>Known risks</b> (rủi ro đã biết — "known unknowns")</td><td><b>Unknown risks</b> (rủi ro chưa biết — "unknown unknowns")</td></tr>
+          <tr><td><b>Có trong Cost Baseline?</b></td><td><b>CÓ</b></td><td><b>KHÔNG</b> (nằm ngoài, trong tổng ngân sách)</td></tr>
+          <tr><td><b>Ai kiểm soát</b></td><td>PM tự dùng được</td><td>Cần <b>lãnh đạo</b> phê duyệt (đổi baseline)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 2 loại reserve</span><b>Cost Baseline = ước tính + Contingency.</b> <b>Project Budget = Cost Baseline + Management Reserve.</b> Nhớ: "Contingency cho cái BIẾT, PM tiêu; Management cho cái KHÔNG biết, sếp giữ".</div>
+      <figure class="diagram"><div class="diagram__title">Cấu trúc ngân sách dự án</div>
+        <div class="diagram-stack"><div class="diagram-stack__seg" style="background:#a25a07"><b>Management Reserve</b><span class="diagram-stack__tag">ngoài baseline</span></div><div class="diagram-stack__seg" style="background:#5a4be0"><b>Contingency Reserve</b><span class="diagram-stack__tag">trong baseline</span></div><div class="diagram-stack__seg" style="background:#4434c4"><b>Ước tính chi phí</b><span class="diagram-stack__tag">work packages</span></div></div>
+        <figcaption>Cost Baseline = ước tính + contingency · Project Budget = + management reserve</figcaption></figure>
+
+      <h3 id="evm-block">⭐ Earned Value Management (EVM)</h3>
+      <figure class="diagram"><div class="diagram__title">Đường cong EVM — PV · EV · AC</div>
+<svg viewBox="0 0 500 250" role="img" aria-label="Bieu do EVM voi SV CV" font-family="ui-monospace, monospace">
+<line x1="50" y1="20" x2="50" y2="212" stroke="#d8d8e0" stroke-width="1.5"/>
+<line x1="50" y1="212" x2="466" y2="212" stroke="#d8d8e0" stroke-width="1.5"/>
+<text x="18" y="128" font-size="10" fill="#76798a" transform="rotate(-90 18 128)">Giá trị lũy kế ($)</text>
+<text x="250" y="238" font-size="11" fill="#76798a" text-anchor="middle">Thời gian →</text>
+<line x1="300" y1="34" x2="300" y2="212" stroke="#bbb" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="300" y="28" font-size="10" fill="#76798a" text-anchor="middle">Hôm nay</text>
+<line x1="50" y1="48" x2="466" y2="48" stroke="#efe9fe" stroke-width="1.5"/>
+<text x="462" y="44" font-size="10" fill="#4434c4" text-anchor="end">BAC</text>
+<polyline points="50,205 160,175 300,80 466,48" fill="none" stroke="#5a4be0" stroke-width="2.6"/>
+<polyline points="50,205 175,165 300,100" fill="none" stroke="#a25a07" stroke-width="2.6"/>
+<polyline points="50,205 178,182 300,150" fill="none" stroke="#197a4b" stroke-width="2.6"/>
+<circle cx="300" cy="80" r="3.5" fill="#5a4be0"/><circle cx="300" cy="100" r="3.5" fill="#a25a07"/><circle cx="300" cy="150" r="3.5" fill="#197a4b"/>
+<text x="250" y="70" font-size="11" fill="#4434c4" font-weight="600">PV</text>
+<text x="196" y="176" font-size="11" fill="#197a4b" font-weight="600">EV</text>
+<text x="200" y="158" font-size="11" fill="#a25a07" font-weight="600">AC</text>
+<!-- CV gap: AC (100) ↔ EV (150) -->
+<line x1="316" y1="100" x2="316" y2="150" stroke="#a25a07" stroke-width="1.2"/>
+<line x1="311" y1="100" x2="321" y2="100" stroke="#a25a07"/><line x1="311" y1="150" x2="321" y2="150" stroke="#a25a07"/>
+<text x="324" y="128" font-size="10" fill="#a25a07" font-weight="700">CV = EV−AC (&lt;0)</text>
+<!-- SV gap: PV (80) ↔ EV (150) -->
+<line x1="356" y1="80" x2="356" y2="150" stroke="#4434c4" stroke-width="1.2"/>
+<line x1="351" y1="80" x2="361" y2="80" stroke="#4434c4"/><line x1="351" y1="150" x2="361" y2="150" stroke="#4434c4"/>
+<text x="364" y="92" font-size="10" fill="#4434c4" font-weight="700">SV = EV−PV (&lt;0)</text>
+</svg>
+<div class="diagram__key"><span><i style="background:#5a4be0"></i>PV — kế hoạch</span><span><i style="background:#197a4b"></i>EV — đạt được</span><span><i style="background:#a25a07"></i>AC — thực chi</span></div>
+<figcaption>Tại "Hôm nay": <b>CV = EV−AC</b> (lệch dọc AC↔EV) &amp; <b>SV = EV−PV</b> (lệch dọc PV↔EV). Ở đây cả hai âm → vừa <b>vượt chi</b> vừa <b>chậm tiến độ</b>.</figcaption></figure>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Planned Value (PV)</b> — the authorized budget assigned to scheduled work. <i>(giá trị công việc đã lên kế hoạch; tổng PV = BAC)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Earned Value (EV)</b> — the measure of work performed expressed in terms of the budget authorized for that work. <i>(giá trị công việc thực sự hoàn thành = % × BAC)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Actual Cost (AC)</b> — the realized cost incurred for the work performed during a given period. <i>(tiền thực đã chi cho công việc đã làm)</i></div>
+      <p>EVM đo "sức khỏe" dự án qua 3 giá trị lõi rồi suy ra mọi thứ:</p>
+      <div class="features">
+        <div class="feature"><b>PV</b> — Planned Value<span>Giá trị công việc <b>đã lên kế hoạch</b> tới thời điểm này. Tổng PV cả dự án = <b>BAC</b> (Budget at Completion).</span></div>
+        <div class="feature"><b>EV</b> — Earned Value<span>Giá trị công việc <b>thực sự hoàn thành</b> (= % hoàn thành × BAC). <i>Không phải</i> tiền đã tiêu.</span></div>
+        <div class="feature"><b>AC</b> — Actual Cost<span>Tiền <b>thực đã chi</b> cho công việc đã làm.</span></div>
+      </div>
+      <div class="formula">
+        <div class="formula__row"><span class="formula__cm"># VARIANCE (chênh lệch) — dùng phép TRỪ, EV luôn đứng đầu</span></div>
+        <div class="formula__row"><b>SV</b> = <span class="formula__var">EV</span> <span class="formula__op">−</span> <span class="formula__var">PV</span>&nbsp;&nbsp;<span class="formula__cm">Schedule Variance — âm = chậm tiến độ</span></div>
+        <div class="formula__row"><b>CV</b> = <span class="formula__var">EV</span> <span class="formula__op">−</span> <span class="formula__var">AC</span>&nbsp;&nbsp;<span class="formula__cm">Cost Variance — âm = vượt ngân sách</span></div>
+        <div class="formula__row"> </div>
+        <div class="formula__row"><span class="formula__cm"># INDEX (chỉ số) — dùng phép CHIA, EV luôn ở tử số. &gt;1 tốt, &lt;1 xấu</span></div>
+        <div class="formula__row"><b>SPI</b> = <span class="formula__var">EV</span> <span class="formula__op">/</span> <span class="formula__var">PV</span>&nbsp;&nbsp;<span class="formula__cm">Schedule Performance Index</span></div>
+        <div class="formula__row"><b>CPI</b> = <span class="formula__var">EV</span> <span class="formula__op">/</span> <span class="formula__var">AC</span>&nbsp;&nbsp;<span class="formula__cm">Cost Performance Index</span></div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · EVM (quan trọng nhất)</span><b>"EV luôn đứng đầu."</b> Variance = TRỪ (EV − …), Index = CHIA (EV / …). Dấu/giá trị: <b>Cost thì so với AC, Schedule thì so với PV</b>. Kết quả <b>dương hoặc &gt;1 = TỐT</b> (đúng/vượt kế hoạch), <b>âm hoặc &lt;1 = XẤU</b>. Mẹo chữ: "<b>P</b>lanned đi với <b>S</b>chedule (SV, SPI); <b>A</b>ctual đi với <b>C</b>ost (CV, CPI)".</div>
+
+      <h4 class="section__subhead">Dự báo (Forecasting) — EAC / ETC / VAC</h4>
+      <p><b>BAC</b> = ngân sách gốc. <b>EAC</b> = dự báo tổng chi phí cuối cùng. <b>ETC</b> = còn cần chi bao nhiêu nữa. <b>VAC</b> = chênh lệch dự báo.</p>
+      <div class="formula">
+        <div class="formula__row"><b>VAC</b> = <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EAC</span>&nbsp;&nbsp;<span class="formula__cm">dương = sẽ dưới ngân sách</span></div>
+        <div class="formula__row"> </div>
+        <div class="formula__row"><span class="formula__cm"># TH1: sai lệch hiện tại còn tiếp diễn (hay dùng nhất)</span></div>
+        <div class="formula__row"><b>EAC</b> = <span class="formula__var">BAC</span> <span class="formula__op">/</span> <span class="formula__var">CPI</span></div>
+        <div class="formula__row"><span class="formula__cm"># TH2: phần còn lại chạy đúng kế hoạch</span></div>
+        <div class="formula__row"><b>EAC</b> = <span class="formula__var">AC</span> <span class="formula__op">+</span> ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EV</span> )</div>
+        <div class="formula__row"><span class="formula__cm"># TH3: ước tính gốc sai, phải tính lại phần còn lại</span></div>
+        <div class="formula__row"><b>EAC</b> = <span class="formula__var">AC</span> <span class="formula__op">+</span> ETC<sub>mới</sub></div>
+        <div class="formula__row"><span class="formula__cm"># TH4: vượt ngân sách nhưng phải kịp deadline</span></div>
+        <div class="formula__row"><b>EAC</b> = <span class="formula__var">AC</span> <span class="formula__op">+</span> ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EV</span> ) <span class="formula__op">/</span> ( <span class="formula__var">CPI</span> <span class="formula__op">×</span> <span class="formula__var">SPI</span> )</div>
+      </div>
+
+      <h4 class="section__subhead">TCPI — To-Complete Performance Index</h4>
+      <p>Hiệu suất <i>cần đạt</i> cho phần còn lại để về đích. <code class="inline-code">&gt;1 = càng khó (phải làm hiệu quả hơn); &lt;1 = dễ thở</code>.</p>
+      <div class="formula">
+        <div class="formula__row"><b>TCPI</b> = ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EV</span> ) <span class="formula__op">/</span> ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">AC</span> )&nbsp;&nbsp;<span class="formula__cm">bám ngân sách gốc</span></div>
+        <div class="formula__row"><b>TCPI</b> = ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EV</span> ) <span class="formula__op">/</span> ( <span class="formula__var">EAC</span> <span class="formula__op">−</span> <span class="formula__var">AC</span> )&nbsp;&nbsp;<span class="formula__cm">bám dự báo mới</span></div>
+        <div class="formula__row"><span class="formula__cm"># Nhớ: Tử số = Work Remaining; Mẫu = Funds Remaining</span></div>
+      </div>
+      <div class="callout callout--ok"><span class="callout__label">Ví dụ nhanh (làm được là hiểu EVM)</span>Dự án 4 giai đoạn, mỗi giai đoạn $500. Cuối tuần 2: <b>kế hoạch</b> xong 2 giai đoạn → PV = <b>$1000</b>. <b>Thực tế</b> xong 3 giai đoạn → EV = 3×500 = <b>$1500</b>. Đã chi <b>$1700</b> → AC = $1700. ⇒ SV = 1500−1000 = <b>+$500</b> (nhanh hơn tiến độ 👍), CV = 1500−1700 = <b>−$200</b> (vượt chi 👎), CPI = 1500/1700 ≈ <b>0.88</b>.</div>
+
+      <h3>Cost of Quality (COQ) — xem đầy đủ ở mục Quality</h3>
+      <p>COQ nằm ở cả Finance &amp; Quality: <b>Cost of Conformance</b> (Prevention + Appraisal) vs <b>Cost of Nonconformance</b> (Internal + External failure). Chi tiết ở <a href="quality.html" style="color:var(--accent-ink);font-weight:600">mục Quality ↓</a>.</p>
+      <h3>Earning Rules — quy tắc ghi nhận EV</h3>
+      <p>Khi báo cáo tiến độ, quy tắc quyết định lúc nào ghi nhận bao nhiêu <b>Earned Value</b>:</p>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Quy tắc</th><th>Cách ghi EV</th><th>Dùng khi</th></tr></thead>
+        <tbody>
+          <tr><td><b>0/100</b></td><td>0% khi bắt đầu, 100% khi <b>hoàn thành</b></td><td>Việc ngắn (1 kỳ báo cáo); tránh khai khống</td></tr>
+          <tr><td><b>50/50</b></td><td>50% khi bắt đầu, 50% khi xong</td><td>Việc ≤ 2 kỳ báo cáo</td></tr>
+          <tr><td><b>Weighted Milestone</b></td><td>Ghi EV theo trọng số từng mốc</td><td>Việc dài ≥ 3 kỳ, có mốc rõ ràng</td></tr>
+          <tr><td><b>Percent Complete</b></td><td>Theo % tự đánh giá</td><td><b>Kém tin cậy nhất</b> (chủ quan) — cần dữ liệu định lượng hậu thuẫn</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Cost Aggregation, S-curve &amp; Funding Limit Reconciliation</h3>
+      <p><b>Cost Aggregation</b>: cộng dồn chi phí từ dưới lên — Activity → Work Package → Control Account → toàn dự án. Kết quả tạo <b>Cost Baseline</b> hình <b>đường cong S (S-curve)</b>: chi ít ở đầu, tăng dần rồi chậm lại về cuối.</p>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Funding Limit Reconciliation</b> — the process of comparing planned expenditure of project funds against any limits on the commitment of funds, to reconcile differences between the funding limits and the planned expenditures. <i>(khớp chi tiêu kế hoạch với hạn mức cấp vốn)</i></div>
+      <p>Nếu chi tiêu kế hoạch <b>vượt hạn mức cấp vốn</b> theo kỳ → phải dàn lại công việc để khớp dòng tiền, có thể dẫn tới đổi Project Management Plan &amp; schedule.</p>
+
+      <h3>Life Cycle Cost &amp; Value Engineering</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Life Cycle Costing</b> — considering the total cost of ownership across the entire product life (acquisition + operation + maintenance + disposal), not just the project cost. <i>(tổng chi phí trọn vòng đời)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Value Analysis / Value Engineering</b> — a systematic approach to find a less costly way to do the same work without reducing scope or performance. <i>(tối ưu chi phí, giữ nguyên giá trị)</i></div>
+      <div class="callout callout--warn"><span class="callout__label">Bẫy Life Cycle Cost</span>Cắt tính năng để giảm chi phí <b>dự án</b> có thể khiến chi phí <b>vận hành/bảo trì</b> về sau tăng vọt → tổng chi phí trọn đời cao hơn. Luôn nhìn <b>Life Cycle Cost</b>, đừng chỉ nhìn chi phí dự án.</div>
+    </section>
+    <footer>
+      <b>Phần II · Finance — Chi phí &amp; EVM</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.<br><a href="schedule.html">← Schedule — Tiến độ</a> · <a href="quality.html">Quality — Chất lượng →</a>
+    </footer>
+  </main>
+</div>
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

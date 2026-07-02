@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quality — Chất lượng — Phần II · Học PMP với PMBOK 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+<div id="site-navbar"></div>
+<div class="shell" id="top">
+  <aside class="sidebar" id="side">
+    <a class="sidebar__back" href="phan-2-chu-de.html">← Phần II · Mục lục</a>
+    <h4>8 chủ đề kiến thức</h4>
+    <a href="scope.html"><span class="sidebar__num">01</span>Scope</a>
+    <a href="schedule.html"><span class="sidebar__num">02</span>Schedule</a>
+    <a href="finance.html"><span class="sidebar__num">03</span>Finance</a>
+    <a href="quality.html" class="is-active"><span class="sidebar__num">04</span>Quality</a>
+    <a href="resource.html"><span class="sidebar__num">05</span>Resource</a>
+    <a href="risk.html"><span class="sidebar__num">06</span>Risk</a>
+    <a href="stakeholder.html"><span class="sidebar__num">07</span>Stakeholder &amp; …</a>
+    <a href="procurement.html"><span class="sidebar__num">08</span>Procurement</a>
+    <h4>Liên quan</h4>
+    <a href="cong-thuc-va-vi-du.html"><span class="sidebar__num">∑</span>Công thức &amp; ví dụ</a>
+    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard &amp; Quiz</a>
+  </aside>
+  <main>
+    <div class="hero">
+      <span class="hero__eyebrow">Phần II · Chủ đề 04/08 — 8 Performance Domains</span>
+      <h1>Quality — Chất lượng</h1>
+      <p>QA vs QC, Cost of Quality, 7 công cụ chất lượng, Rule of Seven.</p>
+    </div>
+    <section id="quality">
+      <p class="section__desc">Quality trả lời <b>"sản phẩm có đáp ứng yêu cầu không?"</b>. Nhiều cặp khái niệm dễ nhầm — nắm chắc từng cặp.</p>
+
+      <h3>Các cặp khái niệm phải phân biệt</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Quality</b> — the degree to which a set of inherent characteristics of an object fulfills requirements. <i>(mức đáp ứng yêu cầu; low quality luôn xấu)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Grade</b> — a category assigned to deliverables having the same functional use but different technical characteristics. <i>(hạng kỹ thuật; low grade không nhất thiết xấu)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Quality Assurance (QA)</b> — the process of auditing quality requirements and results to ensure appropriate quality standards and operational definitions are used; process-oriented and preventive. <i>(đảm bảo quy trình, phòng ngừa)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Quality Control (QC)</b> — the process of monitoring and recording results of quality activities to assess performance and recommend necessary changes; product-oriented and inspection-based. <i>(kiểm soát sản phẩm, bắt lỗi)</i></div>
+      <div class="features">
+        <div class="feature"><b>Quality vs Grade</b><span><b>Quality</b> = mức đáp ứng yêu cầu. <b>Grade</b> = hạng kỹ thuật (nhiều/ít tính năng). <b>Low quality luôn xấu; low grade thì không nhất thiết</b> (xe bình dân chất lượng tốt vẫn ổn).</span></div>
+        <div class="feature"><b>Accuracy vs Precision</b><span><b>Accuracy</b> = đúng (gần giá trị thật). <b>Precision</b> = nhất quán (các lần đo cụm lại). Có thể precise mà không accurate.</span></div>
+        <div class="feature"><b>QA vs QC</b><span><b>QA</b> (Assurance) = <i>quy trình</i>, phòng ngừa, "làm đúng cách". <b>QC</b> (Control) = <i>sản phẩm</i>, phát hiện lỗi, kiểm tra kết quả.</span></div>
+        <div class="feature"><b>Prevention vs Inspection</b><span><b>Prevention</b> = giữ lỗi khỏi quy trình (rẻ hơn). <b>Inspection</b> = giữ lỗi khỏi tới tay khách. "Phòng bệnh hơn chữa bệnh".</span></div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · QA vs QC</span><b>QA = Assure quy trình (trước &amp; xuyên suốt); QC = Control sản phẩm (kiểm cuối).</b> QA phòng ngừa, QC bắt lỗi. Còn <b>Quality ≠ Grade</b>: "chất lượng thấp là lỗi; hạng thấp là lựa chọn".</div>
+
+      <h3>Cost of Quality (COQ)</h3>
+      <figure class="diagram"><div class="diagram__title">Cost of Quality — 4 loại chi phí</div>
+        <div class="diagram-steps"><div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Prevention</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">2</span>Appraisal</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">3</span>Internal failure</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">4</span>External failure</div></div>
+        <div class="diagram-steps__note">Prevention + Appraisal = Cost of Conformance · Internal + External failure = Cost of Nonconformance</div>
+        <figcaption>Chủ động chi để tránh lỗi (1–2) vs bị động trả giá vì lỗi (3–4)</figcaption></figure>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Cost of Quality (COQ)</b> — the total cost incurred over the life of the product in preventing nonconformance to requirements (cost of conformance) plus the cost of nonconformance (internal and external failure). <i>(tổng chi phí conformance + nonconformance)</i></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Cost of Conformance (chi để TRÁNH lỗi)</th><th>Cost of Nonconformance (chi VÌ lỗi)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Prevention</b> — đào tạo, chuẩn hóa quy trình, thiết bị, "làm đúng ngay từ đầu"</td><td><b>Internal failure</b> — lỗi do <b>dự án</b> tự phát hiện: rework, phế phẩm (scrap)</td></tr>
+          <tr><td><b>Appraisal</b> — kiểm thử, kiểm tra, đánh giá chất lượng</td><td><b>External failure</b> — lỗi do <b>khách hàng</b> phát hiện: bảo hành, kiện tụng, mất khách</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 4 loại COQ</span><b>"PAIE"</b>: <b>P</b>revention + <b>A</b>ppraisal = conformance (chủ động chi). <b>I</b>nternal + <b>E</b>xternal failure = nonconformance (bị động trả giá). Phân biệt Internal/External bằng <b>AI phát hiện lỗi</b>: dự án = Internal, khách = External (đắt &amp; nguy hiểm nhất).</div>
+
+      <h3>7 công cụ chất lượng cơ bản (7 Basic Quality Tools)</h3>
+      <div class="principles">
+        <div class="principle"><span class="principle__num">1</span><span class="principle__title">Cause-and-Effect / Fishbone / Ishikawa</span><span class="principle__desc">Sơ đồ xương cá — truy tìm <b>root cause</b> (nguyên nhân gốc).</span></div>
+        <div class="principle"><span class="principle__num">2</span><span class="principle__title">Flowchart</span><span class="principle__desc">Sơ đồ luồng — thấy các bước &amp; chỗ dễ phát sinh lỗi.</span></div>
+        <div class="principle"><span class="principle__num">3</span><span class="principle__title">Checksheet</span><span class="principle__desc">Bảng đếm dữ liệu tại chỗ, theo thời gian thực.</span></div>
+        <div class="principle"><span class="principle__num">4</span><span class="principle__title">Pareto Chart</span><span class="principle__desc">Quy tắc <b>80/20</b>: 80% vấn đề từ 20% nguyên nhân ("critical few").</span></div>
+        <div class="principle"><span class="principle__num">5</span><span class="principle__title">Histogram</span><span class="principle__desc">Biểu đồ cột tần suất phân bố dữ liệu.</span></div>
+        <div class="principle"><span class="principle__num">6</span><span class="principle__title">Control Chart</span><span class="principle__desc">Theo dõi quy trình có "trong tầm kiểm soát" &amp; ổn định không.</span></div>
+        <div class="principle"><span class="principle__num">7</span><span class="principle__title">Scatter Diagram</span><span class="principle__desc">Biểu đồ phân tán — quan hệ giữa 2 biến.</span></div>
+      </div>
+      <div class="callout callout--note"><span class="callout__label">Rule of Seven</span>Trên <b>Control Chart</b>: nếu có <b>7 điểm liên tiếp cùng một phía của đường trung bình</b> → quy trình "out of control" <b>dù vẫn nằm trong control limits</b>, cần điều tra. Đây là <b>Assignable/Special Cause</b> (nguyên nhân đặc biệt). Lưu ý: <b>Control limits</b> (do quy trình) khác <b>Specification limits</b> (do khách/hợp đồng).</div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · công cụ improvement</span><b>PDCA</b> (Plan-Do-Check-Act) &amp; <b>Six Sigma</b> là 2 phương pháp cải tiến phổ biến nhất. <b>Kaizen</b> = cải tiến liên tục (Nhật — cải thiện <i>con người</i> trước, sản phẩm sau). <b>Pareto = 80/20</b>: nhớ "ít nguyên nhân, nhiều hậu quả".</div>
+      <h3>Cost-Benefit &amp; Marginal Analysis</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Marginal Analysis</b> — finding the point where the benefit (revenue) from improving quality equals the incremental cost to achieve it; beyond this point, extra quality spending is not worthwhile. <i>(điểm tối ưu chất lượng)</i></div>
+      <p><b>Cost-Benefit Analysis</b>: cân chi phí bỏ ra cho hoạt động chất lượng với lợi ích thu về. <b>Marginal Analysis</b>: tăng chất lượng tới điểm mà <b>lợi ích tăng thêm = chi phí tăng thêm</b> — quá điểm này là lãng phí (Law of Diminishing Returns).</p>
+
+      <h3>Manage Quality (QA) — công cụ chính</h3>
+      <div class="features">
+        <div class="feature"><b>Quality Audit</b><span>Rà soát <b>độc lập, có cấu trúc</b> xem hoạt động có tuân quy trình/chính sách không. Nội bộ/bên ngoài, định kỳ/bất chợt.</span></div>
+        <div class="feature"><b>Design of Experiments (DOE)</b><span>Phương pháp thống kê xác định yếu tố nào ảnh hưởng biến số → tối ưu sản phẩm/quy trình.</span></div>
+        <div class="feature"><b>Process Analysis</b><span>Tìm hoạt động <b>không tạo giá trị</b> &amp; nút thắt để cải tiến (Value Stream Map).</span></div>
+        <div class="feature"><b>Quality Reports</b><span>Tổng hợp vấn đề chất lượng, đề xuất cải tiến, hành động khắc phục.</span></div>
+      </div>
+      <div class="callout callout--note"><span class="callout__label">Manage Quality vs Control Quality</span><b>Manage Quality (QA)</b> = "làm đúng quy trình", phòng ngừa, xuyên suốt → dùng audit, DOE. <b>Control Quality (QC)</b> = "đo &amp; bắt lỗi sản phẩm", dùng inspection, testing, 7 công cụ, statistical sampling.</div>
+
+      <h3>Phương pháp cải tiến chất lượng</h3>
+      <div class="features">
+        <div class="feature"><b>PDCA</b><span>Plan-Do-Check-Act (Deming/Shewhart) — vòng lặp cải tiến liên tục.</span></div>
+        <div class="feature"><b>Six Sigma</b><span>Giảm biến động &amp; khuyết tật xuống mức cực thấp (mục tiêu 3.4 lỗi/triệu).</span></div>
+        <div class="feature"><b>Kaizen</b><span>Cải tiến liên tục kiểu Nhật — cải thiện <b>con người trước</b>, sản phẩm sau.</span></div>
+        <div class="feature"><b>Lean</b><span>Loại bỏ lãng phí (waste), tối đa giá trị cho khách hàng.</span></div>
+        <div class="feature"><b>JIT (Just-In-Time)</b><span>Đưa tồn kho về gần <b>0</b> — nguyên liệu tới đúng lúc cần, buộc chất lượng phải cao.</span></div>
+      </div>
+
+      <h3>Statistical Sampling — Attribute vs Variable</h3>
+      <div class="features">
+        <div class="feature"><b>Attribute Sampling</b><span>Kết quả <b>đạt/không đạt</b> (nhị phân — có lỗi hay không).</span></div>
+        <div class="feature"><b>Variable Sampling</b><span>Đo trên <b>thang liên tục</b> (kích thước, trọng lượng) → mức độ đạt.</span></div>
+      </div>
+      <p><b>Statistical Sampling</b>: kiểm tra một <b>mẫu</b> chọn theo tính toán thống kê thay vì toàn bộ — tần suất &amp; cỡ mẫu xác định ở giai đoạn Plan Quality.</p>
+
+      <h3>5 mức quản lý chất lượng (tăng dần hiệu quả)</h3>
+      <div class="diagram-steps"><div class="diagram-steps__step"><span class="diagram-steps__num">1</span>Để khách tìm lỗi</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">2</span>QC: phát hiện &amp; sửa lỗi</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step"><span class="diagram-steps__num">3</span>QA: rà &amp; sửa quy trình</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">4</span>Quality built-in (thiết kế)</div><div class="diagram-steps__arrow">›</div><div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">5</span>Văn hóa chất lượng</div></div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 5 mức</span>Từ <b>tệ nhất</b> (để khách phát hiện lỗi — mất uy tín) tới <b>tốt nhất</b> (văn hóa chất lượng toàn tổ chức). Càng lên cao càng <b>phòng ngừa</b>, càng rẻ &amp; bền.</div>
+    </section>
+    <footer>
+      <b>Phần II · Quality — Chất lượng</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.<br><a href="finance.html">← Finance — Chi phí &amp; EVM</a> · <a href="resource.html">Resource — Nguồn lực &amp; Con người →</a>
+    </footer>
+  </main>
+</div>
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

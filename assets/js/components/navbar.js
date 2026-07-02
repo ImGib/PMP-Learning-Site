@@ -11,12 +11,18 @@ const LINKS = [
   { href: 'flashcard-quiz.html',     label: 'Flashcard & Quiz', cta: true },
 ];
 
+// Per-topic pages of Phần II live at the root; the "II · Chủ đề" tab stays active on them.
+const PART2_TOPICS = new Set(['scope.html', 'schedule.html', 'finance.html', 'quality.html',
+  'resource.html', 'risk.html', 'stakeholder.html', 'procurement.html']);
+
 export function renderNavbar(mount) {
   const current = (location.pathname.split('/').pop() || 'index.html');
   const links = LINKS.map((l) => {
     const cls = ['topbar__link'];
     if (l.cta) cls.push('topbar__link--cta');
-    if (l.href === current) cls.push('topbar__link--current');
+    const active = l.href === current ||
+      (l.href === 'phan-2-chu-de.html' && PART2_TOPICS.has(current));
+    if (active) cls.push('topbar__link--current');
     return `<a class="${cls.join(' ')}" href="${l.href}">${l.label}</a>`;
   }).join('');
 

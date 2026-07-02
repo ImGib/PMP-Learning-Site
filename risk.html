@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk — Rủi ro — Phần II · Học PMP với PMBOK 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+<div id="site-navbar"></div>
+<div class="shell" id="top">
+  <aside class="sidebar" id="side">
+    <a class="sidebar__back" href="phan-2-chu-de.html">← Phần II · Mục lục</a>
+    <h4>8 chủ đề kiến thức</h4>
+    <a href="scope.html"><span class="sidebar__num">01</span>Scope</a>
+    <a href="schedule.html"><span class="sidebar__num">02</span>Schedule</a>
+    <a href="finance.html"><span class="sidebar__num">03</span>Finance</a>
+    <a href="quality.html"><span class="sidebar__num">04</span>Quality</a>
+    <a href="resource.html"><span class="sidebar__num">05</span>Resource</a>
+    <a href="risk.html" class="is-active"><span class="sidebar__num">06</span>Risk</a>
+    <a href="stakeholder.html"><span class="sidebar__num">07</span>Stakeholder &amp; …</a>
+    <a href="procurement.html"><span class="sidebar__num">08</span>Procurement</a>
+    <h4>Liên quan</h4>
+    <a href="cong-thuc-va-vi-du.html"><span class="sidebar__num">∑</span>Công thức &amp; ví dụ</a>
+    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard &amp; Quiz</a>
+  </aside>
+  <main>
+    <div class="hero">
+      <span class="hero__eyebrow">Phần II · Chủ đề 06/08 — 8 Performance Domains</span>
+      <h1>Risk — Rủi ro</h1>
+      <p>EMV, ứng phó threat/opportunity, contingency vs management reserve.</p>
+    </div>
+    <section id="risk">
+      <p class="section__desc">Risk = sự kiện <b>chưa chắc chắn ở tương lai</b>, nếu xảy ra sẽ ảnh hưởng mục tiêu. PMP nhìn rủi ro cả 2 chiều: xấu (Threat) &amp; tốt (Opportunity).</p>
+
+      <h3>Khái niệm nền &amp; các cặp dễ nhầm</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Risk</b> — an uncertain event or condition that, if it occurs, has a positive or negative effect on one or more project objectives. <i>(tương lai, chưa xảy ra)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Issue</b> — a current condition or situation that has already occurred and may impact the project objectives. <i>(rủi ro đã xảy ra)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Secondary Risk</b> — a new risk that arises as a direct result of implementing a risk response. <i>(rủi ro mới sinh ra TỪ một response)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Residual Risk</b> — the risk that remains after risk responses have been implemented. <i>(rủi ro còn lại SAU khi xử lý)</i></div>
+      <ul>
+        <li><b>Risk vs Issue</b>: Risk = <i>tương lai, chưa xảy ra</i> (xác suất &gt;0% &amp; &lt;100%). <b>Issue</b> = risk <i>đã xảy ra</i> (thành sự thật). <b>Risk Trigger</b> = dấu hiệu risk sắp/đang xảy ra.</li>
+        <li><b>Threat</b> (rủi ro tiêu cực) vs <b>Opportunity</b> (rủi ro tích cực).</li>
+        <li><b>Individual risk</b> (rủi ro đơn lẻ, ghi ở Risk Register) vs <b>Overall risk</b> (rủi ro tổng thể dự án, ghi ở Risk Report).</li>
+        <li><b>Secondary risk</b> = rủi ro <i>mới sinh ra TỪ</i> một response. <b>Residual risk</b> = rủi ro <i>còn lại SAU</i> khi đã xử lý.</li>
+      </ul>
+      <div class="callout callout--note"><span class="callout__label">Appetite · Tolerance · Threshold</span><b>Risk Appetite</b> = mức rủi ro tổ chức <i>sẵn sàng</i> chấp nhận (chung chung). <b>Risk Tolerance</b> = mức tối đa <i>cụ thể</i> chịu được. <b>Risk Threshold</b> = <i>điểm</i> mà tại đó rủi ro trở nên KHÔNG chấp nhận được.</div>
+
+      <h3>Định tính vs Định lượng</h3>
+      <p><b>Qualitative Analysis</b> = <i>ưu tiên hóa</i> rủi ro (chủ quan) qua ma trận <b>Probability-Impact</b>. Làm cho <b>mọi</b> dự án. <b>Quantitative Analysis</b> = phân tích <i>bằng số</i> (EMV, Monte Carlo). Chỉ làm cho rủi ro ưu tiên cao, <b>không bắt buộc</b>.</p>
+      <figure class="diagram"><div class="diagram__title">Ma trận Probability–Impact</div>
+        <div class="diagram-quad"><div class="diagram-quad__yaxis">Xác suất: thấp → cao</div><div><div class="diagram-quad__grid"><div class="diagram-quad__cell"><b>P cao / I thấp</b>theo dõi</div><div class="diagram-quad__cell diagram-quad__cell--hi"><b>P cao / I cao</b>ƯU TIÊN xử lý</div><div class="diagram-quad__cell"><b>P thấp / I thấp</b>chấp nhận</div><div class="diagram-quad__cell diagram-quad__cell--mid"><b>P thấp / I cao</b>lập kế hoạch dự phòng</div></div><div class="diagram-quad__xaxis">Tác động: thấp → cao</div></div></div>
+        <figcaption>Ô Xác suất cao × Tác động cao là nhóm cần xử lý ưu tiên nhất</figcaption></figure>
+
+      <h3>⭐ EMV — Expected Monetary Value</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Expected Monetary Value (EMV)</b> — a statistical technique that calculates the average (expected) outcome when the future includes scenarios that may or may not happen: probability × impact. <i>(dùng cho Contingency Reserve &amp; Decision Tree)</i></div>
+      <div class="formula">
+        <div class="formula__row"><b>EMV</b> = <span class="formula__var">Probability</span> <span class="formula__op">×</span> <span class="formula__var">Impact</span></div>
+        <div class="formula__row"><span class="formula__cm"># Threat: Impact ÂM (tổn thất). Opportunity: Impact DƯƠNG (lợi ích).</span></div>
+        <div class="formula__row"><span class="formula__cm"># Dùng để tính Contingency Reserve và trong Decision Tree.</span></div>
+      </div>
+      <div class="callout callout--ok"><span class="callout__label">Ví dụ EMV</span>Rủi ro A: 25% × (−$1000) = <b>−$250</b>. Cơ hội B: 60% × (+$500) = <b>+$300</b>. EMV tổng = +$50 → xét về kỳ vọng là <b>đáng làm</b>. Trong <b>Decision Tree</b>, chọn nhánh có EMV tốt nhất — nhớ trừ cả chi phí đầu tư của mỗi nhánh (kết quả có thể <b>đảo ngược</b> so với khi chưa trừ!).</div>
+
+      <h3>Chiến lược ứng phó rủi ro</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Threats (tiêu cực)</th><th>Opportunities (tích cực)</th><th>Ý nghĩa</th></tr></thead>
+        <tbody>
+          <tr><td><b>Avoid</b> (né tránh)</td><td><b>Exploit</b> (khai thác)</td><td>Loại bỏ bất định hoàn toàn (đưa xác suất về 0% / 100%)</td></tr>
+          <tr><td><b>Transfer</b> (chuyển giao)</td><td><b>Share</b> (chia sẻ)</td><td>Đưa cho bên thứ ba (bảo hiểm / đối tác)</td></tr>
+          <tr><td><b>Mitigate</b> (giảm nhẹ)</td><td><b>Enhance</b> (tăng cường)</td><td>Giảm/tăng xác suất hoặc tác động</td></tr>
+          <tr><td colspan="2" style="text-align:center"><b>Escalate</b> (đẩy lên cấp trên)</td><td>Khi vượt thẩm quyền/phạm vi PM — sau đó KHÔNG monitor nữa</td></tr>
+          <tr><td colspan="2" style="text-align:center"><b>Accept</b> (chấp nhận)</td><td>Passive (không làm gì) hoặc Active (lập <b>contingency plan</b>)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · cặp đối xứng</span>Threat và Opportunity đối xứng nhau: <b>Avoid ↔ Exploit</b> (triệt để), <b>Transfer ↔ Share</b> (giao bên khác), <b>Mitigate ↔ Enhance</b> (điều chỉnh). Còn <b>Escalate &amp; Accept</b> dùng chung cho cả hai. <b>Contingency plan</b> (khi trigger xảy ra) khác <b>Fallback plan</b> (khi contingency plan thất bại).</div>
+      <div class="callout callout--note"><span class="callout__label">Công cụ &amp; Prompt list</span>Nhận diện rủi ro bằng <b>SWOT</b>, <b>PESTLE</b> (Political/Economic/Social/Technological/Legal/Environmental), TECOP, VUCA. Định lượng bằng <b>Monte Carlo</b> (mô phỏng "what-if"), <b>Decision Tree</b>, <b>Sensitivity Analysis → Tornado diagram</b>.</div>
+      <h3>Thái độ với rủi ro (Utility Theory)</h3>
+      <div class="features">
+        <div class="feature"><b>Risk Averse</b><span>Ngại rủi ro — không thoải mái với bất định.</span></div>
+        <div class="feature"><b>Risk Neutral</b><span>Trung lập — chấp nhận rủi ro để đổi lấy lợi ích tương lai.</span></div>
+        <div class="feature"><b>Risk Seeker</b><span>Ưa rủi ro — xem rủi ro như thử thách/cơ hội.</span></div>
+        <div class="feature"><b>Risk Tolerant</b><span>Chịu được rủi ro — không quá bận tâm.</span></div>
+      </div>
+      <p>Cùng một người có thể vừa <b>risk averse</b> vừa <b>risk seeker</b> ở các tình huống khác nhau (utility theory).</p>
+
+      <h3>RBS — Risk Breakdown Structure</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Risk Breakdown Structure (RBS)</b> — a hierarchical representation of potential sources of risk. <i>(cây phân rã NGUỒN rủi ro)</i></div>
+      <p>RBS nhóm rủi ro theo <b>nguồn</b> (kỹ thuật, bên ngoài, tổ chức, quản lý dự án…). Các category ở tầng thấp nhất của RBS/WBS có thể dùng làm <b>prompt list</b> để gợi ý nhận diện rủi ro.</p>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 2 chữ RBS</span><b>R</b>isk BS = nguồn rủi ro · <b>R</b>esource BS = nguồn lực. Cùng viết tắt — đọc kỹ ngữ cảnh câu hỏi!</div>
+
+      <h3>Passive vs Active Acceptance · Contingency vs Fallback</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Khái niệm</th><th>Nghĩa</th></tr></thead>
+        <tbody>
+          <tr><td><b>Passive Acceptance</b></td><td><b>Không làm gì</b> trước; xử lý khi rủi ro xảy ra.</td></tr>
+          <tr><td><b>Active Acceptance</b></td><td>Lập sẵn <b>Contingency Plan</b> &amp; contingency reserve để dùng khi trigger.</td></tr>
+          <tr><td><b>Contingency Plan</b></td><td>Kế hoạch chạy khi <b>trigger</b> xảy ra (rủi ro thành hiện thực).</td></tr>
+          <tr><td><b>Fallback Plan</b></td><td>"Kế hoạch B" chạy khi <b>Contingency Plan thất bại</b>.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+    <footer>
+      <b>Phần II · Risk — Rủi ro</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.<br><a href="resource.html">← Resource — Nguồn lực &amp; Con người</a> · <a href="stakeholder.html">Stakeholder &amp; Communication →</a>
+    </footer>
+  </main>
+</div>
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

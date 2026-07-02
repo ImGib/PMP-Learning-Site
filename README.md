@@ -28,7 +28,8 @@ Bộ tài liệu **tự học PMP** (Project Management Professional) dành cho 
 |---|---|
 | `index.html` | Trang chủ — giới thiệu, lộ trình học, bản đồ tài liệu |
 | `phan-1-nen-tang.html` | **Phần I · Nền tảng** — Dự án/Value/Stakeholder, Portfolio–Program–Project, Development Approaches, Vòng đời & Phase Gate, EEF/OPA, PMO, Governance |
-| `phan-2-chu-de.html` | **Phần II · 8 chủ đề kiến thức** — Scope, Schedule, Finance/EVM, Quality, Resource, Risk, Stakeholder & Communication, Procurement |
+| `phan-2-chu-de.html` | **Phần II · Mục lục** 8 chủ đề (mỗi chủ đề là 1 trang riêng) |
+| `scope/schedule/finance/quality/resource/risk/stakeholder/procurement.html` | 8 trang chủ đề tách riêng của Phần II (ngắn, tải nhanh) |
 | `phan-3-agile.html` | **Phần III · Agile & Adaptive** — Value-driven Delivery, Adaptive Planning |
 | `phan-4-on-thi.html` | **Phần IV · Ôn thi** — Cấu trúc đề, PMI Mindset, chiến lược làm bài |
 | `cong-thuc-va-vi-du.html` | **Công thức & ví dụ** giải từng bước |
