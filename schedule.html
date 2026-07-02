@@ -135,6 +135,23 @@
       </table></div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Crash vs Fast Track</span><b>Crashing = "đổ tiền/người"</b> (Cost↑). <b>Fast Tracking = "làm chồng lên nhau"</b> (Risk↑). Còn <b>Leveling đổi critical path, Smoothing KHÔNG</b> — nhớ "Level = làm phẳng, dời đường; Smooth = mượt trong khe float".</div>
       <div class="callout callout--warn"><span class="callout__label">Đường găng dễ bẫy</span>Critical Path là đường <b>dài nhất</b> nhưng cho ra <b>thời gian ngắn nhất</b> của dự án. Có thể có <b>nhiều hơn 1</b> đường găng (→ rủi ro cao hơn). Ước lượng thời lượng hoạt động <b>không</b> bao gồm lag.</div>
+
+      <h3>Biểu đồ Gantt (Bar Chart)</h3>
+      <figure class="diagram"><div class="diagram__title">Gantt — thanh ngang theo thời gian (cùng dữ liệu A/B/C/D)</div>
+<svg viewBox="0 0 470 195" role="img" aria-label="Gantt chart" font-family="ui-monospace, monospace">
+<line x1="70" y1="150" x2="410" y2="150" stroke="#d8d8e0" stroke-width="1.2"/>
+<g font-size="8" fill="#9aa0b5" text-anchor="middle">
+<text x="70" y="164">0</text><text x="130" y="164">2</text><text x="190" y="164">4</text><text x="250" y="164">6</text><text x="310" y="164">8</text><text x="370" y="164">10</text><text x="400" y="164">11</text></g>
+<text x="240" y="184" font-size="10" fill="#76798a" text-anchor="middle">Ngày →</text>
+<g font-size="11" font-weight="600">
+<text x="60" y="46" fill="#3c3e46" text-anchor="end">A</text><rect x="70" y="35" width="90" height="16" rx="3" fill="#5a4be0"/>
+<text x="60" y="76" fill="#3c3e46" text-anchor="end">B</text><rect x="160" y="65" width="120" height="16" rx="3" fill="#c5c5cf"/>
+<text x="60" y="106" fill="#3c3e46" text-anchor="end">C</text><rect x="160" y="95" width="180" height="16" rx="3" fill="#5a4be0"/>
+<text x="60" y="136" fill="#3c3e46" text-anchor="end">D</text><rect x="340" y="125" width="60" height="16" rx="3" fill="#5a4be0"/>
+</g>
+<path d="M400,120 l7,7 l-7,7 l-7,-7 z" fill="#b0125e"/><text x="400" y="118" font-size="8" fill="#b0125e" text-anchor="middle">🏁</text>
+</svg>
+<figcaption>Gantt trực quan hóa lịch theo thời gian (báo cáo cho team). Thanh <span style="color:#5a4be0;font-weight:600">tím</span> = đường găng A→C→D; B có float (xám); ◆ = milestone.</figcaption></figure>
       <h3>4 "quy luật" ảnh hưởng ước lượng thời gian</h3>
       <div class="principles">
         <div class="principle"><span class="principle__num">1</span><span class="principle__title">Parkinson's Law</span><span class="principle__desc">"Work expands to fill the available time" — việc <b>phình ra</b> cho vừa thời gian được cấp. Cho dư giờ → xong đúng hạn chót chứ không sớm.</span></div>
