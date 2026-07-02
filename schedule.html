@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Schedule — Tiến độ — Phần II · Học PMP với PMBOK 8</title>
+<!-- shared-head:start — TỰ SINH, đừng sửa tay. Nguồn: assets/partials/head.html · cập nhật: node scripts/sync-head.mjs -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles/main.css">
+<!-- shared-head:end -->
 </head>
 <body data-page="schedule">
 <div id="site-navbar"></div>
@@ -136,7 +138,7 @@
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Crash vs Fast Track</span><b>Crashing = "đổ tiền/người"</b> (Cost↑). <b>Fast Tracking = "làm chồng lên nhau"</b> (Risk↑). Còn <b>Leveling đổi critical path, Smoothing KHÔNG</b> — nhớ "Level = làm phẳng, dời đường; Smooth = mượt trong khe float".</div>
       <div class="callout callout--warn"><span class="callout__label">Đường găng dễ bẫy</span>Critical Path là đường <b>dài nhất</b> nhưng cho ra <b>thời gian ngắn nhất</b> của dự án. Có thể có <b>nhiều hơn 1</b> đường găng (→ rủi ro cao hơn). Ước lượng thời lượng hoạt động <b>không</b> bao gồm lag.</div>
       <div class="callout callout--note"><span class="callout__label">Free Float vs Total Float (công thức)</span><b>Total Float</b> = LS − ES = LF − EF (được trễ mà không trễ <i>dự án</i>). <b>Free Float</b> = ES(việc-sau sớm nhất) − EF(việc này) − lag (được trễ mà không trễ <i>việc kế tiếp</i>). Ví dụ với sơ đồ trên: B có EF=7, successor D có ES=9 ⇒ <b>Free Float B = 9 − 7 = 2</b>. Trên đường găng cả hai loại float = 0.</div>
-      <div class="callout callout--tip"><span class="callout__label">Lịch trong Agile/Hybrid</span>Dự án adaptive không dùng Gantt/CPM chi tiết mà lập lịch theo <b>iteration</b>: ước lượng bằng <b>story points</b>, đo <b>velocity</b> (điểm/iteration), lập <b>Release Plan</b> (nhiều iteration) &amp; <b>Iteration Plan</b>. Dự báo ngày xong ≈ <i>backlog còn lại ÷ velocity</i>. Xem thêm <a href="phan-3-agile.html" style="color:var(--accent-ink);font-weight:600">Phần III · Agile ↗</a>.</div>
+      <div class="callout callout--tip"><span class="callout__label">Lịch trong Agile/Hybrid</span>Dự án adaptive không dùng Gantt/CPM chi tiết mà lập lịch theo <b>iteration</b>: ước lượng bằng <b>story points</b>, đo <b>velocity</b> (điểm/iteration), lập <b>Release Plan</b> (nhiều iteration) &amp; <b>Iteration Plan</b>. Dự báo ngày xong ≈ <i>backlog còn lại ÷ velocity</i>. Xem thêm <a href="phan-3-agile.html" class="link-accent link-accent--bold">Phần III · Agile ↗</a>.</div>
 
       <h3>Biểu đồ Gantt (Bar Chart)</h3>
       <figure class="diagram"><div class="diagram__title">Gantt — thanh ngang theo thời gian (cùng dữ liệu A/B/C/D)</div>
@@ -186,6 +188,7 @@
         </tbody>
       </table></div>
     </section>
+    <section id="miniQuiz" class="mini-quiz"></section>
     <footer id="topic-footer"></footer>
   </main>
 </div>

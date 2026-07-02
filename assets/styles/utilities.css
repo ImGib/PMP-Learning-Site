@@ -1,0 +1,21 @@
+/* ============================================================
+   utilities.css — lớp tiện ích dùng chung (thay cho inline style)
+   Quy ước: utility đơn nhiệm, đặt tên theo chức năng.
+   Chỉ đưa vào đây thứ LẶP LẠI nhiều nơi; giá trị động (bar width,
+   màu riêng của từng diagram) vẫn để inline vì mỗi chỗ một khác.
+   ============================================================ */
+
+/* Link nhấn mạnh — dùng cho anchor trong .feature, danh sách điều hướng */
+.link-accent {
+  color: var(--accent-ink);
+}
+.link-accent--bold {
+  font-weight: 600;
+}
+
+/* Dòng chú thích nhỏ, màu mờ (hint dưới tiêu đề, ghi chú phụ) */
+.text-hint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}

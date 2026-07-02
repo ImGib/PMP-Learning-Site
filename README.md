@@ -45,6 +45,7 @@ Tách bạch **cấu trúc (HTML) · giao diện (CSS/BEM) · logic (JS module)*
 
 ```
 assets/
+├── partials/head.html      # NGUỒN DUY NHẤT của khối <head> chung (preconnect/fonts/main.css)
 ├── styles/                 # Giao diện — CSS chia theo component, gom bằng @import, đặt tên BEM
 │   ├── main.css            #   entry (@import base → layout → components)
 │   ├── base.css            #   design tokens (:root), reset, atom (btn, jargon)
@@ -54,7 +55,8 @@ assets/
 │   ├── diagram.css         #   .fig / .d-* / .pchart / .gchip …
 │   ├── flashcard.css       #   .flashcard__* (BEM)
 │   ├── quiz.css            #   .quiz__* (BEM)
-│   └── glossary.css        #   .glossary__* (BEM)
+│   ├── glossary.css        #   .glossary__* (BEM)
+│   └── utilities.css       #   utility dùng chung (.link-accent, .text-hint) — thay inline style
 └── js/                     # Logic — ES6 Modules (import/export), không biến toàn cục
     ├── main.js             #   entry (type="module"): mount chrome + feature-detect widget
     ├── lib/dom.js          #   helper DOM dùng chung (esc, qs, qsa, el)
@@ -64,7 +66,9 @@ assets/
 
 - **Component dùng chung:** thanh điều hướng (`navbar.js`) được **render lúc chạy** vào `<div id="site-navbar">` trên mọi trang → hết trùng lặp markup.
 - **BEM:** `block__element--modifier` (vd `.quiz__opt--correct`, `.flashcard--flipped`, `.callout--warn`); state class dùng `is-*` (`.is-active`, `.is-answered`).
+- **Không inline style:** style lặp lại → utility class trong `utilities.css`; ẩn/hiện dùng thuộc tính `hidden`. Chỉ để inline cho **giá trị động** (bề rộng thanh bar theo dữ liệu, màu riêng của từng diagram).
 - **ES6 Modules:** mỗi trang chỉ nạp `main.js`; nó `import` các component/data cần dùng và tự bỏ qua nếu trang không có widget tương ứng.
+- **`<head>` một nguồn (không build):** phần `<head>` chung (preconnect/fonts/`main.css`) **không** JS-inject được vì sẽ gây FOUC. Thay vào đó sửa `assets/partials/head.html` rồi chạy `node scripts/sync-head.mjs` — script "dán" nội dung vào giữa cặp marker `<!-- shared-head:start … end -->` ở cả 19 trang. `<title>` vẫn nằm riêng từng trang. HTML xuất ra vẫn tĩnh 100%, GitHub Pages không đổi.
 
 ---
 
@@ -105,7 +109,7 @@ Trên **GitHub Pages** thì chạy bình thường (đã là HTTPS). Không có 
 - Tổng hợp từ **PMBOK® Guide – 8th Edition (2025)** và slide khóa PMP (PMA Việt Nam).
 - Các con số trong ví dụ mang tính **minh họa để luyện phương pháp**; khi thi luôn đối chiếu **ECO** và tài liệu PMI chính thức.
 - **PMP®**, **PMBOK®** và **PMI®** là nhãn hiệu đã đăng ký của **Project Management Institute, Inc.** Tài liệu này chỉ phục vụ **học tập cá nhân**, không liên kết hay được PMI bảo trợ.
-- File nguồn (PDF, slide) dung lượng lớn **không được đưa lên repo** (xem `.gitignore`).
+- File nguồn (PDF, slide) dung lượng lớn nằm trong **`docs-src/`** — giữ trên máy, **không đưa lên repo** (xem `.gitignore`). Ghi chú rà soát nội dung ở **`reviews/`**.
 
 ---
 

@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Từ điển thuật ngữ song ngữ — Học PMP với PMBOK 8</title>
+<!-- shared-head:start — TỰ SINH, đừng sửa tay. Nguồn: assets/partials/head.html · cập nhật: node scripts/sync-head.mjs -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles/main.css">
+<!-- shared-head:end -->
 </head>
 <body>
 <div id="site-navbar"></div>
@@ -33,7 +35,7 @@
       <div class="glossary__filter">
         <input id="glossSearch" type="text" placeholder="🔍 Tìm thuật ngữ… (vd: float, rủi ro, EVM, contingency)" autocomplete="off">
       </div>
-      <p style="font-size:13px;color:var(--muted);margin:0" id="glossHint"></p>
+      <p class="text-hint" id="glossHint"></p>
     </div>
 
     <section id="g-foundation">
@@ -149,7 +151,7 @@
       </div>
     </section>
 
-    <div class="callout callout--note" id="noResult" style="display:none">Không tìm thấy thuật ngữ khớp. Thử từ khóa khác (tiếng Anh hoặc tiếng Việt).</div>
+    <div class="callout callout--note" id="noResult" hidden>Không tìm thấy thuật ngữ khớp. Thử từ khóa khác (tiếng Anh hoặc tiếng Việt).</div>
 
     <footer>
       <b>Từ điển thuật ngữ</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP. Định nghĩa tiếng Anh theo chuẩn PMI để bạn quen ngôn ngữ thi. Luyện nhớ nhanh: <a href="flashcard-quiz.html">Flashcard →</a>
