@@ -24,7 +24,7 @@ export function renderTopicChrome() {
 
   const hero = document.getElementById('topic-hero');
   if (hero) {
-    hero.innerHTML = `<span class="hero__eyebrow">Phần II · Chủ đề ${t.num}/08 — 8 Performance Domains</span>
+    hero.innerHTML = `<span class="hero__eyebrow">Phần II · Chủ đề ${t.num}/08 — 8 chủ đề kiến thức</span>
        <h1>${t.title}</h1><p>${t.blurb}</p>`;
   }
 

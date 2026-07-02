@@ -1,6 +1,7 @@
 // components/navbar.js — shared top navigation (rendered at runtime → no duplication)
 const LINKS = [
   { href: 'index.html', label: 'Bắt đầu' },
+  { href: 'nguyen-ly-pmbok8.html', label: 'Nguyên lý' },
   { href: 'phan-1-nen-tang.html', label: 'I · Nền tảng' },
   { href: 'phan-2-chu-de.html', label: 'II · Chủ đề' },
   { href: 'phan-3-agile.html', label: 'III · Agile' },

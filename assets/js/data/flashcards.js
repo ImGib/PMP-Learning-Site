@@ -562,4 +562,35 @@ export const FLASHCARDS = [
     en: 'Self-awareness, self-management, social awareness, relationship management.',
     vn: "4 nhóm; 'power skill' cốt lõi giúp PM gắn kết team & xử lý xung đột.",
   },
+  ,
+  {
+    cat: 'Nền tảng',
+    term: 'PMBOK 8 Mindset (3 chiều)',
+    en: 'Proactive, Ownership, Value-Driven — the three dimensions of the project management mindset in PMBOK 8.',
+    vn: 'Chủ động · Làm chủ · Hướng giá trị. Mỗi chiều gắn 2 nguyên lý → tổng 6 principles.',
+  },
+  {
+    cat: 'Nền tảng',
+    term: '6 Nguyên lý PMBOK 8',
+    en: 'Adopt a Holistic View; Embed Quality; Be an Accountable Leader; Build an Empowered Culture; Focus on Value; Integrate Sustainability.',
+    vn: 'PMBOK 8 rút 12 principle (v7) còn 6, nhóm theo 3 chiều mindset.',
+  },
+  {
+    cat: 'Nền tảng',
+    term: '7 Performance Domains (PMBOK 8)',
+    en: 'Governance, Scope, Schedule, Finance, Stakeholders, Resources, Risk — each includes processes/ITTO.',
+    vn: 'v8 có 7 domain (v7 có 8). Quality thành nguyên lý, Procurement gộp vào Resources.',
+  },
+  {
+    cat: 'Nền tảng',
+    term: 'Integrate Sustainability',
+    en: 'New PMBOK 8 principle: weave environmental, social and economic sustainability into all project areas.',
+    vn: 'Nguyên lý MỚI ở v8 — lồng ghép bền vững (ESG) vào mọi mặt dự án.',
+  },
+  {
+    cat: 'Nền tảng',
+    term: 'Tailoring',
+    en: 'Deliberate adaptation of approach, governance and processes to suit the environment and the work at hand.',
+    vn: "Không 'một cỡ cho tất cả': chọn approach → tailor cho tổ chức → cho dự án → thực thi & cải tiến.",
+  },
 ];
