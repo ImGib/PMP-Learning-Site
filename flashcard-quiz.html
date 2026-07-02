@@ -53,8 +53,27 @@
       <div class="fc-toolbar">
         <button class="btn primary" id="fcFlip" data-open="0">Lật tất cả</button>
         <button class="btn" id="fcShuffle" data-k="0">Xáo trộn thứ tự</button>
-        <span style="font-size:13px;color:var(--muted)">Mẹo: che phần tiếng Anh, tự dịch thuật ngữ sang định nghĩa tiếng Anh trước khi lật.</span>
+        <button class="btn" id="fcAddToggle">➕ Thêm thẻ mới</button>
+        <span style="font-size:13px;color:var(--muted)">Bạn đã thêm: <b id="fcMineCount">0</b> thẻ (lưu trong trình duyệt này)</span>
       </div>
+
+      <div class="fc-addform" id="fcForm" style="display:none">
+        <p class="af-help">Thêm nhanh một thẻ — lưu ngay trong trình duyệt này (không cần sửa code). Muốn lưu <b>cố định &amp; chia sẻ</b> (đưa lên GitHub), thêm vào file <code>assets/my-cards.js</code> hoặc dùng nút "Xuất thẻ đã thêm" bên dưới.</p>
+        <div class="af-grid">
+          <label>Nhóm / chủ đề<input id="fcInCat" type="text" placeholder="vd: Risk, Agile…"></label>
+          <label>Mặt trước (thuật ngữ) *<input id="fcInTerm" type="text" placeholder="vd: Risk Register"></label>
+          <label>Định nghĩa tiếng Anh (EN) *<textarea id="fcInEn" rows="2" placeholder="A repository of identified risks…"></textarea></label>
+          <label>Ghi chú tiếng Việt<textarea id="fcInVn" rows="2" placeholder="Sổ ghi các rủi ro đã nhận diện…"></textarea></label>
+        </div>
+        <div class="af-actions">
+          <button class="btn primary" id="fcAdd">Thêm thẻ</button>
+          <button class="btn" id="fcExport">Xuất thẻ đã thêm (copy vào my-cards.js)</button>
+          <button class="btn" id="fcClear">Xóa thẻ đã thêm</button>
+        </div>
+        <p class="af-msg" id="fcMsg"></p>
+        <textarea class="af-export" id="fcExportOut" readonly style="display:none"></textarea>
+      </div>
+
       <div class="fc-grid" id="fcGrid"></div>
     </section>
 
@@ -77,6 +96,7 @@
   </main>
 </div>
 <script src="assets/site.js"></script>
+<script src="assets/my-cards.js"></script>
 <script src="assets/quiz.js"></script>
 </body>
 </html>

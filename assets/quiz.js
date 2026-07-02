@@ -128,9 +128,20 @@ var QUIZ = [
 (function(){
   var grid = document.getElementById('fcGrid');
   if(!grid) return;
-  var data = FLASHCARDS.slice();
+  var LSKEY = 'pmp_flashcards_v1';
 
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function loadMine(){ try{ return JSON.parse(localStorage.getItem(LSKEY)||'[]'); }catch(e){ return []; } }
+  function saveMine(arr){ try{ localStorage.setItem(LSKEY, JSON.stringify(arr)); }catch(e){} }
+
+  var fileCards = (window.FLASHCARDS||[]).concat(window.MY_FLASHCARDS||[]);
+  var data = [];
+  function buildDeck(){
+    var mine = loadMine().map(function(c){ return {cat:c.cat,term:c.term,en:c.en,vn:c.vn,id:c.id,_mine:true}; });
+    data = fileCards.concat(mine);
+    return data;
+  }
+
   function render(list){
     grid.innerHTML = '';
     list.forEach(function(c){
@@ -138,25 +149,42 @@ var QUIZ = [
       el.className = 'fc';
       el.innerHTML =
         '<div class="fc-inner">'+
-          '<div class="fc-face fc-front"><span class="cat">'+esc(c.cat)+'</span>'+
+          '<div class="fc-face fc-front">'+
+            (c._mine ? '<button class="fc-del" title="Xóa thẻ bạn đã thêm" data-id="'+c.id+'">&times;</button>' : '')+
+            '<span class="cat">'+esc(c.cat||'Khác')+(c._mine?' · của bạn':'')+'</span>'+
             '<div class="term">'+esc(c.term)+'</div><div class="hint">Bấm để lật ↩</div></div>'+
-          '<div class="fc-face fc-back"><p class="en"><b>EN:</b> '+esc(c.en)+'</p><p class="vn">'+esc(c.vn)+'</p></div>'+
+          '<div class="fc-face fc-back"><p class="en"><b>EN:</b> '+esc(c.en)+'</p><p class="vn">'+esc(c.vn||'')+'</p></div>'+
         '</div>';
       el.addEventListener('click', function(){ el.classList.toggle('flip'); });
+      var del = el.querySelector('.fc-del');
+      if(del) del.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        var id = del.getAttribute('data-id');
+        var mine = loadMine().filter(function(c){ return String(c.id)!==String(id); });
+        saveMine(mine); refresh();
+      });
       grid.appendChild(el);
     });
   }
-  function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=(i*7+3)%(i+1); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
-  render(data);
 
-  var count = document.getElementById('fcCount');
-  if(count) count.textContent = data.length;
+  function refresh(){ buildDeck(); render(data); updateCounts(); }
+  function updateCounts(){
+    var count = document.getElementById('fcCount');
+    if(count) count.textContent = data.length;
+    var mineCount = document.getElementById('fcMineCount');
+    if(mineCount) mineCount.textContent = loadMine().length;
+  }
+
+  refresh();
+
+  // shuffle (rotate — no Math.random needed)
   var sh = document.getElementById('fcShuffle');
   if(sh) sh.addEventListener('click', function(){
-    // rotate-based shuffle so output stays deterministic-free of Math.random
-    var n = data.length, k = (parseInt(sh.dataset.k||'0',10)+5)%n; sh.dataset.k=k;
+    var n = data.length; if(!n) return;
+    var k = (parseInt(sh.dataset.k||'0',10)+5)%n; sh.dataset.k=k;
     data = data.slice(k).concat(data.slice(0,k)); render(data);
   });
+  // flip all
   var flipAll = document.getElementById('fcFlip');
   if(flipAll) flipAll.addEventListener('click', function(){
     var open = flipAll.dataset.open==='1';
@@ -164,7 +192,59 @@ var QUIZ = [
     flipAll.dataset.open = open?'0':'1';
     flipAll.textContent = open ? 'Lật tất cả' : 'Úp tất cả lại';
   });
-  var cats = {}; FLASHCARDS.forEach(function(c){cats[c.cat]=(cats[c.cat]||0)+1;});
+
+  // ---- Add-card form (saves to localStorage) ----
+  var toggle = document.getElementById('fcAddToggle');
+  var panel  = document.getElementById('fcForm');
+  if(toggle && panel) toggle.addEventListener('click', function(){
+    var open = panel.style.display==='block';
+    panel.style.display = open ? 'none' : 'block';
+    toggle.textContent = open ? '➕ Thêm thẻ mới' : '✕ Đóng';
+  });
+
+  var addBtn = document.getElementById('fcAdd');
+  if(addBtn) addBtn.addEventListener('click', function(){
+    var term = (document.getElementById('fcInTerm').value||'').trim();
+    var en   = (document.getElementById('fcInEn').value||'').trim();
+    var vn   = (document.getElementById('fcInVn').value||'').trim();
+    var cat  = (document.getElementById('fcInCat').value||'').trim() || 'Khác';
+    var msg  = document.getElementById('fcMsg');
+    if(!term || !en){
+      if(msg){ msg.textContent = 'Cần ít nhất "Mặt trước" và "Định nghĩa EN".'; msg.style.color='var(--bad)'; }
+      return;
+    }
+    var mine = loadMine();
+    mine.push({id:Date.now(), cat:cat, term:term, en:en, vn:vn});
+    saveMine(mine); refresh();
+    document.getElementById('fcInTerm').value='';
+    document.getElementById('fcInEn').value='';
+    document.getElementById('fcInVn').value='';
+    if(msg){ msg.textContent = '✓ Đã thêm! Thẻ nằm ở cuối danh sách và được lưu trong trình duyệt này.'; msg.style.color='var(--ok)'; }
+  });
+
+  // ---- Export my cards (to paste into assets/my-cards.js) ----
+  var exp = document.getElementById('fcExport');
+  var expOut = document.getElementById('fcExportOut');
+  if(exp && expOut) exp.addEventListener('click', function(){
+    var mine = loadMine();
+    if(!mine.length){ expOut.style.display='block'; expOut.value='// Bạn chưa thêm thẻ nào.'; return; }
+    var text = mine.map(function(c){
+      return '  {cat:'+JSON.stringify(c.cat)+', term:'+JSON.stringify(c.term)+', en:'+JSON.stringify(c.en)+', vn:'+JSON.stringify(c.vn)+'},';
+    }).join('\n');
+    expOut.style.display='block';
+    expOut.value = text;
+    expOut.focus(); expOut.select();
+  });
+
+  // ---- Clear my cards ----
+  var clr = document.getElementById('fcClear');
+  if(clr) clr.addEventListener('click', function(){
+    if(!loadMine().length) return;
+    if(window.confirm('Xóa tất cả thẻ bạn đã thêm trong trình duyệt này?')){
+      localStorage.removeItem(LSKEY); refresh();
+      if(expOut){ expOut.style.display='none'; expOut.value=''; }
+    }
+  });
 })();
 
 // ---------- render quiz ----------
