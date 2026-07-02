@@ -262,8 +262,8 @@ code.k{background:var(--line-soft);padding:2px 7px;border-radius:5px;font-size:1
 .quiz-done .big{font-family:var(--display);font-size:40px;font-weight:600;color:var(--accent-ink)}
 
 /* ---- Rita process chart ---- */
-.pchart{font-size:12.5px}
-.pchart th,.pchart td{padding:8px 10px;vertical-align:top;border:1px solid var(--line)}
+.pchart{font-size:12.3px;min-width:1160px}
+.pchart th,.pchart td{padding:8px 10px;vertical-align:top;border:1px solid var(--line);word-break:normal;overflow-wrap:normal;hyphens:none}
 .pchart thead th{text-align:center;white-space:nowrap}
 .pchart .ka{font-weight:600;color:var(--ink);white-space:nowrap;background:var(--rail)}
 .pchart .ka .n{display:block;font-family:var(--mono);font-size:10px;color:var(--faint);font-weight:500;margin-top:2px}
@@ -275,7 +275,31 @@ code.k{background:var(--line-soft);padding:2px 7px;border-radius:5px;font-size:1
 .pc-item b{color:var(--ink);font-weight:600;font-size:12.3px}
 .pc-item .vn{display:block;color:var(--muted);font-size:10.7px;line-height:1.35;margin-top:1px}
 .pchart tfoot td{text-align:center;font-family:var(--mono);font-weight:600;color:var(--accent-ink);background:var(--rail)}
-.pchart .tot{font-family:var(--mono);font-weight:600;color:var(--accent-ink)}
+.pchart .tot{font-family:var(--mono);font-weight:600;color:var(--accent-ink);text-align:center}
+.scroll-hint{font-family:var(--mono);font-size:11px;color:var(--faint);margin:0 0 8px}
+/* group chips (detail tables) */
+.gchip{font-family:var(--mono);font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap;display:inline-block}
+.gchip.init{background:#f3edff;color:#6d28d9}
+.gchip.plan{background:#eaf5ff;color:#1d5f9e}
+.gchip.exec{background:#eafaf0;color:#197a4b}
+.gchip.mc{background:#fff4e6;color:#a25a07}
+.gchip.close{background:#fdeef4;color:#b0125e}
+/* KA detail block */
+.ka-block{border:1px solid var(--line);border-radius:var(--radius);padding:6px 20px 16px;margin:16px 0;background:#fff}
+.ka-block h3{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.ka-block h3 .relate{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--accent-ink);
+  border:1px solid var(--accent-wash);background:var(--accent-wash);padding:3px 10px;border-radius:20px}
+.ka-block h3 .relate:hover{border-color:var(--accent)}
+.ka-block h3 .cnt{font-family:var(--mono);font-size:12px;color:var(--faint);font-weight:500}
+.katbl{width:100%;border-collapse:collapse;font-size:13.6px;margin-top:6px}
+.katbl th,.katbl td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.katbl th{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.katbl td:first-child{white-space:nowrap}
+.katbl .pn{font-weight:600;color:var(--ink)}
+.katbl .pv{display:block;font-size:11.5px;color:var(--muted);font-weight:400}
+.katbl .ex b{color:var(--ink)}
+.katbl tr:hover td{background:var(--rail)}
+@media(max-width:640px){ .katbl td:first-child{white-space:normal} }
 
 footer{margin-top:70px;padding-top:26px;border-top:1px solid var(--line);
   font-size:13px;color:var(--muted);font-family:var(--mono);line-height:1.8}

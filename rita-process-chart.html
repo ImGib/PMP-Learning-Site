@@ -31,9 +31,10 @@
     <h4>Rita Process Chart</h4>
     <a href="#about"><span class="c">01</span>Là gì &amp; vì sao học</a>
     <a href="#chart"><span class="c">02</span>Bảng 49 Process</a>
-    <a href="#counts"><span class="c">03</span>Con số cần nhớ</a>
-    <a href="#howto"><span class="c">04</span>Cách dùng (Process Game)</a>
-    <a href="#version"><span class="c">05</span>Lưu ý PMBOK 6 → 8</a>
+    <a href="#detail"><span class="c">03</span>Chi tiết theo lĩnh vực</a>
+    <a href="#counts"><span class="c">04</span>Con số cần nhớ</a>
+    <a href="#howto"><span class="c">05</span>Cách dùng (Process Game)</a>
+    <a href="#version"><span class="c">06</span>Lưu ý PMBOK 6 → 8</a>
     <h4>Liên quan</h4>
     <a href="phan-1-nen-tang.html"><span class="c">I</span>Nền tảng (Process Groups)</a>
     <a href="phan-4-on-thi.html"><span class="c">IV</span>Ôn thi →</a>
@@ -78,6 +79,7 @@
         <div class="lg"><span class="badge phase" style="background:#fff4e6;color:#a25a07">Monitoring &amp; Controlling</span><span> Giám sát &amp; kiểm soát — song song (12)</span></div>
         <div class="lg"><span class="badge phase" style="background:#fdeef4;color:#b0125e">Closing</span><span> Đóng — nghiệm thu &amp; kết thúc (1)</span></div>
       </div>
+      <p class="scroll-hint">↔ Bảng rộng — kéo ngang để xem đủ 5 cột. Cần chi tiết + ví dụ từng process? Xem <a href="#detail" style="color:var(--accent-ink);font-weight:600">phần "Chi tiết theo lĩnh vực" ↓</a></p>
       <div class="tbl-wrap"><table class="tbl pchart">
         <thead><tr>
           <th style="text-align:left">Knowledge Area</th>
@@ -191,6 +193,154 @@
         </tr></tfoot>
       </table></div>
       <div class="note warn"><span class="lbl">Chỉ có ở Initiating (2) &amp; Closing (1)</span>Initiating chỉ gồm <b>Develop Project Charter</b> + <b>Identify Stakeholders</b>. Closing chỉ gồm duy nhất <b>Close Project or Phase</b>. Đây là các mốc rất hay hỏi.</div>
+    </section>
+
+    <!-- DETAIL -->
+    <section id="detail">
+      <div class="sec-head"><h2>Chi tiết theo lĩnh vực</h2><span class="tag">ý nghĩa + ví dụ + liên kết</span></div>
+      <p class="sec-desc">Mỗi lĩnh vực (Knowledge Area) là một hàng của bảng trên. Ở đây từng process được giải thích <b>làm gì</b> kèm <b>ví dụ cụ thể</b>, và link tới phần kiến thức tương ứng trong tài liệu. Cột <b>Nhóm</b> = process group (giai đoạn).</p>
+
+      <div class="ka-block" id="ka-integration">
+        <h3>1 · Integration <span class="cnt">7 process</span> <a class="relate" href="phan-1-nen-tang.html#governance">Kiến thức: Governance &amp; Tích hợp →</a></h3>
+        <p style="font-size:13.5px;color:var(--muted);margin:2px 0 4px">Lĩnh vực "nhạc trưởng" — điều phối mọi lĩnh vực khác; là KA duy nhất có process ở cả 5 nhóm.</p>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Develop Project Charter</span><span class="pv">Lập tuyên bố dự án</span></td><td><span class="gchip init">Initiating</span></td><td class="ex">"Khai sinh" dự án &amp; trao quyền cho PM. <b>VD:</b> Sponsor ký charter dự án "App bán hàng Q4", nêu mục tiêu, ngân sách sơ bộ $200k và chỉ định bạn làm PM.</td></tr>
+            <tr><td><span class="pn">Develop Project Management Plan</span><span class="pv">Lập kế hoạch QLDA tổng thể</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Gộp mọi kế hoạch con + baseline thành một tài liệu chủ. <b>VD:</b> tổng hợp scope/schedule/cost/risk plan thành 1 PM Plan trình sponsor duyệt.</td></tr>
+            <tr><td><span class="pn">Direct and Manage Project Work</span><span class="pv">Chỉ đạo &amp; quản lý công việc</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Điều phối team thực thi, tạo ra deliverable. <b>VD:</b> giao task cho dev, ra quyết định hằng ngày để hoàn thành module A.</td></tr>
+            <tr><td><span class="pn">Manage Project Knowledge</span><span class="pv">Quản lý tri thức dự án</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Dùng tri thức cũ &amp; tạo tri thức mới (lessons learned). <b>VD:</b> họp rút kinh nghiệm sau mỗi milestone, lưu bài học vào wiki nội bộ.</td></tr>
+            <tr><td><span class="pn">Monitor and Control Project Work</span><span class="pv">Giám sát &amp; kiểm soát công việc</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">So sánh thực tế với kế hoạch, đề xuất hành động. <b>VD:</b> phát hiện dự án chậm 10% → lập change request đề nghị điều chỉnh.</td></tr>
+            <tr><td><span class="pn">Perform Integrated Change Control</span><span class="pv">Kiểm soát thay đổi tích hợp</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Mọi thay đổi phải qua CCB đánh giá &amp; duyệt. <b>VD:</b> khách xin thêm tính năng → đánh giá tác động chi phí/tiến độ → CCB duyệt → cập nhật baseline.</td></tr>
+            <tr><td><span class="pn">Close Project or Phase</span><span class="pv">Đóng dự án/giai đoạn</span></td><td><span class="gchip close">Closing</span></td><td class="ex">Nghiệm thu cuối, chuyển giao, lưu trữ. <b>VD:</b> khách ký biên bản nghiệm thu, giải tán team, archive tài liệu &amp; lessons learned.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ka-block" id="ka-scope">
+        <h3>2 · Scope <span class="cnt">6 process</span> <a class="relate" href="phan-2-chu-de.html#scope">Kiến thức: Scope — Phạm vi →</a></h3>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Plan Scope Management</span><span class="pv">Lập kế hoạch quản lý phạm vi</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Định ra cách xác định &amp; kiểm soát scope. <b>VD:</b> quy định mọi thay đổi phạm vi phải điền form và qua CCB.</td></tr>
+            <tr><td><span class="pn">Collect Requirements</span><span class="pv">Thu thập yêu cầu</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Lấy yêu cầu từ stakeholder. <b>VD:</b> phỏng vấn + workshop + khảo sát → tạo tài liệu yêu cầu &amp; ma trận truy vết (RTM).</td></tr>
+            <tr><td><span class="pn">Define Scope</span><span class="pv">Xác định phạm vi</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Viết Project Scope Statement (gồm gì, loại trừ gì). <b>VD:</b> "App gồm module A, B; KHÔNG gồm thanh toán quốc tế".</td></tr>
+            <tr><td><span class="pn">Create WBS</span><span class="pv">Tạo cây phân rã công việc</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Phân rã scope thành work package. <b>VD:</b> "Module A" → thiết kế → code → test (mỗi việc 8–80 giờ).</td></tr>
+            <tr><td><span class="pn">Validate Scope</span><span class="pv">Nghiệm thu phạm vi</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Khách chính thức chấp nhận deliverable. <b>VD:</b> khách review &amp; ký nhận module A đạt acceptance criteria.</td></tr>
+            <tr><td><span class="pn">Control Scope</span><span class="pv">Kiểm soát phạm vi</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Ngăn scope creep, quản thay đổi baseline. <b>VD:</b> phát hiện dev tự thêm tính năng không yêu cầu (gold plating) → chặn lại.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ka-block" id="ka-schedule">
+        <h3>3 · Schedule <span class="cnt">6 process</span> <a class="relate" href="phan-2-chu-de.html#schedule">Kiến thức: Schedule — Tiến độ →</a></h3>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Plan Schedule Management</span><span class="pv">Lập kế hoạch quản lý tiến độ</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Quy định cách lập &amp; theo dõi lịch. <b>VD:</b> chọn dùng MS Project, đơn vị "ngày", ngưỡng cảnh báo trễ 5%.</td></tr>
+            <tr><td><span class="pn">Define Activities</span><span class="pv">Xác định hoạt động</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Chia work package thành các activity. <b>VD:</b> "Code module A" → 5 activity nhỏ.</td></tr>
+            <tr><td><span class="pn">Sequence Activities</span><span class="pv">Sắp xếp trình tự</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Xác định phụ thuộc (FS/SS…). <b>VD:</b> "Test" chỉ bắt đầu sau khi "Code" xong (Finish-to-Start).</td></tr>
+            <tr><td><span class="pn">Estimate Activity Durations</span><span class="pv">Ước lượng thời lượng</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Ước lượng thời gian mỗi activity (PERT). <b>VD:</b> code = (8 + 4×14 + 26)/6 = 15 ngày.</td></tr>
+            <tr><td><span class="pn">Develop Schedule</span><span class="pv">Xây dựng lịch trình</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Tính critical path → chốt schedule baseline. <b>VD:</b> dùng CPM tìm đường găng 45 ngày, chốt ngày kết thúc.</td></tr>
+            <tr><td><span class="pn">Control Schedule</span><span class="pv">Kiểm soát tiến độ</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Theo dõi &amp; điều chỉnh tiến độ (SPI). <b>VD:</b> SPI = 0.8 (chậm) → cân nhắc fast tracking hoặc crashing.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ka-block" id="ka-cost">
+        <h3>4 · Cost <span class="cnt">4 process</span> <a class="relate" href="phan-2-chu-de.html#finance">Kiến thức: Finance &amp; EVM →</a></h3>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Plan Cost Management</span><span class="pv">Lập kế hoạch quản lý chi phí</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Cách ước tính &amp; kiểm soát tiền. <b>VD:</b> quy định đơn vị USD, mức chính xác ±10%, ngưỡng kiểm soát.</td></tr>
+            <tr><td><span class="pn">Estimate Costs</span><span class="pv">Ước lượng chi phí</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Ước tính chi phí từng phần việc. <b>VD:</b> bottom-up cho tổng ước tính $180k.</td></tr>
+            <tr><td><span class="pn">Determine Budget</span><span class="pv">Xác định ngân sách</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Cộng dồn chi phí + contingency → cost baseline (S-curve). <b>VD:</b> baseline $190k gồm $10k dự phòng.</td></tr>
+            <tr><td><span class="pn">Control Costs</span><span class="pv">Kiểm soát chi phí</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Theo dõi chi tiêu bằng <b>EVM</b>. <b>VD:</b> CPI = 0.9 → EAC = BAC/CPI, cảnh báo sẽ vượt ngân sách.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ka-block" id="ka-quality">
+        <h3>5 · Quality <span class="cnt">3 process</span> <a class="relate" href="phan-2-chu-de.html#quality">Kiến thức: Quality — Chất lượng →</a></h3>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Plan Quality Management</span><span class="pv">Lập kế hoạch chất lượng</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Đặt tiêu chuẩn &amp; metrics chất lượng. <b>VD:</b> quy định "lỗi &lt; 1/1000 dòng code", chọn công cụ đo.</td></tr>
+            <tr><td><span class="pn">Manage Quality</span><span class="pv">Đảm bảo chất lượng (QA)</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Audit &amp; cải tiến quy trình (phòng ngừa). <b>VD:</b> chạy quality audit, phát hiện quy trình review yếu → cải tiến.</td></tr>
+            <tr><td><span class="pn">Control Quality</span><span class="pv">Kiểm soát chất lượng (QC)</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Kiểm tra deliverable, đo lỗi. <b>VD:</b> test app, dùng Pareto/control chart tìm lỗi hay gặp → ra verified deliverables.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ka-block" id="ka-resource">
+        <h3>6 · Resource <span class="cnt">6 process</span> <a class="relate" href="phan-2-chu-de.html#resource">Kiến thức: Resource — Nguồn lực →</a></h3>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Plan Resource Management</span><span class="pv">Lập kế hoạch nguồn lực</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Cách xác định &amp; quản người/vật lực. <b>VD:</b> lập RACI, viết team charter (quy tắc nhóm).</td></tr>
+            <tr><td><span class="pn">Estimate Activity Resources</span><span class="pv">Ước lượng nguồn lực</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Cần bao nhiêu người/thiết bị. <b>VD:</b> activity "code" cần 2 dev + 1 server.</td></tr>
+            <tr><td><span class="pn">Acquire Resources</span><span class="pv">Huy động nguồn lực</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Lấy team &amp; tài nguyên về dự án. <b>VD:</b> xin 2 dev từ phòng ban, thuê server cloud.</td></tr>
+            <tr><td><span class="pn">Develop Team</span><span class="pv">Phát triển đội</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Đào tạo, gắn kết (Tuckman). <b>VD:</b> training + team-building giúp đội vượt giai đoạn Storming.</td></tr>
+            <tr><td><span class="pn">Manage Team</span><span class="pv">Quản lý đội</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Theo dõi hiệu suất, xử lý xung đột. <b>VD:</b> hòa giải 2 dev bằng problem-solving (win-win).</td></tr>
+            <tr><td><span class="pn">Control Resources</span><span class="pv">Kiểm soát nguồn lực (vật lực)</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Đảm bảo tài nguyên vật lý đúng kế hoạch. <b>VD:</b> kiểm tra server đủ công suất, thay thiết bị hỏng.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ka-block" id="ka-comm">
+        <h3>7 · Communications <span class="cnt">3 process</span> <a class="relate" href="phan-2-chu-de.html#stakeholder">Kiến thức: Stakeholder &amp; Communication →</a></h3>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Plan Communications Management</span><span class="pv">Lập kế hoạch truyền thông</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Ai cần thông tin gì, khi nào, cách nào. <b>VD:</b> sếp nhận báo cáo tuần (push), team xem dashboard (pull).</td></tr>
+            <tr><td><span class="pn">Manage Communications</span><span class="pv">Quản lý truyền thông</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Tạo &amp; phân phối thông tin. <b>VD:</b> gửi status report, chủ trì họp cập nhật tiến độ.</td></tr>
+            <tr><td><span class="pn">Monitor Communications</span><span class="pv">Giám sát truyền thông</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Kiểm tra thông tin có đến &amp; hiệu quả không. <b>VD:</b> khảo sát thấy stakeholder chưa nắm thông tin → đổi kênh.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ka-block" id="ka-risk">
+        <h3>8 · Risk <span class="cnt">7 process</span> <a class="relate" href="phan-2-chu-de.html#risk">Kiến thức: Risk — Rủi ro →</a></h3>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Plan Risk Management</span><span class="pv">Lập kế hoạch quản lý rủi ro</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Cách làm rủi ro (appetite, ma trận P-I). <b>VD:</b> định nghĩa thang xác suất/tác động cho dự án.</td></tr>
+            <tr><td><span class="pn">Identify Risks</span><span class="pv">Nhận diện rủi ro</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Liệt kê rủi ro (SWOT/PESTLE). <b>VD:</b> "nhà cung cấp trễ", "thiếu dev" → ghi vào risk register.</td></tr>
+            <tr><td><span class="pn">Perform Qualitative Risk Analysis</span><span class="pv">Phân tích định tính</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Ưu tiên rủi ro bằng P×I (chủ quan). <b>VD:</b> xếp "nhà cung cấp trễ" mức Cao.</td></tr>
+            <tr><td><span class="pn">Perform Quantitative Risk Analysis</span><span class="pv">Phân tích định lượng</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Lượng hóa bằng số (EMV, Monte Carlo). <b>VD:</b> EMV = 30% × $50k = $15k.</td></tr>
+            <tr><td><span class="pn">Plan Risk Responses</span><span class="pv">Lập kế hoạch ứng phó</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Chọn chiến lược (avoid/mitigate…). <b>VD:</b> mua bảo hiểm (transfer) cho rủi ro cháy nổ.</td></tr>
+            <tr><td><span class="pn">Implement Risk Responses</span><span class="pv">Thực thi ứng phó</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Thực hiện kế hoạch đã lập. <b>VD:</b> ký hợp đồng bảo hiểm, thêm nhà cung cấp dự phòng.</td></tr>
+            <tr><td><span class="pn">Monitor Risks</span><span class="pv">Giám sát rủi ro</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Theo dõi rủi ro &amp; trigger. <b>VD:</b> rà soát định kỳ, phát hiện residual/secondary risk mới.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ka-block" id="ka-procurement">
+        <h3>9 · Procurement <span class="cnt">3 process</span> <a class="relate" href="phan-2-chu-de.html#procurement">Kiến thức: Procurement — Mua sắm →</a></h3>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Plan Procurement Management</span><span class="pv">Lập kế hoạch mua sắm</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Make-or-buy &amp; chọn loại hợp đồng. <b>VD:</b> quyết định thuê ngoài phần thanh toán, dùng hợp đồng FFP.</td></tr>
+            <tr><td><span class="pn">Conduct Procurements</span><span class="pv">Tiến hành mua sắm</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Mời thầu, chọn seller, ký hợp đồng. <b>VD:</b> gửi RFP, tổ chức bidder conference, chọn nhà cung cấp.</td></tr>
+            <tr><td><span class="pn">Control Procurements</span><span class="pv">Kiểm soát hợp đồng</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Quản hợp đồng, nghiệm thu, xử lý claim. <b>VD:</b> audit invoice, giải quyết claim, đóng hợp đồng.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ka-block" id="ka-stakeholder">
+        <h3>10 · Stakeholder <span class="cnt">4 process</span> <a class="relate" href="phan-2-chu-de.html#stakeholder">Kiến thức: Stakeholder &amp; Communication →</a></h3>
+        <table class="katbl">
+          <thead><tr><th>Process</th><th>Nhóm</th><th>Ý nghĩa &amp; ví dụ cụ thể</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pn">Identify Stakeholders</span><span class="pv">Nhận diện bên liên quan</span></td><td><span class="gchip init">Initiating</span></td><td class="ex">Liệt kê &amp; phân loại (Power-Interest). <b>VD:</b> lập stakeholder register, xếp sếp lớn vào ô "Manage Closely".</td></tr>
+            <tr><td><span class="pn">Plan Stakeholder Engagement</span><span class="pv">Lập kế hoạch gắn kết</span></td><td><span class="gchip plan">Planning</span></td><td class="ex">Chiến lược đưa mức gắn kết C→D (SEAM). <b>VD:</b> lập kế hoạch kéo một stakeholder "Resistant" thành "Supportive".</td></tr>
+            <tr><td><span class="pn">Manage Stakeholder Engagement</span><span class="pv">Quản lý gắn kết</span></td><td><span class="gchip exec">Executing</span></td><td class="ex">Tương tác, xử lý kỳ vọng &amp; issue. <b>VD:</b> họp giải thích lợi ích để giảm phản đối từ phòng ban.</td></tr>
+            <tr><td><span class="pn">Monitor Stakeholder Engagement</span><span class="pv">Giám sát gắn kết</span></td><td><span class="gchip mc">M&amp;C</span></td><td class="ex">Đánh giá &amp; điều chỉnh mức gắn kết. <b>VD:</b> thấy stakeholder vẫn "Resistant" → đổi chiến lược tiếp cận.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · mẫu lặp</span>Để nhớ nhanh: hầu hết lĩnh vực đi theo mẫu <b>Plan (lập kế hoạch) → làm ở Executing → kiểm ở M&amp;C</b>. Ba lĩnh vực <b>Quality · Communications · Procurement</b> gọn nhất, đúng mẫu <i>Plan → 1 việc Executing → 1 việc M&amp;C</i>. Riêng <b>Scope &amp; Schedule</b> dồn nhiều process ở Planning và kiểm soát ở M&amp;C (không có Executing).</div>
     </section>
 
     <!-- COUNTS -->
