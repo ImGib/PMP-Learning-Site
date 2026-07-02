@@ -126,12 +126,12 @@
       </table></div>
 
       <h3>Ước lượng thời gian</h3>
-      <ul>
-        <li><b>Analogous</b> (loại suy) — dựa dự án tương tự trước đó. <b>Nhanh &amp; rẻ nhất, kém chính xác nhất</b> (top-down).</li>
-        <li><b>Parametric</b> — dùng quan hệ thống kê (vd 10 giờ/mét). Chính xác hơn analogous.</li>
-        <li><b>Bottom-up</b> — cộng dồn từ chi tiết. <b>Chính xác nhất</b> (nhưng tốn công).</li>
-        <li><b>Three-point (PERT)</b> — dùng 3 giá trị: <b>O</b>ptimistic, <b>M</b>ost likely, <b>P</b>essimistic.</li>
-      </ul>
+      <div class="legend">
+        <div class="lg"><b>Analogous (loại suy)</b><span>Dựa dự án tương tự trước đó. <b>Nhanh &amp; rẻ nhất, kém chính xác nhất</b> (top-down).</span></div>
+        <div class="lg"><b>Parametric</b><span>Dùng quan hệ thống kê (vd 10 giờ/mét). Chính xác hơn analogous.</span></div>
+        <div class="lg"><b>Bottom-up</b><span>Cộng dồn từ chi tiết. <b>Chính xác nhất</b> (nhưng tốn công).</span></div>
+        <div class="lg"><b>Three-point (PERT)</b><span>Dùng 3 giá trị: <b>O</b>ptimistic · <b>M</b>ost likely · <b>P</b>essimistic.</span></div>
+      </div>
       <div class="formula">
         <div class="row"><span class="cm"># PERT — phân phối Beta (hay dùng, nhấn mạnh M)</span></div>
         <div class="row"><b>E</b> = ( <span class="v">O</span> <span class="op">+</span> 4<span class="v">M</span> <span class="op">+</span> <span class="v">P</span> ) <span class="op">/</span> 6</div>
@@ -309,15 +309,15 @@
       <div class="tip"><span class="lbl">Mẹo ghi nhớ · 4 loại COQ</span><b>"PAIE"</b>: <b>P</b>revention + <b>A</b>ppraisal = conformance (chủ động chi). <b>I</b>nternal + <b>E</b>xternal failure = nonconformance (bị động trả giá). Phân biệt Internal/External bằng <b>AI phát hiện lỗi</b>: dự án = Internal, khách = External (đắt &amp; nguy hiểm nhất).</div>
 
       <h3>7 công cụ chất lượng cơ bản (7 Basic Quality Tools)</h3>
-      <ol>
-        <li><b>Cause-and-Effect / Fishbone / Ishikawa</b> — sơ đồ xương cá, tìm <b>root cause</b>.</li>
-        <li><b>Flowchart</b> — sơ đồ luồng, thấy chỗ dễ phát sinh lỗi.</li>
-        <li><b>Checksheet</b> — bảng đếm dữ liệu tại chỗ, real-time.</li>
-        <li><b>Pareto Chart</b> — quy tắc <b>80/20</b>: 80% vấn đề từ 20% nguyên nhân ("critical few").</li>
-        <li><b>Histogram</b> — biểu đồ cột tần suất.</li>
-        <li><b>Control Chart</b> — theo dõi quy trình có "trong tầm kiểm soát" &amp; ổn định không.</li>
-        <li><b>Scatter Diagram</b> — quan hệ giữa 2 biến.</li>
-      </ol>
+      <div class="principles">
+        <div class="principle"><span class="pnum">1</span><span class="pen">Cause-and-Effect / Fishbone / Ishikawa</span><span class="pvn">Sơ đồ xương cá — truy tìm <b>root cause</b> (nguyên nhân gốc).</span></div>
+        <div class="principle"><span class="pnum">2</span><span class="pen">Flowchart</span><span class="pvn">Sơ đồ luồng — thấy các bước &amp; chỗ dễ phát sinh lỗi.</span></div>
+        <div class="principle"><span class="pnum">3</span><span class="pen">Checksheet</span><span class="pvn">Bảng đếm dữ liệu tại chỗ, theo thời gian thực.</span></div>
+        <div class="principle"><span class="pnum">4</span><span class="pen">Pareto Chart</span><span class="pvn">Quy tắc <b>80/20</b>: 80% vấn đề từ 20% nguyên nhân ("critical few").</span></div>
+        <div class="principle"><span class="pnum">5</span><span class="pen">Histogram</span><span class="pvn">Biểu đồ cột tần suất phân bố dữ liệu.</span></div>
+        <div class="principle"><span class="pnum">6</span><span class="pen">Control Chart</span><span class="pvn">Theo dõi quy trình có "trong tầm kiểm soát" &amp; ổn định không.</span></div>
+        <div class="principle"><span class="pnum">7</span><span class="pen">Scatter Diagram</span><span class="pvn">Biểu đồ phân tán — quan hệ giữa 2 biến.</span></div>
+      </div>
       <div class="note"><span class="lbl">Rule of Seven</span>Trên <b>Control Chart</b>: nếu có <b>7 điểm liên tiếp cùng một phía của đường trung bình</b> → quy trình "out of control" <b>dù vẫn nằm trong control limits</b>, cần điều tra. Đây là <b>Assignable/Special Cause</b> (nguyên nhân đặc biệt). Lưu ý: <b>Control limits</b> (do quy trình) khác <b>Specification limits</b> (do khách/hợp đồng).</div>
       <div class="tip"><span class="lbl">Mẹo ghi nhớ · công cụ improvement</span><b>PDCA</b> (Plan-Do-Check-Act) &amp; <b>Six Sigma</b> là 2 phương pháp cải tiến phổ biến nhất. <b>Kaizen</b> = cải tiến liên tục (Nhật — cải thiện <i>con người</i> trước, sản phẩm sau). <b>Pareto = 80/20</b>: nhớ "ít nguyên nhân, nhiều hậu quả".</div>
     </section>
