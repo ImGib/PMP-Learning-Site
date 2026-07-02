@@ -41,6 +41,8 @@
         <li><b>CapEx</b> (Capital Expenditure) — mua/nâng cấp tài sản (nhà xưởng, máy móc). <b>OpEx</b> (Operational Expenditure) — chi phí vận hành hằng ngày (lương, điện, thuê).</li>
         <li><b>Direct</b> (trực tiếp cho dự án) vs <b>Indirect</b> (chi phí chung, chia nhiều dự án). Độc lập với: <b>Fixed</b> (cố định) vs <b>Variable</b> (biến đổi theo khối lượng).</li>
       </ul>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>CapEx (Capital Expenditure)</b> — funds used to acquire, upgrade or maintain long-term physical assets (buildings, equipment). <b>OpEx (Operational Expenditure)</b> — ongoing day-to-day running costs (wages, rent, utilities). <i>(chi đầu tư tài sản vs chi vận hành)</i></div>
+      <div class="callout callout--warn"><span class="callout__label">Sunk Cost &amp; Opportunity Cost</span><b>Sunk Cost</b> = chi phí đã bỏ ra, không thu hồi được → <b>KHÔNG</b> đưa vào quyết định có tiếp tục dự án hay không. <b>Opportunity Cost</b> = giá trị của phương án tốt nhất bị bỏ qua khi chọn phương án hiện tại.</div>
       <div class="callout callout--note"><span class="callout__label">3 mức độ chính xác ước tính</span><b>ROM</b> (Rough Order of Magnitude): <code>−25% đến +75%</code> (giai đoạn đầu). <b>Budget Estimate</b>: <code>−10% đến +25%</code>. <b>Definitive</b>: <code>−5% đến +10%</code> (càng về sau càng chính xác).</div>
 
       <h3>Contingency vs Management Reserve — bẫy kinh điển</h3>
@@ -55,9 +57,21 @@
         </tbody>
       </table></div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · 2 loại reserve</span><b>Cost Baseline = ước tính + Contingency.</b> <b>Project Budget = Cost Baseline + Management Reserve.</b> Nhớ: "Contingency cho cái BIẾT, PM tiêu; Management cho cái KHÔNG biết, sếp giữ".</div>
-      <figure class="diagram"><div class="diagram__title">Cấu trúc ngân sách dự án</div>
-        <div class="diagram-stack"><div class="diagram-stack__seg" style="background:#a25a07"><b>Management Reserve</b><span class="diagram-stack__tag">ngoài baseline</span></div><div class="diagram-stack__seg" style="background:#5a4be0"><b>Contingency Reserve</b><span class="diagram-stack__tag">trong baseline</span></div><div class="diagram-stack__seg" style="background:#4434c4"><b>Ước tính chi phí</b><span class="diagram-stack__tag">work packages</span></div></div>
-        <figcaption>Cost Baseline = ước tính + contingency · Project Budget = + management reserve</figcaption></figure>
+      <h3>Cost Baseline · Project Budget · Funding Requirements</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Cost Baseline</b> — the approved, time-phased budget (an S-curve) used to measure &amp; monitor cost performance; = sum of cost estimates + contingency reserves, and EXCLUDES management reserve. Changed only via formal change control. <i>(mốc chi phí để đo hiệu suất; = ước tính + contingency)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Project Budget (Cost Budget)</b> — the total authorized funds for the project = Cost Baseline + Management Reserve. <i>(tổng ngân sách được duyệt)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Project Funding Requirements</b> — total and periodic funding needs derived from the cost baseline; funds are usually committed incrementally in a step function, and the total funding line sits ABOVE the cost baseline by the management reserve. <i>(nhu cầu cấp vốn theo mốc, thường theo bậc)</i></div>
+      <figure class="diagram"><div class="diagram__title">Tổng hợp chi phí → Cost Baseline → Project Budget</div>
+        <div class="diagram-stack">
+          <div class="diagram-stack__seg" style="background:#a25a07"><b>+ Management Reserve</b><span class="diagram-stack__tag">ngoài baseline · sếp duyệt</span></div>
+          <div class="diagram-stack__seg" style="background:#5a4be0"><b>+ Contingency Reserve</b><span class="diagram-stack__tag">known risks · trong baseline</span></div>
+          <div class="diagram-stack__seg" style="background:#6d5df0"><b>Control Accounts</b><span class="diagram-stack__tag">gộp work packages</span></div>
+          <div class="diagram-stack__seg" style="background:#8f83f4"><b>Work Package estimates</b><span class="diagram-stack__tag">gộp activity costs</span></div>
+          <div class="diagram-stack__seg" style="background:#b0a8f7"><b>Activity cost estimates</b><span class="diagram-stack__tag">đáy: ước tính chi tiết</span></div>
+        </div>
+        <figcaption>Đọc từ dưới lên: Activity → Work Package → Control Account → <b>+Contingency = Cost Baseline</b> → <b>+Management Reserve = Project Budget</b></figcaption></figure>
+      <div class="callout callout--warn"><span class="callout__label">Funding Requirements ≠ Funding Limit Reconciliation</span><b>Project Funding Requirements</b> = <i>cần bao nhiêu tiền, khi nào</i> (suy từ cost baseline, thường cấp theo bậc). <b>Funding Limit Reconciliation</b> = <i>khớp</i> nhu cầu chi tiêu với <b>hạn mức cấp vốn</b> đã có (nếu lệch → dời lịch công việc). Đừng nhầm 2 khái niệm.</div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · tầng ngân sách</span>Cộng dồn từ đáy: <b>Activity → WP → Control Account → +Contingency = Cost Baseline → +Management Reserve = Project Budget</b>. BAC (Budget at Completion) = tổng <b>Cost Baseline</b>. Management reserve KHÔNG nằm trong BAC/cost baseline.</div>
 
       <h3 id="evm-block">⭐ Earned Value Management (EVM)</h3>
       <figure class="diagram"><div class="diagram__title">Đường cong EVM — PV · EV · AC</div>
