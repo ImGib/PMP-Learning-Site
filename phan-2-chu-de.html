@@ -65,12 +65,26 @@
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Creep vs Gold Plating</span><b>Scope Creep = khách/nhiều bên đẩy vào</b> (thay đổi lén, không kiểm soát). <b>Gold Plating = TEAM tự thêm</b> (tưởng tốt nhưng thừa). Cả hai đều xấu — luôn bám <b>change control</b>.</div>
 
       <h3>WBS — Work Breakdown Structure</h3>
-      <figure class="diagram"><div class="diagram__title">WBS — cây phân rã công việc</div>
-        <div class="diagram-hier"><span class="diagram-hier__label">Project</span>
-          <div class="diagram-hier__program"><span class="diagram-hier__label">Deliverable — Module A</span><div class="diagram-hier__projects"><span class="diagram-hier__project">Work Package A1</span><span class="diagram-hier__project">Work Package A2</span></div></div>
-          <div class="diagram-hier__program"><span class="diagram-hier__label">Deliverable — Module B</span><div class="diagram-hier__projects"><span class="diagram-hier__project">Work Package B1</span><span class="diagram-hier__project">Work Package B2</span></div></div>
+      <figure class="diagram"><div class="diagram__title">WBS — cây phân rã công việc (3 cấp)</div>
+        <div class="diagram-hier"><span class="diagram-hier__label">Cấp 1 · Project — "App bán hàng"</span>
+          <div class="diagram-hier__program"><span class="diagram-hier__label">Cấp 2 · Deliverable — Module A (Giỏ hàng)</span><div class="diagram-hier__projects"><span class="diagram-hier__project">Cấp 3 · WP A1 · Thiết kế UI</span><span class="diagram-hier__project">Cấp 3 · WP A2 · API giỏ hàng</span></div></div>
+          <div class="diagram-hier__program"><span class="diagram-hier__label">Cấp 2 · Deliverable — Module B (Thanh toán)</span><div class="diagram-hier__projects"><span class="diagram-hier__project">Cấp 3 · WP B1 · Cổng thanh toán</span><span class="diagram-hier__project">Cấp 3 · WP B2 · Hóa đơn</span></div></div>
         </div>
-        <figcaption>Project phân rã thành Deliverable → Work Package (phần tử thấp nhất; tuân Rule 100%)</figcaption></figure>
+        <figcaption>WBS dừng ở Cấp 3 = Work Package (phần tử thấp nhất; tuân Rule 100% &amp; quy tắc 8/80 giờ)</figcaption></figure>
+
+      <figure class="diagram"><div class="diagram__title">Work Package → Activities → Milestone</div>
+        <div class="diagram-steps">
+          <div class="diagram-steps__step"><span class="diagram-steps__num">WBS · Scope</span>WP A2 · API giỏ hàng</div>
+          <div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">Activity</span>Thiết kế API</div>
+          <div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">Activity</span>Code API</div>
+          <div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">Activity</span>Test API</div>
+          <div class="diagram-steps__arrow">›</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">🏁 Milestone</span>Module A hoàn tất · Dur = 0</div>
+        </div>
+        <div class="diagram-steps__note">Work Package được chia tiếp thành Activities khi lập lịch (Define Activities); Milestone là mốc, không tốn thời gian</div>
+      </figure>
+      <div class="callout callout--note"><span class="callout__label">WBS vs Activity vs Milestone</span><b>WBS</b> (thuộc <b>Scope</b>) phân rã tới <b>Work Package</b> — trả lời "LÀM GÌ". <b>Activity</b> (thuộc <b>Schedule</b>, sinh ra ở <i>Define Activities</i>) là việc nhỏ hơn để thực thi work package — trả lời "làm THẾ NÀO / KHI NÀO". <b>Milestone</b> = mốc quan trọng, <b>duration = 0</b> (vd "Module A xong", "ký hợp đồng").</div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Work Breakdown Structure (WBS)</b> — a hierarchical decomposition of the total scope of work to be carried out by the project team to accomplish the project objectives and create the required deliverables. <i>(cây phân rã công việc)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Work Package</b> — the work defined at the lowest level of the WBS for which cost and duration can be estimated and managed. <i>(phần tử thấp nhất của WBS)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Scope Baseline</b> — the approved version of the scope statement, WBS, and its associated WBS dictionary, changed only through formal change control. <i>(Scope Statement + WBS + WBS Dictionary)</i></div>
@@ -162,19 +176,63 @@
       <h3>Critical Path Method (CPM)</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Critical Path</b> — the sequence of activities that represents the longest path through a project, which determines the shortest possible project duration. <i>(đường găng — Float = 0)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Total Float</b> — the amount of time an activity can be delayed from its early start date without delaying the project finish date. <i>(TF = LS − ES = LF − EF)</i></div>
-      <figure class="diagram"><div class="diagram__title">Sơ đồ mạng &amp; Đường găng</div>
-<svg viewBox="0 0 430 205" role="img" aria-label="So do mang duong gang">
-<line x1="100" y1="103" x2="180" y2="60" stroke="#c5c5cf" stroke-width="2"/>
-<line x1="100" y1="103" x2="180" y2="150" stroke="#d2604a" stroke-width="3"/>
-<line x1="250" y1="60" x2="330" y2="103" stroke="#c5c5cf" stroke-width="2"/>
-<line x1="250" y1="150" x2="330" y2="103" stroke="#d2604a" stroke-width="3"/>
-<g font-size="13" font-weight="600" text-anchor="middle">
-<rect x="45" y="85" width="55" height="36" rx="8" fill="#efedfd" stroke="#d2604a" stroke-width="2"/><text x="72" y="108" fill="#4434c4">A · 3</text>
-<rect x="180" y="42" width="70" height="36" rx="8" fill="#fff" stroke="#c5c5cf" stroke-width="2"/><text x="215" y="65" fill="#3c3e46">B · 4</text>
-<rect x="180" y="132" width="70" height="36" rx="8" fill="#fdeef4" stroke="#d2604a" stroke-width="2"/><text x="215" y="155" fill="#b0125e">C · 6</text>
-<rect x="330" y="85" width="60" height="36" rx="8" fill="#efedfd" stroke="#d2604a" stroke-width="2"/><text x="360" y="108" fill="#4434c4">D · 2</text>
-</g></svg>
-<figcaption>Đường găng (đỏ) A→C→D = 3+6+2 = 11 ngày · Đường A→B→D = 9 ngày (B có float 2)</figcaption></figure>
+      <figure class="diagram"><div class="diagram__title">Sơ đồ mạng &amp; Đường găng — ES · EF · LS · LF · Float</div>
+<svg viewBox="0 0 540 240" role="img" aria-label="So do duong gang chi tiet" font-family="ui-monospace, monospace">
+<text x="10" y="14" font-size="9" fill="#76798a">Mỗi ô: [ES · Dur · EF] / Tên / [LS · Float · LF]</text>
+<!-- edges -->
+<line x1="116" y1="118" x2="222" y2="51" stroke="#c5c5cf" stroke-width="2"/>
+<line x1="116" y1="132" x2="222" y2="199" stroke="#d2604a" stroke-width="3"/>
+<line x1="318" y1="51" x2="424" y2="118" stroke="#c5c5cf" stroke-width="2"/>
+<line x1="318" y1="199" x2="424" y2="132" stroke="#d2604a" stroke-width="3"/>
+<!-- node A (critical) -->
+<g font-size="8.5" fill="#76798a" text-anchor="middle">
+<rect x="20" y="98" width="96" height="54" rx="6" fill="#fff" stroke="#d2604a" stroke-width="2"/>
+<line x1="20" y1="116" x2="116" y2="116" stroke="#e8e8ee"/><line x1="20" y1="134" x2="116" y2="134" stroke="#e8e8ee"/>
+<line x1="52" y1="98" x2="52" y2="116" stroke="#e8e8ee"/><line x1="84" y1="98" x2="84" y2="116" stroke="#e8e8ee"/>
+<line x1="52" y1="134" x2="52" y2="152" stroke="#e8e8ee"/><line x1="84" y1="134" x2="84" y2="152" stroke="#e8e8ee"/>
+<text x="36" y="111">0</text><text x="68" y="111">3</text><text x="100" y="111">3</text>
+<text x="68" y="131" font-size="13" font-weight="700" fill="#b0125e">A</text>
+<text x="36" y="147">0</text><text x="68" y="147">0</text><text x="100" y="147">3</text></g>
+<!-- node B (float 2) -->
+<g font-size="8.5" fill="#76798a" text-anchor="middle">
+<rect x="222" y="24" width="96" height="54" rx="6" fill="#fff" stroke="#c5c5cf" stroke-width="2"/>
+<line x1="222" y1="42" x2="318" y2="42" stroke="#e8e8ee"/><line x1="222" y1="60" x2="318" y2="60" stroke="#e8e8ee"/>
+<line x1="254" y1="24" x2="254" y2="42" stroke="#e8e8ee"/><line x1="286" y1="24" x2="286" y2="42" stroke="#e8e8ee"/>
+<line x1="254" y1="60" x2="254" y2="78" stroke="#e8e8ee"/><line x1="286" y1="60" x2="286" y2="78" stroke="#e8e8ee"/>
+<text x="238" y="37">3</text><text x="270" y="37">4</text><text x="302" y="37">7</text>
+<text x="270" y="57" font-size="13" font-weight="700" fill="#3c3e46">B</text>
+<text x="238" y="73">5</text><text x="270" y="73" font-weight="700" fill="#b0125e">2</text><text x="302" y="73">9</text></g>
+<!-- node C (critical) -->
+<g font-size="8.5" fill="#76798a" text-anchor="middle">
+<rect x="222" y="172" width="96" height="54" rx="6" fill="#fff" stroke="#d2604a" stroke-width="2"/>
+<line x1="222" y1="190" x2="318" y2="190" stroke="#e8e8ee"/><line x1="222" y1="208" x2="318" y2="208" stroke="#e8e8ee"/>
+<line x1="254" y1="172" x2="254" y2="190" stroke="#e8e8ee"/><line x1="286" y1="172" x2="286" y2="190" stroke="#e8e8ee"/>
+<line x1="254" y1="208" x2="254" y2="226" stroke="#e8e8ee"/><line x1="286" y1="208" x2="286" y2="226" stroke="#e8e8ee"/>
+<text x="238" y="185">3</text><text x="270" y="185">6</text><text x="302" y="185">9</text>
+<text x="270" y="205" font-size="13" font-weight="700" fill="#b0125e">C</text>
+<text x="238" y="221">3</text><text x="270" y="221">0</text><text x="302" y="221">9</text></g>
+<!-- node D (critical) -->
+<g font-size="8.5" fill="#76798a" text-anchor="middle">
+<rect x="424" y="98" width="96" height="54" rx="6" fill="#fff" stroke="#d2604a" stroke-width="2"/>
+<line x1="424" y1="116" x2="520" y2="116" stroke="#e8e8ee"/><line x1="424" y1="134" x2="520" y2="134" stroke="#e8e8ee"/>
+<line x1="456" y1="98" x2="456" y2="116" stroke="#e8e8ee"/><line x1="488" y1="98" x2="488" y2="116" stroke="#e8e8ee"/>
+<line x1="456" y1="134" x2="456" y2="152" stroke="#e8e8ee"/><line x1="488" y1="134" x2="488" y2="152" stroke="#e8e8ee"/>
+<text x="440" y="111">9</text><text x="472" y="111">2</text><text x="504" y="111">11</text>
+<text x="472" y="131" font-size="13" font-weight="700" fill="#b0125e">D</text>
+<text x="440" y="147">9</text><text x="472" y="147">0</text><text x="504" y="147">11</text></g>
+</svg>
+<div class="diagram__key"><span><i style="background:#d2604a"></i>Đường găng (Float = 0)</span><span><i style="background:#c5c5cf"></i>Có Float (dư địa trễ)</span></div>
+<figcaption>Forward pass → ES/EF (trái sang phải) · Backward pass → LS/LF (phải sang trái) · Float = LS−ES = LF−EF</figcaption></figure>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Hoạt động</th><th>Trước đó</th><th>Dur</th><th>ES</th><th>EF</th><th>LS</th><th>LF</th><th>Total Float</th><th>Đường găng?</th></tr></thead>
+        <tbody>
+          <tr><td><b>A</b></td><td>—</td><td>3</td><td>0</td><td>3</td><td>0</td><td>3</td><td>0</td><td>✅</td></tr>
+          <tr><td><b>B</b></td><td>A</td><td>4</td><td>3</td><td>7</td><td>5</td><td>9</td><td><b>2</b></td><td>—</td></tr>
+          <tr><td><b>C</b></td><td>A</td><td>6</td><td>3</td><td>9</td><td>3</td><td>9</td><td>0</td><td>✅</td></tr>
+          <tr><td><b>D</b></td><td>B, C</td><td>2</td><td>9</td><td>11</td><td>9</td><td>11</td><td>0</td><td>✅</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout callout--note"><span class="callout__label">Cách đọc</span><b>Forward pass</b> (tiến): ES việc đầu = 0, <b>EF = ES + Duration</b>, ES việc sau = EF lớn nhất của việc trước. <b>Backward pass</b> (lùi): LF việc cuối = EF dự án, <b>LS = LF − Duration</b>. <b>Total Float = LS − ES = LF − EF</b>; Float = 0 → nằm trên <b>đường găng</b> A→C→D = 11 ngày. B có <b>Float = 2</b> (được trễ 2 ngày không ảnh hưởng dự án).</div>
       <p><b>Critical Path</b> (đường găng) = chuỗi hoạt động <b>DÀI NHẤT</b> qua sơ đồ → chính là <b>thời gian ngắn nhất</b> có thể hoàn thành dự án. Trên đường găng, <b>Float (Slack) = 0</b> → không được trễ, trễ là trễ cả dự án.</p>
       <ul>
         <li><b>Total Float</b> — số thời gian một việc có thể trễ mà <i>không</i> trễ cả dự án. Công thức: <code class="inline-code">TF = LS − ES = LF − EF</code>.</li>
@@ -256,24 +314,33 @@
 
       <h3 id="evm-block">⭐ Earned Value Management (EVM)</h3>
       <figure class="diagram"><div class="diagram__title">Đường cong EVM — PV · EV · AC</div>
-<svg viewBox="0 0 470 250" role="img" aria-label="Bieu do EVM">
+<svg viewBox="0 0 500 250" role="img" aria-label="Bieu do EVM voi SV CV" font-family="ui-monospace, monospace">
 <line x1="50" y1="20" x2="50" y2="212" stroke="#d8d8e0" stroke-width="1.5"/>
-<line x1="50" y1="212" x2="452" y2="212" stroke="#d8d8e0" stroke-width="1.5"/>
-<text x="18" y="118" font-size="11" fill="#76798a" transform="rotate(-90 18 118)">Giá trị ($)</text>
+<line x1="50" y1="212" x2="466" y2="212" stroke="#d8d8e0" stroke-width="1.5"/>
+<text x="18" y="128" font-size="10" fill="#76798a" transform="rotate(-90 18 128)">Giá trị lũy kế ($)</text>
 <text x="250" y="238" font-size="11" fill="#76798a" text-anchor="middle">Thời gian →</text>
-<line x1="330" y1="34" x2="330" y2="212" stroke="#bbb" stroke-width="1" stroke-dasharray="4 4"/>
-<text x="330" y="28" font-size="10" fill="#76798a" text-anchor="middle">Hôm nay</text>
-<line x1="50" y1="48" x2="452" y2="48" stroke="#efe9fe" stroke-width="1.5"/>
-<text x="448" y="44" font-size="10" fill="#4434c4" text-anchor="end">BAC</text>
-<path d="M50,210 C170,200 260,110 452,50" fill="none" stroke="#5a4be0" stroke-width="2.6"/>
-<path d="M50,210 C150,206 250,158 330,120" fill="none" stroke="#197a4b" stroke-width="2.6"/>
-<path d="M50,210 C150,200 250,120 330,86" fill="none" stroke="#a25a07" stroke-width="2.6"/>
-<text x="430" y="66" font-size="11" fill="#4434c4" font-weight="600">PV</text>
-<text x="335" y="120" font-size="11" fill="#197a4b" font-weight="600">EV</text>
-<text x="335" y="86" font-size="11" fill="#a25a07" font-weight="600">AC</text>
+<line x1="300" y1="34" x2="300" y2="212" stroke="#bbb" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="300" y="28" font-size="10" fill="#76798a" text-anchor="middle">Hôm nay</text>
+<line x1="50" y1="48" x2="466" y2="48" stroke="#efe9fe" stroke-width="1.5"/>
+<text x="462" y="44" font-size="10" fill="#4434c4" text-anchor="end">BAC</text>
+<polyline points="50,205 160,175 300,80 466,48" fill="none" stroke="#5a4be0" stroke-width="2.6"/>
+<polyline points="50,205 175,165 300,100" fill="none" stroke="#a25a07" stroke-width="2.6"/>
+<polyline points="50,205 178,182 300,150" fill="none" stroke="#197a4b" stroke-width="2.6"/>
+<circle cx="300" cy="80" r="3.5" fill="#5a4be0"/><circle cx="300" cy="100" r="3.5" fill="#a25a07"/><circle cx="300" cy="150" r="3.5" fill="#197a4b"/>
+<text x="250" y="70" font-size="11" fill="#4434c4" font-weight="600">PV</text>
+<text x="196" y="176" font-size="11" fill="#197a4b" font-weight="600">EV</text>
+<text x="200" y="158" font-size="11" fill="#a25a07" font-weight="600">AC</text>
+<!-- CV gap: AC (100) ↔ EV (150) -->
+<line x1="316" y1="100" x2="316" y2="150" stroke="#a25a07" stroke-width="1.2"/>
+<line x1="311" y1="100" x2="321" y2="100" stroke="#a25a07"/><line x1="311" y1="150" x2="321" y2="150" stroke="#a25a07"/>
+<text x="324" y="128" font-size="10" fill="#a25a07" font-weight="700">CV = EV−AC (&lt;0)</text>
+<!-- SV gap: PV (80) ↔ EV (150) -->
+<line x1="356" y1="80" x2="356" y2="150" stroke="#4434c4" stroke-width="1.2"/>
+<line x1="351" y1="80" x2="361" y2="80" stroke="#4434c4"/><line x1="351" y1="150" x2="361" y2="150" stroke="#4434c4"/>
+<text x="364" y="92" font-size="10" fill="#4434c4" font-weight="700">SV = EV−PV (&lt;0)</text>
 </svg>
 <div class="diagram__key"><span><i style="background:#5a4be0"></i>PV — kế hoạch</span><span><i style="background:#197a4b"></i>EV — đạt được</span><span><i style="background:#a25a07"></i>AC — thực chi</span></div>
-<figcaption>AC trên EV → vượt chi; EV dưới PV → chậm tiến độ</figcaption></figure>
+<figcaption>Tại "Hôm nay": <b>CV = EV−AC</b> (lệch dọc AC↔EV) &amp; <b>SV = EV−PV</b> (lệch dọc PV↔EV). Ở đây cả hai âm → vừa <b>vượt chi</b> vừa <b>chậm tiến độ</b>.</figcaption></figure>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Planned Value (PV)</b> — the authorized budget assigned to scheduled work. <i>(giá trị công việc đã lên kế hoạch; tổng PV = BAC)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Earned Value (EV)</b> — the measure of work performed expressed in terms of the budget authorized for that work. <i>(giá trị công việc thực sự hoàn thành = % × BAC)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Actual Cost (AC)</b> — the realized cost incurred for the work performed during a given period. <i>(tiền thực đã chi cho công việc đã làm)</i></div>
