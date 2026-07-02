@@ -29,8 +29,10 @@
   <aside class="side" id="side">
     <a class="backlink" href="index.html">← Trang chủ</a>
     <h4>Phần III · Agile</h4>
-    <a href="#value-delivery"><span class="c">01</span>Value-driven Delivery</a>
-    <a href="#adaptive"><span class="c">02</span>Adaptive Planning</a>
+    <a href="#manifesto"><span class="c">01</span>Agile Manifesto (4+12)</a>
+    <a href="#scrum"><span class="c">02</span>Scrum Framework</a>
+    <a href="#value-delivery"><span class="c">03</span>Value-driven Delivery</a>
+    <a href="#adaptive"><span class="c">04</span>Adaptive Planning</a>
     <h4>Đi tiếp</h4>
     <a href="phan-4-on-thi.html"><span class="c">IV</span>Ôn thi →</a>
   </aside>
@@ -40,10 +42,112 @@
       <h1>Agile &amp; lập kế hoạch thích ứng</h1>
       <p>Đề PMP hiện đại ~50% là agile/hybrid. Phần này gồm giao giá trị sớm (value-driven delivery), Scrum/Kanban, và lập kế hoạch thích ứng (story points, velocity, timeboxing). Mỗi mục kèm <b>định nghĩa tiếng Anh chuẩn thi</b>.</p>
       <div class="jump">
-        <a href="#value-delivery"><span class="n">01</span>Value Delivery</a>
-        <a href="#adaptive"><span class="n">02</span>Adaptive Planning</a>
+        <a href="#manifesto"><span class="n">01</span>Manifesto</a>
+        <a href="#scrum"><span class="n">02</span>Scrum</a>
+        <a href="#value-delivery"><span class="n">03</span>Value Delivery</a>
+        <a href="#adaptive"><span class="n">04</span>Adaptive Planning</a>
       </div>
     </div>
+
+    <!-- MANIFESTO -->
+    <section id="manifesto">
+      <div class="sec-head"><h2>Agile Manifesto</h2><span class="tag">4 giá trị · 12 nguyên tắc</span></div>
+      <p class="sec-desc">Nền tảng tư duy Agile, công bố năm <b>2001</b> bởi 17 chuyên gia phần mềm. Mọi phương pháp Agile (Scrum, Kanban, XP…) đều bắt nguồn từ đây. Đề PMP hỏi rất nhiều về <b>tinh thần</b> của Manifesto.</p>
+      <div class="en-def"><span class="lbl">EN</span><b>Agile</b> — a mindset (not a single method) defined by the Agile Manifesto's values and principles, favoring iterative delivery, collaboration, and responding to change. <i>(Agile là một "tư duy", không phải một quy trình cụ thể)</i></div>
+
+      <h3>4 giá trị cốt lõi (4 Core Values)</h3>
+      <p>Công thức: <b>"Coi trọng A HƠN B"</b> — vế phải <i>vẫn có giá trị</i>, nhưng vế trái được ưu tiên hơn.</p>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Đề cao ▲ (coi trọng hơn)</th><th>hơn là</th><th>Ý nghĩa</th></tr></thead>
+        <tbody>
+          <tr><td><b>Individuals and interactions</b><br>Con người &amp; sự tương tác</td><td>processes and tools<br><i>quy trình &amp; công cụ</i></td><td>Con người giao tiếp tốt quan trọng hơn quy trình cứng nhắc.</td></tr>
+          <tr><td><b>Working software</b><br>Sản phẩm chạy được</td><td>comprehensive documentation<br><i>tài liệu đồ sộ</i></td><td>Giao được thứ dùng được quan trọng hơn viết tài liệu dày. <i>(nay hiểu rộng: "working solution/product")</i></td></tr>
+          <tr><td><b>Customer collaboration</b><br>Hợp tác với khách hàng</td><td>contract negotiation<br><i>đàm phán hợp đồng</i></td><td>Cùng khách hàng làm việc liên tục hơn là bám câu chữ hợp đồng.</td></tr>
+          <tr><td><b>Responding to change</b><br>Phản hồi với thay đổi</td><td>following a plan<br><i>bám theo kế hoạch</i></td><td>Linh hoạt thích ứng quan trọng hơn làm đúng kế hoạch cũ.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · 4 giá trị</span>Nhớ 4 vế TRÁI: <b>"Người – Sản phẩm – Khách – Thay đổi"</b> (Individuals · Working software · Customer · Change). Bẫy thi: đáp án nào "vế phải" (tài liệu đồ sộ, bám hợp đồng, bám kế hoạch cứng) thường <b>kém "Agile"</b> hơn. Nhưng nhớ: vế phải KHÔNG vô giá trị — chỉ là ưu tiên thấp hơn.</div>
+
+      <h3>12 nguyên tắc (12 Principles)</h3>
+      <p>Chia thành 4 nhóm chủ đề cho dễ nhớ:</p>
+      <h4 class="sub">Nhóm A · Khách hàng &amp; Giao hàng</h4>
+      <ol>
+        <li><b>Satisfy the customer through early &amp; continuous delivery of valuable software</b> — Ưu tiên cao nhất: làm hài lòng khách bằng giao sản phẩm giá trị <b>sớm &amp; liên tục</b>.</li>
+        <li><b>Welcome changing requirements, even late</b> — Chào đón thay đổi yêu cầu, kể cả muộn — biến thay đổi thành <b>lợi thế cạnh tranh</b> cho khách.</li>
+        <li><b>Deliver working software frequently</b> (vài tuần → vài tháng, ưu tiên ngắn) — Giao sản phẩm chạy được <b>thường xuyên</b>.</li>
+        <li><b>Working software is the primary measure of progress</b> — Sản phẩm chạy được là <b>thước đo tiến độ</b> chính (không phải % tài liệu).</li>
+      </ol>
+      <h4 class="sub">Nhóm B · Con người &amp; Hợp tác</h4>
+      <ol start="5">
+        <li><b>Business people &amp; developers work together daily</b> — Người nghiệp vụ &amp; lập trình viên làm việc cùng nhau <b>hằng ngày</b>.</li>
+        <li><b>Build projects around motivated individuals</b> (trao môi trường, hỗ trợ &amp; niềm tin) — Xây dự án quanh <b>người có động lực</b>, tin tưởng để họ làm.</li>
+        <li><b>Face-to-face conversation is the most efficient communication</b> — Giao tiếp <b>trực tiếp</b> là cách truyền đạt hiệu quả nhất.</li>
+        <li><b>Self-organizing teams produce the best architectures &amp; designs</b> — Nhóm <b>tự tổ chức</b> cho ra kiến trúc/thiết kế tốt nhất.</li>
+      </ol>
+      <h4 class="sub">Nhóm C · Kỹ thuật &amp; Chất lượng</h4>
+      <ol start="9">
+        <li><b>Continuous attention to technical excellence &amp; good design</b> — Liên tục chú trọng <b>chất lượng kỹ thuật</b> &amp; thiết kế tốt để tăng tính linh hoạt.</li>
+        <li><b>Simplicity — maximizing the amount of work NOT done</b> — <b>Đơn giản</b> là cốt lõi: tối đa hóa phần việc <i>không cần làm</i>.</li>
+      </ol>
+      <h4 class="sub">Nhóm D · Nhịp độ &amp; Cải tiến</h4>
+      <ol start="11">
+        <li><b>Sustainable development — constant pace indefinitely</b> — Phát triển <b>bền vững</b>: giữ nhịp độ ổn định lâu dài (không "cày" kiệt sức).</li>
+        <li><b>Reflect &amp; adjust at regular intervals</b> — Định kỳ <b>nhìn lại &amp; điều chỉnh</b> cách làm cho hiệu quả hơn (chính là Retrospective).</li>
+      </ol>
+      <div class="note"><span class="lbl">Lưu ý số thứ tự</span>Thứ tự "chuẩn PMP" của 12 nguyên tắc là theo Manifesto gốc (1→12); ở đây nhóm lại theo chủ đề để dễ nhớ. Nguyên tắc <b>#2 (đón thay đổi)</b> và <b>#12 (reflect &amp; adjust)</b> là hai điểm hay ra thi nhất.</div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · 12 nguyên tắc</span>Đừng học vẹt 12 câu. Nhớ theo <b>4 nhóm</b>: <b>Khách/Giao hàng</b> (sớm–liên tục–đón thay đổi–đo bằng sản phẩm), <b>Con người</b> (làm cùng nhau, tự tổ chức, face-to-face, tin tưởng), <b>Kỹ thuật</b> (chất lượng + đơn giản), <b>Nhịp độ</b> (bền vững + retrospective).</div>
+    </section>
+
+    <!-- SCRUM -->
+    <section id="scrum">
+      <div class="sec-head"><h2>Scrum Framework</h2><span class="tag">3 vai trò · 5 sự kiện · 3 artifact</span></div>
+      <p class="sec-desc">Scrum là khung Agile phổ biến nhất — chạy sản phẩm qua các <b>Sprint</b> (chu kỳ ngắn, timeboxed). Nhớ theo cấu trúc <b>3-5-3</b>.</p>
+      <div class="en-def"><span class="lbl">EN</span><b>Scrum</b> — a lightweight Agile framework for delivering products in short, fixed-length iterations called Sprints, built on empiricism (transparency, inspection, adaptation). <i>(khung Agile giao sản phẩm theo các Sprint ngắn)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Sprint</b> — a timeboxed iteration (usually 1–4 weeks) during which a "Done", usable Increment is created; the container for all other Scrum events. <i>(chu kỳ 1–4 tuần tạo ra một Increment dùng được)</i></div>
+
+      <figure class="fig"><div class="fig-title">Chu trình Scrum (một Sprint)</div>
+        <div class="d-steps">
+          <div class="st"><span class="s">In</span>Product Backlog</div><div class="arw">›</div>
+          <div class="st"><span class="s">1</span>Sprint Planning</div><div class="arw">›</div>
+          <div class="st alt"><span class="s">↻</span>Sprint 1–4 tuần<br>(Daily Scrum mỗi ngày)</div><div class="arw">›</div>
+          <div class="st"><span class="s">2</span>Sprint Review</div><div class="arw">›</div>
+          <div class="st"><span class="s">3</span>Retrospective</div><div class="arw">›</div>
+          <div class="st"><span class="s">Out</span>Increment</div>
+        </div>
+        <div class="d-wrap-note">Hết Sprint lại lặp lại từ đầu — mỗi vòng cho ra một Increment "Done"</div>
+        <figcaption>Backlog → Planning → Sprint (Daily) → Review → Retrospective → Increment</figcaption>
+      </figure>
+
+      <h3>3 vai trò (Roles / Accountabilities)</h3>
+      <div class="legend">
+        <div class="lg"><b>Product Owner (PO)</b><span>Sở hữu &amp; <b>ưu tiên Product Backlog</b>, tối đa hóa giá trị sản phẩm, là "tiếng nói khách hàng". Quyết định <i>làm GÌ</i>.</span></div>
+        <div class="lg"><b>Scrum Master (SM)</b><span><b>Servant leader</b>: gỡ vướng (impediment), bảo vệ team, hướng dẫn Scrum. KHÔNG phải sếp, KHÔNG giao việc.</span></div>
+        <div class="lg"><b>Developers (Dev Team)</b><span>Nhóm <b>tự tổ chức</b> làm ra Increment; quyết định <i>làm THẾ NÀO</i>. Thường 3–9 người.</span></div>
+      </div>
+      <div class="en-def"><span class="lbl">EN</span><b>Product Owner</b> — accountable for maximizing product value by managing and ordering the Product Backlog. <b>Scrum Master</b> — a servant leader accountable for the team's effectiveness and removing impediments. <b>Developers</b> — the people who create a usable Increment each Sprint.</div>
+
+      <h3>5 sự kiện (Events)</h3>
+      <ul>
+        <li><b>The Sprint</b> — "hộp chứa" mọi sự kiện khác; 1–4 tuần, độ dài cố định.</li>
+        <li><b>Sprint Planning</b> — đầu Sprint: chọn việc &amp; lập Sprint Goal + Sprint Backlog.</li>
+        <li><b>Daily Scrum</b> — họp đứng ~15 phút mỗi ngày, đồng bộ &amp; nêu <b>impediment</b> (không phải họp báo cáo).</li>
+        <li><b>Sprint Review</b> — cuối Sprint: demo Increment cho stakeholder, lấy <b>feedback</b> (kiểm tra <i>sản phẩm</i>).</li>
+        <li><b>Sprint Retrospective</b> — sau Review: nhóm nhìn lại &amp; cải tiến <b>cách làm việc</b> (kiểm tra <i>quy trình</i>).</li>
+      </ul>
+      <div class="note warn"><span class="lbl">Review vs Retrospective — hay nhầm</span><b>Sprint Review</b> soi <i>SẢN PHẨM</i> (demo cho khách, điều chỉnh backlog). <b>Retrospective</b> soi <i>CÁCH LÀM VIỆC của nhóm</i> (cải tiến quy trình). Nhớ: "Review = product, Retro = process".</div>
+
+      <h3>3 artifact (+ cam kết)</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Artifact</th><th>Là gì</th><th>Cam kết gắn kèm (Commitment)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Product Backlog</b></td><td>Danh sách <b>mọi</b> việc cần làm cho sản phẩm, do PO ưu tiên</td><td><b>Product Goal</b> (mục tiêu sản phẩm)</td></tr>
+          <tr><td><b>Sprint Backlog</b></td><td>Phần việc <b>chọn cho Sprint này</b> + kế hoạch thực hiện</td><td><b>Sprint Goal</b> (mục tiêu Sprint)</td></tr>
+          <tr><td><b>Increment</b></td><td>Kết quả <b>dùng được</b> tạo ra trong Sprint (cộng dồn)</td><td><b>Definition of Done</b> (tiêu chí hoàn thành)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Scrum 3-5-3</span><b>3 vai trò</b> (PO · SM · Devs) — <b>5 sự kiện</b> (Sprint + Planning · Daily · Review · Retro) — <b>3 artifact</b> (Product Backlog · Sprint Backlog · Increment). Đọc nhanh: <i>"Ba vai – Năm họp – Ba sản phẩm"</i>. So sánh với <b>Kanban</b> (xem mục Value Delivery): Kanban KHÔNG có Sprint/role cố định, chỉ dòng chảy liên tục + giới hạn WIP.</div>
+    </section>
+
     <section id="value-delivery">
       <div class="sec-head"><h2>Value-driven Delivery</h2><span class="tag">Phần III · Agile 1/2</span></div>
       <p class="sec-desc">Agile tập trung <b>giao value sớm nhất</b> ("eat your dessert first") và <b>loại bỏ lãng phí</b>. Đây là ~50% đề thi PMP hiện đại.</p>
