@@ -2,11 +2,18 @@
 const LSKEY = 'pmp_flashcards_v1';
 
 export function loadMine() {
-  try { return JSON.parse(localStorage.getItem(LSKEY) || '[]'); }
-  catch { return []; }
+  try {
+    return JSON.parse(localStorage.getItem(LSKEY) || '[]');
+  } catch {
+    return [];
+  }
 }
 export function saveMine(arr) {
-  try { localStorage.setItem(LSKEY, JSON.stringify(arr)); } catch { /* quota / disabled */ }
+  try {
+    localStorage.setItem(LSKEY, JSON.stringify(arr));
+  } catch {
+    /* quota / disabled */
+  }
 }
 export function addMine(card) {
   const arr = loadMine();
@@ -20,10 +27,17 @@ export function removeMine(id) {
   return arr;
 }
 export function clearMine() {
-  try { localStorage.removeItem(LSKEY); } catch { /* ignore */ }
+  try {
+    localStorage.removeItem(LSKEY);
+  } catch {
+    /* ignore */
+  }
 }
 export function exportMine() {
   return loadMine()
-    .map((c) => `  {cat:${JSON.stringify(c.cat)}, term:${JSON.stringify(c.term)}, en:${JSON.stringify(c.en)}, vn:${JSON.stringify(c.vn)}},`)
+    .map(
+      (c) =>
+        `  {cat:${JSON.stringify(c.cat)}, term:${JSON.stringify(c.term)}, en:${JSON.stringify(c.en)}, vn:${JSON.stringify(c.vn)}},`
+    )
     .join('\n');
 }

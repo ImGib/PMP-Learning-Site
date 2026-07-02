@@ -9,30 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles/main.css">
 </head>
-<body>
+<body data-page="quality">
 <div id="site-navbar"></div>
 <div class="shell" id="top">
-  <aside class="sidebar" id="side">
-    <a class="sidebar__back" href="phan-2-chu-de.html">← Phần II · Mục lục</a>
-    <h4>8 chủ đề kiến thức</h4>
-    <a href="scope.html"><span class="sidebar__num">01</span>Scope</a>
-    <a href="schedule.html"><span class="sidebar__num">02</span>Schedule</a>
-    <a href="finance.html"><span class="sidebar__num">03</span>Finance</a>
-    <a href="quality.html" class="is-active"><span class="sidebar__num">04</span>Quality</a>
-    <a href="resource.html"><span class="sidebar__num">05</span>Resource</a>
-    <a href="risk.html"><span class="sidebar__num">06</span>Risk</a>
-    <a href="stakeholder.html"><span class="sidebar__num">07</span>Stakeholder &amp; …</a>
-    <a href="procurement.html"><span class="sidebar__num">08</span>Procurement</a>
-    <h4>Liên quan</h4>
-    <a href="cong-thuc-va-vi-du.html"><span class="sidebar__num">∑</span>Công thức &amp; ví dụ</a>
-    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard &amp; Quiz</a>
-  </aside>
+  <aside class="sidebar" id="side"></aside>
   <main>
-    <div class="hero">
-      <span class="hero__eyebrow">Phần II · Chủ đề 04/08 — 8 Performance Domains</span>
-      <h1>Quality — Chất lượng</h1>
-      <p>QA vs QC, Cost of Quality, 7 công cụ chất lượng, Rule of Seven.</p>
-    </div>
+    <div class="hero" id="topic-hero"></div>
     <section id="quality">
       <p class="section__desc">Quality trả lời <b>"sản phẩm có đáp ứng yêu cầu không?"</b>. Nhiều cặp khái niệm dễ nhầm — nắm chắc từng cặp.</p>
 
@@ -145,9 +127,7 @@
       </figure>
       <div class="callout callout--note"><span class="callout__label">Manage Quality (QA) vs Control Quality (QC)</span><b>Manage Quality (QA)</b> — hướng <i>process</i>, phòng ngừa, cả vòng đời: audit chất lượng, phân tích &amp; cải tiến quy trình (PDCA/Six Sigma), "làm đúng cách". <b>Control Quality (QC)</b> — hướng <i>product</i>, phần kiểm thử: đo/inspection, statistical sampling, đọc control chart → ra <b>verified deliverables</b>. Thứ tự: QC (verified) <b>trước</b> → Validate Scope (accepted, khách nghiệm thu) <b>sau</b>.</div>
     </section>
-    <footer>
-      <b>Phần II · Quality — Chất lượng</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.<br><a href="finance.html">← Finance — Chi phí &amp; EVM</a> · <a href="resource.html">Resource — Nguồn lực &amp; Con người →</a>
-    </footer>
+    <footer id="topic-footer"></footer>
   </main>
 </div>
 <script type="module" src="assets/js/main.js"></script>

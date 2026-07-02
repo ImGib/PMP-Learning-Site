@@ -1,0 +1,5 @@
+# HTML chứa sơ đồ .flow / .formula nhạy khoảng trắng → không auto-format để tránh vỡ diagram
+*.html
+# tài liệu nguồn & tạm
+*.pdf
+*.zip

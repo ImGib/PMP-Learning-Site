@@ -9,30 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles/main.css">
 </head>
-<body>
+<body data-page="resource">
 <div id="site-navbar"></div>
 <div class="shell" id="top">
-  <aside class="sidebar" id="side">
-    <a class="sidebar__back" href="phan-2-chu-de.html">← Phần II · Mục lục</a>
-    <h4>8 chủ đề kiến thức</h4>
-    <a href="scope.html"><span class="sidebar__num">01</span>Scope</a>
-    <a href="schedule.html"><span class="sidebar__num">02</span>Schedule</a>
-    <a href="finance.html"><span class="sidebar__num">03</span>Finance</a>
-    <a href="quality.html"><span class="sidebar__num">04</span>Quality</a>
-    <a href="resource.html" class="is-active"><span class="sidebar__num">05</span>Resource</a>
-    <a href="risk.html"><span class="sidebar__num">06</span>Risk</a>
-    <a href="stakeholder.html"><span class="sidebar__num">07</span>Stakeholder &amp; …</a>
-    <a href="procurement.html"><span class="sidebar__num">08</span>Procurement</a>
-    <h4>Liên quan</h4>
-    <a href="cong-thuc-va-vi-du.html"><span class="sidebar__num">∑</span>Công thức &amp; ví dụ</a>
-    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard &amp; Quiz</a>
-  </aside>
+  <aside class="sidebar" id="side"></aside>
   <main>
-    <div class="hero">
-      <span class="hero__eyebrow">Phần II · Chủ đề 05/08 — 8 Performance Domains</span>
-      <h1>Resource — Nguồn lực &amp; Con người</h1>
-      <p>Tuckman, tạo động lực, 5 kiểu xử lý xung đột, lãnh đạo, RACI.</p>
-    </div>
+    <div class="hero" id="topic-hero"></div>
     <section id="resource">
       <p class="section__desc">Chủ đề về <b>đội ngũ</b>: xây team, tạo động lực, xử lý xung đột, lãnh đạo. Ít công thức, nhiều mô hình cần nhớ tên.</p>
 
@@ -111,6 +93,20 @@
           <tr><td><b>S4 · Delegating</b></td><td>Thấp</td><td>Thấp</td><td><b>R4</b> — vừa giỏi vừa chủ động; giao việc &amp; tin tưởng</td></tr>
         </tbody>
       </table></div>
+      <figure class="diagram"><div class="diagram__title">Bản đồ 4 style — Directive × Supportive</div>
+        <div class="diagram-quad">
+          <div class="diagram-quad__yaxis">Hỗ trợ (Supportive) →</div>
+          <div>
+            <div class="diagram-quad__grid">
+              <div class="diagram-quad__cell"><b>S3 · Supporting</b>Hỗ trợ CAO · Chỉ đạo THẤP — cùng quyết, khích lệ. <i>R3: giỏi nhưng thiếu tự tin</i></div>
+              <div class="diagram-quad__cell diagram-quad__cell--hi"><b>S2 · Coaching</b>Hỗ trợ CAO · Chỉ đạo CAO — vừa hướng dẫn vừa động viên. <i>R2: yếu nhưng có động lực</i></div>
+              <div class="diagram-quad__cell"><b>S4 · Delegating</b>Hỗ trợ THẤP · Chỉ đạo THẤP — giao việc &amp; tin tưởng. <i>R4: giỏi &amp; chủ động</i></div>
+              <div class="diagram-quad__cell diagram-quad__cell--mid"><b>S1 · Directing</b>Hỗ trợ THẤP · Chỉ đạo CAO — chỉ dẫn cụ thể. <i>R1: chưa đủ năng lực</i></div>
+            </div>
+            <div class="diagram-quad__xaxis">Chỉ đạo (Directive) →</div>
+          </div>
+        </div>
+        <figcaption>Trục dọc = mức Hỗ trợ · trục ngang = mức Chỉ đạo. Càng lên "chín" (R1→R4) càng dịch S1→S2→S3→S4.</figcaption></figure>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · khớp với Tuckman</span><b>Forming→Directing · Storming→Coaching · Norming→Supporting · Performing→Delegating.</b> Team/nhân viên càng "chín", PM càng <b>bớt chỉ đạo, tăng ủy quyền</b>.</div>
       <div class="callout callout--note"><span class="callout__label">Emotional Intelligence (EI) — 4 nhóm</span><b>Self-awareness</b> (hiểu cảm xúc mình) · <b>Self-management</b> (kiểm soát cảm xúc) · <b>Social awareness</b> (đọc cảm xúc &amp; đồng cảm với người khác) · <b>Relationship management</b> (dẫn dắt, xử lý xung đột). EI cao là "power skill" cốt lõi giúp PM gắn kết team &amp; giải quyết xung đột.</div>
 
@@ -129,9 +125,7 @@
       </div>
       <div class="callout callout--note"><span class="callout__label">Recognition &amp; Rewards</span>Chỉ thưởng <b>hành vi mong muốn</b>. <b>Win-win rewards</b> (ai cũng đạt được, vd nộp báo cáo đúng hạn) tăng gắn kết. <b>Win-lose / zero-sum</b> (chỉ 1 "nhân viên của tháng") có thể <b>phá vỡ</b> tinh thần đồng đội. Cân nhắc khác biệt <b>văn hóa</b>.</div>
     </section>
-    <footer>
-      <b>Phần II · Resource — Nguồn lực &amp; Con người</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.<br><a href="quality.html">← Quality — Chất lượng</a> · <a href="risk.html">Risk — Rủi ro →</a>
-    </footer>
+    <footer id="topic-footer"></footer>
   </main>
 </div>
 <script type="module" src="assets/js/main.js"></script>
