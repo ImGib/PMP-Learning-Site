@@ -7,41 +7,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/pmp.css">
+<link rel="stylesheet" href="assets/styles/main.css">
 </head>
 <body>
-<div class="topbar">
-  <a class="brand" href="index.html"><span class="mark">P</span> PMBOK 8 <small>học PMP · v2</small></a>
-  <nav class="topnav">
-    <a href="index.html">Bắt đầu</a>
-    <a href="phan-1-nen-tang.html">I · Nền tảng</a>
-    <a href="phan-2-chu-de.html">II · Chủ đề</a>
-    <a href="phan-3-agile.html">III · Agile</a>
-    <a href="phan-4-on-thi.html" class="cur">IV · Ôn thi</a>
-    <a href="cong-thuc-va-vi-du.html">Công thức</a>
-    <a href="thuat-ngu.html">Thuật ngữ</a>
-    <a href="rita-process-chart.html">Process Chart</a>
-    <a class="cta" href="flashcard-quiz.html">Flashcard &amp; Quiz</a>
-  </nav>
-  <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
-</div>
+<div id="site-navbar"></div>
 <div class="shell" id="top">
-  <aside class="side" id="side">
-    <a class="backlink" href="index.html">← Trang chủ</a>
+  <aside class="sidebar" id="side">
+    <a class="sidebar__back" href="index.html">← Trang chủ</a>
     <h4>Phần IV · Ôn thi</h4>
-    <a href="#exam-structure"><span class="c">01</span>Cấu trúc đề thi</a>
-    <a href="#mindset"><span class="c">02</span>PMI Mindset</a>
-    <a href="#exam-strategy"><span class="c">03</span>Chiến lược làm bài</a>
+    <a href="#exam-structure"><span class="sidebar__num">01</span>Cấu trúc đề thi</a>
+    <a href="#mindset"><span class="sidebar__num">02</span>PMI Mindset</a>
+    <a href="#exam-strategy"><span class="sidebar__num">03</span>Chiến lược làm bài</a>
     <h4>Luyện tập</h4>
-    <a href="flashcard-quiz.html"><span class="c">?</span>Flashcard &amp; Quiz →</a>
-    <a href="cong-thuc-va-vi-du.html"><span class="c">∑</span>Ví dụ tính toán →</a>
+    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard &amp; Quiz →</a>
+    <a href="cong-thuc-va-vi-du.html"><span class="sidebar__num">∑</span>Ví dụ tính toán →</a>
   </aside>
   <main>
     <div class="hero">
-      <span class="eyebrow">Phần IV · Chiến lược &amp; tâm thế phòng thi</span>
+      <span class="hero__eyebrow">Phần IV · Chiến lược &amp; tâm thế phòng thi</span>
       <h1>Ôn thi &amp; PMI Mindset</h1>
       <p>Biết cấu trúc đề (180 câu / 230 phút / 3 domains) và nắm <b>PMI Mindset</b> giúp chọn đúng đáp án khi nhiều lựa chọn "nghe đều đúng". Kèm định nghĩa tiếng Anh các thuật ngữ thi.</p>
-      <div class="jump">
+      <div class="hero__jump">
         <a href="#exam-structure"><span class="n">01</span>Cấu trúc đề</a>
         <a href="#mindset"><span class="n">02</span>PMI Mindset</a>
         <a href="#exam-strategy"><span class="n">03</span>Chiến lược</a>
@@ -49,13 +35,13 @@
     </div>
     <!-- EXAM STRUCTURE -->
     <section id="exam-structure">
-      <div class="sec-head"><h2>Cấu trúc đề thi PMP</h2><span class="tag">Phần IV · ôn thi</span></div>
-      <p class="sec-desc">Biết rõ "luật chơi" của đề thi giúp bạn phân bổ thời gian &amp; tâm lý đúng.</p>
-      <div class="legend">
-        <div class="lg"><span class="num">180</span><b>câu hỏi</b><span>Chia 3 phần × 60 câu. Nghỉ 10 phút sau mỗi phần (nộp rồi <b>không quay lại</b>).</span></div>
-        <div class="lg"><span class="num">230</span><b>phút</b><span>≈ <b>1 phút 20 giây/câu</b>. Có máy tính tích hợp trong phần mềm.</span></div>
-        <div class="lg"><span class="num">~50%</span><b>Agile/Hybrid</b><span>Nửa đề là predictive, nửa là agile/hybrid. Câu hỏi đều là <b>tình huống</b>.</span></div>
-        <div class="lg"><span class="num">~2</span><b>câu tính toán</b><span>Rất ít công thức — chủ yếu <b>EVM</b>. Đừng sợ toán.</span></div>
+      <div class="section__head"><h2>Cấu trúc đề thi PMP</h2><span class="tag">Phần IV · ôn thi</span></div>
+      <p class="section__desc">Biết rõ "luật chơi" của đề thi giúp bạn phân bổ thời gian &amp; tâm lý đúng.</p>
+      <div class="features">
+        <div class="feature"><span class="feature__num">180</span><b>câu hỏi</b><span>Chia 3 phần × 60 câu. Nghỉ 10 phút sau mỗi phần (nộp rồi <b>không quay lại</b>).</span></div>
+        <div class="feature"><span class="feature__num">230</span><b>phút</b><span>≈ <b>1 phút 20 giây/câu</b>. Có máy tính tích hợp trong phần mềm.</span></div>
+        <div class="feature"><span class="feature__num">~50%</span><b>Agile/Hybrid</b><span>Nửa đề là predictive, nửa là agile/hybrid. Câu hỏi đều là <b>tình huống</b>.</span></div>
+        <div class="feature"><span class="feature__num">~2</span><b>câu tính toán</b><span>Rất ít công thức — chủ yếu <b>EVM</b>. Đừng sợ toán.</span></div>
       </div>
       <h3>3 Domains (theo ECO — Exam Content Outline)</h3>
       <figure class="fig">
@@ -82,10 +68,10 @@
         </div>
         <div class="d-wrap-note">Nộp mỗi phần là KHÔNG quay lại được</div>
       </figure>
-      <div class="en-def"><span class="lbl">EN</span><b>Exam Content Outline (ECO)</b> — the official PMI document that defines the domains, tasks and enablers tested on the PMP exam. <i>(bản phác thảo nội dung thi chính thức của PMI)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>People domain</b> — the exam domain covering leading and building the team, conflict management and motivation (42%). <i>(miền Con người)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>Process domain</b> — the exam domain covering the technical work of managing a project: scope, schedule, cost, risk, quality, procurement (50%). <i>(miền Quy trình)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>Business Environment domain</b> — the exam domain covering compliance, delivering value to the organization and supporting organizational change (8%). <i>(miền Môi trường doanh nghiệp)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Exam Content Outline (ECO)</b> — the official PMI document that defines the domains, tasks and enablers tested on the PMP exam. <i>(bản phác thảo nội dung thi chính thức của PMI)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>People domain</b> — the exam domain covering leading and building the team, conflict management and motivation (42%). <i>(miền Con người)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Process domain</b> — the exam domain covering the technical work of managing a project: scope, schedule, cost, risk, quality, procurement (50%). <i>(miền Quy trình)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Business Environment domain</b> — the exam domain covering compliance, delivering value to the organization and supporting organizational change (8%). <i>(miền Môi trường doanh nghiệp)</i></div>
       <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th>Domain</th><th>Tỷ trọng</th><th>Nội dung</th></tr></thead>
         <tbody>
@@ -94,13 +80,13 @@
           <tr><td><b>Business Environment</b></td><td><b>8%</b></td><td>Tuân thủ, value cho tổ chức, thay đổi tổ chức</td></tr>
         </tbody>
       </table></div>
-      <div class="tip"><span class="lbl">Mẹo ghi nhớ · tỷ trọng</span><b>"People 42 – Process 50 – Business 8"</b> (tổng 100). Process nhiều nhất nhưng People sát nút — đừng bỏ qua kỹ năng con người. Business Environment ít câu nhưng dễ ăn điểm.</div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · tỷ trọng</span><b>"People 42 – Process 50 – Business 8"</b> (tổng 100). Process nhiều nhất nhưng People sát nút — đừng bỏ qua kỹ năng con người. Business Environment ít câu nhưng dễ ăn điểm.</div>
 
       <h3>Đăng ký thi &amp; chi phí</h3>
-      <div class="note"><span class="lbl">Chi phí (tham khảo)</span>Membership PMI: <b>$109</b> ($10 phí đăng ký + $99 phí thường niên). Phí thi sau ưu đãi thành viên: <b>$284</b> (giá niêm yết không ưu đãi ~$393). <b>Kiểm tra chiết khấu đã được áp trong tài khoản PMI trước khi thanh toán</b>, tránh phải claim hoàn tiền về sau.</div>
-      <div class="en-def"><span class="lbl">EN</span><b>Eligibility</b> — the requirements to sit the exam: a valid education level, months of project management experience, and <b>35 contact hours</b> of formal project management education. <i>(điều kiện dự thi: học vấn + số tháng kinh nghiệm PM + 35 giờ học chính thức)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>Application audit</b> — a random verification step where PMI asks you to submit evidence (experience, education) before approving the application. <i>(kiểm tra hồ sơ ngẫu nhiên — phải nộp minh chứng kinh nghiệm &amp; học tập)</i></div>
-      <h4 class="sub">Thi Online hay Offline?</h4>
+      <div class="callout callout--note"><span class="callout__label">Chi phí (tham khảo)</span>Membership PMI: <b>$109</b> ($10 phí đăng ký + $99 phí thường niên). Phí thi sau ưu đãi thành viên: <b>$284</b> (giá niêm yết không ưu đãi ~$393). <b>Kiểm tra chiết khấu đã được áp trong tài khoản PMI trước khi thanh toán</b>, tránh phải claim hoàn tiền về sau.</div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Eligibility</b> — the requirements to sit the exam: a valid education level, months of project management experience, and <b>35 contact hours</b> of formal project management education. <i>(điều kiện dự thi: học vấn + số tháng kinh nghiệm PM + 35 giờ học chính thức)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Application audit</b> — a random verification step where PMI asks you to submit evidence (experience, education) before approving the application. <i>(kiểm tra hồ sơ ngẫu nhiên — phải nộp minh chứng kinh nghiệm &amp; học tập)</i></div>
+      <h4 class="section__subhead">Thi Online hay Offline?</h4>
       <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th>Hình thức</th><th>Ưu điểm</th><th>Nhược điểm</th></tr></thead>
         <tbody>
@@ -110,12 +96,12 @@
       </table></div>
 
       <h3>Các loại câu hỏi trong đề</h3>
-      <div class="en-def"><span class="lbl">EN</span><b>Multiple choice</b> — a question with four options where exactly one is correct. <i>(chọn 1 đáp án đúng — dạng phổ biến nhất)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>Multiple response</b> — a question that instructs you to select two or more correct options (e.g., "choose three"). <i>(chọn nhiều đáp án đúng — thường ghi rõ số lượng)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>Matching</b> — a question asking you to pair items from two lists, e.g., a term to its definition. <i>(nối cặp — đề thực tế có khoảng 5 câu)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>Hotspot</b> — a question where you click the correct region on an image or diagram. <i>(chọn/bấm vùng đúng trên hình)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>Fill-in-the-blank</b> — a question where you type the missing word or number into a blank. <i>(điền vào chỗ trống)</i></div>
-      <div class="note ok"><span class="lbl">Quan sát từ đề thi thực tế</span>Hầu hết câu là <b>tình huống</b> (viết từ góc nhìn Project Manager / Agile Leader), phần lớn về <b>agile/hybrid</b>, lồng ghép khái niệm truyền thống. Chỉ khoảng <b>2 câu cần công thức</b> (chủ yếu <b>EVM</b>). Mỗi phần thường có ~<b>8–10 câu multiple choice</b> và ~<b>5 câu matching</b>; câu hỏi trải đều các knowledge area.</div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Multiple choice</b> — a question with four options where exactly one is correct. <i>(chọn 1 đáp án đúng — dạng phổ biến nhất)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Multiple response</b> — a question that instructs you to select two or more correct options (e.g., "choose three"). <i>(chọn nhiều đáp án đúng — thường ghi rõ số lượng)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Matching</b> — a question asking you to pair items from two lists, e.g., a term to its definition. <i>(nối cặp — đề thực tế có khoảng 5 câu)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Hotspot</b> — a question where you click the correct region on an image or diagram. <i>(chọn/bấm vùng đúng trên hình)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Fill-in-the-blank</b> — a question where you type the missing word or number into a blank. <i>(điền vào chỗ trống)</i></div>
+      <div class="callout callout--ok"><span class="callout__label">Quan sát từ đề thi thực tế</span>Hầu hết câu là <b>tình huống</b> (viết từ góc nhìn Project Manager / Agile Leader), phần lớn về <b>agile/hybrid</b>, lồng ghép khái niệm truyền thống. Chỉ khoảng <b>2 câu cần công thức</b> (chủ yếu <b>EVM</b>). Mỗi phần thường có ~<b>8–10 câu multiple choice</b> và ~<b>5 câu matching</b>; câu hỏi trải đều các knowledge area.</div>
 
       <h3>Thủ tục &amp; trải nghiệm tại phòng thi</h3>
       <div class="d-steps">
@@ -127,28 +113,28 @@
         <div class="arw">›</div>
         <div class="st alt"><span class="s">Start</span>giám thị bấm bắt đầu</div>
       </div>
-      <div class="note"><span class="lbl">Lưu ý trong phòng</span>Hiện chưa quét kim loại nhưng túi áo bị kiểm tra &amp; có camera giám sát. Nếu lạnh → xin giám thị chỉnh nhiệt độ; khó tập trung → xin <b>nút bịt tai (earplugs)</b>. Phần mềm thi có <b>máy tính tích hợp</b>. Mang theo <b>Passport</b> (bắt buộc) và đi vệ sinh trước khi vào.</div>
+      <div class="callout callout--note"><span class="callout__label">Lưu ý trong phòng</span>Hiện chưa quét kim loại nhưng túi áo bị kiểm tra &amp; có camera giám sát. Nếu lạnh → xin giám thị chỉnh nhiệt độ; khó tập trung → xin <b>nút bịt tai (earplugs)</b>. Phần mềm thi có <b>máy tính tích hợp</b>. Mang theo <b>Passport</b> (bắt buộc) và đi vệ sinh trước khi vào.</div>
     </section>
 
     <!-- MINDSET -->
     <section id="mindset">
-      <div class="sec-head"><h2>PMI Mindset (PMI-ism)</h2><span class="tag">chìa khóa chọn đáp án đúng</span></div>
-      <p class="sec-desc">Nhiều câu hỏi có 2–3 đáp án "nghe đều đúng". <b>PMI Mindset</b> là bộ nguyên tắc giúp chọn đáp án PMI <i>muốn</i> — quan trọng hơn cả thuộc lý thuyết.</p>
-      <div class="en-def"><span class="lbl">EN</span><b>Servant Leadership</b> — a leadership style in which the project manager serves and empowers the team, removing impediments rather than commanding. <i>(lãnh đạo phục vụ)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>Root Cause Analysis</b> — a structured method for identifying the underlying cause of a problem instead of treating its symptoms. <i>(phân tích nguyên nhân gốc)</i></div>
-      <div class="en-def"><span class="lbl">EN</span><b>Escalation</b> — raising an issue to a higher authority (e.g., the sponsor) when it is beyond the team's authority or ability to resolve. <i>(báo lên cấp cao hơn)</i></div>
-      <div class="legend">
-        <div class="lg"><b>Proactive &amp; Root cause</b><span>Luôn <b>chủ động</b>, tìm &amp; xử lý <b>nguyên nhân gốc</b> — không "chữa cháy" bề mặt, không lờ đi.</span></div>
-        <div class="lg"><b>Servant Leadership</b><span>PM <b>phục vụ team</b>, trao quyền &amp; tin tưởng; chỉ can thiệp khi có <b>blocker</b>.</span></div>
-        <div class="lg"><b>Team trước, escalate sau</b><span>Thử tự giải quyết với team trước; hết cách/vượt thẩm quyền mới <b>escalate cho sponsor</b>.</span></div>
-        <div class="lg"><b>Không đổ lỗi</b><span>Thành viên gặp vấn đề = vấn đề của <b>cả team</b>, cùng hỗ trợ. Xung đột → gặp riêng, tìm root cause.</span></div>
-        <div class="lg"><b>Value &amp; feedback sớm</b><span>Agile: giao <b>incremental</b> để có feedback sớm. Dùng <b>spike</b> khi có bất định kỹ thuật.</span></div>
-        <div class="lg"><b>Đúng quy trình</b><span>Thay đổi liên quan hợp đồng → theo <b>formal change control</b>. Change từ khách → qua <b>Product Owner</b>.</span></div>
+      <div class="section__head"><h2>PMI Mindset (PMI-ism)</h2><span class="tag">chìa khóa chọn đáp án đúng</span></div>
+      <p class="section__desc">Nhiều câu hỏi có 2–3 đáp án "nghe đều đúng". <b>PMI Mindset</b> là bộ nguyên tắc giúp chọn đáp án PMI <i>muốn</i> — quan trọng hơn cả thuộc lý thuyết.</p>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Servant Leadership</b> — a leadership style in which the project manager serves and empowers the team, removing impediments rather than commanding. <i>(lãnh đạo phục vụ)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Root Cause Analysis</b> — a structured method for identifying the underlying cause of a problem instead of treating its symptoms. <i>(phân tích nguyên nhân gốc)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Escalation</b> — raising an issue to a higher authority (e.g., the sponsor) when it is beyond the team's authority or ability to resolve. <i>(báo lên cấp cao hơn)</i></div>
+      <div class="features">
+        <div class="feature"><b>Proactive &amp; Root cause</b><span>Luôn <b>chủ động</b>, tìm &amp; xử lý <b>nguyên nhân gốc</b> — không "chữa cháy" bề mặt, không lờ đi.</span></div>
+        <div class="feature"><b>Servant Leadership</b><span>PM <b>phục vụ team</b>, trao quyền &amp; tin tưởng; chỉ can thiệp khi có <b>blocker</b>.</span></div>
+        <div class="feature"><b>Team trước, escalate sau</b><span>Thử tự giải quyết với team trước; hết cách/vượt thẩm quyền mới <b>escalate cho sponsor</b>.</span></div>
+        <div class="feature"><b>Không đổ lỗi</b><span>Thành viên gặp vấn đề = vấn đề của <b>cả team</b>, cùng hỗ trợ. Xung đột → gặp riêng, tìm root cause.</span></div>
+        <div class="feature"><b>Value &amp; feedback sớm</b><span>Agile: giao <b>incremental</b> để có feedback sớm. Dùng <b>spike</b> khi có bất định kỹ thuật.</span></div>
+        <div class="feature"><b>Đúng quy trình</b><span>Thay đổi liên quan hợp đồng → theo <b>formal change control</b>. Change từ khách → qua <b>Product Owner</b>.</span></div>
       </div>
-      <div class="tip"><span class="lbl">Mẹo ghi nhớ · lọc đáp án</span>Gặp câu bí, loại ngay các đáp án: <b>đổ lỗi</b>, <b>escalate ngay lập tức</b>, <b>ép làm thêm giờ (OT)</b>, <b>bỏ qua vấn đề</b>, <b>tự ý bỏ quy trình</b>. Đáp án đúng thường là: <b>tìm hiểu/phân tích trước</b>, <b>nói chuyện với team/bên liên quan</b>, <b>xử lý gốc rễ</b>. Tiến độ chậm? Xét <b>smoothing → crashing → resource leveling</b> trước, rồi mới escalate.</div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · lọc đáp án</span>Gặp câu bí, loại ngay các đáp án: <b>đổ lỗi</b>, <b>escalate ngay lập tức</b>, <b>ép làm thêm giờ (OT)</b>, <b>bỏ qua vấn đề</b>, <b>tự ý bỏ quy trình</b>. Đáp án đúng thường là: <b>tìm hiểu/phân tích trước</b>, <b>nói chuyện với team/bên liên quan</b>, <b>xử lý gốc rễ</b>. Tiến độ chậm? Xét <b>smoothing → crashing → resource leveling</b> trước, rồi mới escalate.</div>
 
       <h3>Cheat sheet mindset theo tình huống</h3>
-      <p class="sec-desc">Bộ phản xạ "PMI muốn gì" rút từ slide — áp thẳng khi gặp tình huống tương ứng trong đề.</p>
+      <p class="section__desc">Bộ phản xạ "PMI muốn gì" rút từ slide — áp thẳng khi gặp tình huống tương ứng trong đề.</p>
       <div class="p-group g1">
         <div class="p-group-h"><span class="gtag">People</span> Con người &amp; đội nhóm</div>
         <div class="principles">
@@ -191,19 +177,19 @@
 
     <!-- EXAM STRATEGY -->
     <section id="exam-strategy">
-      <div class="sec-head"><h2>Chiến lược làm bài</h2><span class="tag">kỹ thuật phòng thi</span></div>
-      <p class="sec-desc">Kiến thức tốt vẫn cần kỹ thuật làm bài để "về đích" trong 230 phút.</p>
+      <div class="section__head"><h2>Chiến lược làm bài</h2><span class="tag">kỹ thuật phòng thi</span></div>
+      <p class="section__desc">Kiến thức tốt vẫn cần kỹ thuật làm bài để "về đích" trong 230 phút.</p>
       <ul>
         <li><b>Không bao giờ để trống</b> — không chắc thì <b>đoán</b> rồi chọn. Bỏ trống = mất điểm chắc chắn.</li>
         <li><b>Quá 1 phút 20 giây</b> cho 1 câu → <b>mark for review</b>, chuyển câu tiếp, quay lại sau.</li>
         <li>Đọc kỹ từ khóa: "EXCEPT", "NOT", "FIRST/NEXT/BEST" — chúng đảo ngược ý câu hỏi.</li>
         <li>Chấp nhận có ~40 câu không chắc chắn là <b>bình thường</b> — đừng hoảng, mục tiêu là đạt ngưỡng đậu.</li>
       </ul>
-      <div class="note"><span class="lbl">Chuẩn bị hành chính</span>Mang <b>Passport</b>; đăng ký membership PMI (~$109) để được giá thi ưu đãi; PMI cho tối đa <b>3 lần thi/năm</b>. Vi phạm quy chế (Pearson VUE) có thể bị <b>cấm thi tới 3 năm</b>. Kết quả chính thức: offline ~2 ngày, online ~5 ngày.</div>
-      <div class="tip"><span class="lbl">Mẹo ghi nhớ · nếu chẳng may rớt</span><b>Ownership → Review → Plan → Execute.</b> Không đổ lỗi → soi lại điểm yếu → lập kế hoạch thi lại → thực thi. Thất bại một lần không sao, quan trọng là quy trình sửa sai.</div>
+      <div class="callout callout--note"><span class="callout__label">Chuẩn bị hành chính</span>Mang <b>Passport</b>; đăng ký membership PMI (~$109) để được giá thi ưu đãi; PMI cho tối đa <b>3 lần thi/năm</b>. Vi phạm quy chế (Pearson VUE) có thể bị <b>cấm thi tới 3 năm</b>. Kết quả chính thức: offline ~2 ngày, online ~5 ngày.</div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · nếu chẳng may rớt</span><b>Ownership → Review → Plan → Execute.</b> Không đổ lỗi → soi lại điểm yếu → lập kế hoạch thi lại → thực thi. Thất bại một lần không sao, quan trọng là quy trình sửa sai.</div>
 
       <h3>Đọc câu hỏi &amp; loại trừ đáp án</h3>
-      <p class="sec-desc">Đề PMP hiếm khi hỏi định nghĩa thẳng — luôn đọc kỹ từ khóa trước khi chọn.</p>
+      <p class="section__desc">Đề PMP hiếm khi hỏi định nghĩa thẳng — luôn đọc kỹ từ khóa trước khi chọn.</p>
       <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th>Từ khóa</th><th>Ý nghĩa · phải làm gì</th></tr></thead>
         <tbody>
@@ -213,7 +199,7 @@
           <tr><td><b>EXCEPT / NOT / LEAST</b></td><td>Đảo ngược — tìm đáp án <b>SAI</b> / ít phù hợp nhất. Dễ bẫy, đọc chậm lại.</td></tr>
         </tbody>
       </table></div>
-      <div class="tip"><span class="lbl">Kỹ thuật loại trừ</span>Loại trước 2 đáp án "sai rõ" (đổ lỗi, escalate ngay, OT, bỏ qua quy trình) → còn 2 đáp án "nghe đều đúng" → chọn cái <b>chủ động, xử lý gốc rễ, đúng vai trò PM</b>. Nếu vẫn phân vân, <b>đoán</b> và <b>mark for review</b> — tuyệt đối không để trống.</div>
+      <div class="callout callout--tip"><span class="callout__label">Kỹ thuật loại trừ</span>Loại trước 2 đáp án "sai rõ" (đổ lỗi, escalate ngay, OT, bỏ qua quy trình) → còn 2 đáp án "nghe đều đúng" → chọn cái <b>chủ động, xử lý gốc rễ, đúng vai trò PM</b>. Nếu vẫn phân vân, <b>đoán</b> và <b>mark for review</b> — tuyệt đối không để trống.</div>
 
       <h3>Chiến lược ôn 2 giai đoạn</h3>
       <div class="tbl-wrap"><table class="tbl">
@@ -225,13 +211,13 @@
           <tr><td>Kỹ năng đạt được</td><td>Tư duy logic, PM mindset</td><td>Quen format thật, kỹ thuật &amp; quản lý thời gian</td></tr>
         </tbody>
       </table></div>
-      <div class="note"><span class="lbl">Vì sao trượt?</span>Các nguyên nhân gốc: <b>kỹ năng đọc tiếng Anh</b> (hiểu sai câu hỏi/đáp án), <b>lỗ hổng kiến thức</b>, <b>bận, không có thời gian học</b>, <b>cảm xúc/tâm lý</b> (bỏ trống, quên điền), và <b>thiếu kỹ thuật làm bài</b> (không đủ thời gian). Luyện đề &gt; đọc chay: Làm đề → chấm → nghiên cứu &amp; thảo luận với bạn học → đúc kết kiến thức.</div>
+      <div class="callout callout--note"><span class="callout__label">Vì sao trượt?</span>Các nguyên nhân gốc: <b>kỹ năng đọc tiếng Anh</b> (hiểu sai câu hỏi/đáp án), <b>lỗ hổng kiến thức</b>, <b>bận, không có thời gian học</b>, <b>cảm xúc/tâm lý</b> (bỏ trống, quên điền), và <b>thiếu kỹ thuật làm bài</b> (không đủ thời gian). Luyện đề &gt; đọc chay: Làm đề → chấm → nghiên cứu &amp; thảo luận với bạn học → đúc kết kiến thức.</div>
 
       <h3>Xử lý câu hỏi trong ~1 phút</h3>
-      <div class="legend">
-        <div class="lg"><b>Trước kỳ thi</b><span>Luyện đọc câu dài &amp; mơ hồ; làm tới ~<b>1.500 câu</b> đạt &gt;65%. "Practice makes perfect" — luyện để có phản xạ.</span></div>
-        <div class="lg"><b>Trong kỳ thi</b><span>Không sa lầy 1 câu. Quá <b>1m20s</b> → mark for review &amp; chuyển câu. Không hiểu → <b>đoán</b>. <b>Không bao giờ để trống</b>.</span></div>
-        <div class="lg"><b>Chấp nhận bất định</b><span>~<b>40/180 câu</b> thấy không chắc là bình thường. Đừng kỳ vọng câu định nghĩa thẳng — hầu hết là tình huống.</span></div>
+      <div class="features">
+        <div class="feature"><b>Trước kỳ thi</b><span>Luyện đọc câu dài &amp; mơ hồ; làm tới ~<b>1.500 câu</b> đạt &gt;65%. "Practice makes perfect" — luyện để có phản xạ.</span></div>
+        <div class="feature"><b>Trong kỳ thi</b><span>Không sa lầy 1 câu. Quá <b>1m20s</b> → mark for review &amp; chuyển câu. Không hiểu → <b>đoán</b>. <b>Không bao giờ để trống</b>.</span></div>
+        <div class="feature"><b>Chấp nhận bất định</b><span>~<b>40/180 câu</b> thấy không chắc là bình thường. Đừng kỳ vọng câu định nghĩa thẳng — hầu hết là tình huống.</span></div>
       </div>
 
       <h3>Chuẩn bị D-1 &amp; D-Day</h3>
@@ -241,12 +227,12 @@
           <tr><td>Thư giãn lành mạnh</td><td>Xem phim, nghe nhạc; ăn món quen thuộc; ngủ sâu đủ giấc</td><td>Học quá sức, không nghỉ; vận động nặng tới kiệt sức; thức khuya</td></tr>
         </tbody>
       </table></div>
-      <div class="note ok"><span class="lbl">D-Day</span>Ở nhà: vận động nhẹ, ăn uống hợp lý, mặc đồ phù hợp. Trước khi tới điểm thi: mang <b>Passport (bắt buộc)</b>, khẩu trang, đi vệ sinh trước khi vào phòng.</div>
+      <div class="callout callout--ok"><span class="callout__label">D-Day</span>Ở nhà: vận động nhẹ, ăn uống hợp lý, mặc đồ phù hợp. Trước khi tới điểm thi: mang <b>Passport (bắt buộc)</b>, khẩu trang, đi vệ sinh trước khi vào phòng.</div>
 
       <h3>Sự cố trong phòng thi &amp; quy chế</h3>
-      <div class="note warn"><span class="lbl">Xử lý sự cố</span><b>Mất tập trung/căng thẳng:</b> xin phép ra ngoài, rửa mặt, hít thở sâu — <b>tuyệt đối không</b> gọi điện, xem note hay tài liệu (có thể bị cấm thi Pearson VUE tới <b>3 năm</b>). <b>Bị đăng xuất</b> (lỗi máy/mạng): giữ bình tĩnh, gọi giám thị ngay (~30s–1 phút). <b>Thời gian thi thực tế &lt; 4 giờ:</b> khiếu nại trực tiếp với Pearson VUE.</div>
-      <div class="note warn"><span class="lbl">Trường hợp có thể bị hủy kết quả (revocation)</span>Cúi nhìn / đọc câu hỏi ra thành tiếng; có tiếng ồn lớn từ ngoài; có người gõ cửa lúc thi; rời ghế nghỉ nhưng hệ thống proctoring không ghi nhận; sau giờ nghỉ bị lỗi kết nối hoặc webcam không bật lại.</div>
-      <div class="note"><span class="lbl">Khiếu nại &amp; xác minh điểm</span>Pearson VUE điều tra ticket: nếu do vi phạm quy chế theo checklist → thường từ chối thi lại miễn phí; chỉ đổi lịch miễn phí nếu lỗi do hệ thống/kỹ thuật của họ. PMI có thể tặng 1 lần thi lại hoặc giảm giá như thiện chí. Email PMI Customer Care thường phản hồi sau <b>3–5 ngày làm việc</b>.</div>
+      <div class="callout callout--warn"><span class="callout__label">Xử lý sự cố</span><b>Mất tập trung/căng thẳng:</b> xin phép ra ngoài, rửa mặt, hít thở sâu — <b>tuyệt đối không</b> gọi điện, xem note hay tài liệu (có thể bị cấm thi Pearson VUE tới <b>3 năm</b>). <b>Bị đăng xuất</b> (lỗi máy/mạng): giữ bình tĩnh, gọi giám thị ngay (~30s–1 phút). <b>Thời gian thi thực tế &lt; 4 giờ:</b> khiếu nại trực tiếp với Pearson VUE.</div>
+      <div class="callout callout--warn"><span class="callout__label">Trường hợp có thể bị hủy kết quả (revocation)</span>Cúi nhìn / đọc câu hỏi ra thành tiếng; có tiếng ồn lớn từ ngoài; có người gõ cửa lúc thi; rời ghế nghỉ nhưng hệ thống proctoring không ghi nhận; sau giờ nghỉ bị lỗi kết nối hoặc webcam không bật lại.</div>
+      <div class="callout callout--note"><span class="callout__label">Khiếu nại &amp; xác minh điểm</span>Pearson VUE điều tra ticket: nếu do vi phạm quy chế theo checklist → thường từ chối thi lại miễn phí; chỉ đổi lịch miễn phí nếu lỗi do hệ thống/kỹ thuật của họ. PMI có thể tặng 1 lần thi lại hoặc giảm giá như thiện chí. Email PMI Customer Care thường phản hồi sau <b>3–5 ngày làm việc</b>.</div>
 
       <h3>Nếu trượt lần đầu — 4 bước</h3>
       <div class="d-steps">
@@ -258,19 +244,19 @@
         <div class="arw">›</div>
         <div class="st alt"><span class="s">Bước 4</span>Execute</div>
       </div>
-      <div class="legend">
-        <div class="lg"><b>1 · Attitude</b><span>Làm chủ tình huống: chịu trách nhiệm kết quả, không đổ lỗi bản thân hay ngoại cảnh. PMI cho tới <b>3 lần/năm</b> — nghỉ ngơi, lấy lại tự tin.</span></div>
-        <div class="lg"><b>2 · Review</b><span>Hiểu hay học vẹt? Yếu domain nào hay cả đề? Rào cản tiếng Anh? Chiến lược phòng thi &amp; tâm lý có ổn? Viết lại lessons learned.</span></div>
-        <div class="lg"><b>3 · Plan</b><span>Sau khi tha thứ cho bản thân, lập kế hoạch <b>cụ thể</b>: hành động sửa điểm yếu, mốc thời gian rõ, rà soát tiến độ đều đặn.</span></div>
-        <div class="lg"><b>4 · Execute</b><span>May mắn chỉ là phần rất nhỏ — <b>luyện tập đều đặn &amp; chiến lược đúng</b> mới đưa bạn tới thành công.</span></div>
+      <div class="features">
+        <div class="feature"><b>1 · Attitude</b><span>Làm chủ tình huống: chịu trách nhiệm kết quả, không đổ lỗi bản thân hay ngoại cảnh. PMI cho tới <b>3 lần/năm</b> — nghỉ ngơi, lấy lại tự tin.</span></div>
+        <div class="feature"><b>2 · Review</b><span>Hiểu hay học vẹt? Yếu domain nào hay cả đề? Rào cản tiếng Anh? Chiến lược phòng thi &amp; tâm lý có ổn? Viết lại lessons learned.</span></div>
+        <div class="feature"><b>3 · Plan</b><span>Sau khi tha thứ cho bản thân, lập kế hoạch <b>cụ thể</b>: hành động sửa điểm yếu, mốc thời gian rõ, rà soát tiến độ đều đặn.</span></div>
+        <div class="feature"><b>4 · Execute</b><span>May mắn chỉ là phần rất nhỏ — <b>luyện tập đều đặn &amp; chiến lược đúng</b> mới đưa bạn tới thành công.</span></div>
       </div>
-      <div class="note ok"><span class="lbl">Sau khi đậu</span>Báo tin gia đình, chia sẻ &amp; tag bạn học; cập nhật chữ ký email &amp; hồ sơ LinkedIn; kiểm tra tên trong <b>PMI online registry</b>; tải chứng chỉ số ở Dashboard pmi.org (View Certification); viết lessons learned &amp; quay lại chia sẻ cho khóa sau — pay it forward.</div>
+      <div class="callout callout--ok"><span class="callout__label">Sau khi đậu</span>Báo tin gia đình, chia sẻ &amp; tag bạn học; cập nhật chữ ký email &amp; hồ sơ LinkedIn; kiểm tra tên trong <b>PMI online registry</b>; tải chứng chỉ số ở Dashboard pmi.org (View Certification); viết lessons learned &amp; quay lại chia sẻ cho khóa sau — pay it forward.</div>
     </section>
     <footer>
       <b>Phần IV / IV</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP. Luyện tiếp: <a href="flashcard-quiz.html">Flashcard &amp; Quiz →</a>
     </footer>
   </main>
 </div>
-<script src="assets/site.js"></script>
+<script type="module" src="assets/js/main.js"></script>
 </body>
 </html>

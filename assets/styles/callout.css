@@ -1,0 +1,23 @@
+/* callout.css — note / warn / ok / tip / english-definition (BEM block + modifiers) */
+.callout{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--accent-wash);
+  border-radius:10px;padding:14px 19px;margin:16px 0;font-size:14.3px;color:var(--ink-soft)}
+.callout b{color:var(--ink)}
+.callout__label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-ink);margin-bottom:5px;font-weight:600}
+
+.callout--note{} /* default = base accent */
+.callout--warn{border-left-color:var(--gate);background:var(--gate-wash)}
+.callout--warn .callout__label{color:var(--gate)}
+.callout--ok{border-left-color:var(--ok);background:var(--ok-wash)}
+.callout--ok .callout__label{color:var(--ok)}
+
+.callout--tip{border-color:#f5c6dd;border-left-color:var(--tip);background:var(--tip-wash)}
+.callout--tip .callout__label{color:var(--tip);letter-spacing:.08em}
+.callout--tip code{background:#fff;padding:1px 6px;border-radius:5px;color:var(--tip);font-size:12.5px}
+
+.callout--en{border-color:#bfe0da;border-left-color:var(--flag);background:var(--flag-wash);
+  border-radius:9px;padding:11px 16px;margin:11px 0;font-size:14px}
+.callout--en i{color:var(--muted)}
+.callout--en .callout__label{display:inline-block;font-size:9.5px;letter-spacing:.1em;color:#fff;
+  background:var(--flag);padding:2px 7px;border-radius:5px;margin:0 9px 0 0;font-weight:600;vertical-align:1px}
+.callout--en + .callout--en{margin-top:-2px}

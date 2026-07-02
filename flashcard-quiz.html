@@ -7,41 +7,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/pmp.css">
+<link rel="stylesheet" href="assets/styles/main.css">
 </head>
 <body>
-<div class="topbar">
-  <a class="brand" href="index.html"><span class="mark">P</span> PMBOK 8 <small>học PMP · v2</small></a>
-  <nav class="topnav">
-    <a href="index.html">Bắt đầu</a>
-    <a href="phan-1-nen-tang.html">I · Nền tảng</a>
-    <a href="phan-2-chu-de.html">II · Chủ đề</a>
-    <a href="phan-3-agile.html">III · Agile</a>
-    <a href="phan-4-on-thi.html">IV · Ôn thi</a>
-    <a href="cong-thuc-va-vi-du.html">Công thức</a>
-    <a href="thuat-ngu.html">Thuật ngữ</a>
-    <a href="rita-process-chart.html">Process Chart</a>
-    <a class="cta cur" href="flashcard-quiz.html">Flashcard &amp; Quiz</a>
-  </nav>
-  <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
-</div>
+<div id="site-navbar"></div>
 <div class="shell" id="top">
-  <aside class="side" id="side">
-    <a class="backlink" href="index.html">← Trang chủ</a>
+  <aside class="sidebar" id="side">
+    <a class="sidebar__back" href="index.html">← Trang chủ</a>
     <h4>Tự kiểm tra</h4>
-    <a href="#flashcards"><span class="c">01</span>Flashcard thuật ngữ</a>
-    <a href="#quiz"><span class="c">02</span>Quiz trắc nghiệm</a>
+    <a href="#flashcards"><span class="sidebar__num">01</span>Flashcard thuật ngữ</a>
+    <a href="#quiz"><span class="sidebar__num">02</span>Quiz trắc nghiệm</a>
     <h4>Ôn lý thuyết</h4>
-    <a href="phan-2-chu-de.html"><span class="c">II</span>8 chủ đề kiến thức</a>
-    <a href="cong-thuc-va-vi-du.html"><span class="c">∑</span>Ví dụ tính toán</a>
-    <a href="thuat-ngu.html"><span class="c">A-Z</span>Từ điển thuật ngữ</a>
+    <a href="phan-2-chu-de.html"><span class="sidebar__num">II</span>8 chủ đề kiến thức</a>
+    <a href="cong-thuc-va-vi-du.html"><span class="sidebar__num">∑</span>Ví dụ tính toán</a>
+    <a href="thuat-ngu.html"><span class="sidebar__num">A-Z</span>Từ điển thuật ngữ</a>
   </aside>
   <main>
     <div class="hero">
-      <span class="eyebrow">Tự kiểm tra · lật thẻ &amp; trắc nghiệm tự chấm điểm</span>
+      <span class="hero__eyebrow">Tự kiểm tra · lật thẻ &amp; trắc nghiệm tự chấm điểm</span>
       <h1>Flashcard &amp; Quiz</h1>
       <p>Học chủ động: <b>lật flashcard</b> để nhớ định nghĩa (song ngữ Anh–Việt), rồi làm <b>bộ quiz tình huống</b> tự chấm điểm kèm giải thích ngay. Đây là cách luyện đúng chuẩn "practising over reading".</p>
-      <div class="jump">
+      <div class="hero__jump">
         <a href="#flashcards"><span class="n">01</span>Flashcards</a>
         <a href="#quiz"><span class="n">02</span>Quiz</a>
       </div>
@@ -49,47 +35,47 @@
 
     <!-- FLASHCARDS -->
     <section id="flashcards">
-      <div class="sec-head"><h2>Flashcard thuật ngữ</h2><span class="tag"><span id="fcCount">0</span> thẻ · song ngữ</span></div>
-      <p class="sec-desc">Nhìn mặt trước (thuật ngữ) → tự nhẩm định nghĩa → bấm để lật xem đáp án (định nghĩa tiếng Anh + ghi chú tiếng Việt).</p>
-      <div class="fc-toolbar">
-        <button class="btn primary" id="fcFlip" data-open="0">Lật tất cả</button>
+      <div class="section__head"><h2>Flashcard thuật ngữ</h2><span class="tag"><span id="fcCount">0</span> thẻ · song ngữ</span></div>
+      <p class="section__desc">Nhìn mặt trước (thuật ngữ) → tự nhẩm định nghĩa → bấm để lật xem đáp án (định nghĩa tiếng Anh + ghi chú tiếng Việt).</p>
+      <div class="flashcard-toolbar">
+        <button class="btn btn--primary" id="fcFlip" data-open="0">Lật tất cả</button>
         <button class="btn" id="fcShuffle" data-k="0">Xáo trộn thứ tự</button>
         <button class="btn" id="fcAddToggle">➕ Thêm thẻ mới</button>
         <span style="font-size:13px;color:var(--muted)">Bạn đã thêm: <b id="fcMineCount">0</b> thẻ (lưu trong trình duyệt này)</span>
       </div>
 
-      <div class="fc-addform" id="fcForm" style="display:none">
-        <p class="af-help">Thêm nhanh một thẻ — lưu ngay trong trình duyệt này (không cần sửa code). Muốn lưu <b>cố định &amp; chia sẻ</b> (đưa lên GitHub), thêm vào file <code>assets/my-cards.js</code> hoặc dùng nút "Xuất thẻ đã thêm" bên dưới.</p>
-        <div class="af-grid">
+      <div class="flashcard-form" id="fcForm" style="display:none">
+        <p class="flashcard-form__help">Thêm nhanh một thẻ — lưu ngay trong trình duyệt này (không cần sửa code). Muốn lưu <b>cố định &amp; chia sẻ</b> (đưa lên GitHub), thêm vào file <code>assets/js/data/my-cards.js</code> hoặc dùng nút "Xuất thẻ đã thêm" bên dưới.</p>
+        <div class="flashcard-form__grid">
           <label>Nhóm / chủ đề<input id="fcInCat" type="text" placeholder="vd: Risk, Agile…"></label>
           <label>Mặt trước (thuật ngữ) *<input id="fcInTerm" type="text" placeholder="vd: Risk Register"></label>
           <label>Định nghĩa tiếng Anh (EN) *<textarea id="fcInEn" rows="2" placeholder="A repository of identified risks…"></textarea></label>
           <label>Ghi chú tiếng Việt<textarea id="fcInVn" rows="2" placeholder="Sổ ghi các rủi ro đã nhận diện…"></textarea></label>
         </div>
-        <div class="af-actions">
-          <button class="btn primary" id="fcAdd">Thêm thẻ</button>
-          <button class="btn" id="fcExport">Xuất thẻ đã thêm (copy vào my-cards.js)</button>
+        <div class="flashcard-form__actions">
+          <button class="btn btn--primary" id="fcAdd">Thêm thẻ</button>
+          <button class="btn" id="fcExport">Xuất thẻ đã thêm (copy vào data/my-cards.js)</button>
           <button class="btn" id="fcClear">Xóa thẻ đã thêm</button>
         </div>
-        <p class="af-msg" id="fcMsg"></p>
-        <textarea class="af-export" id="fcExportOut" readonly style="display:none"></textarea>
+        <p class="flashcard-form__msg" id="fcMsg"></p>
+        <textarea class="flashcard-form__export" id="fcExportOut" readonly style="display:none"></textarea>
       </div>
 
-      <div class="fc-grid" id="fcGrid"></div>
+      <div class="flashcard-grid" id="fcGrid"></div>
     </section>
 
     <!-- QUIZ -->
     <section id="quiz">
-      <div class="sec-head"><h2>Quiz trắc nghiệm</h2><span class="tag">tình huống · tự chấm</span></div>
-      <p class="sec-desc">Chọn đáp án cho mỗi câu — hệ thống chấm ngay, tô xanh đáp án đúng, đỏ đáp án sai, và hiện giải thích. Mục tiêu ≥ 80%. Dùng bộ lọc để luyện riêng từng chủ đề.</p>
-      <div class="quiz-filter" id="quizFilter"><span class="flabel">Lọc theo chủ đề:</span></div>
-      <div class="quiz-bar">
-        <span class="score" id="quizScore">0 / 0</span>
-        <div class="prog"><i id="quizProg"></i></div>
+      <div class="section__head"><h2>Quiz trắc nghiệm</h2><span class="tag">tình huống · tự chấm</span></div>
+      <p class="section__desc">Chọn đáp án cho mỗi câu — hệ thống chấm ngay, tô xanh đáp án đúng, đỏ đáp án sai, và hiện giải thích. Mục tiêu ≥ 80%. Dùng bộ lọc để luyện riêng từng chủ đề.</p>
+      <div class="quiz__filter" id="quizFilter"><span class="quiz__filter-label">Lọc theo chủ đề:</span></div>
+      <div class="quiz__bar">
+        <span class="quiz__score" id="quizScore">0 / 0</span>
+        <div class="quiz__prog"><i id="quizProg"></i></div>
         <span style="font-size:12.5px;color:var(--muted);font-family:var(--mono)">tổng <span id="quizTotal">0</span> câu</span>
       </div>
       <div class="quiz" id="quizList"></div>
-      <div class="quiz-done" id="quizDone" style="display:none"></div>
+      <div class="quiz__done" id="quizDone" style="display:none"></div>
     </section>
 
     <footer>
@@ -97,8 +83,6 @@
     </footer>
   </main>
 </div>
-<script src="assets/site.js"></script>
-<script src="assets/my-cards.js"></script>
-<script src="assets/quiz.js"></script>
+<script type="module" src="assets/js/main.js"></script>
 </body>
 </html>

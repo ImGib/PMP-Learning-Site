@@ -34,22 +34,49 @@ Bộ tài liệu **tự học PMP** (Project Management Professional) dành cho 
 | `cong-thuc-va-vi-du.html` | **Công thức & ví dụ** giải từng bước |
 | `flashcard-quiz.html` | **Flashcard & Quiz** tương tác |
 | `thuat-ngu.html` | **Từ điển thuật ngữ** song ngữ Anh–Việt |
-| `assets/` | `pmp.css` (giao diện) · `site.js` (điều hướng) · `quiz.js` (flashcard + quiz) |
+| `rita-process-chart.html` | **Rita Process Chart** — 49 process |
 
 ---
 
-## 💻 Xem tại máy (local)
+## 🏗️ Kiến trúc (Component-Based · BEM · ES6 Modules)
 
-Không cần cài đặt gì — chỉ là HTML/CSS/JS thuần, không có bước build.
+Tách bạch **cấu trúc (HTML) · giao diện (CSS/BEM) · logic (JS module)**:
+
+```
+assets/
+├── styles/                 # Giao diện — CSS chia theo component, gom bằng @import, đặt tên BEM
+│   ├── main.css            #   entry (@import base → layout → components)
+│   ├── base.css            #   design tokens (:root), reset, atom (btn, jargon)
+│   ├── layout.css          #   .topbar / .shell / .sidebar / .hero / .section / footer
+│   ├── callout.css         #   .callout--note / --warn / --ok / --tip / --en
+│   ├── content.css         #   .card / .features / .tbl / .formula / .principle …
+│   ├── diagram.css         #   .fig / .d-* / .pchart / .gchip …
+│   ├── flashcard.css       #   .flashcard__* (BEM)
+│   ├── quiz.css            #   .quiz__* (BEM)
+│   └── glossary.css        #   .glossary__* (BEM)
+└── js/                     # Logic — ES6 Modules (import/export), không biến toàn cục
+    ├── main.js             #   entry (type="module"): mount chrome + feature-detect widget
+    ├── lib/dom.js          #   helper DOM dùng chung (esc, qs, qsa, el)
+    ├── components/         #   navbar · sidebar · flashcards · quiz · glossary
+    └── data/               #   flashcards · quiz · user-cards (localStorage) · my-cards
+```
+
+- **Component dùng chung:** thanh điều hướng (`navbar.js`) được **render lúc chạy** vào `<div id="site-navbar">` trên mọi trang → hết trùng lặp markup.
+- **BEM:** `block__element--modifier` (vd `.quiz__opt--correct`, `.flashcard--flipped`, `.callout--warn`); state class dùng `is-*` (`.is-active`, `.is-answered`).
+- **ES6 Modules:** mỗi trang chỉ nạp `main.js`; nó `import` các component/data cần dùng và tự bỏ qua nếu trang không có widget tương ứng.
+
+---
+
+## 💻 Chạy tại máy (local)
+
+> ⚠️ Vì dùng **ES6 Modules**, KHÔNG mở trực tiếp bằng double-click (`file://`) — trình duyệt chặn module. Hãy chạy qua một server tĩnh:
 
 ```bash
-# Cách 1: mở trực tiếp
-# Nhấp đúp vào index.html
-
-# Cách 2: chạy server tĩnh (khuyến nghị, tránh vướng CORS)
-python -m http.server 8000
-# rồi mở http://localhost:8000
+python -m http.server 8000      # rồi mở http://localhost:8000
+# hoặc:  npx serve .
 ```
+
+Trên **GitHub Pages** thì chạy bình thường (đã là HTTPS). Không có bước build.
 
 ---
 
@@ -65,7 +92,8 @@ python -m http.server 8000
 
 ## ⚙️ Công nghệ
 
-- HTML5 + CSS3 + JavaScript thuần (vanilla), **không framework, không build**
+- HTML5 + CSS3 (**BEM**) + JavaScript **ES6 Modules** thuần (vanilla), **không framework, không build**
+- Kiến trúc **Component-Based**: chrome dùng chung render runtime; CSS/JS chia theo component
 - Font: Newsreader + JetBrains Mono (Google Fonts)
 - Triển khai qua **GitHub Pages** (miễn phí)
 
