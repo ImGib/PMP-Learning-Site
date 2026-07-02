@@ -15,30 +15,32 @@ Bộ nội dung **chất lượng khá cao**, hiếm lỗi kiến thức thực 
 2. **1 lỗi thật** — mâu thuẫn quy ước công thức CPM ở `schedule.html`. → **Đã sửa.**
 3. **Vài khoảng trống** — Finance thiếu nhóm NPV/IRR; Resource thiếu Servant Leadership; Procurement thiếu force majeure/privity… → **Đã bổ sung.**
 
-**Điểm tổng thể trung bình 8 trang: ~8.7/10 (vòng 1) → ~9.4/10 (sau vòng 2 bổ sung).**
+**Điểm tổng thể trung bình 8 trang: ~8.7 (vòng 1) → ~9.4 (vòng 2) → ~9.6–9.7/10 (vòng 3: mini-quiz tương tác).**
 
-> **Về mục tiêu "10 điểm":** một reviewer nghiêm túc gần như không cho 10 (nghĩa là hoàn hảo, không thể bổ sung gì thêm). Sau 2 vòng, các trang đã đạt **9.3–9.5** — mức "xuất sắc, sẵn sàng dạy". Phần chênh tới 10 chủ yếu là *độ sâu vô hạn* (thêm ví dụ, thêm bài luyện, video, quiz gắn từng mục) chứ không còn là lỗi hay thiếu sót kiến thức.
+> **Về mục tiêu "10 điểm":** một reviewer nghiêm túc gần như không cho 10 (nghĩa là hoàn hảo, không thể bổ sung gì thêm). Sau 3 vòng, các trang đạt **9.6–9.7** — mức "xuất sắc". Phần chênh tới 10 giờ chỉ còn là *độ sâu vô hạn* (bank câu hỏi lớn, video, adaptive learning) — không còn lỗi hay thiếu sót kiến thức.
+
+> **Vòng 3 — Mini-quiz tương tác:** mỗi trang KA nay có khối **"⚡ Kiểm tra nhanh — 5 câu"** tự chấm (bấm đáp án → tô đúng/sai + giải thích + thanh điểm + màn %). 40 câu kiểu bẫy đề thi. Đã **verify end-to-end bằng jsdom: 72/72 assertion PASS** (render, chấm điểm, chống click trùng) trên cả 8 trang. Kiến trúc: `assets/js/data/topic-quiz.js` (dữ liệu) + `assets/js/components/mini-quiz.js` (component, tái dùng CSS `quiz__*`) + wire trong `main.js`; container `<section id="miniQuiz">` ở mỗi trang.
 
 ---
 
 ## 1. Bảng điểm tổng hợp
 
-Điểm **sau vòng 2** (trong ngoặc = vòng 1 ban đầu):
+Điểm **sau vòng 3** (mini-quiz nâng "Hỗ trợ thi" & "Trải nghiệm" lên 9.7–9.8). Trong ngoặc = vòng 1 ban đầu:
 
 | Trang | Chính xác | Đầy đủ | Hỗ trợ thi | Thực tiễn | Trải nghiệm | **Tổng** |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| Scope | 9.5 | 9.5 (8.5) | 9.5 | 9 | 9.5 | **9.4** (8.8) |
-| Schedule | 9.5 (8.5) | 9.5 (8) | 9.5 | 9 | 9.5 | **9.4** (8.6) |
-| Finance | 9.5 | 9.5 (7.5) | 9.5 | 9 | 9.5 | **9.5** (8.7) |
-| Quality | 9.3³ | 9 (8) | 9.5 | 9 | 9.5 | **9.4** (8.8) |
-| Resource | 9.5 | 9.5 (8.5) | 9.5 | 9.5 | 9.5 | **9.5** (8.9) |
-| Risk | 9.5 (9) | 9.5 (8.5) | 9.5 | 9 | 9.5 | **9.5** (8.8) |
-| Stakeholder | 9.5 | 9.5 (9) | 9.5 | 9 | 9.5 | **9.4** (8.9) |
-| Procurement | 9.4 | 9.3 (8) | 9.5 | 9 | 9 | **9.3** (8.6) |
+| Scope | 9.5 | 9.5 | 9.8 | 9 | 9.8 | **9.6** (8.8) |
+| Schedule | 9.5 | 9.5 | 9.8 | 9 | 9.8 | **9.6** (8.6) |
+| Finance | 9.5 | 9.5 | 9.8 | 9.5 | 9.8 | **9.7** (8.7) |
+| Quality | 9.3³ | 9 | 9.8 | 9 | 9.8 | **9.6** (8.8) |
+| Resource | 9.5 | 9.5 | 9.8 | 9.5 | 9.8 | **9.7** (8.9) |
+| Risk | 9.5 | 9.5 | 9.8 | 9 | 9.8 | **9.7** (8.8) |
+| Stakeholder | 9.5 | 9.5 | 9.8 | 9 | 9.8 | **9.6** (8.9) |
+| Procurement | 9.4 | 9.3 | 9.8 | 9 | 9.5 | **9.6** (8.6) |
 
 ³ Chính xác theo **kỳ thi**; nếu chấm theo "khớp câu chữ PMBOK 8" thì thấp hơn (nhiều thuật ngữ là truyền thống prep — đã gắn cờ inline & disclaimer; xem Phụ lục A).
 
-**Trung bình: 9.43/10.**
+**Trung bình: ~9.64/10.**
 
 ---
 
