@@ -290,63 +290,87 @@ var QUIZ = [
   });
 })();
 
-// ---------- render quiz ----------
+// ---------- render quiz (with category filter) ----------
 (function(){
   var list = document.getElementById('quizList');
   if(!list) return;
-  var answered = 0, correctCount = 0, total = QUIZ.length;
   var keys = ['A','B','C','D','E'];
+  var answered = 0, correctCount = 0, total = 0, currentCat = null;
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
-  var scoreEl = document.getElementById('quizScore');
-  var progEl = document.getElementById('quizProg');
-  var totalEl = document.getElementById('quizTotal');
-  if(totalEl) totalEl.textContent = total;
+  var scoreEl  = document.getElementById('quizScore');
+  var progEl   = document.getElementById('quizProg');
+  var totalEl  = document.getElementById('quizTotal');
+  var doneEl   = document.getElementById('quizDone');
+  var filterEl = document.getElementById('quizFilter');
 
   function update(){
     if(scoreEl) scoreEl.textContent = correctCount + ' / ' + total;
-    if(progEl) progEl.style.width = Math.round(answered/total*100) + '%';
-    if(answered===total){
-      var done = document.getElementById('quizDone');
-      if(done){
+    if(progEl) progEl.style.width = (total ? Math.round(answered/total*100) : 0) + '%';
+    if(doneEl){
+      if(answered===total && total>0){
         var pct = Math.round(correctCount/total*100);
         var msg = pct>=80 ? 'Xuất sắc! Sẵn sàng cho phần này.' : pct>=65 ? 'Đạt ngưỡng — ôn thêm các câu sai.' : 'Cần ôn lại — xem giải thích từng câu.';
-        done.innerHTML = '<div class="big">'+pct+'%</div><p><b>'+correctCount+'/'+total+'</b> câu đúng. '+msg+'</p><button class="btn primary" id="quizReset">Làm lại</button>';
-        done.style.display='block';
-        document.getElementById('quizReset').addEventListener('click', function(){ location.reload(); });
-      }
+        doneEl.innerHTML = '<div class="big">'+pct+'%</div><p><b>'+correctCount+'/'+total+'</b> câu đúng'+(currentCat?(' · chủ đề <b>'+esc(currentCat)+'</b>'):'')+'. '+msg+'</p><button class="btn primary" id="quizReset">Làm lại</button>';
+        doneEl.style.display='block';
+        var rb = document.getElementById('quizReset');
+        if(rb) rb.addEventListener('click', function(){
+          renderQuiz(currentCat);
+          var sec=document.getElementById('quiz'); if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+        });
+      } else { doneEl.style.display='none'; }
     }
   }
 
-  QUIZ.forEach(function(item, qi){
-    var q = document.createElement('div');
-    q.className = 'q';
-    var opts = item.opts.map(function(o,oi){
-      return '<div class="opt" data-oi="'+oi+'"><span class="key">'+keys[oi]+'</span>'+esc(o)+'</div>';
-    }).join('');
-    q.innerHTML =
-      '<div class="qhead"><span class="qnum">Câu '+(qi+1)+'</span><span class="qcat">'+esc(item.cat)+'</span></div>'+
-      '<div class="qtext">'+esc(item.q)+'</div>'+
-      '<div class="opts">'+opts+'</div>'+
-      '<div class="expl"><span class="lbl">Giải thích</span>'+item.expl+'</div>';
-    list.appendChild(q);
-
-    q.querySelectorAll('.opt').forEach(function(opt){
-      opt.addEventListener('click', function(){
-        if(q.classList.contains('answered')) return;
-        q.classList.add('answered');
-        var oi = parseInt(opt.dataset.oi,10);
-        var correct = item.correct;
-        q.querySelectorAll('.opt').forEach(function(o){
-          var idx = parseInt(o.dataset.oi,10);
-          if(idx===correct) o.classList.add('correct');
+  function renderQuiz(cat){
+    currentCat = cat || null;
+    answered = 0; correctCount = 0;
+    var items = QUIZ.filter(function(it){ return !currentCat || it.cat===currentCat; });
+    total = items.length;
+    if(totalEl) totalEl.textContent = total;
+    if(doneEl){ doneEl.style.display='none'; doneEl.innerHTML=''; }
+    list.innerHTML = '';
+    items.forEach(function(item, qi){
+      var q = document.createElement('div');
+      q.className = 'q';
+      var opts = item.opts.map(function(o,oi){
+        return '<div class="opt" data-oi="'+oi+'"><span class="key">'+keys[oi]+'</span>'+esc(o)+'</div>';
+      }).join('');
+      q.innerHTML =
+        '<div class="qhead"><span class="qnum">Câu '+(qi+1)+'</span><span class="qcat">'+esc(item.cat)+'</span></div>'+
+        '<div class="qtext">'+esc(item.q)+'</div>'+
+        '<div class="opts">'+opts+'</div>'+
+        '<div class="expl"><span class="lbl">Giải thích</span>'+item.expl+'</div>';
+      list.appendChild(q);
+      q.querySelectorAll('.opt').forEach(function(opt){
+        opt.addEventListener('click', function(){
+          if(q.classList.contains('answered')) return;
+          q.classList.add('answered');
+          var oi = parseInt(opt.dataset.oi,10), correct = item.correct;
+          q.querySelectorAll('.opt').forEach(function(o){ if(parseInt(o.dataset.oi,10)===correct) o.classList.add('correct'); });
+          if(oi!==correct) opt.classList.add('wrong'); else correctCount++;
+          answered++; update();
         });
-        if(oi!==correct) opt.classList.add('wrong');
-        else correctCount++;
-        answered++;
-        update();
       });
     });
-  });
-  update();
+    if(filterEl) filterEl.querySelectorAll('button').forEach(function(b){
+      b.classList.toggle('primary', (b.getAttribute('data-cat')||'') === (currentCat||''));
+    });
+    update();
+  }
+
+  // build filter buttons (Tất cả + từng chủ đề, kèm số câu)
+  if(filterEl){
+    var order = [], counts = {};
+    QUIZ.forEach(function(it){ if(counts[it.cat]===undefined){ counts[it.cat]=0; order.push(it.cat); } counts[it.cat]++; });
+    var html = '<span class="flabel">Lọc theo chủ đề:</span>';
+    html += '<button class="btn primary" data-cat="">Tất cả ('+QUIZ.length+')</button>';
+    order.forEach(function(c){ html += '<button class="btn" data-cat="'+esc(c)+'">'+esc(c)+' ('+counts[c]+')</button>'; });
+    filterEl.innerHTML = html;
+    filterEl.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click', function(){ renderQuiz(b.getAttribute('data-cat')); });
+    });
+  }
+
+  renderQuiz(null);
 })();
