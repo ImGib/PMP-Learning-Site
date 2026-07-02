@@ -41,20 +41,22 @@ const PART2_TOPICS = new Set([
   'procurement.html',
 ]);
 
+const pageOf = () => location.pathname.split('/').pop() || 'index.html';
+const isActive = (href, current) =>
+  href === current || (href === 'phan-2-chu-de.html' && PART2_TOPICS.has(current));
+
 export function renderNavbar(mount) {
-  const current = location.pathname.split('/').pop() || 'index.html';
-  const isActive = (href) =>
-    href === current || (href === 'phan-2-chu-de.html' && PART2_TOPICS.has(current));
+  const current = pageOf();
 
   const nav = NAV.map((item) => {
     if (!item.children) {
-      const cur = isActive(item.href) ? ' topbar__link--current' : '';
+      const cur = isActive(item.href, current) ? ' topbar__link--current' : '';
       return `<a class="topbar__link${cur}" href="${item.href}">${item.label}</a>`;
     }
-    const anyCur = item.children.some((c) => isActive(c.href));
+    const anyCur = item.children.some((c) => isActive(c.href, current));
     const kids = item.children
       .map((c) => {
-        const cur = isActive(c.href) ? ' topbar__panellink--current' : '';
+        const cur = isActive(c.href, current) ? ' topbar__panellink--current' : '';
         return `<a class="topbar__panellink${cur}" href="${c.href}">${c.label}</a>`;
       })
       .join('');
@@ -84,4 +86,27 @@ export function renderNavbar(mount) {
     });
   });
   document.addEventListener('click', () => groups.forEach((g) => g.classList.remove('is-open')));
+}
+
+// Inject the full site navigation at the top of the sidebar. Hidden on desktop (CSS),
+// shown only inside the mobile drawer (☰) so phones get complete cross-page navigation.
+// Call AFTER any sidebar rendering (e.g. renderTopicChrome) so it is not overwritten.
+export function mountMobileNav() {
+  const side = document.querySelector('.sidebar');
+  if (!side || side.querySelector('.sidebar__sitenav')) return;
+  const current = pageOf();
+  const link = (href, label) =>
+    `<a href="${href}"${isActive(href, current) ? ' class="is-active"' : ''}>${label}</a>`;
+  const section = (title, items) =>
+    `<h4>${title}</h4>` + items.map((i) => link(i.href, i.label)).join('');
+
+  let html = `<h4>Điều hướng</h4>${link('index.html', 'Trang chủ')}`;
+  NAV.forEach((item) => {
+    if (item.children) html += section(item.label, item.children);
+  });
+
+  const wrap = document.createElement('div');
+  wrap.className = 'sidebar__sitenav';
+  wrap.innerHTML = html;
+  side.prepend(wrap);
 }

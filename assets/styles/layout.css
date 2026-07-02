@@ -213,6 +213,11 @@
   color: var(--accent-ink);
 }
 
+/* full site nav injected into sidebar — only shown in the mobile drawer */
+.sidebar__sitenav {
+  display: none;
+}
+
 /* ---- hero ---- */
 .hero {
   border-bottom: 1px solid var(--line);
@@ -351,6 +356,12 @@ footer a {
   }
   .sidebar--open {
     transform: translateX(0);
+  }
+  .sidebar__sitenav {
+    display: block;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
   }
   .topbar__menu {
     display: block;
