@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcard &amp; Quiz — Học PMP với PMBOK 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/pmp.css">
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="index.html"><span class="mark">P</span> PMBOK 8 <small>học PMP · v2</small></a>
+  <nav class="topnav">
+    <a href="index.html">Bắt đầu</a>
+    <a href="phan-1-nen-tang.html">I · Nền tảng</a>
+    <a href="phan-2-chu-de.html">II · Chủ đề</a>
+    <a href="phan-3-agile.html">III · Agile</a>
+    <a href="phan-4-on-thi.html">IV · Ôn thi</a>
+    <a href="cong-thuc-va-vi-du.html">Công thức</a>
+    <a href="thuat-ngu.html">Thuật ngữ</a>
+    <a class="cta cur" href="flashcard-quiz.html">Flashcard &amp; Quiz</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
+</div>
+<div class="shell" id="top">
+  <aside class="side" id="side">
+    <a class="backlink" href="index.html">← Trang chủ</a>
+    <h4>Tự kiểm tra</h4>
+    <a href="#flashcards"><span class="c">01</span>Flashcard thuật ngữ</a>
+    <a href="#quiz"><span class="c">02</span>Quiz trắc nghiệm</a>
+    <h4>Ôn lý thuyết</h4>
+    <a href="phan-2-chu-de.html"><span class="c">II</span>8 chủ đề kiến thức</a>
+    <a href="cong-thuc-va-vi-du.html"><span class="c">∑</span>Ví dụ tính toán</a>
+    <a href="thuat-ngu.html"><span class="c">A-Z</span>Từ điển thuật ngữ</a>
+  </aside>
+  <main>
+    <div class="hero">
+      <span class="eyebrow">Tự kiểm tra · lật thẻ &amp; trắc nghiệm tự chấm điểm</span>
+      <h1>Flashcard &amp; Quiz</h1>
+      <p>Học chủ động: <b>lật flashcard</b> để nhớ định nghĩa (song ngữ Anh–Việt), rồi làm <b>bộ quiz tình huống</b> tự chấm điểm kèm giải thích ngay. Đây là cách luyện đúng chuẩn "practising over reading".</p>
+      <div class="jump">
+        <a href="#flashcards"><span class="n">01</span>Flashcards</a>
+        <a href="#quiz"><span class="n">02</span>Quiz</a>
+      </div>
+    </div>
+
+    <!-- FLASHCARDS -->
+    <section id="flashcards">
+      <div class="sec-head"><h2>Flashcard thuật ngữ</h2><span class="tag"><span id="fcCount">0</span> thẻ · song ngữ</span></div>
+      <p class="sec-desc">Nhìn mặt trước (thuật ngữ) → tự nhẩm định nghĩa → bấm để lật xem đáp án (định nghĩa tiếng Anh + ghi chú tiếng Việt).</p>
+      <div class="fc-toolbar">
+        <button class="btn primary" id="fcFlip" data-open="0">Lật tất cả</button>
+        <button class="btn" id="fcShuffle" data-k="0">Xáo trộn thứ tự</button>
+        <span style="font-size:13px;color:var(--muted)">Mẹo: che phần tiếng Anh, tự dịch thuật ngữ sang định nghĩa tiếng Anh trước khi lật.</span>
+      </div>
+      <div class="fc-grid" id="fcGrid"></div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz">
+      <div class="sec-head"><h2>Quiz trắc nghiệm</h2><span class="tag">tình huống · tự chấm</span></div>
+      <p class="sec-desc">Chọn đáp án cho mỗi câu — hệ thống chấm ngay, tô xanh đáp án đúng, đỏ đáp án sai, và hiện giải thích. Mục tiêu ≥ 80%.</p>
+      <div class="quiz-bar">
+        <span class="score" id="quizScore">0 / 0</span>
+        <div class="prog"><i id="quizProg"></i></div>
+        <span style="font-size:12.5px;color:var(--muted);font-family:var(--mono)">tổng <span id="quizTotal">0</span> câu</span>
+      </div>
+      <div class="quiz" id="quizList"></div>
+      <div class="quiz-done" id="quizDone" style="display:none"></div>
+    </section>
+
+    <footer>
+      <b>Flashcard &amp; Quiz</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP. Câu hỏi mang tính minh họa để luyện tư duy PMI — đề thi thật có 180 câu. Ôn lý thuyết: <a href="phan-1-nen-tang.html">Phần I →</a>
+    </footer>
+  </main>
+</div>
+<script src="assets/site.js"></script>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

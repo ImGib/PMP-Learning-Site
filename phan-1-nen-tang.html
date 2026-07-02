@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phần I · Nền tảng — Học PMP với PMBOK 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/pmp.css">
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="index.html"><span class="mark">P</span> PMBOK 8 <small>học PMP · v2</small></a>
+  <nav class="topnav">
+    <a href="index.html">Bắt đầu</a>
+    <a href="phan-1-nen-tang.html" class="cur">I · Nền tảng</a>
+    <a href="phan-2-chu-de.html">II · Chủ đề</a>
+    <a href="phan-3-agile.html">III · Agile</a>
+    <a href="phan-4-on-thi.html">IV · Ôn thi</a>
+    <a href="cong-thuc-va-vi-du.html">Công thức</a>
+    <a href="thuat-ngu.html">Thuật ngữ</a>
+    <a class="cta" href="flashcard-quiz.html">Flashcard &amp; Quiz</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
+</div>
+<div class="shell" id="top">
+  <aside class="side" id="side">
+    <a class="backlink" href="index.html">← Trang chủ</a>
+    <h4>Phần I · Nền tảng</h4>
+    <a href="#project-basics"><span class="c">01</span>Dự án, Value, Stakeholder</a>
+    <a href="#value-system"><span class="c">02</span>Portfolio · Program · Project</a>
+    <a href="#approaches"><span class="c">03</span>Development Approaches</a>
+    <a href="#lifecycle"><span class="c">04</span>Vòng đời &amp; Phase Gate</a>
+    <a href="#environment"><span class="c">05</span>Môi trường DN · EEF/OPA · AI</a>
+    <a href="#org-structure"><span class="c">06</span>Cơ cấu tổ chức &amp; PMO</a>
+    <a href="#governance"><span class="c">07</span>Governance &amp; Tích hợp</a>
+    <h4>Đi tiếp</h4>
+    <a href="phan-2-chu-de.html"><span class="c">II</span>8 chủ đề kiến thức →</a>
+  </aside>
+  <main>
+    <div class="hero">
+      <span class="eyebrow">Phần I · Nền tảng quản lý dự án</span>
+      <h1>Nền tảng: hiểu dự án trước khi đi sâu</h1>
+      <p>7 khái niệm gốc mọi PMP phải nắm: dự án là gì, giá trị, các bên liên quan, cách tiếp cận phát triển, vòng đời, môi trường tổ chức và quản trị. Mỗi mục kèm <b>định nghĩa tiếng Anh chuẩn thi</b> và mẹo ghi nhớ.</p>
+      <div class="jump">
+        <a href="#project-basics"><span class="n">01</span>Dự án &amp; Value</a>
+        <a href="#value-system"><span class="n">02</span>3 tầng</a>
+        <a href="#approaches"><span class="n">03</span>Approaches</a>
+        <a href="#environment"><span class="n">05</span>EEF/OPA</a>
+        <a href="#governance"><span class="n">07</span>Governance</a>
+      </div>
+    </div>
+    <!-- PROJECT BASICS -->
+    <section id="project-basics">
+      <div class="sec-head"><h2>Dự án, Value &amp; Stakeholder</h2><span class="tag">Phần I · nền tảng</span></div>
+      <p class="sec-desc">Ba khái niệm gốc: một dự án <i>là gì</i>, nó tạo ra <i>cái gì</i>, và <i>ai</i> liên quan.</p>
+
+      <h3>Project (dự án) vs Operation (vận hành)</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Project</b> — a temporary endeavor undertaken to create a unique product, service, or result. <i>(nỗ lực tạm thời tạo ra kết quả độc nhất)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Operations</b> — ongoing, repetitive work performed to sustain the business and produce the same outputs over time; unlike a project, it is not temporary. <i>(vận hành lặp lại, không có điểm dừng)</i></div>
+      <p>Một <b>Project</b> là <i>"nỗ lực tạm thời, trong bối cảnh duy nhất, nhằm tạo ra giá trị"</i>. Hai từ khóa: <b>temporary</b> (có ngày bắt đầu &amp; kết thúc) và <b>unique</b> (kết quả độc nhất, chưa từng làm y hệt). Ngược lại, <b>Operation</b> (vận hành) là <b>permanent</b> (lặp đi lặp lại, không có điểm dừng) — ví dụ dây chuyền sản xuất, chăm sóc khách hàng.</p>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Project vs Operation</span><b>Project = T.U.</b> (<b>T</b>emporary + <b>U</b>nique). Xây một tòa nhà = project; vận hành thang máy hằng ngày trong tòa nhà đó = operation. Đề thi rất hay hỏi phân biệt — cứ tìm 2 chữ "tạm thời" và "độc nhất".</div>
+
+      <h3>Value (giá trị) — trái tim của PMBOK 8</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Value</b> — the worth, importance, or usefulness of something; the net benefit (financial and non-financial) delivered relative to the resources invested. <i>(giá trị: lợi ích vượt trên đầu tư)</i></div>
+      <p><b>Value</b> = <i>phần lợi ích (tài chính + phi tài chính) vượt trên khoản đầu tư</i>. Gồm <b>Business value</b> (đo bằng <span class="jargon" title="Return on Investment — tỷ suất hoàn vốn">ROI</span>, tiền) và <b>Societal value</b> (giá trị xã hội, phi tiền tệ như uy tín, môi trường).</p>
+      <div class="note"><span class="lbl">Điểm dễ nhầm</span>Value <b>không chỉ là tiền</b>. Một câu hỏi thi có thể mô tả dự án "lỗ tiền nhưng tăng uy tín thương hiệu" — đó vẫn là tạo value.</div>
+
+      <h3>Stakeholder (bên liên quan)</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Stakeholder</b> — an individual, group, or organization that may affect, be affected by, or perceive itself to be affected by a decision, activity, or outcome of a project. <i>(bên có thể tác động hoặc bị tác động bởi dự án)</i></div>
+      <p><b>Stakeholder</b> là bất kỳ cá nhân/nhóm/tổ chức nào <i>có thể tác động, bị tác động, hoặc tự cho là bị tác động</i> bởi dự án. Các stakeholder chính:</p>
+      <ul>
+        <li><b>Sponsor</b> — người tài trợ, cấp tiền, "chống lưng" dự án, ký <span class="jargon" title="văn bản khai sinh dự án">Project Charter</span>.</li>
+        <li><b>Project Manager (PM)</b> — người được tổ chức chỉ định dẫn dắt team đạt mục tiêu.</li>
+        <li><b>Project Team</b> — nhóm thực thi công việc.</li>
+        <li><b>Customer</b> — người nhận &amp; nghiệm thu sản phẩm; <b>PMO</b>, cơ quan quản lý, và các bên ảnh hưởng khác.</li>
+      </ul>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · 6 ràng buộc dự án</span>Mọi dự án bị "kéo căng" bởi 6 ràng buộc, nhớ bằng <b>"Sao Chép Chất — Người Rủi Sướng"</b>: <b>S</b>cope · <b>C</b>ost (Finance) · <b>C</b>hất lượng (Quality) · Người (<b>R</b>esource) · <b>R</b>isk · Sự hài lòng (Stakeholder Satisfaction) + Schedule. Thay đổi 1 cái sẽ ảnh hưởng các cái còn lại.</div>
+    </section>
+
+    <!-- VALUE SYSTEM -->
+    <section id="value-system">
+      <div class="sec-head"><h2>Portfolio · Program · Project</h2><span class="tag">System for Value Delivery</span></div>
+      <p class="sec-desc">Tổ chức giao value qua một "hệ thống" 3 tầng. Phân biệt 3 tầng này là câu hỏi kinh điển.</p>
+      <div class="en-def"><span class="lbl">EN</span><b>Portfolio</b> — a collection of projects, programs, subsidiary portfolios, and operations managed as a group to achieve strategic objectives. <i>(danh mục quản lý theo chiến lược)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Program</b> — a group of related projects, subsidiary programs, and program activities managed in a coordinated manner to obtain benefits not available from managing them individually. <i>(nhóm dự án liên quan, cộng hưởng lợi ích)</i></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Cấp</th><th>Là gì</th><th>Mục tiêu</th><th>Đo thành công bằng</th></tr></thead>
+        <tbody>
+          <tr><td><b>Project</b></td><td>1 nỗ lực tạm thời tạo 1 kết quả</td><td>Đạt mục tiêu cụ thể</td><td>Chất lượng, đúng hạn, đúng ngân sách, sự hài lòng KH</td></tr>
+          <tr><td><b>Program</b></td><td>Nhóm <b>project liên quan</b> quản lý phối hợp</td><td>Đạt <b>benefit</b> mà làm riêng lẻ không có được</td><td>Khả năng giao đúng lợi ích kỳ vọng</td></tr>
+          <tr><td><b>Portfolio</b></td><td>Tập hợp program + project + operation (có thể <b>không liên quan</b> nhau)</td><td>Bám <b>chiến lược</b> tổ chức, chọn &amp; ưu tiên đúng việc</td><td>Hiệu quả đầu tư tổng thể &amp; hiện thực hóa lợi ích</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · 3 tầng</span>Hình dung một <b>hãng xe</b>: làm <b>một mẫu xe mới</b> = <i>Project</i>. Nhóm các project "ra mắt dòng xe điện" (nhà máy + pin + marketing) = <i>Program</i> (chúng liên quan, cộng hưởng lợi ích). Toàn bộ danh mục đầu tư của hãng (xe điện + xe xăng + bất động sản) = <i>Portfolio</i> (chọn cái nào đáng đầu tư theo chiến lược). <b>Program = "liên quan"; Portfolio = "chiến lược"</b>.</div>
+    </section>
+
+    <!-- APPROACHES -->
+    <section id="approaches">
+      <div class="sec-head"><h2>Development Approaches</h2><span class="tag">cách phát triển sản phẩm</span></div>
+      <p class="sec-desc">Có nhiều cách "chạy" một dự án. Chọn cách nào phụ thuộc mức độ <b>chắc chắn của yêu cầu</b>.</p>
+      <div class="en-def"><span class="lbl">EN</span><b>Predictive approach</b> — a development approach in which the project scope, schedule, and cost are determined early in the life cycle and change is tightly controlled. <i>(kế hoạch cố định từ đầu, làm tuần tự)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Adaptive (Agile) approach</b> — a development approach that is iterative and incremental, refining requirements and delivering value frequently in short cycles while responding to change. <i>(lặp + tăng dần, đón nhận thay đổi)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Hybrid approach</b> — a combination of adaptive and predictive approaches, using elements of each as fit for purpose. <i>(lai: phần rõ dùng predictive, phần mơ hồ dùng agile)</i></div>
+      <div class="legend">
+        <div class="lg"><b>Predictive (Waterfall)</b><span>Lập kế hoạch toàn bộ từ đầu, làm tuần tự. Hợp khi yêu cầu <b>rõ ràng, ít đổi</b>. Còn gọi <i>plan-driven</i>.</span></div>
+        <div class="lg"><b>Iterative (lặp)</b><span>Làm đi làm lại để <b>tinh chỉnh</b> sản phẩm qua từng vòng (refine dần cùng một thứ).</span></div>
+        <div class="lg"><b>Incremental (tăng dần)</b><span>Giao sản phẩm theo <b>từng mảnh hoàn chỉnh</b> nhỏ, cộng dồn lại.</span></div>
+        <div class="lg"><b>Adaptive (Agile)</b><span>Kết hợp iterative + incremental, <b>value-driven</b>, đón nhận thay đổi. Hợp khi yêu cầu <b>mơ hồ, biến động</b>.</span></div>
+        <div class="lg"><b>Hybrid (lai)</b><span>Trộn Predictive + Agile, <b>"fit-for-purpose"</b> — phần rõ thì predictive, phần mơ hồ thì agile. Rất phổ biến thực tế.</span></div>
+      </div>
+      <div class="note"><span class="lbl">Stacey Complexity Matrix</span>Mô hình chọn approach theo 2 trục <b>độ chắc chắn của yêu cầu</b> &amp; <b>độ chắc chắn của công nghệ</b>: <b>Simple</b> → Predictive; <b>Complicated/Complex</b> → Agile/Hybrid; <b>Anarchy</b> (hỗn loạn) → cần ổn định trước khi làm.</div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Iterative vs Incremental</span><b>Iterative = "vẽ lại bức tranh cho đẹp hơn"</b> (cùng 1 tranh, tinh chỉnh). <b>Incremental = "ghép từng mảnh tranh"</b> (mỗi lần thêm 1 phần hoàn chỉnh). Agile = làm cả hai cùng lúc.</div>
+    </section>
+
+    <!-- LIFECYCLE -->
+    <section id="lifecycle">
+      <div class="sec-head"><h2>Vòng đời dự án &amp; Phase Gate</h2><span class="tag">Project Lifecycle</span></div>
+      <p class="sec-desc">Dự án đi qua các <b>Phase</b> (giai đoạn); giữa các phase có "cổng" quyết định.</p>
+      <div class="en-def"><span class="lbl">EN</span><b>Project Life Cycle</b> — the series of phases that a project passes through from its start to its completion. <i>(chuỗi các giai đoạn từ khi bắt đầu đến khi kết thúc dự án)</i></div>
+      <h3>5 Process Groups (nhóm quy trình)</h3>
+      <div class="flow"><span class="hl">Initiating</span> → <span class="hl">Planning</span> → <span class="hl">Executing</span> → <span class="hl">Monitoring &amp; Controlling</span> → <span class="hl">Closing</span>
+<span class="cm"># Khởi tạo → Lập kế hoạch → Thực thi → Giám sát &amp; kiểm soát → Đóng dự án</span></div>
+      <p><b>Monitoring &amp; Controlling</b> chạy <i>song song</i> xuyên suốt (giám sát mọi lúc), không phải một bước tuần tự.</p>
+
+      <h3>Phase Gate — cổng kiểm soát</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Phase Gate</b> — a review at the end of a phase in which a decision is made to continue to the next phase, to continue with modification, or to end a project or program. <i>(cổng ra quyết định Go / Hold / Kill / Recycle cuối mỗi phase)</i></div>
+      <p>Cuối mỗi phase có một <b>Phase Gate</b> (còn gọi stage gate / gate review / decision point): lãnh đạo xem xét rồi ra 1 trong các quyết định: <b>Go</b> (đi tiếp), <b>Hold</b> (tạm dừng), <b>Kill</b> (hủy), <b>Recycle</b> (làm lại phase).</p>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Project vs Product Lifecycle</span><b>Product Lifecycle dài hơn Project Lifecycle.</b> Vòng đời <i>sản phẩm</i> đi từ ý tưởng → phát triển → tăng trưởng → thoái trào → <b>khai tử</b>, và có thể chứa <b>nhiều dự án</b> bên trong. Vòng đời <i>dự án</i> chỉ là một đoạn "sinh ra một phiên bản/tính năng" của sản phẩm đó.</div>
+    </section>
+
+    <!-- ENVIRONMENT -->
+    <section id="environment">
+      <div class="sec-head"><h2>Môi trường doanh nghiệp · EEF/OPA · AI</h2><span class="tag">Business Environment</span></div>
+      <p class="sec-desc">Dự án không chạy trong chân không — nó bị ảnh hưởng bởi môi trường (EEF) và dùng tài sản của tổ chức (OPA). Đây là cặp khái niệm xuất hiện khắp PMBOK.</p>
+      <div class="en-def"><span class="lbl">EN</span><b>Enterprise Environmental Factors (EEF)</b> — conditions, not under the immediate control of the project team, that influence, constrain, or direct the project (e.g., culture, market conditions, laws, IT infrastructure). <i>(yếu tố môi trường ngoài tầm kiểm soát của team)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Organizational Process Assets (OPA)</b> — plans, processes, policies, procedures, and knowledge bases specific to and used by the performing organization. <i>(tài sản quy trình của tổ chức: mẫu biểu, quy trình, tri thức)</i></div>
+
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th></th><th>EEF — Enterprise Environmental Factors</th><th>OPA — Organizational Process Assets</th></tr></thead>
+        <tbody>
+          <tr><td><b>Là gì</b></td><td>Điều kiện <b>môi trường</b> tác động/ràng buộc dự án</td><td><b>Tài sản quy trình</b> của tổ chức: mẫu biểu, quy trình, tri thức</td></tr>
+          <tr><td><b>Team kiểm soát?</b></td><td><b>KHÔNG</b> kiểm soát trực tiếp</td><td><b>CÓ</b> — dùng và cập nhật được</td></tr>
+          <tr><td><b>Ví dụ</b></td><td>Nội bộ: văn hóa, cơ cấu, hạ tầng IT. Bên ngoài: luật, thị trường, tiêu chuẩn ngành</td><td>Templates, quy trình, chính sách + <b>Corporate Knowledge Base</b> (lessons learned, dữ liệu lịch sử)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · EEF vs OPA</span><b>EEF = "thời tiết"</b> (bạn không đổi được, phải thích nghi). <b>OPA = "hộp đồ nghề của công ty"</b> (bạn lấy ra dùng, dùng xong bỏ thêm kinh nghiệm vào). Trong OPA: nhóm <i>quy trình/chính sách</i> KHÔNG sửa khi đang chạy dự án; nhưng <i>Knowledge Base</i> (bài học kinh nghiệm) thì cập nhật liên tục.</div>
+
+      <h3>Business Case &amp; Project Charter</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Business Case</b> — a documented economic feasibility study used to establish the validity of the benefits of a selected component and used as a basis for the authorization of further project management activities. <i>(nghiên cứu khả thi kinh tế, cơ sở phê duyệt dự án)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Project Charter</b> — a document issued by the project sponsor that formally authorizes the existence of a project and provides the project manager with the authority to apply organizational resources to project activities. <i>(giấy khai sinh dự án, do Sponsor ký)</i></div>
+      <ul>
+        <li><b>Business Case</b> — "nghiên cứu khả thi kinh tế": chứng minh dự án <i>đáng làm</i> (lợi ích &gt; đầu tư). Là cơ sở phê duyệt và đo thành công suốt dự án.</li>
+        <li><b>Project Charter</b> — "giấy khai sinh dự án": văn bản do <b>Sponsor</b> ký (KHÔNG phải PM), chính thức <b>trao quyền</b> cho PM. <b>Không có charter → dự án chưa tồn tại.</b></li>
+        <li><b>SMART objectives</b> — mục tiêu tốt phải: <b>S</b>pecific · <b>M</b>easurable · <b>A</b>chievable · <b>R</b>elevant · <b>T</b>imely.</li>
+      </ul>
+      <div class="note"><span class="lbl">Chọn dự án bằng chỉ số tài chính</span><b>Payback Period</b> (thời gian hoàn vốn — càng ngắn càng tốt), <b>NPV</b> (giá trị hiện tại ròng — chọn NPV cao nhất), <b>IRR</b> (tỷ suất hoàn vốn nội bộ — cao là tốt), <b>ROI</b>, <b>BCR</b> (Benefit-Cost Ratio &gt; 1 là lời). Lưu ý <b>Sunk Cost</b> (chi phí đã bỏ, không thu hồi) — <i>không</i> được đưa vào quyết định có tiếp tục hay không.</div>
+
+      <h3>AI trong quản lý dự án</h3>
+      <p>Slide nhấn 2 khung tư duy dùng <span class="jargon" title="Generative AI — AI tạo sinh">GenAI</span> cho PM:</p>
+      <ul>
+        <li><b>PRIME Method</b> — khung viết <span class="jargon" title="câu lệnh gửi cho AI">prompt</span> tốt: <b>P</b>rovide Context (cho ngữ cảnh) · <b>R</b>eliability Check (kiểm chứng) · <b>I</b>terate (lặp tinh chỉnh) · <b>M</b>odel with Examples (cho ví dụ mẫu) · <b>E</b>xplore then refine ("diverge then converge").</li>
+        <li><b>The 3 A's</b> — 3 mức ứng dụng AI: <b>Automation</b> (tự động hóa việc lặp) · <b>Assistance</b> (trợ lý gợi ý) · <b>Augmentation</b> (khuếch đại năng lực con người).</li>
+      </ul>
+      <div class="note warn"><span class="lbl">Cảnh giác</span>AI có thể <b>hallucination</b> (bịa thông tin nghe rất thật). Luôn kiểm chứng đầu ra — đó là lý do chữ "R" (Reliability) nằm trong PRIME.</div>
+    </section>
+
+    <!-- ORG STRUCTURE -->
+    <section id="org-structure">
+      <div class="sec-head"><h2>Cơ cấu tổ chức &amp; PMO</h2><span class="tag">quyền lực của PM</span></div>
+      <p class="sec-desc">Cơ cấu tổ chức quyết định PM có <b>bao nhiêu quyền</b>. Đây là câu hỏi "PM có được quyết định không?" rất hay gặp.</p>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Cơ cấu</th><th>Quyền của PM</th><th>Ghi chú</th></tr></thead>
+        <tbody>
+          <tr><td><b>Functional</b> (chức năng)</td><td>Thấp nhất / gần như không</td><td>Quyền nằm ở Functional Manager (trưởng phòng)</td></tr>
+          <tr><td><b>Weak Matrix</b></td><td>Rất ít — PM chỉ là <b>Project Expediter</b> (không quyền quyết) hoặc <b>Project Coordinator</b> (ít quyền)</td><td></td></tr>
+          <tr><td><b>Balanced Matrix</b></td><td>Chia sẻ với Functional Manager</td><td></td></tr>
+          <tr><td><b>Strong Matrix</b></td><td>Cao — PM &gt; Functional Manager</td><td></td></tr>
+          <tr><td><b>Project-oriented</b></td><td>Cao nhất</td><td>Tổ chức xoay quanh dự án</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>PMO — Project Management Office</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Project Management Office (PMO)</b> — an organizational structure that standardizes the project-related governance processes and facilitates the sharing of resources, methodologies, tools, and techniques. <i>(bộ phận chuẩn hóa quản trị &amp; chia sẻ tài nguyên dự án)</i></div>
+      <p><b>PMO</b> là bộ phận chuẩn hóa quản trị dự án &amp; chia sẻ tài nguyên/phương pháp. Có 3 loại theo <b>mức độ kiểm soát</b>:</p>
+      <div class="legend">
+        <div class="lg"><span class="num">Low</span><b>Supportive</b><span>Chỉ <b>hỗ trợ</b>: cung cấp template, best practice, đào tạo, lessons learned. Như một "thư viện".</span></div>
+        <div class="lg"><span class="num">Med</span><b>Controlling</b><span>Yêu cầu <b>tuân thủ</b> khung quản trị/biểu mẫu/công cụ. Như một "trọng tài".</span></div>
+        <div class="lg"><span class="num">High</span><b>Directive</b><span><b>Trực tiếp quản lý</b> dự án; PM báo cáo cho PMO. Như một "chỉ huy".</span></div>
+      </div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · 3 PMO</span><b>"Hỗ trợ – Kiểm soát – Chỉ đạo" = quyền tăng dần.</b> Supportive cho, Controlling ép, Directive nắm. Câu hỏi thi mô tả PMO "yêu cầu dùng đúng biểu mẫu" → Controlling; "PM báo cáo trực tiếp cho PMO" → Directive.</div>
+    </section>
+
+    <!-- GOVERNANCE -->
+    <section id="governance">
+      <div class="sec-head"><h2>Governance &amp; Tích hợp dự án</h2><span class="tag">Integration · điều phối tổng thể</span></div>
+      <p class="sec-desc">Governance là "khung luật chơi" điều phối mọi quyết định để tối ưu value. Đây cũng là nơi diễn ra <b>quản lý thay đổi</b> — chủ đề cực hay ra thi.</p>
+      <div class="en-def"><span class="lbl">EN</span><b>Project Governance</b> — the framework, functions, and processes that guide project management activities in order to create a unique product, service, or result to meet organizational, strategic, and operational goals. <i>(khung quản trị điều phối các quyết định dự án)</i></div>
+
+      <h3>Project Management Plan &amp; Baselines</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Baseline</b> — the approved version of a work product (scope, schedule, or cost), used as a basis for comparison to actual results; it can be changed only through formal change control procedures. <i>(đường mốc đã duyệt, chỉ đổi qua kiểm soát thay đổi)</i></div>
+      <p><b>Project Management Plan</b> (kế hoạch tổng — "master plan") gom mọi kế hoạch con (scope, schedule, cost, quality, risk, communication...) và <b>3 baselines</b> (đường mốc so sánh): <b>Scope · Schedule · Cost</b>. Baseline chỉ được đổi qua <b>quy trình kiểm soát thay đổi chính thức</b>.</p>
+
+      <h3>Chuỗi dữ liệu hiệu suất: WPD → WPI → WPR</h3>
+      <div class="flow"><span class="hl">Work Performance Data</span> → <span class="hl">Work Performance Information</span> → <span class="hl">Work Performance Reports</span>
+<span class="cm"># Dữ liệu thô  →  Thông tin (đã phân tích)  →  Báo cáo (đã phân phối cho stakeholder)</span></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · WPD/WPI/WPR</span><b>Data thô → Information có nghĩa → Report gửi đi.</b> Ví dụ: "đã xong 5/10 task" = Data; "dự án chậm 10%" = Information; "email tình hình gửi sếp" = Report.</div>
+
+      <h3>Perform Integrated Change Control (kiểm soát thay đổi tích hợp)</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Change Control Board (CCB)</b> — a formally chartered group responsible for reviewing, evaluating, approving, delaying, or rejecting changes to the project, and for recording and communicating such decisions. <i>(hội đồng phê duyệt/từ chối thay đổi)</i></div>
+      <p>Mọi thay đổi phải đi qua quy trình chính thức, thường do <b>CCB (Change Control Board)</b> phê duyệt/từ chối. 3 loại Change Request (+ Updates):</p>
+      <ul>
+        <li><b>Corrective action</b> — kéo hiệu suất <i>về đúng</i> kế hoạch (sửa hiện tại).</li>
+        <li><b>Preventive action</b> — <i>giảm xác suất</i> vấn đề tiêu cực xảy ra (phòng tương lai).</li>
+        <li><b>Defect repair</b> — sửa <i>lỗi</i> của sản phẩm.</li>
+      </ul>
+      <div class="note warn"><span class="lbl">Điểm cực dễ nhầm</span><b>Configuration Management</b> quản lý <i>đặc tả (specification) của sản phẩm/quy trình</i> — "sản phẩm phải trông thế nào". <b>Change Control</b> quản lý <i>thay đổi trên baseline/tài liệu/deliverable</i> — "được phép đổi gì, ai duyệt". Và: đổi baseline chỉ áp dụng <b>từ nay về sau</b>, hiệu suất quá khứ không đổi.</div>
+      <div class="note"><span class="lbl">Governance Models</span><b>Structured Governance</b> (có sponsor, PMO, governance board) — cho dự án predictive lớn. <b>Self-Governance</b> (nhóm tự chịu trách nhiệm tập thể) — cho dự án adaptive; rủi ro là "quyết định phân mảnh", khắc phục bằng mục tiêu chung đo được. Dự án Hybrid nằm ở giữa.</div>
+
+      <h3>Quản lý tri thức &amp; Đóng dự án</h3>
+      <p><b>Tacit knowledge</b> (tri thức ẩn — trong đầu người, khó ghi lại) vs <b>Explicit knowledge</b> (tri thức hiện — đã văn bản hóa). <b>Lessons Learned Register</b> (ghi trong lúc chạy dự án) khác <b>Lessons Learned Repository</b> (kho lưu vào OPA cuối dự án).</p>
+      <div class="note"><span class="lbl">Trình tự Deliverable</span><b>Deliverables → Verified</b> (qua Control Quality) <b>→ Accepted</b> (qua Validate Scope, khách ký nhận) <b>→ sản phẩm cuối</b>. Đóng dự án: nghiệm thu cuối → chuyển giao → đóng tài chính/pháp lý → báo cáo cuối → lessons learned → lưu trữ → đo sự hài lòng KH.</div>
+    </section>
+    <footer>
+      <b>Phần I / IV</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP. <a href="phan-2-chu-de.html">Tiếp: Phần II — 8 chủ đề kiến thức →</a>
+    </footer>
+  </main>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

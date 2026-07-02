@@ -1,0 +1,16 @@
+# Tài liệu nguồn (dung lượng lớn — giữ trên máy, không đưa lên repo)
+PMP Slides.zip
+PMBOK-8-2025.pdf
+*.zip
+*.pdf
+
+# File nội bộ của Claude Code
+.claude/
+
+# Thư mục tạm / trích xuất
+PMP_Slides_extracted/
+txt/
+
+# OS
+Thumbs.db
+.DS_Store

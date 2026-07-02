@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phần III · Agile &amp; Adaptive — Học PMP với PMBOK 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/pmp.css">
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="index.html"><span class="mark">P</span> PMBOK 8 <small>học PMP · v2</small></a>
+  <nav class="topnav">
+    <a href="index.html">Bắt đầu</a>
+    <a href="phan-1-nen-tang.html">I · Nền tảng</a>
+    <a href="phan-2-chu-de.html">II · Chủ đề</a>
+    <a href="phan-3-agile.html" class="cur">III · Agile</a>
+    <a href="phan-4-on-thi.html">IV · Ôn thi</a>
+    <a href="cong-thuc-va-vi-du.html">Công thức</a>
+    <a href="thuat-ngu.html">Thuật ngữ</a>
+    <a class="cta" href="flashcard-quiz.html">Flashcard &amp; Quiz</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
+</div>
+<div class="shell" id="top">
+  <aside class="side" id="side">
+    <a class="backlink" href="index.html">← Trang chủ</a>
+    <h4>Phần III · Agile</h4>
+    <a href="#value-delivery"><span class="c">01</span>Value-driven Delivery</a>
+    <a href="#adaptive"><span class="c">02</span>Adaptive Planning</a>
+    <h4>Đi tiếp</h4>
+    <a href="phan-4-on-thi.html"><span class="c">IV</span>Ôn thi →</a>
+  </aside>
+  <main>
+    <div class="hero">
+      <span class="eyebrow">Phần III · Agile &amp; Adaptive — ~50% đề thi</span>
+      <h1>Agile &amp; lập kế hoạch thích ứng</h1>
+      <p>Đề PMP hiện đại ~50% là agile/hybrid. Phần này gồm giao giá trị sớm (value-driven delivery), Scrum/Kanban, và lập kế hoạch thích ứng (story points, velocity, timeboxing). Mỗi mục kèm <b>định nghĩa tiếng Anh chuẩn thi</b>.</p>
+      <div class="jump">
+        <a href="#value-delivery"><span class="n">01</span>Value Delivery</a>
+        <a href="#adaptive"><span class="n">02</span>Adaptive Planning</a>
+      </div>
+    </div>
+    <section id="value-delivery">
+      <div class="sec-head"><h2>Value-driven Delivery</h2><span class="tag">Phần III · Agile 1/2</span></div>
+      <p class="sec-desc">Agile tập trung <b>giao value sớm nhất</b> ("eat your dessert first") và <b>loại bỏ lãng phí</b>. Đây là ~50% đề thi PMP hiện đại.</p>
+
+      <h3>Value · Non-value · Anti-value</h3>
+      <div class="legend">
+        <div class="lg"><b>Value</b><span>Trực tiếp tạo giá trị: làm tính năng cho khách, sửa lỗi nghiêm trọng.</span></div>
+        <div class="lg"><b>Non-value (Waste)</b><span>Lãng phí: họp thừa, tài liệu quá mức, tính năng ít dùng.</span></div>
+        <div class="lg"><b>Anti-value</b><span><b>Chủ động gây hại</b>: tạo lỗi, làm việc ưu tiên thấp thay vì việc quan trọng.</span></div>
+      </div>
+
+      <h3>User Story &amp; chất lượng story</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>User Story</b> — a short, informal description of a feature told from the end user's perspective, in the form "As a [role], I want [goal], so that [benefit]". <i>(mẩu yêu cầu nhỏ theo góc nhìn người dùng)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Definition of Done (DoD)</b> — a shared, team-agreed set of criteria that every work item must satisfy to be considered complete; process view, applied to all items. <i>(tiêu chí "hoàn thành" chung cho mọi item)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Acceptance Criteria</b> — the specific, testable conditions a single user story must meet to be accepted by the customer/product owner; user view, per-item. <i>(điều kiện nghiệm thu cho một story cụ thể)</i></div>
+      <p>Định dạng: <b>"As a [vai trò], I want [mục tiêu], so that [lý do]"</b>.</p>
+      <ul>
+        <li><b>3C</b> của user story: <b>Card</b> (thẻ ghi) · <b>Conversation</b> (trao đổi) · <b>Confirmation</b> (tiêu chí xác nhận).</li>
+        <li><b>INVEST</b> — story tốt: <b>I</b>ndependent · <b>N</b>egotiable · <b>V</b>aluable · <b>E</b>stimable · <b>S</b>mall · <b>T</b>estable.</li>
+      </ul>
+      <div class="note warn"><span class="lbl">Acceptance Criteria vs Definition of Done — hay hỏi</span><b>Acceptance Criteria</b> = "sản phẩm làm được gì" — góc nhìn <i>user</i>, cho <b>một</b> item cụ thể, kiểm bằng test. <b>Definition of Done (DoD)</b> = "team đã làm đủ chưa" — góc nhìn <i>process</i>, áp cho <b>mọi</b> item, do team thống nhất.</div>
+
+      <h3>Ưu tiên value</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Minimum Viable Product (MVP)</b> — the smallest releasable version of a product with just enough features to deliver value and gather validated learning from early users. <i>(sản phẩm khả dụng tối thiểu để giao value &amp; học sớm)</i></div>
+      <ul>
+        <li><b>MoSCoW</b>: Must · Should · Could · Won't-this-time.</li>
+        <li><b>Kano Analysis</b>: <b>Delighters</b> (bất ngờ thích thú) · <b>Satisfiers</b> (càng nhiều càng thích, tuyến tính) · <b>Dissatisfiers/Basic</b> (thiếu thì bực, có cũng không thích thêm) · Indifferent (loại bỏ).</li>
+        <li>Khác: Dot Voting, Monopoly Money, 100-Point Method, Relative Ranking.</li>
+      </ul>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Kano</span><b>Basic/Dissatisfier = "điều đương nhiên"</b> (như phanh xe — có không ai khen, thiếu là chửi). <b>Delighter = "bất ngờ"</b> (tặng thêm quà). Có Delighter mới tạo "wow", nhưng thiếu Basic là "toang".</div>
+
+      <h3>Kanban, WIP &amp; Little's Law</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Work in Progress (WIP)</b> — work items that have been started but not yet finished; limiting WIP reduces bottlenecks and improves flow/throughput. <i>(việc đang làm dở, chưa hoàn thành)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Kanban</b> — a pull-based, visual workflow method that limits work in progress and optimizes continuous flow, rather than working in fixed-length iterations. <i>(phương pháp trực quan hóa luồng, giới hạn WIP, kéo theo nhu cầu)</i></div>
+      <p><b>Kanban 5 practices</b>: Visualize workflow → Limit WIP → Manage Flow → Explicit policies → Feedback loops. <b>WIP (Work in Progress)</b> = việc đang làm dở → kẹt vốn, chưa có ROI, dễ thành bottleneck. <b>WIP Limits</b> tối ưu <b>throughput</b>, KHÔNG phải tối ưu "resource utilization".</p>
+      <div class="formula">
+        <div class="row"><span class="cm"># Little's Law</span></div>
+        <div class="row"><b>Cycle Time</b> = <span class="v">WIP</span> <span class="op">/</span> <span class="v">Throughput</span></div>
+        <div class="row"><span class="cm"># VD: WIP=15 items, Throughput=3 items/sprint → 15/3 = 5 sprints</span></div>
+      </div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · giảm Cycle Time</span>Muốn giao nhanh hơn (Cycle Time nhỏ): <b>giảm WIP</b> hoặc <b>tăng Throughput</b>. Bẫy thi: WIP limit để <b>tối ưu dòng chảy (throughput)</b>, không phải để "mọi người luôn bận" (utilization).</div>
+      <div class="note"><span class="lbl">Kiểm chứng value (V&amp;V)</span><b>TDD</b> (viết test <i>trước</i> code, chu trình <b>Red → Green → Refactor</b>), <b>ATDD</b> (test theo yêu cầu nghiệp vụ), <b>CI</b> (Continuous Integration — tích hợp code liên tục + test tự động), Exploratory &amp; Usability testing.</div>
+    </section>
+    <!-- ADAPTIVE -->
+    <section id="adaptive">
+      <div class="sec-head"><h2>Adaptive Planning &amp; Tracking</h2><span class="tag">Agile 2/2</span></div>
+      <p class="sec-desc">Trong Agile, kế hoạch <b>"Plan to replan"</b> — lập kế hoạch xuyên suốt, chi tiết dần theo 5 lớp của "củ hành lập kế hoạch".</p>
+
+      <h3>Agile Planning Onion (5 lớp)</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Progressive Elaboration</b> — iteratively adding more detail to a plan as more information becomes known over time (epics → features → stories → tasks). <i>(chi tiết hóa dần khi có thêm thông tin)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Timeboxing</b> — allocating a fixed, unchangeable period to an activity; when the time runs out, scope is adjusted rather than the deadline extended. <i>(khung thời gian cố định; hết giờ thì cắt scope)</i></div>
+      <div class="flow">Strategy → <span class="hl">High-level</span> → <span class="hl">Release</span> → <span class="hl">Iteration</span> → <span class="hl">Daily</span>
+<span class="cm"># Từ ngoài (dài hạn, thô) vào trong (ngắn hạn, chi tiết)</span></div>
+      <ul>
+        <li><b>Progressive Elaboration</b> — thêm chi tiết khi có thông tin (epics → features → stories → tasks).</li>
+        <li><b>Rolling Wave Planning</b> — gần thì chi tiết, xa thì thô.</li>
+        <li><b>Just-in-Time / Last Responsible Moment</b> — chia nhỏ yêu cầu đúng lúc gần làm.</li>
+        <li><b>Timeboxing</b> — khung thời gian cố định; hết giờ thì <b>điều chỉnh scope</b> (không kéo dài thời gian).</li>
+      </ul>
+
+      <h3>Release vs Iteration</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Iteration / Sprint</b> — a short, fixed-length (timeboxed) development cycle, typically 1–4 weeks, that produces a potentially releasable product increment. <i>(chu kỳ ngắn cố định tạo increment)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Release</b> — a deployable package that bundles the output of one or more iterations to deliver working, valuable functionality to users. <i>(gói bàn giao gom nhiều iteration)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Backlog Refinement</b> — the ongoing activity of reviewing, re-prioritizing, estimating, and breaking down backlog items to keep them ready for upcoming iterations. <i>(rà soát &amp; chuẩn bị backlog; còn gọi Grooming)</i></div>
+      <ul>
+        <li><b>Iteration/Sprint</b> — chu kỳ ngắn timeboxed, thường <b>1–4 tuần</b>.</li>
+        <li><b>Release</b> — gom nhiều iteration để ra deliverable có giá trị (date-driven hoặc functionality-driven).</li>
+        <li><b>Iteration 0</b> — thiết lập ban đầu, chưa tạo deliverable cho khách. <b>Iteration H</b> (Hardening) — ổn định &amp; chuẩn bị release.</li>
+        <li><b>Backlog Refinement (Grooming)</b> — cập nhật/ưu tiên/chia nhỏ backlog liên tục.</li>
+      </ul>
+
+      <h3>Ước lượng Agile: Story Points &amp; Velocity</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Story Point</b> — a relative unit of estimate that combines complexity, effort, and risk of a work item; it is not a measure of time. <i>(đơn vị ước lượng tương đối, không phải giờ)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Velocity</b> — the number of story points a team completes per iteration, used to forecast capacity; it must not be compared across teams. <i>(số điểm hoàn thành mỗi iteration, không so giữa các team)</i></div>
+      <p><b>Story Points</b> = đơn vị <b>tương đối</b> gồm <i>độ phức tạp + công sức + rủi ro</i> (không phải giờ). <b>Ideal Time</b> (= effort, không gián đoạn) khác <b>Real Time</b> (= duration thực tế). <b>Planning Poker</b> dùng dãy <b>Fibonacci (1,2,3,5,8,13)</b>.</p>
+      <div class="formula">
+        <div class="row"><b>Velocity</b> = số Story Points hoàn thành mỗi iteration</div>
+        <div class="row"><b>Points cho 1 release</b> = <span class="v">Velocity</span> <span class="op">×</span> <span class="v">số iteration</span></div>
+        <div class="row"><span class="cm"># VD velocity 4 sprint: 38,29,38,39 → trung bình ≈ 36 points/sprint</span></div>
+      </div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Story Points &amp; Velocity</span><b>KHÔNG so sánh velocity giữa 2 team</b> — vì story point là tương đối, mỗi team tự định nghĩa (bẫy thi rất hay). Dùng Fibonacci vì con người khó phân biệt "17 với 18", nhưng phân biệt được "13 với 21".</div>
+      <div class="note"><span class="lbl">Daily Standup</span>Họp đứng ngắn, <b>3 câu hỏi</b>: hôm qua làm gì / hôm nay làm gì / có <b>impediment</b> (vướng mắc) gì. <b>KHÔNG phải</b> họp báo cáo cho sếp, <b>KHÔNG phải</b> họp giải quyết vấn đề (vấn đề để bàn riêng sau).</div>
+      <div class="note warn"><span class="lbl">Vì sao Agile ra đời</span>Thống kê (Standish/Chaos): <b>64% tính năng hiếm/không bao giờ dùng</b>; ngân sách trung bình tiêu <b>156%</b>; tỷ lệ thành công ~<b>29%</b>. → Agile sinh ra để giao đúng thứ tạo value, sớm &amp; linh hoạt.</div>
+    </section>
+    <footer>
+      <b>Phần III / IV</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP. <a href="phan-4-on-thi.html">Tiếp: Phần IV — Ôn thi →</a>
+    </footer>
+  </main>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

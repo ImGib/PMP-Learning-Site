@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phần II · 8 Chủ đề kiến thức — Học PMP với PMBOK 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/pmp.css">
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="index.html"><span class="mark">P</span> PMBOK 8 <small>học PMP · v2</small></a>
+  <nav class="topnav">
+    <a href="index.html">Bắt đầu</a>
+    <a href="phan-1-nen-tang.html">I · Nền tảng</a>
+    <a href="phan-2-chu-de.html" class="cur">II · Chủ đề</a>
+    <a href="phan-3-agile.html">III · Agile</a>
+    <a href="phan-4-on-thi.html">IV · Ôn thi</a>
+    <a href="cong-thuc-va-vi-du.html">Công thức</a>
+    <a href="thuat-ngu.html">Thuật ngữ</a>
+    <a class="cta" href="flashcard-quiz.html">Flashcard &amp; Quiz</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
+</div>
+<div class="shell" id="top">
+  <aside class="side" id="side">
+    <a class="backlink" href="index.html">← Trang chủ</a>
+    <h4>Phần II · 8 chủ đề</h4>
+    <a href="#scope"><span class="c">01</span>Scope — Phạm vi</a>
+    <a href="#schedule"><span class="c">02</span>Schedule — Tiến độ</a>
+    <a href="#finance"><span class="c">03</span>Finance &amp; EVM</a>
+    <a href="#quality"><span class="c">04</span>Quality — Chất lượng</a>
+    <a href="#resource"><span class="c">05</span>Resource — Nguồn lực</a>
+    <a href="#risk"><span class="c">06</span>Risk — Rủi ro</a>
+    <a href="#stakeholder"><span class="c">07</span>Stakeholder &amp; Comm.</a>
+    <a href="#procurement"><span class="c">08</span>Procurement — Mua sắm</a>
+    <h4>Đi tiếp</h4>
+    <a href="phan-3-agile.html"><span class="c">III</span>Agile &amp; Adaptive →</a>
+  </aside>
+  <main>
+    <div class="hero">
+      <span class="eyebrow">Phần II · 8 Performance Domains cốt lõi</span>
+      <h1>8 chủ đề kiến thức chính</h1>
+      <p>Từ Scope tới Procurement — phần chiếm tỷ trọng lớn nhất trong đề thi (domain Process ~50%). Có nhiều công thức (EVM, PERT, EMV) và cặp khái niệm dễ nhầm. Mỗi mục kèm <b>định nghĩa tiếng Anh chuẩn thi</b> và mẹo ghi nhớ.</p>
+      <div class="jump">
+        <a href="#scope"><span class="n">01</span>Scope</a>
+        <a href="#schedule"><span class="n">02</span>Schedule</a>
+        <a href="#finance"><span class="n">03</span>Finance/EVM</a>
+        <a href="#risk"><span class="n">06</span>Risk</a>
+        <a href="#procurement"><span class="n">08</span>Procurement</a>
+      </div>
+    </div>
+    <!-- SCOPE -->
+    <section id="scope">
+      <div class="sec-head"><h2>Scope — Phạm vi</h2><span class="tag">Phần II · chủ đề 1/8</span></div>
+      <p class="sec-desc">Scope trả lời câu hỏi <b>"dự án sẽ làm những gì (và KHÔNG làm gì)?"</b>. Kiểm soát scope kém là nguyên nhân thất bại số 1.</p>
+
+      <h3>Product Scope vs Project Scope</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Project Scope</b> — the work performed to deliver a product, service, or result with the specified features and functions. <i>(công việc phải làm để tạo ra sản phẩm)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Product Scope</b> — the features and functions that characterize a product, service, or result. <i>(tính năng &amp; chức năng của sản phẩm)</i></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th></th><th>Product Scope</th><th>Project Scope</th></tr></thead>
+        <tbody>
+          <tr><td><b>Là gì</b></td><td>Các <b>tính năng &amp; chức năng</b> của sản phẩm</td><td><b>Công việc</b> phải làm để tạo ra sản phẩm đó</td></tr>
+          <tr><td><b>Đo hoàn thành bằng</b></td><td><b>Product requirements</b> (yêu cầu sản phẩm)</td><td><b>Project Management Plan</b> (kế hoạch)</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Hai "kẻ thù" của Scope</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Scope Creep</b> — the uncontrolled expansion to product or project scope without adjustments to time, cost, and resources. <i>(phạm vi phình ra không qua change control)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Gold Plating</b> — adding extra features or work not requested by the customer, beyond the agreed requirements. <i>(team tự thêm tính năng thừa)</i></div>
+      <div class="legend">
+        <div class="lg"><b>Scope Creep</b><span>Phạm vi <b>phình ra không kiểm soát</b> — khách/team thêm việc mà không qua change control. "Creep" = bò lan.</span></div>
+        <div class="lg"><b>Gold Plating</b><span>Team <b>tự ý thêm tính năng</b> khách <i>không</i> yêu cầu ("mạ vàng"). Lãng phí, không tạo value.</span></div>
+      </div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Creep vs Gold Plating</span><b>Scope Creep = khách/nhiều bên đẩy vào</b> (thay đổi lén, không kiểm soát). <b>Gold Plating = TEAM tự thêm</b> (tưởng tốt nhưng thừa). Cả hai đều xấu — luôn bám <b>change control</b>.</div>
+
+      <h3>WBS — Work Breakdown Structure</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Work Breakdown Structure (WBS)</b> — a hierarchical decomposition of the total scope of work to be carried out by the project team to accomplish the project objectives and create the required deliverables. <i>(cây phân rã công việc)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Work Package</b> — the work defined at the lowest level of the WBS for which cost and duration can be estimated and managed. <i>(phần tử thấp nhất của WBS)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Scope Baseline</b> — the approved version of the scope statement, WBS, and its associated WBS dictionary, changed only through formal change control. <i>(Scope Statement + WBS + WBS Dictionary)</i></div>
+      <p><b>WBS</b> = "cây phân rã công việc": chia nhỏ toàn bộ scope thành các phần quản lý được. WBS nói <b>CÁI GÌ</b> (không nói how/when). Phần tử <b>thấp nhất</b> của WBS gọi là <b>Work Package</b>.</p>
+      <ul>
+        <li><b>Scope Baseline = 3 thành phần</b>: Scope Statement + WBS + WBS Dictionary (từ điển mô tả chi tiết từng phần).</li>
+        <li><b>Rule 100%</b>: tổng công việc các "con" = 100% của "cha"; không dư, không thiếu.</li>
+        <li><b>Rule 8/80</b>: một work package nên tốn <b>từ 8 đến 80 giờ</b> (không quá nhỏ, không quá lớn).</li>
+        <li><b>RTM (Requirements Traceability Matrix)</b> — ma trận truy vết: nối mỗi yêu cầu với mục tiêu &amp; deliverable, theo dõi suốt vòng đời.</li>
+      </ul>
+      <div class="note warn"><span class="lbl">Validate Scope ≠ Control Quality</span><b>Control Quality</b> → tạo <b>Verified deliverables</b> (đội QC kiểm đúng/sai — nội bộ). <b>Validate Scope</b> → tạo <b>Accepted deliverables</b> (khách/sponsor <b>ký nghiệm thu</b> — chính thức). Trình tự: kiểm chất lượng <i>trước</i>, khách nghiệm thu <i>sau</i>.</div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Verified vs Accepted</span><b>Verified = "đúng chưa?"</b> (nội bộ QC). <b>Accepted = "khách gật đầu chưa?"</b> (ký nhận). Còn <b>MoSCoW</b> để ưu tiên yêu cầu: <b>M</b>ust · <b>S</b>hould · <b>C</b>ould · <b>W</b>on't-this-time.</div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule">
+      <div class="sec-head"><h2>Schedule — Tiến độ</h2><span class="tag">chủ đề 2/8 · nhiều tính toán</span></div>
+      <p class="sec-desc">Schedule trả lời <b>"khi nào xong?"</b>. Đây là chủ đề có Critical Path &amp; công thức ước lượng — cần luyện tay.</p>
+
+      <h3>Khái niệm nền</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Milestone</b> — a significant point or event in a project; it has zero duration. <i>(mốc quan trọng, duration = 0)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Lead</b> — the amount of time a successor activity can be advanced with respect to a predecessor activity (overlap). <i>(việc sau bắt đầu sớm/chồng lấn)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Lag</b> — the amount of time a successor activity is delayed with respect to a predecessor activity (waiting time). <i>(thời gian chờ giữa 2 việc)</i></div>
+      <ul>
+        <li><b>Activity (Task)</b> — công việc cần làm để hoàn thành 1 work package. <b>Milestone</b> = mốc quan trọng, <b>duration = 0</b> (không tốn thời gian).</li>
+        <li><b>Dependencies</b> (quan hệ phụ thuộc): <b>Mandatory</b> = Hard Logic (bắt buộc, do luật/tự nhiên) · <b>Discretionary</b> = Soft Logic (tùy chọn, do kinh nghiệm).</li>
+        <li><b>Lead</b> = việc sau được <i>bắt đầu sớm/chồng lấn</i> (tăng tốc). <b>Lag</b> = thời gian <i>chờ</i> giữa 2 việc (trì hoãn).</li>
+      </ul>
+
+      <h3>PDM — 4 quan hệ trước-sau</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Quan hệ</th><th>Nghĩa</th><th>Tần suất</th></tr></thead>
+        <tbody>
+          <tr><td><b>Finish-to-Start (FS)</b></td><td>A xong thì B mới bắt đầu</td><td><b>Phổ biến nhất</b></td></tr>
+          <tr><td><b>Start-to-Start (SS)</b></td><td>A bắt đầu thì B mới được bắt đầu</td><td>Thường</td></tr>
+          <tr><td><b>Finish-to-Finish (FF)</b></td><td>A xong thì B mới được xong</td><td>Thường</td></tr>
+          <tr><td><b>Start-to-Finish (SF)</b></td><td>A bắt đầu thì B mới được kết thúc</td><td><b>Hiếm nhất</b></td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Ước lượng thời gian</h3>
+      <ul>
+        <li><b>Analogous</b> (loại suy) — dựa dự án tương tự trước đó. <b>Nhanh &amp; rẻ nhất, kém chính xác nhất</b> (top-down).</li>
+        <li><b>Parametric</b> — dùng quan hệ thống kê (vd 10 giờ/mét). Chính xác hơn analogous.</li>
+        <li><b>Bottom-up</b> — cộng dồn từ chi tiết. <b>Chính xác nhất</b> (nhưng tốn công).</li>
+        <li><b>Three-point (PERT)</b> — dùng 3 giá trị: <b>O</b>ptimistic, <b>M</b>ost likely, <b>P</b>essimistic.</li>
+      </ul>
+      <div class="formula">
+        <div class="row"><span class="cm"># PERT — phân phối Beta (hay dùng, nhấn mạnh M)</span></div>
+        <div class="row"><b>E</b> = ( <span class="v">O</span> <span class="op">+</span> 4<span class="v">M</span> <span class="op">+</span> <span class="v">P</span> ) <span class="op">/</span> 6</div>
+        <div class="row"><span class="cm"># PERT — phân phối Triangular (trung bình đơn giản)</span></div>
+        <div class="row"><b>E</b> = ( <span class="v">O</span> <span class="op">+</span> <span class="v">M</span> <span class="op">+</span> <span class="v">P</span> ) <span class="op">/</span> 3</div>
+        <div class="row"><span class="cm"># Độ lệch chuẩn &amp; phương sai (chuẩn PMP)</span></div>
+        <div class="row"><b>SD</b> = ( <span class="v">P</span> <span class="op">−</span> <span class="v">O</span> ) <span class="op">/</span> 6&nbsp;&nbsp;&nbsp;&nbsp;<b>Variance</b> = SD²</div>
+      </div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · PERT</span><b>Beta có số 4 (4M) và chia 6; Triangular chia 3.</b> Nhớ: "Beta 4-6, Tri-3". Beta chính xác hơn vì đặt trọng số lớn cho "khả năng nhất" (M).</div>
+
+      <h3>Critical Path Method (CPM)</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Critical Path</b> — the sequence of activities that represents the longest path through a project, which determines the shortest possible project duration. <i>(đường găng — Float = 0)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Total Float</b> — the amount of time an activity can be delayed from its early start date without delaying the project finish date. <i>(TF = LS − ES = LF − EF)</i></div>
+      <p><b>Critical Path</b> (đường găng) = chuỗi hoạt động <b>DÀI NHẤT</b> qua sơ đồ → chính là <b>thời gian ngắn nhất</b> có thể hoàn thành dự án. Trên đường găng, <b>Float (Slack) = 0</b> → không được trễ, trễ là trễ cả dự án.</p>
+      <ul>
+        <li><b>Total Float</b> — số thời gian một việc có thể trễ mà <i>không</i> trễ cả dự án. Công thức: <code class="k">TF = LS − ES = LF − EF</code>.</li>
+        <li><b>Free Float</b> — trễ mà không ảnh hưởng việc kế tiếp (chỉ có khi 2+ việc chung 1 successor).</li>
+        <li><b>Forward Pass</b>: <code class="k">EF = ES + Duration − 1</code>. <b>Backward Pass</b>: <code class="k">LS = LF − Duration + 1</code>.</li>
+      </ul>
+
+      <h3>Rút ngắn &amp; tối ưu tài nguyên</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Kỹ thuật</th><th>Cách làm</th><th>Tác dụng phụ</th></tr></thead>
+        <tbody>
+          <tr><td><b>Crashing</b></td><td>Thêm tài nguyên vào việc trên đường găng</td><td><b>Tăng chi phí</b> (chọn cách rẻ nhất mà rút được nhiều nhất)</td></tr>
+          <tr><td><b>Fast Tracking</b></td><td>Làm <b>song song</b> các việc vốn tuần tự</td><td><b>Tăng rủi ro &amp; rework</b></td></tr>
+          <tr><td><b>Resource Leveling</b></td><td>Cân bằng khi tài nguyên bị quá tải/giới hạn</td><td><b>Đường găng có thể ĐỔI</b> (thường dài ra)</td></tr>
+          <tr><td><b>Resource Smoothing</b></td><td>Điều chỉnh trong phạm vi float</td><td><b>KHÔNG đổi</b> đường găng / ngày kết thúc</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Crash vs Fast Track</span><b>Crashing = "đổ tiền/người"</b> (Cost↑). <b>Fast Tracking = "làm chồng lên nhau"</b> (Risk↑). Còn <b>Leveling đổi critical path, Smoothing KHÔNG</b> — nhớ "Level = làm phẳng, dời đường; Smooth = mượt trong khe float".</div>
+      <div class="note warn"><span class="lbl">Đường găng dễ bẫy</span>Critical Path là đường <b>dài nhất</b> nhưng cho ra <b>thời gian ngắn nhất</b> của dự án. Có thể có <b>nhiều hơn 1</b> đường găng (→ rủi ro cao hơn). Ước lượng thời lượng hoạt động <b>không</b> bao gồm lag.</div>
+    </section>
+
+    <!-- FINANCE -->
+    <section id="finance">
+      <div class="sec-head"><h2>Finance — Chi phí &amp; EVM</h2><span class="tag">chủ đề 3/8 · ⭐ công thức trọng tâm</span></div>
+      <p class="sec-desc">Chủ đề tính toán quan trọng nhất kỳ thi. <b>EVM (Earned Value Management)</b> gần như chắc chắn xuất hiện — nắm vững phần này là "ăn điểm".</p>
+
+      <h3>Phân loại chi phí</h3>
+      <ul>
+        <li><b>CapEx</b> (Capital Expenditure) — mua/nâng cấp tài sản (nhà xưởng, máy móc). <b>OpEx</b> (Operational Expenditure) — chi phí vận hành hằng ngày (lương, điện, thuê).</li>
+        <li><b>Direct</b> (trực tiếp cho dự án) vs <b>Indirect</b> (chi phí chung, chia nhiều dự án). Độc lập với: <b>Fixed</b> (cố định) vs <b>Variable</b> (biến đổi theo khối lượng).</li>
+      </ul>
+      <div class="note"><span class="lbl">3 mức độ chính xác ước tính</span><b>ROM</b> (Rough Order of Magnitude): <code>−25% đến +75%</code> (giai đoạn đầu). <b>Budget Estimate</b>: <code>−10% đến +25%</code>. <b>Definitive</b>: <code>−5% đến +10%</code> (càng về sau càng chính xác).</div>
+
+      <h3>Contingency vs Management Reserve — bẫy kinh điển</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Contingency Reserve</b> — time or money allocated in the schedule or cost baseline to handle identified risks ("known-unknowns"); part of the cost baseline and managed by the PM. <i>(dự phòng cho rủi ro đã biết)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Management Reserve</b> — an amount of the project budget withheld for unforeseen work ("unknown-unknowns"); outside the cost baseline and requires management approval to use. <i>(dự phòng cho rủi ro chưa biết)</i></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th></th><th>Contingency Reserve</th><th>Management Reserve</th></tr></thead>
+        <tbody>
+          <tr><td><b>Dành cho</b></td><td><b>Known risks</b> (rủi ro đã biết — "known unknowns")</td><td><b>Unknown risks</b> (rủi ro chưa biết — "unknown unknowns")</td></tr>
+          <tr><td><b>Có trong Cost Baseline?</b></td><td><b>CÓ</b></td><td><b>KHÔNG</b> (nằm ngoài, trong tổng ngân sách)</td></tr>
+          <tr><td><b>Ai kiểm soát</b></td><td>PM tự dùng được</td><td>Cần <b>lãnh đạo</b> phê duyệt (đổi baseline)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · 2 loại reserve</span><b>Cost Baseline = ước tính + Contingency.</b> <b>Project Budget = Cost Baseline + Management Reserve.</b> Nhớ: "Contingency cho cái BIẾT, PM tiêu; Management cho cái KHÔNG biết, sếp giữ".</div>
+
+      <h3 id="evm-block">⭐ Earned Value Management (EVM)</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Planned Value (PV)</b> — the authorized budget assigned to scheduled work. <i>(giá trị công việc đã lên kế hoạch; tổng PV = BAC)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Earned Value (EV)</b> — the measure of work performed expressed in terms of the budget authorized for that work. <i>(giá trị công việc thực sự hoàn thành = % × BAC)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Actual Cost (AC)</b> — the realized cost incurred for the work performed during a given period. <i>(tiền thực đã chi cho công việc đã làm)</i></div>
+      <p>EVM đo "sức khỏe" dự án qua 3 giá trị lõi rồi suy ra mọi thứ:</p>
+      <div class="legend">
+        <div class="lg"><b>PV</b> — Planned Value<span>Giá trị công việc <b>đã lên kế hoạch</b> tới thời điểm này. Tổng PV cả dự án = <b>BAC</b> (Budget at Completion).</span></div>
+        <div class="lg"><b>EV</b> — Earned Value<span>Giá trị công việc <b>thực sự hoàn thành</b> (= % hoàn thành × BAC). <i>Không phải</i> tiền đã tiêu.</span></div>
+        <div class="lg"><b>AC</b> — Actual Cost<span>Tiền <b>thực đã chi</b> cho công việc đã làm.</span></div>
+      </div>
+      <div class="formula">
+        <div class="row"><span class="cm"># VARIANCE (chênh lệch) — dùng phép TRỪ, EV luôn đứng đầu</span></div>
+        <div class="row"><b>SV</b> = <span class="v">EV</span> <span class="op">−</span> <span class="v">PV</span>&nbsp;&nbsp;<span class="cm">Schedule Variance — âm = chậm tiến độ</span></div>
+        <div class="row"><b>CV</b> = <span class="v">EV</span> <span class="op">−</span> <span class="v">AC</span>&nbsp;&nbsp;<span class="cm">Cost Variance — âm = vượt ngân sách</span></div>
+        <div class="row"> </div>
+        <div class="row"><span class="cm"># INDEX (chỉ số) — dùng phép CHIA, EV luôn ở tử số. &gt;1 tốt, &lt;1 xấu</span></div>
+        <div class="row"><b>SPI</b> = <span class="v">EV</span> <span class="op">/</span> <span class="v">PV</span>&nbsp;&nbsp;<span class="cm">Schedule Performance Index</span></div>
+        <div class="row"><b>CPI</b> = <span class="v">EV</span> <span class="op">/</span> <span class="v">AC</span>&nbsp;&nbsp;<span class="cm">Cost Performance Index</span></div>
+      </div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · EVM (quan trọng nhất)</span><b>"EV luôn đứng đầu."</b> Variance = TRỪ (EV − …), Index = CHIA (EV / …). Dấu/giá trị: <b>Cost thì so với AC, Schedule thì so với PV</b>. Kết quả <b>dương hoặc &gt;1 = TỐT</b> (đúng/vượt kế hoạch), <b>âm hoặc &lt;1 = XẤU</b>. Mẹo chữ: "<b>P</b>lanned đi với <b>S</b>chedule (SV, SPI); <b>A</b>ctual đi với <b>C</b>ost (CV, CPI)".</div>
+
+      <h4 class="sub">Dự báo (Forecasting) — EAC / ETC / VAC</h4>
+      <p><b>BAC</b> = ngân sách gốc. <b>EAC</b> = dự báo tổng chi phí cuối cùng. <b>ETC</b> = còn cần chi bao nhiêu nữa. <b>VAC</b> = chênh lệch dự báo.</p>
+      <div class="formula">
+        <div class="row"><b>VAC</b> = <span class="v">BAC</span> <span class="op">−</span> <span class="v">EAC</span>&nbsp;&nbsp;<span class="cm">dương = sẽ dưới ngân sách</span></div>
+        <div class="row"> </div>
+        <div class="row"><span class="cm"># TH1: sai lệch hiện tại còn tiếp diễn (hay dùng nhất)</span></div>
+        <div class="row"><b>EAC</b> = <span class="v">BAC</span> <span class="op">/</span> <span class="v">CPI</span></div>
+        <div class="row"><span class="cm"># TH2: phần còn lại chạy đúng kế hoạch</span></div>
+        <div class="row"><b>EAC</b> = <span class="v">AC</span> <span class="op">+</span> ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">EV</span> )</div>
+        <div class="row"><span class="cm"># TH3: ước tính gốc sai, phải tính lại phần còn lại</span></div>
+        <div class="row"><b>EAC</b> = <span class="v">AC</span> <span class="op">+</span> ETC<sub>mới</sub></div>
+        <div class="row"><span class="cm"># TH4: vượt ngân sách nhưng phải kịp deadline</span></div>
+        <div class="row"><b>EAC</b> = <span class="v">AC</span> <span class="op">+</span> ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">EV</span> ) <span class="op">/</span> ( <span class="v">CPI</span> <span class="op">×</span> <span class="v">SPI</span> )</div>
+      </div>
+
+      <h4 class="sub">TCPI — To-Complete Performance Index</h4>
+      <p>Hiệu suất <i>cần đạt</i> cho phần còn lại để về đích. <code class="k">&gt;1 = càng khó (phải làm hiệu quả hơn); &lt;1 = dễ thở</code>.</p>
+      <div class="formula">
+        <div class="row"><b>TCPI</b> = ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">EV</span> ) <span class="op">/</span> ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">AC</span> )&nbsp;&nbsp;<span class="cm">bám ngân sách gốc</span></div>
+        <div class="row"><b>TCPI</b> = ( <span class="v">BAC</span> <span class="op">−</span> <span class="v">EV</span> ) <span class="op">/</span> ( <span class="v">EAC</span> <span class="op">−</span> <span class="v">AC</span> )&nbsp;&nbsp;<span class="cm">bám dự báo mới</span></div>
+        <div class="row"><span class="cm"># Nhớ: Tử số = Work Remaining; Mẫu = Funds Remaining</span></div>
+      </div>
+      <div class="note ok"><span class="lbl">Ví dụ nhanh (làm được là hiểu EVM)</span>Dự án 4 giai đoạn, mỗi giai đoạn $500. Cuối tuần 2: <b>kế hoạch</b> xong 2 giai đoạn → PV = <b>$1000</b>. <b>Thực tế</b> xong 3 giai đoạn → EV = 3×500 = <b>$1500</b>. Đã chi <b>$1700</b> → AC = $1700. ⇒ SV = 1500−1000 = <b>+$500</b> (nhanh hơn tiến độ 👍), CV = 1500−1700 = <b>−$200</b> (vượt chi 👎), CPI = 1500/1700 ≈ <b>0.88</b>.</div>
+
+      <h3>Cost of Quality (COQ) — xem đầy đủ ở mục Quality</h3>
+      <p>COQ nằm ở cả Finance &amp; Quality: <b>Cost of Conformance</b> (Prevention + Appraisal) vs <b>Cost of Nonconformance</b> (Internal + External failure). Chi tiết ở <a href="#quality" style="color:var(--accent-ink);font-weight:600">mục Quality ↓</a>.</p>
+    </section>
+
+    <!-- QUALITY -->
+    <section id="quality">
+      <div class="sec-head"><h2>Quality — Chất lượng</h2><span class="tag">chủ đề 4/8</span></div>
+      <p class="sec-desc">Quality trả lời <b>"sản phẩm có đáp ứng yêu cầu không?"</b>. Nhiều cặp khái niệm dễ nhầm — nắm chắc từng cặp.</p>
+
+      <h3>Các cặp khái niệm phải phân biệt</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Quality</b> — the degree to which a set of inherent characteristics of an object fulfills requirements. <i>(mức đáp ứng yêu cầu; low quality luôn xấu)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Grade</b> — a category assigned to deliverables having the same functional use but different technical characteristics. <i>(hạng kỹ thuật; low grade không nhất thiết xấu)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Quality Assurance (QA)</b> — the process of auditing quality requirements and results to ensure appropriate quality standards and operational definitions are used; process-oriented and preventive. <i>(đảm bảo quy trình, phòng ngừa)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Quality Control (QC)</b> — the process of monitoring and recording results of quality activities to assess performance and recommend necessary changes; product-oriented and inspection-based. <i>(kiểm soát sản phẩm, bắt lỗi)</i></div>
+      <div class="legend">
+        <div class="lg"><b>Quality vs Grade</b><span><b>Quality</b> = mức đáp ứng yêu cầu. <b>Grade</b> = hạng kỹ thuật (nhiều/ít tính năng). <b>Low quality luôn xấu; low grade thì không nhất thiết</b> (xe bình dân chất lượng tốt vẫn ổn).</span></div>
+        <div class="lg"><b>Accuracy vs Precision</b><span><b>Accuracy</b> = đúng (gần giá trị thật). <b>Precision</b> = nhất quán (các lần đo cụm lại). Có thể precise mà không accurate.</span></div>
+        <div class="lg"><b>QA vs QC</b><span><b>QA</b> (Assurance) = <i>quy trình</i>, phòng ngừa, "làm đúng cách". <b>QC</b> (Control) = <i>sản phẩm</i>, phát hiện lỗi, kiểm tra kết quả.</span></div>
+        <div class="lg"><b>Prevention vs Inspection</b><span><b>Prevention</b> = giữ lỗi khỏi quy trình (rẻ hơn). <b>Inspection</b> = giữ lỗi khỏi tới tay khách. "Phòng bệnh hơn chữa bệnh".</span></div>
+      </div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · QA vs QC</span><b>QA = Assure quy trình (trước &amp; xuyên suốt); QC = Control sản phẩm (kiểm cuối).</b> QA phòng ngừa, QC bắt lỗi. Còn <b>Quality ≠ Grade</b>: "chất lượng thấp là lỗi; hạng thấp là lựa chọn".</div>
+
+      <h3>Cost of Quality (COQ)</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Cost of Quality (COQ)</b> — the total cost incurred over the life of the product in preventing nonconformance to requirements (cost of conformance) plus the cost of nonconformance (internal and external failure). <i>(tổng chi phí conformance + nonconformance)</i></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Cost of Conformance (chi để TRÁNH lỗi)</th><th>Cost of Nonconformance (chi VÌ lỗi)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Prevention</b> — đào tạo, chuẩn hóa quy trình, thiết bị, "làm đúng ngay từ đầu"</td><td><b>Internal failure</b> — lỗi do <b>dự án</b> tự phát hiện: rework, phế phẩm (scrap)</td></tr>
+          <tr><td><b>Appraisal</b> — kiểm thử, kiểm tra, đánh giá chất lượng</td><td><b>External failure</b> — lỗi do <b>khách hàng</b> phát hiện: bảo hành, kiện tụng, mất khách</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · 4 loại COQ</span><b>"PAIE"</b>: <b>P</b>revention + <b>A</b>ppraisal = conformance (chủ động chi). <b>I</b>nternal + <b>E</b>xternal failure = nonconformance (bị động trả giá). Phân biệt Internal/External bằng <b>AI phát hiện lỗi</b>: dự án = Internal, khách = External (đắt &amp; nguy hiểm nhất).</div>
+
+      <h3>7 công cụ chất lượng cơ bản (7 Basic Quality Tools)</h3>
+      <ol>
+        <li><b>Cause-and-Effect / Fishbone / Ishikawa</b> — sơ đồ xương cá, tìm <b>root cause</b>.</li>
+        <li><b>Flowchart</b> — sơ đồ luồng, thấy chỗ dễ phát sinh lỗi.</li>
+        <li><b>Checksheet</b> — bảng đếm dữ liệu tại chỗ, real-time.</li>
+        <li><b>Pareto Chart</b> — quy tắc <b>80/20</b>: 80% vấn đề từ 20% nguyên nhân ("critical few").</li>
+        <li><b>Histogram</b> — biểu đồ cột tần suất.</li>
+        <li><b>Control Chart</b> — theo dõi quy trình có "trong tầm kiểm soát" &amp; ổn định không.</li>
+        <li><b>Scatter Diagram</b> — quan hệ giữa 2 biến.</li>
+      </ol>
+      <div class="note"><span class="lbl">Rule of Seven</span>Trên <b>Control Chart</b>: nếu có <b>7 điểm liên tiếp cùng một phía của đường trung bình</b> → quy trình "out of control" <b>dù vẫn nằm trong control limits</b>, cần điều tra. Đây là <b>Assignable/Special Cause</b> (nguyên nhân đặc biệt). Lưu ý: <b>Control limits</b> (do quy trình) khác <b>Specification limits</b> (do khách/hợp đồng).</div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · công cụ improvement</span><b>PDCA</b> (Plan-Do-Check-Act) &amp; <b>Six Sigma</b> là 2 phương pháp cải tiến phổ biến nhất. <b>Kaizen</b> = cải tiến liên tục (Nhật — cải thiện <i>con người</i> trước, sản phẩm sau). <b>Pareto = 80/20</b>: nhớ "ít nguyên nhân, nhiều hậu quả".</div>
+    </section>
+
+    <!-- RESOURCE -->
+    <section id="resource">
+      <div class="sec-head"><h2>Resource — Nguồn lực &amp; Con người</h2><span class="tag">chủ đề 5/8 · nặng lý thuyết</span></div>
+      <p class="sec-desc">Chủ đề về <b>đội ngũ</b>: xây team, tạo động lực, xử lý xung đột, lãnh đạo. Ít công thức, nhiều mô hình cần nhớ tên.</p>
+
+      <h3>Tuckman's Ladder — 5 giai đoạn phát triển team</h3>
+      <div class="flow"><span class="hl">Forming</span> → <span class="bd">Storming</span> → <span class="hl">Norming</span> → <span class="gd">Performing</span> → <span class="hl">Adjourning</span>
+<span class="cm"># Hình thành → Bão tố(xung đột) → Ổn định → Hiệu suất cao → Giải tán</span></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Tuckman</span><b>"Form – Storm – Norm – Perform – Adjourn"</b> (vần với nhau!). Xung đột <b>cao nhất ở Storming</b>; năng suất <b>cao nhất ở Performing</b>. Team mới lập luôn phải qua Storming — đừng hoảng.</div>
+
+      <h3>Lý thuyết tạo động lực (Motivation Theories)</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Lý thuyết</th><th>Ý chính</th></tr></thead>
+        <tbody>
+          <tr><td><b>Maslow</b> (Tháp nhu cầu)</td><td>5 tầng từ dưới lên: Physiological → Safety → Love/Belonging → Esteem → <b>Self-actualization</b></td></tr>
+          <tr><td><b>Herzberg</b> (2 yếu tố)</td><td><b>Motivators</b> (tạo hài lòng): thành tựu, ghi nhận, thăng tiến. <b>Hygiene</b> (thiếu thì bất mãn): <b>lương</b>, điều kiện làm việc, an toàn</td></tr>
+          <tr><td><b>McGregor</b> (X &amp; Y)</td><td><b>X</b>: người lười, cần kiểm soát chặt. <b>Y</b>: người tự giác, trao quyền</td></tr>
+          <tr><td><b>McClelland</b> (3 nhu cầu)</td><td><b>Achievement</b> (thích thử thách vừa sức), <b>Affiliation</b> (thích hợp tác), <b>Power</b> (thích ảnh hưởng — cho làm quản lý)</td></tr>
+          <tr><td><b>Theory Z</b> (Ouchi)</td><td>Kiểu Nhật: trung thành, việc làm trọn đời, quan tâm phúc lợi</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Herzberg (hay bẫy)</span><b>Lương KHÔNG tạo động lực</b> — nó là <b>Hygiene factor</b> (thiếu thì bất mãn, có thì cũng không "sướng thêm"). Muốn tạo động lực thật phải dùng <b>Motivator</b>: ghi nhận, trách nhiệm, phát triển. Đề thi thường có đáp án "tăng lương" → thường là <b>sai</b>.</div>
+
+      <h3>RACI &amp; Quyền lực</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Responsibility Assignment Matrix (RACI)</b> — a grid that shows the project resources assigned to each work package, identifying who is Responsible, Accountable, Consulted, and Informed. <i>(RACI là một dạng RAM; mỗi task chỉ 1 chữ A)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Team Charter</b> — a document that records the team values, agreements, and operating guidelines that establish clear expectations for the team. <i>(hiến chương nhóm — do team tự thống nhất)</i></div>
+      <p><b>RACI</b> = ma trận phân trách nhiệm (một dạng RAM): <b>R</b>esponsible (người làm) · <b>A</b>ccountable (người chịu trách nhiệm cuối) · <b>C</b>onsult (hỏi ý kiến) · <b>I</b>nform (thông báo).</p>
+      <div class="note"><span class="lbl">Quy tắc RACI</span>Mỗi task chỉ được có <b>ĐÚNG MỘT chữ A</b> (Accountable) — một người chịu trách nhiệm cuối. Nhưng có thể nhiều R.</div>
+      <p><b>5 loại quyền lực (Forms of Power)</b>: Referent (uy tín cá nhân), <b>Expert</b> (chuyên môn), <b>Reward</b> (thưởng), Legitimate/Formal (chức vụ), Coercive (phạt).</p>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · quyền lực</span><b>Expert &amp; Reward = tốt nhất; Coercive (phạt) = tệ nhất.</b> Formal/Reward/Coercive đến <i>từ chức vụ</i>; Expert/Referent phải <i>tự gây dựng</i>. PM nên dùng Expert.</div>
+      <div class="note"><span class="lbl">Các mô hình khác cần nhớ tên</span><b>Situational Leadership</b> (Hersey-Blanchard): Directing → Coaching → Supporting → Delegating. <b>Six Thinking Hats</b> (de Bono): 6 mũ tư duy. <b>Halo effect</b> = bẫy "giỏi việc A nên chắc giỏi việc B" (sai). <b>Emotional Intelligence (EI)</b> = trí tuệ cảm xúc — kỹ năng cốt lõi của PM.</div>
+    </section>
+
+    <!-- RISK -->
+    <section id="risk">
+      <div class="sec-head"><h2>Risk — Rủi ro</h2><span class="tag">chủ đề 6/8 · có EMV</span></div>
+      <p class="sec-desc">Risk = sự kiện <b>chưa chắc chắn ở tương lai</b>, nếu xảy ra sẽ ảnh hưởng mục tiêu. PMP nhìn rủi ro cả 2 chiều: xấu (Threat) &amp; tốt (Opportunity).</p>
+
+      <h3>Khái niệm nền &amp; các cặp dễ nhầm</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Risk</b> — an uncertain event or condition that, if it occurs, has a positive or negative effect on one or more project objectives. <i>(tương lai, chưa xảy ra)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Issue</b> — a current condition or situation that has already occurred and may impact the project objectives. <i>(rủi ro đã xảy ra)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Secondary Risk</b> — a new risk that arises as a direct result of implementing a risk response. <i>(rủi ro mới sinh ra TỪ một response)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Residual Risk</b> — the risk that remains after risk responses have been implemented. <i>(rủi ro còn lại SAU khi xử lý)</i></div>
+      <ul>
+        <li><b>Risk vs Issue</b>: Risk = <i>tương lai, chưa xảy ra</i> (xác suất &gt;0% &amp; &lt;100%). <b>Issue</b> = risk <i>đã xảy ra</i> (thành sự thật). <b>Risk Trigger</b> = dấu hiệu risk sắp/đang xảy ra.</li>
+        <li><b>Threat</b> (rủi ro tiêu cực) vs <b>Opportunity</b> (rủi ro tích cực).</li>
+        <li><b>Individual risk</b> (rủi ro đơn lẻ, ghi ở Risk Register) vs <b>Overall risk</b> (rủi ro tổng thể dự án, ghi ở Risk Report).</li>
+        <li><b>Secondary risk</b> = rủi ro <i>mới sinh ra TỪ</i> một response. <b>Residual risk</b> = rủi ro <i>còn lại SAU</i> khi đã xử lý.</li>
+      </ul>
+      <div class="note"><span class="lbl">Appetite · Tolerance · Threshold</span><b>Risk Appetite</b> = mức rủi ro tổ chức <i>sẵn sàng</i> chấp nhận (chung chung). <b>Risk Tolerance</b> = mức tối đa <i>cụ thể</i> chịu được. <b>Risk Threshold</b> = <i>điểm</i> mà tại đó rủi ro trở nên KHÔNG chấp nhận được.</div>
+
+      <h3>Định tính vs Định lượng</h3>
+      <p><b>Qualitative Analysis</b> = <i>ưu tiên hóa</i> rủi ro (chủ quan) qua ma trận <b>Probability-Impact</b>. Làm cho <b>mọi</b> dự án. <b>Quantitative Analysis</b> = phân tích <i>bằng số</i> (EMV, Monte Carlo). Chỉ làm cho rủi ro ưu tiên cao, <b>không bắt buộc</b>.</p>
+
+      <h3>⭐ EMV — Expected Monetary Value</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Expected Monetary Value (EMV)</b> — a statistical technique that calculates the average (expected) outcome when the future includes scenarios that may or may not happen: probability × impact. <i>(dùng cho Contingency Reserve &amp; Decision Tree)</i></div>
+      <div class="formula">
+        <div class="row"><b>EMV</b> = <span class="v">Probability</span> <span class="op">×</span> <span class="v">Impact</span></div>
+        <div class="row"><span class="cm"># Threat: Impact ÂM (tổn thất). Opportunity: Impact DƯƠNG (lợi ích).</span></div>
+        <div class="row"><span class="cm"># Dùng để tính Contingency Reserve và trong Decision Tree.</span></div>
+      </div>
+      <div class="note ok"><span class="lbl">Ví dụ EMV</span>Rủi ro A: 25% × (−$1000) = <b>−$250</b>. Cơ hội B: 60% × (+$500) = <b>+$300</b>. EMV tổng = +$50 → xét về kỳ vọng là <b>đáng làm</b>. Trong <b>Decision Tree</b>, chọn nhánh có EMV tốt nhất — nhớ trừ cả chi phí đầu tư của mỗi nhánh (kết quả có thể <b>đảo ngược</b> so với khi chưa trừ!).</div>
+
+      <h3>Chiến lược ứng phó rủi ro</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Threats (tiêu cực)</th><th>Opportunities (tích cực)</th><th>Ý nghĩa</th></tr></thead>
+        <tbody>
+          <tr><td><b>Avoid</b> (né tránh)</td><td><b>Exploit</b> (khai thác)</td><td>Loại bỏ bất định hoàn toàn (đưa xác suất về 0% / 100%)</td></tr>
+          <tr><td><b>Transfer</b> (chuyển giao)</td><td><b>Share</b> (chia sẻ)</td><td>Đưa cho bên thứ ba (bảo hiểm / đối tác)</td></tr>
+          <tr><td><b>Mitigate</b> (giảm nhẹ)</td><td><b>Enhance</b> (tăng cường)</td><td>Giảm/tăng xác suất hoặc tác động</td></tr>
+          <tr><td colspan="2" style="text-align:center"><b>Escalate</b> (đẩy lên cấp trên)</td><td>Khi vượt thẩm quyền/phạm vi PM — sau đó KHÔNG monitor nữa</td></tr>
+          <tr><td colspan="2" style="text-align:center"><b>Accept</b> (chấp nhận)</td><td>Passive (không làm gì) hoặc Active (lập <b>contingency plan</b>)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · cặp đối xứng</span>Threat và Opportunity đối xứng nhau: <b>Avoid ↔ Exploit</b> (triệt để), <b>Transfer ↔ Share</b> (giao bên khác), <b>Mitigate ↔ Enhance</b> (điều chỉnh). Còn <b>Escalate &amp; Accept</b> dùng chung cho cả hai. <b>Contingency plan</b> (khi trigger xảy ra) khác <b>Fallback plan</b> (khi contingency plan thất bại).</div>
+      <div class="note"><span class="lbl">Công cụ &amp; Prompt list</span>Nhận diện rủi ro bằng <b>SWOT</b>, <b>PESTLE</b> (Political/Economic/Social/Technological/Legal/Environmental), TECOP, VUCA. Định lượng bằng <b>Monte Carlo</b> (mô phỏng "what-if"), <b>Decision Tree</b>, <b>Sensitivity Analysis → Tornado diagram</b>.</div>
+    </section>
+
+    <!-- STAKEHOLDER -->
+    <section id="stakeholder">
+      <div class="sec-head"><h2>Stakeholder &amp; Communication</h2><span class="tag">chủ đề 7/8 · PM dành 90% thời gian</span></div>
+      <p class="sec-desc">PM dành <b>~90% thời gian để giao tiếp</b>. Chủ đề này gồm quản lý bên liên quan &amp; truyền thông — có 1 công thức phải thuộc.</p>
+
+      <h3>Phân tích &amp; gắn kết Stakeholder</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Stakeholder</b> — an individual, group, or organization that may affect, be affected by, or perceive itself to be affected by a decision, activity, or outcome of a project. <i>(bên liên quan)</i></div>
+      <ul>
+        <li><b>Stakeholder Register</b> — sổ đăng ký: thông tin nhận diện + đánh giá (kỳ vọng, ảnh hưởng) + phân loại.</li>
+        <li><b>Power-Interest Grid</b> — lưới 2 trục Quyền lực × Quan tâm; nhóm góc cao-cao = "Manage Closely".</li>
+        <li><b>Salience Model</b> — phân loại theo <b>3 thuộc tính</b>: <b>Power · Legitimacy · Urgency</b> (khác Power-Interest Grid chỉ 2 trục).</li>
+      </ul>
+      <h4 class="sub">SEAM — 5 mức gắn kết (Engagement)</h4>
+      <div class="flow"><span class="hl">Unaware</span> → <span class="bd">Resistant</span> → <span class="hl">Neutral</span> → <span class="gd">Supportive</span> → <span class="gd">Leading</span>
+<span class="cm"># Không biết → Chống đối → Trung lập → Ủng hộ → Dẫn dắt</span></div>
+      <p><b>SEAM</b> (Stakeholder Engagement Assessment Matrix) đánh dấu mức hiện tại <b>C</b> (Current) &amp; mức mong muốn <b>D</b> (Desired) → tìm "gap" để lập chiến lược giao tiếp.</p>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · Salience &amp; SEAM</span><b>Salience = 3 vòng tròn P.L.U.</b> (Power, Legitimacy, Urgency). <b>SEAM = từ C tới D</b>: đo hiện tại, nhắm mong muốn, đóng khoảng cách. 5 mức đọc từ tệ đến tốt: "Không biết → Chống → Trung → Ủng hộ → Dẫn dắt".</div>
+
+      <h3>⭐ Công thức kênh giao tiếp</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Communication Channels</b> — the number of potential communication paths among stakeholders, calculated as N × (N − 1) / 2, where N is the number of people. <i>(nhớ cộng cả PM vào N)</i></div>
+      <div class="formula">
+        <div class="row"><b>Số kênh (Channels)</b> = <span class="v">N</span> <span class="op">×</span> ( <span class="v">N</span> <span class="op">−</span> 1 ) <span class="op">/</span> 2</div>
+        <div class="row"><span class="cm"># N = tổng số người tham gia (NHỚ cộng cả PM/giảng viên vào N!)</span></div>
+      </div>
+      <div class="note ok"><span class="lbl">Ví dụ (bẫy "thêm bao nhiêu kênh")</span>16 học viên + 1 giảng viên = 17 người → 17×16/2 = <b>136 kênh</b>. Thêm 2 trợ giảng → 19 người → 19×18/2 = <b>171 kênh</b>. Câu hỏi "thêm bao nhiêu kênh?" ⇒ lấy <b>hiệu</b>: 171 − 136 = <b>35 kênh</b> (không phải 171).</div>
+
+      <h3>Phương thức &amp; nguyên tắc giao tiếp</h3>
+      <div class="legend">
+        <div class="lg"><b>Interactive</b><span>Hai chiều, real-time (họp, gọi điện). Có feedback → <b>hiệu quả nhất</b>.</span></div>
+        <div class="lg"><b>Push</b><span>Đẩy tới người nhận cụ thể (email, memo). Đảm bảo <i>đã gửi</i>, không chắc <i>đã hiểu</i>.</span></div>
+        <div class="lg"><b>Pull</b><span>Người nhận tự truy cập (intranet, portal). Cho lượng lớn / nhiều người.</span></div>
+      </div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · 5C &amp; conflict</span><b>5C viết đúng</b>: <b>C</b>lear, <b>C</b>oncise, <b>C</b>orrect, <b>C</b>oherent, <b>C</b>ontrolling. <b>5 cách giải quyết xung đột</b>: <b>Collaborate/Problem-solve = Win-Win (tốt nhất)</b>; Compromise = <b>Lose-Lose</b> (mỗi bên nhường một ít); Force = Win-Lose; Smooth (né khác biệt); Withdraw (rút lui). Đề PMP luôn ưu tiên <b>Collaborate/Problem-solve</b>.</div>
+      <div class="note warn"><span class="lbl">Đừng nhầm Compromise là Win-Win</span>Nhiều người tưởng "thỏa hiệp" là tốt nhất — SAI. Compromise là <b>Lose-Lose</b> (ai cũng mất một phần). <b>Collaborate/Problem-solving</b> mới là Win-Win và là lựa chọn PMI ưu tiên.</div>
+    </section>
+
+    <!-- PROCUREMENT -->
+    <section id="procurement">
+      <div class="sec-head"><h2>Procurement — Mua sắm &amp; Hợp đồng</h2><span class="tag">chủ đề 8/8</span></div>
+      <p class="sec-desc">Procurement = "thuê ngoài": chọn loại hợp đồng nào và <b>ai chịu rủi ro</b>. Trọng tâm thi là bảng loại hợp đồng.</p>
+
+      <h3>Vai trò &amp; chứng từ</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Statement of Work (SOW)</b> — a narrative description of the products, services, or results to be delivered under a contract. <i>(mô tả phần scope thuộc hợp đồng)</i></div>
+      <ul>
+        <li><b>Buyer</b> (bên mua) &amp; <b>Seller</b> (bên bán). Vòng đời seller: Bidder → Selected source → Contracted supplier.</li>
+        <li><b>SOW (Statement of Work)</b> — mô tả phần scope thuộc hợp đồng. <b>TOR</b> — tương tự, cho tư vấn.</li>
+        <li><b>Chứng từ mời</b>: <b>RFI</b> (xin thông tin) · <b>RFP</b> (xin đề xuất — khi <i>giải pháp/năng lực</i> quan trọng nhất) · <b>RFQ</b> (xin báo giá — khi <i>giá</i> quyết định) · <b>IFB</b> (mời thầu).</li>
+        <li><b>Make-or-Buy Analysis</b> (tự làm hay mua). <b>Bidder Conference</b> — họp trước để mọi seller hiểu chung, <b>không ai được ưu ái</b>. <b>Claim</b> — seller đòi bồi thường (một dạng change request).</li>
+      </ul>
+
+      <h3>Các loại hợp đồng &amp; phổ rủi ro</h3>
+      <div class="en-def"><span class="lbl">EN</span><b>Fixed Price Contract</b> — an agreement that sets a firm total price for a well-defined product or service; the seller bears most of the cost risk. <i>(giá cố định; seller gánh phát sinh)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Cost Reimbursable Contract</b> — an agreement that pays the seller for the actual (allowable) costs incurred plus a fee representing profit; the buyer bears more of the cost risk. <i>(dùng khi yêu cầu chưa rõ)</i></div>
+      <div class="en-def"><span class="lbl">EN</span><b>Point of Total Assumption (PTA)</b> — in a fixed-price incentive-fee (FPIF) contract, the cost above which the seller assumes all additional cost overruns. <i>(chỉ áp dụng cho FPIF)</i></div>
+      <div class="flow">Seller chịu rủi ro cao  ◀━━━━━━━━━━━━━━━━━━━━━━━━━▶  Buyer chịu rủi ro cao
+   <span class="gd">FFP  FPIF</span>      <span class="hl">T&amp;M</span>      <span class="bd">CPIF  CPFF  CPPC</span>
+ (Fixed Price)  (Time&amp;Material) (Cost Reimbursable)</div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Loại</th><th>Dùng khi</th><th>Rủi ro chính</th><th>Ghi chú</th></tr></thead>
+        <tbody>
+          <tr><td><b>FFP</b> (Firm Fixed Price)</td><td>Yêu cầu rõ ràng</td><td><b>Seller</b> (cao nhất)</td><td>Giá cố định; seller gánh mọi phát sinh</td></tr>
+          <tr><td><b>FPIF</b> (Fixed Price Incentive Fee)</td><td>Rõ + muốn khuyến khích</td><td>Chủ yếu Seller (tới PTA)</td><td>Có thưởng; có điểm <b>PTA</b></td></tr>
+          <tr><td><b>FP-EPA</b> (Economic Price Adjustment)</td><td>Hợp đồng FP dài hạn</td><td>Seller (giảm rủi ro lạm phát)</td><td>Điều chỉnh giá theo chỉ số kinh tế</td></tr>
+          <tr><td><b>T&amp;M</b> (Time &amp; Material)</td><td>Chưa rõ khối lượng, ngắn/gấp</td><td>Trung gian</td><td>Staff augmentation; nên thêm <b>"Not to Exceed"</b></td></tr>
+          <tr><td><b>CPIF</b> / <b>CPAF</b> / <b>CPFF</b></td><td>Yêu cầu chưa rõ</td><td>Nghiêng <b>Buyer</b></td><td>Cost + phí (thưởng/award/cố định)</td></tr>
+          <tr><td><b>CPPC</b> (Cost Plus % of Cost)</td><td>Ít dùng</td><td><b>Buyer</b> (cao nhất)</td><td>Cost + % → seller càng chi càng lời</td></tr>
+        </tbody>
+      </table></div>
+      <div class="formula">
+        <div class="row"><span class="cm"># PTA — Point of Total Assumption (chỉ cho FPIF)</span></div>
+        <div class="row"><b>PTA</b> = ( <span class="v">Ceiling Price</span> <span class="op">−</span> <span class="v">Target Price</span> ) <span class="op">/</span> <span class="v">Buyer share</span> <span class="op">+</span> <span class="v">Target Cost</span></div>
+        <div class="row"><span class="cm"># Trên PTA: seller gánh 100% mọi chi phí vượt thêm</span></div>
+      </div>
+      <div class="tip"><span class="lbl">Mẹo ghi nhớ · chọn hợp đồng</span><b>"Rõ → Fixed Price; Mờ → Cost Reimbursable; Gấp/chưa có SOW → T&amp;M."</b> Rủi ro chuyển dần từ Seller (FP) sang Buyer (CR). Nhớ: hợp đồng <b>càng "Fixed" thì Seller càng gánh</b>; càng "Cost Plus" thì Buyer càng gánh.</div>
+      <div class="note"><span class="lbl">Agile Contracting</span><b>Change for Free</b> (đổi tính năng miễn phí nếu tổng khối lượng không đổi), <b>Money for Nothing</b> (cho khách dừng sớm khi backlog hết giá trị), <b>Graduated Fixed-Price</b>, <b>MSA</b> (Master Service Agreement — hợp đồng khung, phần adaptive để ở phụ lục).</div>
+    </section>
+    <footer>
+      <b>Phần II / IV</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP. Xem thêm <a href="cong-thuc-va-vi-du.html">ví dụ tính EVM/PERT/EMV →</a>. <a href="phan-3-agile.html">Tiếp: Phần III — Agile →</a>
+    </footer>
+  </main>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>
