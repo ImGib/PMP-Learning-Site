@@ -47,7 +47,14 @@ var FLASHCARDS = [
   {cat:"Agile", term:"Definition of Done vs Acceptance Criteria", en:"DoD = process checklist applied to ALL items (team-owned). Acceptance Criteria = conditions for ONE specific item (user-focused, test-verified).", vn:"DoD cho MỌI item; Acceptance Criteria cho MỘT item."},
   {cat:"Agile", term:"Velocity", en:"The number of story points a team completes per iteration; used to forecast. Never compare across teams.", vn:"Points/iteration. KHÔNG so sánh giữa 2 team."},
   {cat:"Agile", term:"Little's Law", en:"Cycle Time = WIP / Throughput. Reduce cycle time by lowering WIP or raising throughput.", vn:"Cycle Time = WIP / Throughput."},
-  {cat:"Agile", term:"Timeboxing", en:"A fixed, short period of time; if work is not finished, you adjust scope (never extend the time).", vn:"Hết giờ thì ĐIỀU CHỈNH SCOPE, không kéo dài thời gian."}
+  {cat:"Agile", term:"Timeboxing", en:"A fixed, short period of time; if work is not finished, you adjust scope (never extend the time).", vn:"Hết giờ thì ĐIỀU CHỈNH SCOPE, không kéo dài thời gian."},
+
+  {cat:"Agile", term:"Agile Manifesto — 4 Values", en:"Individuals & interactions over processes and tools; Working software over comprehensive documentation; Customer collaboration over contract negotiation; Responding to change over following a plan.", vn:"Đề cao vế trái (vế phải vẫn có giá trị, chỉ ưu tiên thấp hơn): Người–Sản phẩm–Khách–Thay đổi."},
+  {cat:"Agile", term:"Working software is the primary measure of progress", en:"Agile principle #7: progress is measured by usable, working product — not by documents or hours spent.", vn:"Thước đo tiến độ chính = sản phẩm chạy được, KHÔNG phải % tài liệu."},
+  {cat:"Scrum", term:"Scrum 3-5-3", en:"3 accountabilities (Product Owner, Scrum Master, Developers); 5 events (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective); 3 artifacts (Product Backlog, Sprint Backlog, Increment).", vn:"Ba vai – Năm họp – Ba sản phẩm."},
+  {cat:"Scrum", term:"Product Owner vs Scrum Master", en:"Product Owner maximizes product value by ordering the Product Backlog (decides WHAT). Scrum Master is a servant leader who removes impediments and coaches the team (does NOT assign work).", vn:"PO quyết định LÀM GÌ; SM phục vụ & gỡ vướng (không phải sếp)."},
+  {cat:"Scrum", term:"Sprint Review vs Retrospective", en:"Sprint Review inspects the PRODUCT (demo the Increment, adapt the backlog with stakeholders). Retrospective inspects the PROCESS (how the team works, then improves).", vn:"Review = sản phẩm; Retro = cách làm việc."},
+  {cat:"Scrum", term:"Sprint", en:"A timeboxed iteration of 1–4 weeks that produces a 'Done', usable Increment; it is the container for all other Scrum events.", vn:"Chu kỳ cố định 1–4 tuần, tạo ra Increment dùng được."}
 ];
 
 var QUIZ = [
@@ -121,7 +128,43 @@ var QUIZ = [
 
   {cat:"Agile", q:"Điều gì mô tả đúng 'Definition of Done' (DoD)?",
    opts:["Tiêu chí nghiệm thu cho một user story cụ thể","Checklist quy trình áp dụng cho MỌI backlog item, do team thống nhất","Danh sách rủi ro của sprint","Hợp đồng với khách hàng"],
-   correct:1, expl:"DoD là checklist quy trình áp cho TẤT CẢ items, do team sở hữu. Acceptance Criteria mới là tiêu chí cho MỘT item cụ thể (góc nhìn user, kiểm bằng test)."}
+   correct:1, expl:"DoD là checklist quy trình áp cho TẤT CẢ items, do team sở hữu. Acceptance Criteria mới là tiêu chí cho MỘT item cụ thể (góc nhìn user, kiểm bằng test)."},
+
+  {cat:"Manifesto", q:"Theo Agile Manifesto, cặp giá trị nào thể hiện ĐÚNG điều được coi trọng HƠN?",
+   opts:["Comprehensive documentation hơn working software","Following a plan hơn responding to change","Working software hơn comprehensive documentation","Contract negotiation hơn customer collaboration"],
+   correct:2, expl:"4 giá trị đề cao VẾ TRÁI: Individuals & interactions, Working software, Customer collaboration, Responding to change. Vế phải vẫn có giá trị nhưng ưu tiên thấp hơn."},
+
+  {cat:"Manifesto", q:"Theo 12 nguyên tắc Agile, thước đo tiến độ CHÍNH của dự án là gì?",
+   opts:["Số trang tài liệu đã hoàn thành","Working software — sản phẩm chạy được","Số giờ công đã bỏ ra","Phần trăm kế hoạch đã bám đúng"],
+   correct:1, expl:"Nguyên tắc #7: 'Working software is the primary measure of progress' — đo bằng sản phẩm dùng được, không phải tài liệu hay giờ công."},
+
+  {cat:"Manifesto", q:"Khách hàng muốn thay đổi yêu cầu ở giai đoạn khá muộn. Theo tinh thần Agile, nhóm nên làm gì?",
+   opts:["Từ chối vì đã qua giai đoạn planning","Đón nhận thay đổi và biến nó thành lợi thế cạnh tranh cho khách","Bắt khách ký change request kèm phí phạt trước","Hoãn tất cả thay đổi sang một dự án khác"],
+   correct:1, expl:"Nguyên tắc #2: 'Welcome changing requirements, even late in development' — Agile đón nhận thay đổi để tạo lợi thế cho khách."},
+
+  {cat:"Scrum", q:"Trong Scrum, ai đóng vai servant leader — gỡ bỏ trở ngại (impediment) và bảo vệ nhóm, nhưng KHÔNG giao việc?",
+   opts:["Product Owner","Scrum Master","Project Sponsor","Functional Manager"],
+   correct:1, expl:"Scrum Master là servant leader: gỡ impediment, huấn luyện Scrum, bảo vệ nhóm. KHÔNG phải sếp và KHÔNG giao việc."},
+
+  {cat:"Scrum", q:"Ai chịu trách nhiệm sắp xếp thứ tự ưu tiên Product Backlog để tối đa hóa giá trị sản phẩm?",
+   opts:["Scrum Master","Developers","Product Owner","Change Control Board"],
+   correct:2, expl:"Product Owner sở hữu &amp; ưu tiên Product Backlog, là 'tiếng nói khách hàng', quyết định LÀM GÌ."},
+
+  {cat:"Scrum", q:"Đâu KHÔNG phải mục đích của Daily Scrum (họp đứng hằng ngày)?",
+   opts:["Đồng bộ công việc, hướng tới Sprint Goal","Nêu các impediment đang gặp","Báo cáo tiến độ cho sếp và giải quyết mọi vấn đề kỹ thuật ngay tại chỗ","Giúp nhóm tự điều chỉnh kế hoạch trong ngày"],
+   correct:2, expl:"Daily Scrum KHÔNG phải họp báo cáo cho cấp trên, cũng KHÔNG phải họp giải quyết vấn đề chi tiết — vấn đề kỹ thuật bàn riêng sau (~15 phút, do nhóm tự chủ)."},
+
+  {cat:"Scrum", q:"Cuối Sprint có hai sự kiện. Sự kiện nào tập trung cải tiến CÁCH LÀM VIỆC của nhóm (quy trình)?",
+   opts:["Sprint Review","Sprint Retrospective","Sprint Planning","Backlog Refinement"],
+   correct:1, expl:"Retrospective soi PROCESS (cách làm việc → cải tiến). Sprint Review soi PRODUCT (demo Increment cho stakeholder, điều chỉnh backlog). Nhớ: Review=product, Retro=process."},
+
+  {cat:"Scrum", q:"Một Sprint trong Scrum có đặc điểm nào đúng?",
+   opts:["Timeboxed 1–4 tuần, độ dài cố định, là 'hộp chứa' các sự kiện khác","Kéo dài 1–6 tháng, gia hạn nếu chưa xong","Không giới hạn thời gian, xong việc thì kết thúc","Luôn đúng 30 ngày và không thể thay đổi"],
+   correct:0, expl:"Sprint là iteration timeboxed 1–4 tuần với độ dài cố định; nếu không kịp thì điều chỉnh scope chứ không kéo dài. Sprint chứa Planning, Daily, Review, Retro."},
+
+  {cat:"Scrum", q:"Cam kết (commitment) gắn với Sprint Backlog là gì?",
+   opts:["Product Goal","Definition of Done","Sprint Goal","Definition of Ready"],
+   correct:2, expl:"Product Backlog ↔ Product Goal; Sprint Backlog ↔ Sprint Goal; Increment ↔ Definition of Done."}
 ];
 
 // ---------- render flashcards ----------
