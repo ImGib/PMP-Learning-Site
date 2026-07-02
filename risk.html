@@ -36,6 +36,7 @@
       <figure class="diagram"><div class="diagram__title">Ma trận Probability–Impact</div>
         <div class="diagram-quad"><div class="diagram-quad__yaxis">Xác suất: thấp → cao</div><div><div class="diagram-quad__grid"><div class="diagram-quad__cell"><b>P cao / I thấp</b>theo dõi</div><div class="diagram-quad__cell diagram-quad__cell--hi"><b>P cao / I cao</b>ƯU TIÊN xử lý</div><div class="diagram-quad__cell"><b>P thấp / I thấp</b>chấp nhận</div><div class="diagram-quad__cell diagram-quad__cell--mid"><b>P thấp / I cao</b>lập kế hoạch dự phòng</div></div><div class="diagram-quad__xaxis">Tác động: thấp → cao</div></div></div>
         <figcaption>Ô Xác suất cao × Tác động cao là nhóm cần xử lý ưu tiên nhất</figcaption></figure>
+      <div class="callout callout--note"><span class="callout__label">Trước khi ưu tiên hoá · Risk Data Quality Assessment</span>Trước Qualitative Analysis, đánh giá <b>độ tin cậy của dữ liệu rủi ro</b> (chính xác, đầy đủ, khách quan, kịp thời) — dữ liệu kém thì kết quả ưu tiên hoá vô nghĩa. Đi kèm <b>Risk Categorization</b> (nhóm theo RBS/nguồn) &amp; đánh giá <b>độ khẩn (urgency)</b> của rủi ro.</div>
 
       <h3>⭐ EMV — Expected Monetary Value</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Expected Monetary Value (EMV)</b> — a statistical technique that calculates the average (expected) outcome when the future includes scenarios that may or may not happen: probability × impact. <i>(dùng cho Contingency Reserve &amp; Decision Tree)</i></div>
@@ -64,7 +65,7 @@
           <tr><td><b>Avoid</b> (né tránh)</td><td><b>Exploit</b> (khai thác)</td><td>Loại bỏ bất định hoàn toàn (đưa xác suất về 0% / 100%)</td></tr>
           <tr><td><b>Transfer</b> (chuyển giao)</td><td><b>Share</b> (chia sẻ)</td><td>Đưa cho bên thứ ba (bảo hiểm / đối tác)</td></tr>
           <tr><td><b>Mitigate</b> (giảm nhẹ)</td><td><b>Enhance</b> (tăng cường)</td><td>Giảm/tăng xác suất hoặc tác động</td></tr>
-          <tr><td colspan="2" style="text-align:center"><b>Escalate</b> (đẩy lên cấp trên)</td><td>Khi vượt thẩm quyền/phạm vi PM — sau đó KHÔNG monitor nữa</td></tr>
+          <tr><td colspan="2" style="text-align:center"><b>Escalate</b> (đẩy lên cấp trên)</td><td>Khi vượt thẩm quyền/phạm vi PM — team không xử lý/theo dõi tiếp, <b>nhưng vẫn ghi trong risk register</b> để lưu thông tin; owner mới ở cấp cao hơn phải chấp nhận</td></tr>
           <tr><td colspan="2" style="text-align:center"><b>Accept</b> (chấp nhận)</td><td>Passive (không làm gì) hoặc Active (lập <b>contingency plan</b>)</td></tr>
         </tbody>
       </table></div>
@@ -85,13 +86,13 @@
 </svg>
 <figcaption>Mỗi thanh = mức dao động kết quả khi <b>1 biến thay đổi</b> (giữ biến khác ở baseline). Biến TRÊN CÙNG tác động mạnh nhất → ưu tiên xử lý. Hình phễu = "tornado". (<span style="color:#d2604a">đỏ</span> = xấu đi, <span style="color:#2f9e6b">xanh</span> = tốt lên)</figcaption></figure>
       <h3>Thái độ với rủi ro (Utility Theory)</h3>
+      <p>Utility Theory chuẩn có <b>3</b> nhóm thái độ cốt lõi:</p>
       <div class="features">
-        <div class="feature"><b>Risk Averse</b><span>Ngại rủi ro — không thoải mái với bất định.</span></div>
-        <div class="feature"><b>Risk Neutral</b><span>Trung lập — chấp nhận rủi ro để đổi lấy lợi ích tương lai.</span></div>
-        <div class="feature"><b>Risk Seeker</b><span>Ưa rủi ro — xem rủi ro như thử thách/cơ hội.</span></div>
-        <div class="feature"><b>Risk Tolerant</b><span>Chịu được rủi ro — không quá bận tâm.</span></div>
+        <div class="feature"><b>Risk Averse</b><span>Ngại rủi ro — độ thoả dụng (utility) giảm nhanh khi rủi ro tăng; thích sự chắc chắn.</span></div>
+        <div class="feature"><b>Risk Neutral</b><span>Trung lập — quyết định thuần theo giá trị kỳ vọng (EMV), không phạt/thưởng cho bất định.</span></div>
+        <div class="feature"><b>Risk Seeking</b><span>Ưa rủi ro — sẵn sàng chấp nhận bất định cao để đổi lấy lợi ích lớn hơn.</span></div>
       </div>
-      <p>Cùng một người có thể vừa <b>risk averse</b> vừa <b>risk seeker</b> ở các tình huống khác nhau (utility theory).</p>
+      <p><i>"Risk Tolerant" không phải nhóm thứ 4 — chỉ là cách mô tả mức chịu đựng.</i> Cùng một người có thể vừa <b>risk averse</b> vừa <b>risk seeking</b> ở các tình huống khác nhau.</p>
 
       <h3>RBS — Risk Breakdown Structure</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Risk Breakdown Structure (RBS)</b> — a hierarchical representation of potential sources of risk. <i>(cây phân rã NGUỒN rủi ro)</i></div>
@@ -127,12 +128,14 @@
       <h3>Chọn Risk Response thế nào? (logic)</h3>
       <div class="callout callout--note"><span class="callout__label">Thứ tự cân nhắc cho MỖI rủi ro</span>
         <ol>
-          <li><b>Ngoài thẩm quyền / scope?</b> → <b>Escalate</b> (cho cả threat &amp; opportunity); sau đó team không theo dõi tiếp.</li>
+          <li><b>Ngoài thẩm quyền / scope?</b> → <b>Escalate</b> (cho cả threat &amp; opportunity); team không xử lý tiếp nhưng <b>vẫn ghi nhận trong register</b>.</li>
           <li><b>Threat</b>: <b>Avoid</b> (loại bỏ nguyên nhân, đưa xác suất về 0) → <b>Transfer</b> (chuyển bên thứ ba: bảo hiểm/bảo hành/FP contract) → <b>Mitigate</b> (giảm xác suất/impact xuống mức chấp nhận) → <b>Accept</b> (passive: không làm gì / active: lập contingency reserve + plan).</li>
           <li><b>Opportunity</b> (đối xứng): <b>Exploit</b> (chắc chắn hóa ~100%) → <b>Share</b> (bắt tay đối tác giỏi hơn) → <b>Enhance</b> (tăng xác suất/impact) → <b>Accept</b>.</li>
         </ol>
         Mỗi response phải có <b>owner</b>; cân nhắc mức nghiêm trọng, chi phí–hiệu quả &amp; tính khả thi.</div>
       <div class="callout callout--warn"><span class="callout__label">Contingency vs Fallback vs Workaround</span><b>Contingency plan</b> = kích hoạt bởi <b>trigger</b> (rủi ro đã biết). <b>Fallback plan</b> = "kế hoạch B" khi contingency thất bại. <b>Workaround</b> = phản ứng <b>không lập trước</b>, cho rủi ro chưa lường / đã chấp nhận thụ động.</div>
+      <div class="callout callout--tip"><span class="callout__label">Rủi ro trong Agile/Hybrid</span>Đưa rủi ro vào <b>risk-adjusted backlog</b> (ưu tiên cả value lẫn risk); theo dõi bằng <b>risk burndown chart</b>; review rủi ro mỗi <b>iteration/retrospective</b>. Vòng lặp ngắn giúp <b>lộ &amp; giảm rủi ro sớm</b> nhờ phản hồi liên tục.</div>
+      <div class="callout callout--note"><span class="callout__label">Risk Review vs Risk Audit</span><b>Risk Review</b> = họp định kỳ đánh giá lại rủi ro &amp; response (còn hiệu quả không, có rủi ro mới không). <b>Risk Audit</b> = kiểm tra <b>hiệu quả của cả quy trình quản lý rủi ro</b> ("làm đúng cách chưa"). Cả hai thuộc <b>Monitor Risks</b>.</div>
     </section>
     <footer id="topic-footer"></footer>
   </main>

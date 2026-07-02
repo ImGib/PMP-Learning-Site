@@ -84,6 +84,70 @@
   cursor: pointer;
 }
 
+/* ---- nav dropdown groups ---- */
+.topbar__group {
+  position: relative;
+}
+.topbar__grouptop {
+  font: inherit;
+  font-size: 13.3px;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.topbar__grouptop:hover {
+  color: var(--ink);
+}
+.topbar__grouptop--current {
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+.topbar__caret {
+  font-size: 9px;
+  color: var(--faint);
+}
+.topbar__panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 214px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  box-shadow: 0 16px 40px -18px rgba(40, 36, 90, 0.45);
+  padding: 6px;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 60;
+}
+.topbar__group:hover .topbar__panel,
+.topbar__group.is-open .topbar__panel {
+  display: flex;
+}
+.topbar__panellink {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 13.3px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.topbar__panellink:hover {
+  background: var(--line-soft);
+  color: var(--ink);
+}
+.topbar__panellink--current {
+  background: var(--accent-wash);
+  color: var(--accent-ink);
+  font-weight: 500;
+}
+
 /* ---- shell + sidebar ---- */
 .shell {
   display: grid;

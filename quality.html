@@ -30,6 +30,7 @@
         <div class="feature"><b>Prevention vs Inspection</b><span><b>Prevention</b> = giữ lỗi khỏi quy trình (rẻ hơn). <b>Inspection</b> = giữ lỗi khỏi tới tay khách. "Phòng bệnh hơn chữa bệnh".</span></div>
       </div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · QA vs QC</span><b>QA = Assure quy trình (trước &amp; xuyên suốt); QC = Control sản phẩm (kiểm cuối).</b> QA phòng ngừa, QC bắt lỗi. Còn <b>Quality ≠ Grade</b>: "chất lượng thấp là lỗi; hạng thấp là lựa chọn".</div>
+      <div class="callout callout--warn"><span class="callout__label">Bẫy · Gold Plating</span><b>Chất lượng = đáp ứng ĐÚNG yêu cầu, KHÔNG phải vượt yêu cầu.</b> Tự ý thêm tính năng khách không yêu cầu (<b>gold plating</b>) là <b>sai</b> theo PMI — tốn chi phí, tăng rủi ro, không tạo thêm giá trị. Đáp án kiểu "làm vượt mong đợi của khách" thường là <b>bẫy</b>. (Chi tiết ở <a href="scope.html" style="color:var(--accent-ink);font-weight:600">mục Scope ↗</a>.)</div>
 
       <h3>Cost of Quality (COQ)</h3>
       <figure class="diagram"><div class="diagram__title">Cost of Quality — 4 loại chi phí</div>
@@ -56,7 +57,8 @@
         <div class="principle"><span class="principle__num">6</span><span class="principle__title">Control Chart</span><span class="principle__desc">Theo dõi quy trình có "trong tầm kiểm soát" &amp; ổn định không.</span></div>
         <div class="principle"><span class="principle__num">7</span><span class="principle__title">Scatter Diagram</span><span class="principle__desc">Biểu đồ phân tán — quan hệ giữa 2 biến.</span></div>
       </div>
-      <div class="callout callout--note"><span class="callout__label">Rule of Seven</span>Trên <b>Control Chart</b>: nếu có <b>7 điểm liên tiếp cùng một phía của đường trung bình</b> → quy trình "out of control" <b>dù vẫn nằm trong control limits</b>, cần điều tra. Đây là <b>Assignable/Special Cause</b> (nguyên nhân đặc biệt). Lưu ý: <b>Control limits</b> (do quy trình) khác <b>Specification limits</b> (do khách/hợp đồng).</div>
+      <div class="callout callout--note"><span class="callout__label">Ishikawa 6M &amp; ghi chú PMBOK 8</span><b>Fishbone/Ishikawa</b> thường nhóm nguyên nhân theo <b>6M</b>: <b>M</b>achine · <b>M</b>ethod · <b>M</b>aterial · <b>M</b>easurement · <b>M</b>an (Manpower) · <b>M</b>other Nature (Environment). <i>Lưu ý: "7 công cụ chất lượng cơ bản" là bộ kinh điển của prep — <b>PMBOK 8 không còn liệt kê thành bộ có tên</b>, nhưng vẫn nên thuộc để thi.</i></div>
+      <div class="callout callout--note"><span class="callout__label">Rule of Seven</span>Trên <b>Control Chart</b>: nếu có <b>7 điểm liên tiếp cùng một phía của đường trung bình</b> → quy trình "out of control" <b>dù vẫn nằm trong control limits</b>, cần điều tra. Đây là <b>Assignable/Special Cause</b> (nguyên nhân đặc biệt). Lưu ý: <b>Control limits</b> (do quy trình) khác <b>Specification limits</b> (do khách/hợp đồng). <i>(Rule of Seven là heuristic prep — không có trong văn bản PMBOK 8, vẫn thi.)</i></div>
       <figure class="diagram"><div class="diagram__title">Control Chart &amp; Rule of Seven</div>
 <svg viewBox="0 0 470 205" role="img" aria-label="Control chart" font-family="ui-monospace, monospace">
 <line x1="70" y1="48" x2="440" y2="48" stroke="#d2604a" stroke-width="1.2" stroke-dasharray="5 4"/>
@@ -72,7 +74,7 @@
 <text x="320" y="61" font-size="9" fill="#d2604a" text-anchor="middle">7 điểm liên tiếp TRÊN mean → điều tra</text>
 </svg>
 <figcaption>Điểm vẫn trong UCL/LCL nhưng <b>7 điểm liên tiếp cùng phía mean</b> = Rule of Seven → có special cause, cần điều tra.</figcaption></figure>
-      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · công cụ improvement</span><b>PDCA</b> (Plan-Do-Check-Act) &amp; <b>Six Sigma</b> là 2 phương pháp cải tiến phổ biến nhất. <b>Kaizen</b> = cải tiến liên tục (Nhật — cải thiện <i>con người</i> trước, sản phẩm sau). <b>Pareto = 80/20</b>: nhớ "ít nguyên nhân, nhiều hậu quả".</div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · công cụ improvement</span><b>PDCA</b> (Plan-Do-Check-Act) &amp; <b>Six Sigma</b> là 2 phương pháp cải tiến phổ biến nhất. <b>Kaizen</b> = cải tiến liên tục kiểu Nhật (nhấn mạnh yếu tố <i>con người</i> &amp; <b>cải tiến từng bước nhỏ, liên tục</b>). <b>Pareto = 80/20</b>: nhớ "ít nguyên nhân, nhiều hậu quả".</div>
       <h3>Cost-Benefit &amp; Marginal Analysis</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Marginal Analysis</b> — finding the point where the benefit (revenue) from improving quality equals the incremental cost to achieve it; beyond this point, extra quality spending is not worthwhile. <i>(điểm tối ưu chất lượng)</i></div>
       <p><b>Cost-Benefit Analysis</b>: cân chi phí bỏ ra cho hoạt động chất lượng với lợi ích thu về. <b>Marginal Analysis</b>: tăng chất lượng tới điểm mà <b>lợi ích tăng thêm = chi phí tăng thêm</b> — quá điểm này là lãng phí (Law of Diminishing Returns).</p>
@@ -90,7 +92,7 @@
       <div class="features">
         <div class="feature"><b>PDCA</b><span>Plan-Do-Check-Act (Deming/Shewhart) — vòng lặp cải tiến liên tục.</span></div>
         <div class="feature"><b>Six Sigma</b><span>Giảm biến động &amp; khuyết tật xuống mức cực thấp (mục tiêu 3.4 lỗi/triệu).</span></div>
-        <div class="feature"><b>Kaizen</b><span>Cải tiến liên tục kiểu Nhật — cải thiện <b>con người trước</b>, sản phẩm sau.</span></div>
+        <div class="feature"><b>Kaizen</b><span>Cải tiến liên tục kiểu Nhật — <b>từng bước nhỏ, liên tục</b>, huy động mọi người cùng cải thiện quy trình.</span></div>
         <div class="feature"><b>Lean</b><span>Loại bỏ lãng phí (waste), tối đa giá trị cho khách hàng.</span></div>
         <div class="feature"><b>JIT (Just-In-Time)</b><span>Đưa tồn kho về gần <b>0</b> — nguyên liệu tới đúng lúc cần, buộc chất lượng phải cao.</span></div>
       </div>

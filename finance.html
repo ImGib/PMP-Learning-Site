@@ -26,7 +26,23 @@
       <div class="callout callout--en"><span class="callout__label">EN</span><b>CapEx (Capital Expenditure)</b> — funds used to acquire, upgrade or maintain long-term physical assets (buildings, equipment). <b>OpEx (Operational Expenditure)</b> — ongoing day-to-day running costs (wages, rent, utilities). <i>(chi đầu tư tài sản vs chi vận hành)</i></div>
       <div class="callout callout--warn"><span class="callout__label">Sunk Cost &amp; Opportunity Cost</span><b>Sunk Cost</b> = chi phí đã bỏ ra, không thu hồi được → <b>KHÔNG</b> đưa vào quyết định có tiếp tục dự án hay không. <b>Opportunity Cost</b> = giá trị của phương án tốt nhất bị bỏ qua khi chọn phương án hiện tại.</div>
       <div class="callout callout--note"><span class="callout__label">Depreciation &amp; Working Capital</span><b>Depreciation</b> (khấu hao tài sản): <b>Straight-line</b> — khấu hao đều mỗi kỳ; <b>Accelerated</b> (vd double-declining balance, sum-of-years-digits) — khấu hao nhiều hơn ở các năm đầu. <b>Working Capital</b> = tài sản ngắn hạn − nợ ngắn hạn (lượng tiền tổ chức có thể huy động cho dự án).</div>
-      <div class="callout callout--note"><span class="callout__label">3 mức độ chính xác ước tính</span><b>ROM</b> (Rough Order of Magnitude): <code>−25% đến +75%</code> (giai đoạn đầu). <b>Budget Estimate</b>: <code>−10% đến +25%</code>. <b>Definitive</b>: <code>−5% đến +10%</code> (càng về sau càng chính xác).</div>
+      <div class="callout callout--note"><span class="callout__label">3 mức độ chính xác ước tính</span><b>ROM</b> (Rough Order of Magnitude): <code>−25% đến +75%</code> (giai đoạn đầu). <b>Budget Estimate</b>: <code>−10% đến +25%</code>. <b>Definitive</b>: <code>−5% đến +10%</code> (càng về sau càng chính xác). <i>(giá trị tham khảo kiểu AACE; đề PMP hiện nay ít hỏi con số chính xác — nhớ xu hướng "càng về sau khoảng sai số càng hẹp".)</i></div>
+
+      <h3>Chọn dự án — Benefit Measurement Methods</h3>
+      <p>Khi tổ chức phải chọn giữa nhiều dự án, dùng các chỉ số tài chính sau. <b>Đề PMP hiếm bắt tính tay</b>, nhưng rất hay hỏi <i>"chọn dự án nào?"</i> — thuộc quy tắc so sánh là ăn điểm.</p>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Chỉ số</th><th>Ý nghĩa</th><th>Chọn dự án khi</th></tr></thead>
+        <tbody>
+          <tr><td><b>NPV</b> (Net Present Value)</td><td>Tổng dòng tiền tương lai quy về hiện tại, trừ vốn bỏ ra (đã tính giá trị thời gian của tiền)</td><td><b>NPV cao hơn</b> (và &gt; 0)</td></tr>
+          <tr><td><b>IRR</b> (Internal Rate of Return)</td><td>Lãi suất khiến NPV = 0 — "tỷ suất sinh lời" nội tại của dự án</td><td><b>IRR cao hơn</b></td></tr>
+          <tr><td><b>BCR</b> (Benefit-Cost Ratio)</td><td>Lợi ích / Chi phí</td><td><b>BCR cao hơn</b> (và &gt; 1)</td></tr>
+          <tr><td><b>Payback Period</b></td><td>Thời gian thu hồi vốn</td><td><b>Ngắn hơn</b> — nhưng bỏ qua giá trị thời gian của tiền &amp; dòng tiền sau khi hoàn vốn</td></tr>
+          <tr><td><b>ROI</b> (Return on Investment)</td><td>(Lợi ích − Chi phí) / Chi phí, tính theo %</td><td><b>ROI cao hơn</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Present Value (PV)</b> = FV / (1 + r)<sup>n</sup> — the current worth of a future sum of money given a discount rate r over n periods. <i>(giá trị hiện tại của một khoản tiền tương lai)</i></div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · chọn dự án</span><b>NPV / IRR / BCR / ROI: càng CAO càng tốt. Payback: càng NGẮN càng tốt.</b> Nếu đề đưa "NPV" thì đừng trừ lại chi phí lần nữa — NPV <b>đã</b> trừ vốn &amp; đã chiết khấu. <b>Sunk cost</b> không ảnh hưởng quyết định tiếp tục.</div>
+      <div class="callout callout--warn"><span class="callout__label">Bẫy Payback vs NPV</span>Payback ngắn <b>không</b> đồng nghĩa dự án tốt hơn: nó bỏ qua giá trị thời gian của tiền &amp; lợi ích dài hạn. Khi đề cho cả hai chỉ số, <b>NPV thắng</b> (toàn diện hơn).</div>
 
       <h3>Contingency vs Management Reserve — bẫy kinh điển</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Contingency Reserve</b> — time or money allocated in the schedule or cost baseline to handle identified risks ("known-unknowns"); part of the cost baseline and managed by the PM. <i>(dự phòng cho rủi ro đã biết)</i></div>
@@ -104,6 +120,7 @@
         <div class="formula__row"><b>CPI</b> = <span class="formula__var">EV</span> <span class="formula__op">/</span> <span class="formula__var">AC</span>&nbsp;&nbsp;<span class="formula__cm">Cost Performance Index</span></div>
       </div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · EVM (quan trọng nhất)</span><b>"EV luôn đứng đầu."</b> Variance = TRỪ (EV − …), Index = CHIA (EV / …). Dấu/giá trị: <b>Cost thì so với AC, Schedule thì so với PV</b>. Kết quả <b>dương hoặc &gt;1 = TỐT</b> (đúng/vượt kế hoạch), <b>âm hoặc &lt;1 = XẤU</b>. Mẹo chữ: "<b>P</b>lanned đi với <b>S</b>chedule (SV, SPI); <b>A</b>ctual đi với <b>C</b>ost (CV, CPI)".</div>
+      <div class="callout callout--warn"><span class="callout__label">Bẫy · SPI cuối dự án</span>Về cuối dự án <b>mọi PV dần được "earned"</b> nên <b>SPI luôn tiến về 1</b> dù thực tế trễ — SPI mất ý nghĩa đo tiến độ ở cuối. Lúc đó phải nhìn <b>critical path &amp; ngày mốc</b>, đừng tin SPI. (SV/SPI đo bằng <i>tiền</i>, không đo <i>thời gian</i> — hai thứ có thể lệch nhau.)</div>
 
       <h4 class="section__subhead">Dự báo (Forecasting) — EAC / ETC / VAC</h4>
       <p><b>BAC</b> = ngân sách gốc. <b>EAC</b> = dự báo tổng chi phí cuối cùng. <b>ETC</b> = còn cần chi bao nhiêu nữa. <b>VAC</b> = chênh lệch dự báo.</p>
@@ -119,6 +136,9 @@
         <div class="formula__row"><span class="formula__cm"># TH4: vượt ngân sách nhưng phải kịp deadline</span></div>
         <div class="formula__row"><b>EAC</b> = <span class="formula__var">AC</span> <span class="formula__op">+</span> ( <span class="formula__var">BAC</span> <span class="formula__op">−</span> <span class="formula__var">EV</span> ) <span class="formula__op">/</span> ( <span class="formula__var">CPI</span> <span class="formula__op">×</span> <span class="formula__var">SPI</span> )</div>
       </div>
+
+      <div class="callout callout--ok"><span class="callout__label">Ví dụ EAC · cùng dữ liệu, giả định khác ⇒ kết quả khác</span>BAC=$10.000, đã hoàn thành 40% (EV=$4.000), AC=$5.000, SPI=0.8, CPI=0.8. <b>TH1</b> (xu hướng tiếp diễn): EAC=BAC/CPI=<b>$12.500</b>. <b>TH2</b> (phần còn lại chạy đúng KH): EAC=AC+(BAC−EV)=5.000+6.000=<b>$11.000</b>. <b>TH4</b> (phải kịp deadline): EAC=AC+(BAC−EV)/(CPI×SPI)=5.000+6.000/0.64≈<b>$14.375</b>. → Đọc kỹ đề để chọn đúng công thức.</div>
+      <div class="callout callout--note"><span class="callout__label">Cost Baseline vs PMB (Performance Measurement Baseline)</span><b>PMB</b> tích hợp <b>Scope + Schedule + Cost baseline</b> để đo hiệu suất tổng thể — EVM đo dựa trên PMB. <b>Cost Baseline</b> chỉ là phần chi phí của PMB. Cả hai đều <b>KHÔNG</b> gồm Management Reserve.</div>
 
       <h4 class="section__subhead">TCPI — To-Complete Performance Index</h4>
       <p>Hiệu suất <i>cần đạt</i> cho phần còn lại để về đích. <code class="inline-code">&gt;1 = càng khó (phải làm hiệu quả hơn); &lt;1 = dễ thở</code>.</p>
