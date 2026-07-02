@@ -593,4 +593,47 @@ export const FLASHCARDS = [
     en: 'Deliberate adaptation of approach, governance and processes to suit the environment and the work at hand.',
     vn: "Không 'một cỡ cho tất cả': chọn approach → tailor cho tổ chức → cho dự án → thực thi & cải tiến.",
   },
+  ,
+  {
+    cat: 'Stakeholder',
+    term: 'Mehrabian 7-38-55',
+    en: 'In emotional face-to-face communication: 7% words, 38% tone of voice, 55% body language.',
+    vn: 'Nonverbal chiếm ~55% → gặp trực tiếp truyền đạt hiệu quả nhất.',
+  },
+  {
+    cat: 'Quality',
+    term: '7 lãng phí Lean (TIMWOOD)',
+    en: 'Transport, Inventory, Motion, Waiting, Overproduction, Overprocessing, Defects.',
+    vn: 'Lean = loại bỏ 7 loại lãng phí (Muda) để tối đa giá trị.',
+  },
+  {
+    cat: 'Quality',
+    term: 'Six Sigma / DPMO',
+    en: 'Six Sigma measured in Defects Per Million Opportunities; 6σ ≈ 3.4 defects per million.',
+    vn: 'Càng nhiều sigma → biến động & lỗi càng ít. Design for X (DfX) = tối ưu thiết kế cho tiêu chí X.',
+  },
+  {
+    cat: 'Risk',
+    term: 'Watchlist & Reserve Analysis',
+    en: 'Watchlist = low-priority risks kept for monitoring. Reserve analysis = compare remaining reserve vs remaining risk.',
+    vn: 'Rủi ro ưu tiên thấp chỉ theo dõi; reserve analysis kiểm tra còn đủ dự phòng không.',
+  },
+  {
+    cat: 'Resource',
+    term: 'Team Assessment vs Performance Appraisal',
+    en: 'Team Performance Assessment evaluates the whole TEAM (Develop Team); Project Performance Appraisal evaluates INDIVIDUALS (Manage Team).',
+    vn: 'Đánh giá NHÓM vs đánh giá CÁ NHÂN — đừng nhầm.',
+  },
+  {
+    cat: 'Procurement',
+    term: 'Letter of Intent (LOI)',
+    en: 'A letter expressing intent to award a contract so the seller can prepare; NOT a binding contract.',
+    vn: 'Thư bày tỏ ý định trao hợp đồng — chưa ràng buộc pháp lý.',
+  },
+  {
+    cat: 'Scope',
+    term: 'Nominal Group Technique',
+    en: 'Brainstorming followed by ranking/voting to prioritize ideas.',
+    vn: 'Brainstorm rồi bỏ phiếu xếp hạng — bản nâng cấp của brainstorming.',
+  },
 ];
