@@ -4,6 +4,7 @@ import { renderTopicChrome } from './components/topic-chrome.js';
 import { initSidebar } from './components/sidebar.js';
 import { initFlashcards } from './components/flashcards.js';
 import { initQuiz } from './components/quiz.js';
+import { initMiniQuiz } from './components/mini-quiz.js';
 import { initExam } from './components/exam.js';
 import { initGlossary } from './components/glossary.js';
 
@@ -15,5 +16,6 @@ mountMobileNav(); // inject full site nav into sidebar (mobile drawer); after ch
 initSidebar(); // no-op if there is no .sidebar
 initFlashcards(); // no-op if there is no #fcGrid
 initQuiz(); // no-op if there is no #quizList
+initMiniQuiz(); // no-op if there is no #miniQuiz (per-topic quick check)
 initExam(); // no-op if there is no #exam-root
 initGlossary(); // no-op if there is no #glossSearch

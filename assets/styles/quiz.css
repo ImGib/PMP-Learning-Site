@@ -173,3 +173,13 @@
   font-weight: 600;
   color: var(--accent-ink);
 }
+
+/* per-topic "quick check" block on Phần II pages */
+.mini-quiz {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: 2px solid var(--line);
+}
+.mini-quiz > h3 {
+  margin-top: 0;
+}
