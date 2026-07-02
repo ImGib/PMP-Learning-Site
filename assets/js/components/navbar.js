@@ -9,6 +9,7 @@ const LINKS = [
   { href: 'cong-thuc-va-vi-du.html', label: 'Công thức' },
   { href: 'thuat-ngu.html', label: 'Thuật ngữ' },
   { href: 'rita-process-chart.html', label: 'Process Chart' },
+  { href: 'de-thi-thu.html', label: 'Đề thi thử' },
   { href: 'flashcard-quiz.html', label: 'Flashcard & Quiz', cta: true },
 ];
 
