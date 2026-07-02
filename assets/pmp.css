@@ -261,6 +261,22 @@ code.k{background:var(--line-soft);padding:2px 7px;border-radius:5px;font-size:1
 .quiz-done{border:1px solid var(--line);border-radius:12px;padding:26px;text-align:center;background:var(--panel);margin-top:8px}
 .quiz-done .big{font-family:var(--display);font-size:40px;font-weight:600;color:var(--accent-ink)}
 
+/* ---- Rita process chart ---- */
+.pchart{font-size:12.5px}
+.pchart th,.pchart td{padding:8px 10px;vertical-align:top;border:1px solid var(--line)}
+.pchart thead th{text-align:center;white-space:nowrap}
+.pchart .ka{font-weight:600;color:var(--ink);white-space:nowrap;background:var(--rail)}
+.pchart .ka .n{display:block;font-family:var(--mono);font-size:10px;color:var(--faint);font-weight:500;margin-top:2px}
+.pchart .g-init{background:#f3edff}.pchart .g-plan{background:#eaf5ff}.pchart .g-exec{background:#eafaf0}
+.pchart .g-mc{background:#fff4e6}.pchart .g-close{background:#fdeef4}
+.pchart tbody td{background:#fff}
+.pc-item{margin:0 0 8px}
+.pc-item:last-child{margin-bottom:0}
+.pc-item b{color:var(--ink);font-weight:600;font-size:12.3px}
+.pc-item .vn{display:block;color:var(--muted);font-size:10.7px;line-height:1.35;margin-top:1px}
+.pchart tfoot td{text-align:center;font-family:var(--mono);font-weight:600;color:var(--accent-ink);background:var(--rail)}
+.pchart .tot{font-family:var(--mono);font-weight:600;color:var(--accent-ink)}
+
 footer{margin-top:70px;padding-top:26px;border-top:1px solid var(--line);
   font-size:13px;color:var(--muted);font-family:var(--mono);line-height:1.8}
 footer b{color:var(--ink-soft)}
