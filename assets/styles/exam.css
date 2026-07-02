@@ -331,3 +331,17 @@
 .exam__pct--fail {
   color: var(--bad);
 }
+
+/* export / import row */
+.exam__io {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+.exam__io-btn {
+  padding: 7px 13px;
+  font-size: 12.8px;
+}

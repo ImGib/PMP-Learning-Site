@@ -2,7 +2,13 @@
 // Reuses the QUIZ bank. No-op if there is no #exam-root on the page.
 import { esc, qs } from '../lib/dom.js';
 import { QUIZ } from '../data/quiz.js';
-import { loadHistory, addHistory, clearHistory } from '../data/exam-history.js';
+import {
+  loadHistory,
+  addHistory,
+  clearHistory,
+  exportHistory,
+  importHistory,
+} from '../data/exam-history.js';
 
 const PER_Q_SECONDS = 75; // ~1.25 phút/câu (gần tỉ lệ thật 230 phút / 180 câu)
 const PASS = 0.7; // ngưỡng luyện tập (không phải điểm chính thức của PMI)
@@ -60,6 +66,11 @@ function renderSetup() {
         </label>
       </div>
       <button class="btn btn--primary" id="examStart">Bắt đầu làm bài →</button>
+      <div class="exam__io">
+        <button class="btn exam__io-btn" id="examExport" type="button">⬇ Xuất JSON</button>
+        <button class="btn exam__io-btn" id="examImportBtn" type="button">⬆ Nhập JSON</button>
+        <input type="file" id="examImport" accept="application/json,.json" hidden />
+      </div>
     </div>
     ${renderHistory()}`;
   qs('#examStart', root).addEventListener('click', () => {
@@ -75,6 +86,38 @@ function renderSetup() {
         renderSetup();
       }
     });
+
+  qs('#examExport', root).addEventListener('click', () => {
+    if (!loadHistory().length) {
+      alert('Chưa có lịch sử để xuất.');
+      return;
+    }
+    const blob = new Blob([exportHistory()], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'pmp-exam-history.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  const impInput = qs('#examImport', root);
+  qs('#examImportBtn', root).addEventListener('click', () => impInput.click());
+  impInput.addEventListener('change', () => {
+    const file = impInput.files && impInput.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const res = importHistory(String(reader.result));
+      if (res.ok) {
+        alert(`Đã nhập ${res.count} bản ghi (tổng cộng ${res.total} lần lưu).`);
+        renderSetup();
+      } else {
+        alert('Nhập thất bại: ' + res.error);
+      }
+    };
+    reader.readAsText(file);
+  });
 }
 
 function renderHistory() {
