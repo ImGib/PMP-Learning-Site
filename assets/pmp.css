@@ -301,6 +301,85 @@ code.k{background:var(--line-soft);padding:2px 7px;border-radius:5px;font-size:1
 .katbl tr:hover td{background:var(--rail)}
 @media(max-width:640px){ .katbl td:first-child{white-space:normal} }
 
+/* ================= DIAGRAM TOOLKIT ================= */
+.fig{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:18px 20px 12px;margin:18px 0}
+.fig .fig-title{font-family:var(--display);font-weight:600;font-size:15.5px;color:var(--ink);margin:0 0 14px}
+.fig svg{display:block;max-width:100%;height:auto;margin:0 auto}
+.fig figcaption{margin-top:12px;font-size:12.3px;color:var(--muted);text-align:center;font-family:var(--mono)}
+
+/* step / phase flow (chevrons) */
+.d-steps{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px}
+.d-steps .st{flex:1 1 0;min-width:104px;background:var(--accent-wash);color:var(--accent-ink);
+  padding:11px 12px;border-radius:9px;font-weight:600;font-size:12.8px;text-align:center;line-height:1.25}
+.d-steps .st .s{display:block;font-family:var(--mono);font-size:9.5px;color:var(--faint);font-weight:600;margin-bottom:3px;letter-spacing:.05em;text-transform:uppercase}
+.d-steps .st.alt{background:var(--flag-wash);color:var(--flag)}
+.d-steps .arw{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:16px;font-weight:700;flex:0 0 auto}
+.d-wrap-note{text-align:center;font-size:11.5px;color:var(--muted);font-family:var(--mono);margin-top:8px}
+
+/* spectrum bar (gradient with end + tick labels) */
+.d-spectrum{margin:8px 0 4px}
+.d-spectrum .ends{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-soft);margin-bottom:7px;font-weight:600}
+.d-spectrum .track{height:13px;border-radius:20px;background:linear-gradient(90deg,#2f9e6b,#e0a021,#d2604a)}
+.d-spectrum .track.rev{background:linear-gradient(90deg,#d2604a,#e0a021,#2f9e6b)}
+.d-spectrum .track.mono{background:linear-gradient(90deg,var(--accent-wash),var(--accent))}
+.d-spectrum .ticks{display:flex;margin-top:8px;gap:4px}
+.d-spectrum .ticks span{flex:1;text-align:center;font-size:11px;color:var(--ink-soft);font-family:var(--mono);line-height:1.3}
+
+/* horizontal percentage bars */
+.d-bars{display:flex;flex-direction:column;gap:9px;margin:6px 0}
+.d-bars .b{display:grid;grid-template-columns:150px 1fr 52px;align-items:center;gap:10px;font-size:13px}
+.d-bars .b .lab{font-weight:600;color:var(--ink)}
+.d-bars .b .track{height:22px;background:var(--line-soft);border-radius:6px;overflow:hidden}
+.d-bars .b .track i{display:block;height:100%;background:var(--accent);border-radius:6px;min-width:2px}
+.d-bars .b .track i.c2{background:var(--flag)} .d-bars .b .track i.c3{background:var(--gate)}
+.d-bars .b .val{font-family:var(--mono);color:var(--accent-ink);font-weight:600;text-align:right;font-size:12.5px}
+@media(max-width:560px){ .d-bars .b{grid-template-columns:110px 1fr 44px} }
+
+/* pyramid (stacked levels; set width inline) */
+.d-pyramid{display:flex;flex-direction:column;align-items:center;gap:5px;margin:6px 0}
+.d-pyramid .lvl{color:#fff;text-align:center;padding:9px 12px;border-radius:7px;font-size:12.6px;font-weight:600;max-width:100%}
+.d-pyramid .lvl small{display:block;font-weight:400;font-size:10.5px;opacity:.9}
+
+/* 2x2 quadrant matrix */
+.d-quad-wrap{display:grid;grid-template-columns:24px 1fr;gap:8px;margin:8px 0}
+.d-quad-wrap .yaxis{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-size:11.5px;
+  font-weight:600;color:var(--muted);font-family:var(--mono)}
+.d-quad{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px}
+.d-quad .q{border:1px solid var(--line);border-radius:9px;padding:13px;min-height:82px;font-size:12.5px;color:var(--ink-soft)}
+.d-quad .q b{display:block;color:var(--ink);margin-bottom:3px}
+.d-quad .q.hi{background:var(--accent-wash);border-color:var(--accent)}
+.d-quad .q.mid{background:var(--panel)}
+.d-xaxis{grid-column:2;text-align:center;font-size:11.5px;font-weight:600;color:var(--muted);font-family:var(--mono);margin-top:2px}
+
+/* vertical stack (budget layers) */
+.d-stack{display:flex;flex-direction:column;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--line);max-width:360px;margin:8px 0}
+.d-stack .seg{padding:11px 15px;font-size:12.8px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.d-stack .seg b{font-weight:600}
+.d-stack .seg .tag{font-family:var(--mono);font-size:10.5px;opacity:.9}
+
+/* nested hierarchy (portfolio > program > project) */
+.d-hier{border:2px solid var(--sub);border-radius:11px;padding:14px;background:var(--sub-wash);margin:8px 0}
+.d-hier > .hlabel{font-weight:700;color:var(--sub);font-size:12.5px;font-family:var(--mono);margin-bottom:9px;display:block}
+.d-hier .prog{border:2px solid var(--accent);border-radius:9px;padding:12px;background:var(--accent-wash);margin-bottom:9px}
+.d-hier .prog:last-child{margin-bottom:0}
+.d-hier .prog > .hlabel{color:var(--accent-ink)}
+.d-hier .projs{display:flex;flex-wrap:wrap;gap:7px}
+.d-hier .proj{background:#fff;border:1px solid var(--line);border-radius:7px;padding:7px 12px;font-size:12px;font-weight:600;color:var(--ink)}
+
+/* venn (3 overlapping circles) */
+.d-venn{position:relative;width:260px;height:210px;margin:6px auto}
+.d-venn .c{position:absolute;width:150px;height:150px;border-radius:50%;opacity:.55;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;color:#333;text-align:center}
+.d-venn .c1{background:#c9b8ff;top:0;left:55px}
+.d-venn .c2{background:#a9d8c0;bottom:0;left:0}
+.d-venn .c3{background:#ffcf9e;bottom:0;right:0}
+.d-venn .center{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);font-size:11px;font-weight:700;color:var(--ink);z-index:2}
+
+/* mini legend row under a diagram */
+.d-key{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px;font-size:11.5px;color:var(--ink-soft)}
+.d-key span{display:inline-flex;align-items:center;gap:6px}
+.d-key i{width:12px;height:12px;border-radius:3px;display:inline-block}
+
 footer{margin-top:70px;padding-top:26px;border-top:1px solid var(--line);
   font-size:13px;color:var(--muted);font-family:var(--mono);line-height:1.8}
 footer b{color:var(--ink-soft)}

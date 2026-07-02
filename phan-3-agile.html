@@ -74,6 +74,14 @@
         <li>Khác: Dot Voting, Monopoly Money, 100-Point Method, Relative Ranking.</li>
       </ul>
       <div class="tip"><span class="lbl">Mẹo ghi nhớ · Kano</span><b>Basic/Dissatisfier = "điều đương nhiên"</b> (như phanh xe — có không ai khen, thiếu là chửi). <b>Delighter = "bất ngờ"</b> (tặng thêm quà). Có Delighter mới tạo "wow", nhưng thiếu Basic là "toang".</div>
+      <figure class="fig"><div class="fig-title">MoSCoW — tỷ lệ ưu tiên gợi ý</div>
+        <div class="d-bars">
+          <div class="b"><span class="lab">Must have</span><span class="track"><i style="width:60%"></i></span><span class="val">~60%</span></div>
+          <div class="b"><span class="lab">Should have</span><span class="track"><i class="c2" style="width:20%"></i></span><span class="val">~20%</span></div>
+          <div class="b"><span class="lab">Could have</span><span class="track"><i class="c3" style="width:20%"></i></span><span class="val">~20%</span></div>
+          <div class="b"><span class="lab">Won't (this time)</span><span class="track"><i style="width:0%"></i></span><span class="val">0%</span></div>
+        </div>
+        <figcaption>Ưu tiên phần lớn năng lực cho Must have; Won't-this-time để lại kỳ sau.</figcaption></figure>
 
       <h3>Kanban, WIP &amp; Little's Law</h3>
       <div class="en-def"><span class="lbl">EN</span><b>Work in Progress (WIP)</b> — work items that have been started but not yet finished; limiting WIP reduces bottlenecks and improves flow/throughput. <i>(việc đang làm dở, chưa hoàn thành)</i></div>
@@ -86,6 +94,10 @@
       </div>
       <div class="tip"><span class="lbl">Mẹo ghi nhớ · giảm Cycle Time</span>Muốn giao nhanh hơn (Cycle Time nhỏ): <b>giảm WIP</b> hoặc <b>tăng Throughput</b>. Bẫy thi: WIP limit để <b>tối ưu dòng chảy (throughput)</b>, không phải để "mọi người luôn bận" (utilization).</div>
       <div class="note"><span class="lbl">Kiểm chứng value (V&amp;V)</span><b>TDD</b> (viết test <i>trước</i> code, chu trình <b>Red → Green → Refactor</b>), <b>ATDD</b> (test theo yêu cầu nghiệp vụ), <b>CI</b> (Continuous Integration — tích hợp code liên tục + test tự động), Exploratory &amp; Usability testing.</div>
+      <figure class="fig"><div class="fig-title">Kanban Board</div>
+        <div class="d-steps"><div class="st"><span class="s">1</span>To Do</div><div class="arw">›</div><div class="st"><span class="s">2</span>In Progress (giới hạn WIP)</div><div class="arw">›</div><div class="st"><span class="s">3</span>Done</div></div>
+        <div class="d-wrap-note">Giới hạn WIP để tối ưu dòng chảy (throughput)</div>
+        <figcaption>Kéo việc qua các cột; giới hạn WIP ở cột đang làm để tránh nghẽn.</figcaption></figure>
     </section>
     <!-- ADAPTIVE -->
     <section id="adaptive">
@@ -97,6 +109,21 @@
       <div class="en-def"><span class="lbl">EN</span><b>Timeboxing</b> — allocating a fixed, unchangeable period to an activity; when the time runs out, scope is adjusted rather than the deadline extended. <i>(khung thời gian cố định; hết giờ thì cắt scope)</i></div>
       <div class="flow">Strategy → <span class="hl">High-level</span> → <span class="hl">Release</span> → <span class="hl">Iteration</span> → <span class="hl">Daily</span>
 <span class="cm"># Từ ngoài (dài hạn, thô) vào trong (ngắn hạn, chi tiết)</span></div>
+      <figure class="fig"><div class="fig-title">Agile Planning Onion</div>
+<svg viewBox="0 0 300 250" role="img" aria-label="Planning onion">
+<circle cx="150" cy="140" r="115" fill="#efedfd" stroke="#d9d4fb"/>
+<circle cx="150" cy="140" r="93" fill="#e2ddfb" stroke="#cdc6f8"/>
+<circle cx="150" cy="140" r="71" fill="#d3cbf7" stroke="#bcb2f3"/>
+<circle cx="150" cy="140" r="49" fill="#b9adf2" stroke="#a99cee"/>
+<circle cx="150" cy="140" r="27" fill="#8f83f4"/>
+<g font-size="11" font-weight="600" text-anchor="middle" fill="#4434c4">
+<text x="150" y="42">Strategy</text>
+<text x="150" y="64">High-level (Product)</text>
+<text x="150" y="86">Release</text>
+<text x="150" y="108">Iteration</text>
+<text x="150" y="144" fill="#fff">Daily</text>
+</g></svg>
+<figcaption>Từ ngoài (dài hạn, thô) vào trong (ngắn hạn, chi tiết)</figcaption></figure>
       <ul>
         <li><b>Progressive Elaboration</b> — thêm chi tiết khi có thông tin (epics → features → stories → tasks).</li>
         <li><b>Rolling Wave Planning</b> — gần thì chi tiết, xa thì thô.</li>
@@ -125,6 +152,18 @@
         <div class="row"><span class="cm"># VD velocity 4 sprint: 38,29,38,39 → trung bình ≈ 36 points/sprint</span></div>
       </div>
       <div class="tip"><span class="lbl">Mẹo ghi nhớ · Story Points &amp; Velocity</span><b>KHÔNG so sánh velocity giữa 2 team</b> — vì story point là tương đối, mỗi team tự định nghĩa (bẫy thi rất hay). Dùng Fibonacci vì con người khó phân biệt "17 với 18", nhưng phân biệt được "13 với 21".</div>
+      <figure class="fig"><div class="fig-title">Burndown Chart</div>
+<svg viewBox="0 0 430 230" role="img" aria-label="Burndown chart">
+<line x1="45" y1="20" x2="45" y2="195" stroke="#d8d8e0" stroke-width="1.5"/>
+<line x1="45" y1="195" x2="410" y2="195" stroke="#d8d8e0" stroke-width="1.5"/>
+<text x="16" y="112" font-size="11" fill="#76798a" transform="rotate(-90 16 112)">Việc còn lại</text>
+<text x="228" y="221" font-size="11" fill="#76798a" text-anchor="middle">Ngày trong sprint →</text>
+<line x1="45" y1="40" x2="410" y2="195" stroke="#9aa0b5" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="352" y="150" font-size="10" fill="#9aa0b5">Lý tưởng</text>
+<polyline points="45,40 100,58 155,72 210,120 265,108 320,150 375,118 410,84" fill="none" stroke="#5a4be0" stroke-width="2.6"/>
+<text x="300" y="98" font-size="10" fill="#4434c4" font-weight="600">Thực tế</text>
+</svg>
+<figcaption>Đường thực tế nằm TRÊN đường lý tưởng = đang chậm so với kế hoạch sprint</figcaption></figure>
       <div class="note"><span class="lbl">Daily Standup</span>Họp đứng ngắn, <b>3 câu hỏi</b>: hôm qua làm gì / hôm nay làm gì / có <b>impediment</b> (vướng mắc) gì. <b>KHÔNG phải</b> họp báo cáo cho sếp, <b>KHÔNG phải</b> họp giải quyết vấn đề (vấn đề để bàn riêng sau).</div>
       <div class="note warn"><span class="lbl">Vì sao Agile ra đời</span>Thống kê (Standish/Chaos): <b>64% tính năng hiếm/không bao giờ dùng</b>; ngân sách trung bình tiêu <b>156%</b>; tỷ lệ thành công ~<b>29%</b>. → Agile sinh ra để giao đúng thứ tạo value, sớm &amp; linh hoạt.</div>
     </section>
