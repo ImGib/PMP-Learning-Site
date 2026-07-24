@@ -1,10 +1,15 @@
 // components/rita-order-game.js — game KÉO-THẢ: phân loại 91 bước vào đúng Process Group
 // và đúng THỨ TỰ trong nhóm (theo Rita's Process Chart). Feature-detect #ritaGame → no-op.
+// 2 chế độ: 'study' (Học tập — gợi ý sai nhóm ngay + xem đáp án) và 'test' (như thi thật).
 // Kéo-thả bằng Pointer Events (chạy cả chuột & cảm ứng); kéo từ tay cầm ⋮⋮.
 import { esc, qs, qsa } from '../lib/dom.js';
 import { RITA_ORDER } from '../data/rita-order.js';
 
 const GROUPS = ['init', 'plan', 'exec', 'mc', 'close'];
+const MODE_HINT = {
+  study: 'Chế độ Học tập: thẻ thả SAI nhóm sẽ tô đỏ ngay; được phép Xem đáp án. Bấm Kiểm tra để chấm cả thứ tự.',
+  test: 'Chế độ Test: không gợi ý, không xem đáp án — thả hết rồi Nộp bài, chấm điểm như thi thật.',
+};
 
 export function initRitaOrderGame() {
   const root = qs('#ritaGame');
@@ -14,16 +19,19 @@ export function initRitaOrderGame() {
   const bannerEl = qs('#ogBanner', root);
   const scoreEl = qs('#ogScore', root);
   const poolCountEl = qs('#ogPoolCount', root);
+  const modesEl = qs('#ogModes', root);
+  const modeHintEl = qs('#ogModeHint', root);
   const shuffleBtn = qs('#ogShuffle', root);
   const checkBtn = qs('#ogCheck', root);
   const viewBtn = qs('#ogView', root);
   const listOf = (key) => qs(`.dz-list[data-droplist="${key}"]`, root);
 
-  // state: mỗi "ô chứa" (pool + 5 nhóm) là mảng id "group:index" theo thứ tự hiển thị
+  // state
   let place = emptyPlace();
+  let mode = 'study'; // 'study' | 'test'
   let viewing = false;
   let saved = null;
-  let drag = null; // { id, ghost, offX, offY }
+  let drag = null;
 
   function emptyPlace() {
     const p = { pool: [] };
@@ -68,6 +76,7 @@ export function initRitaOrderGame() {
       place[g].forEach((id, pos) => z.appendChild(makeCard(id, g, pos)));
     });
     updateCounts();
+    liveHint();
   }
 
   function updateCounts() {
@@ -78,11 +87,27 @@ export function initRitaOrderGame() {
     });
   }
 
+  // Học tập: tô đỏ ngay các thẻ đang nằm SAI nhóm (không tiết lộ lỗi thứ tự).
+  function liveHint() {
+    if (mode !== 'study' || viewing) return;
+    GROUPS.forEach((g) => {
+      place[g].forEach((id) => {
+        if (parse(id).g !== g) {
+          const el = qs(`.dz-list[data-droplist="${g}"] .dz-card[data-id="${id}"]`, root);
+          if (el) el.classList.add('is-wrong');
+        }
+      });
+    });
+  }
+
+  function clearMarks() {
+    qsa('.dz-card', root).forEach((c) => c.classList.remove('is-correct', 'is-wrong'));
+  }
   function clearBanner() {
     bannerEl.className = 'order-game__banner';
     bannerEl.textContent = '';
     scoreEl.textContent = '';
-    qsa('.dz-card', root).forEach((c) => c.classList.remove('is-correct', 'is-wrong'));
+    clearMarks();
   }
 
   function removeId(id) {
@@ -182,6 +207,18 @@ export function initRitaOrderGame() {
     drag = null;
   }
 
+  // ----- Chế độ -----
+  function setMode(m) {
+    if (viewing) toggleView(); // thoát xem đáp án TRƯỚC khi đổi chế độ (guard test)
+    mode = m;
+    qsa('.order-game__mode', modesEl).forEach((b) => b.classList.toggle('is-active', b.dataset.mode === m));
+    viewBtn.hidden = m === 'test';
+    checkBtn.textContent = m === 'test' ? '📝 Nộp bài' : '✓ Kiểm tra';
+    modeHintEl.textContent = MODE_HINT[m];
+    clearBanner();
+    liveHint();
+  }
+
   // ----- Nút chức năng -----
   function reset() {
     viewing = false;
@@ -195,6 +232,7 @@ export function initRitaOrderGame() {
 
   function checkOrder() {
     if (viewing) return;
+    clearMarks();
     let correct = 0;
     GROUPS.forEach((g) => {
       place[g].forEach((id, pos) => {
@@ -213,10 +251,13 @@ export function initRitaOrderGame() {
     const perfect = correct === TOTAL;
     const left = place.pool.length;
     bannerEl.className = 'order-game__banner is-show ' + (perfect ? 'is-ok' : 'is-bad');
-    bannerEl.textContent = perfect
-      ? '✅ Hoàn hảo! Mọi bước đúng nhóm và đúng thứ tự.'
-      : `❌ Chưa đúng — ${correct}/${TOTAL} đúng vị trí` +
-        (left ? `, còn ${left} thẻ chưa xếp.` : ' (các thẻ sai tô đỏ).');
+    if (perfect) {
+      bannerEl.textContent = '✅ Hoàn hảo! Mọi bước đúng nhóm và đúng thứ tự.';
+    } else {
+      const head = mode === 'test' ? '📝 Đã nộp — ' : '❌ Chưa đúng — ';
+      bannerEl.textContent =
+        head + `${correct}/${TOTAL} đúng vị trí` + (left ? `, còn ${left} thẻ chưa xếp.` : ' (thẻ sai tô đỏ).');
+    }
   }
 
   function setViewBtn(on) {
@@ -224,9 +265,11 @@ export function initRitaOrderGame() {
     viewBtn.classList.toggle('is-active-view', on);
     shuffleBtn.disabled = on;
     checkBtn.disabled = on;
+    modesEl.classList.toggle('is-disabled', on);
   }
 
   function toggleView() {
+    if (mode === 'test') return; // test: không xem đáp án
     if (!viewing) {
       saved = { pool: place.pool.slice() };
       GROUPS.forEach((g) => (saved[g] = place[g].slice()));
@@ -247,9 +290,14 @@ export function initRitaOrderGame() {
     }
   }
 
+  modesEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('.order-game__mode');
+    if (btn && !viewing) setMode(btn.dataset.mode);
+  });
   shuffleBtn.addEventListener('click', reset);
   checkBtn.addEventListener('click', checkOrder);
   viewBtn.addEventListener('click', toggleView);
 
   reset();
+  setMode('study');
 }

@@ -1,5 +1,45 @@
 /* game.css — Rita Process Chart: game KÉO-THẢ phân loại + xếp thứ tự (BEM, token chung) */
 
+/* ---- Chọn chế độ: Học tập / Test ---- */
+.order-game__modes {
+  display: inline-flex;
+  gap: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px;
+  background: var(--panel);
+  margin: 4px 0 8px;
+}
+.order-game__modes.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.order-game__mode {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 15px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: 0.15s;
+}
+.order-game__mode:hover {
+  color: var(--accent-ink);
+}
+.order-game__mode.is-active {
+  background: var(--accent);
+  color: #fff;
+}
+.order-game__modehint {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
 /* ---- Toolbar / score / banner (dùng chung) ---- */
 .order-game__toolbar {
   display: flex;

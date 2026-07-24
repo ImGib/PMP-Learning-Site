@@ -23,6 +23,12 @@
 
       <div class="callout callout--tip"><span class="callout__label">Cách chơi</span>Nắm biểu tượng <b>⋮⋮</b> ở đầu mỗi thẻ để kéo. Thả vào đúng <b>Process Group</b> và xếp <b>đúng thứ tự</b> (số bên trái là vị trí hiện tại trong nhóm). Có thể kéo qua lại giữa các vùng hoặc trả về Kho. Trên điện thoại: chạm giữ ⋮⋮ rồi kéo (chạm vào chữ để cuộn).</div>
 
+      <div class="order-game__modes" id="ogModes" role="group" aria-label="Chế độ chơi">
+        <button class="order-game__mode is-active" data-mode="study" type="button">📚 Học tập</button>
+        <button class="order-game__mode" data-mode="test" type="button">📝 Test</button>
+      </div>
+      <p class="order-game__modehint" id="ogModeHint"></p>
+
       <div class="order-game__toolbar">
         <button class="btn" id="ogShuffle" type="button">🔀 Xáo trộn lại</button>
         <button class="btn btn--primary" id="ogCheck" type="button">✓ Kiểm tra</button>
