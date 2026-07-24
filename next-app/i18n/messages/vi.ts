@@ -1,0 +1,35 @@
+// Tài nguyên tiếng Việt (react-i18next). Giá trị có thể chứa HTML (render qua dangerouslySetInnerHTML).
+export const vi = {
+  nav: {
+    home: 'Trang chủ',
+    learn: 'Học',
+    examPrep: 'Ôn thi',
+    reference: 'Tra cứu',
+    principles: 'Nguyên lý PMBOK 8',
+    topics: 'II · 8 Chủ đề',
+    scope: 'Scope — Phạm vi',
+    brandTag: 'học PMP · v3',
+  },
+  topic: {
+    back: '← Phần II · Mục lục',
+    eyebrow: 'Phần II · Chủ đề 01/08 — 8 chủ đề kiến thức',
+    source: 'Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.',
+  },
+  scope: {
+    title: 'Scope — Phạm vi',
+    blurb: '"Dự án làm gì & KHÔNG làm gì" — Requirement, WBS, Scope Baseline, kiểm soát thay đổi.',
+    desc: 'Scope trả lời câu hỏi <b>"dự án sẽ làm những gì (và KHÔNG làm gì)?"</b>. Kiểm soát scope kém là nguyên nhân thất bại số 1.',
+    h_ps: 'Product Scope vs Project Scope',
+    def_proj: '<b>Project Scope</b> — the work performed to deliver a product, service, or result with the specified features and functions.',
+    gloss_proj: '(công việc phải làm để tạo ra sản phẩm)',
+    def_prod: '<b>Product Scope</b> — the features and functions that characterize a product, service, or result.',
+    gloss_prod: '(tính năng & chức năng của sản phẩm)',
+    h_enemies: 'Hai "kẻ thù" của Scope',
+    f_creep_t: 'Scope Creep',
+    f_creep: 'Phạm vi <b>phình ra không kiểm soát</b> — khách/team thêm việc mà không qua change control. "Creep" = bò lan.',
+    f_gold_t: 'Gold Plating',
+    f_gold: 'Team <b>tự ý thêm tính năng</b> khách <i>không</i> yêu cầu ("mạ vàng"). Lãng phí, không tạo value.',
+    tip_lbl: 'Mẹo ghi nhớ · Creep vs Gold Plating',
+    tip: '<b>Scope Creep = khách/nhiều bên đẩy vào</b> (thay đổi lén, không kiểm soát). <b>Gold Plating = TEAM tự thêm</b> (tưởng tốt nhưng thừa). Cả hai đều xấu — luôn bám <b>change control</b>.',
+  },
+} as const;

@@ -1,0 +1,35 @@
+// English resources (react-i18next). Same key shape as vi.
+export const en = {
+  nav: {
+    home: 'Home',
+    learn: 'Learn',
+    examPrep: 'Exam Prep',
+    reference: 'Reference',
+    principles: 'PMBOK 8 Principles',
+    topics: 'II · 8 Topics',
+    scope: 'Scope',
+    brandTag: 'learn PMP · v3',
+  },
+  topic: {
+    back: '← Part II · Contents',
+    eyebrow: 'Part II · Topic 01/08 — 8 knowledge topics',
+    source: 'Source: PMBOK® Guide 8th Ed. (2025) + PMP slides.',
+  },
+  scope: {
+    title: 'Scope',
+    blurb: '"What the project will and will NOT do" — requirements, WBS, scope baseline, change control.',
+    desc: 'Scope answers the question <b>"what will the project do (and NOT do)?"</b> Poor scope control is the #1 cause of project failure.',
+    h_ps: 'Product Scope vs Project Scope',
+    def_proj: '<b>Project Scope</b> — the work performed to deliver a product, service, or result with the specified features and functions.',
+    gloss_proj: '',
+    def_prod: '<b>Product Scope</b> — the features and functions that characterize a product, service, or result.',
+    gloss_prod: '',
+    h_enemies: 'Scope\'s two "enemies"',
+    f_creep_t: 'Scope Creep',
+    f_creep: '<b>Uncontrolled growth</b> — the customer/team adds work without going through change control. "Creep" = it slowly spreads.',
+    f_gold_t: 'Gold Plating',
+    f_gold: 'The team <b>adds features</b> the customer did <i>not</i> ask for ("gold plating"). Wasteful, adds no value.',
+    tip_lbl: 'Memory tip · Creep vs Gold Plating',
+    tip: '<b>Scope Creep = pushed in by others</b> (sneaky, uncontrolled change). <b>Gold Plating = the TEAM adds it</b> (well-meant but unnecessary). Both are bad — always stick to <b>change control</b>.',
+  },
+} as const;
