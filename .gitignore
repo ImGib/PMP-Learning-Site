@@ -3,8 +3,10 @@ docs-src/
 *.zip
 *.pdf
 
-# File nội bộ của Claude Code
-.claude/
+# Claude Code — cho phép commit cấu hình project trong .claude/,
+# chỉ bỏ file cục bộ theo máy / runtime
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
 
 # Thư mục tạm / trích xuất
 PMP_Slides_extracted/
@@ -13,7 +15,6 @@ txt/
 # Astro / Node
 node_modules/
 dist/
-.astro/
 npm-debug.log*
 
 # OS
