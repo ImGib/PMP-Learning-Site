@@ -7,8 +7,9 @@ import { RITA_ORDER } from '../data/rita-order.js';
 
 const GROUPS = ['init', 'plan', 'exec', 'mc', 'close'];
 const MODE_HINT = {
-  study: 'Chế độ Học tập: thẻ thả SAI nhóm sẽ tô đỏ ngay; được phép Xem đáp án. Bấm Kiểm tra để chấm cả thứ tự.',
-  test: 'Chế độ Test: không gợi ý, không xem đáp án — thả hết rồi Nộp bài, chấm điểm như thi thật.',
+  study:
+    'Study mode: cards in the WRONG group turn red instantly; View answer is allowed. Hit Check to also grade the order. <span class="vn-gloss">(Học: thẻ sai nhóm đỏ ngay, được xem đáp án.)</span>',
+  test: 'Test mode: no hints, no answer key — place everything, then Submit for your score, like the real exam. <span class="vn-gloss">(Test: không gợi ý, nộp bài mới ra điểm.)</span>',
 };
 
 export function initRitaOrderGame() {
@@ -81,10 +82,10 @@ export function initRitaOrderGame() {
   }
 
   function updateCounts() {
-    poolCountEl.textContent = `${place.pool.length} thẻ`;
+    poolCountEl.textContent = `${place.pool.length} cards`;
     GROUPS.forEach((g) => {
       const c = qs(`.dz-zone__count[data-count="${g}"]`, root);
-      if (c) c.textContent = `${place[g].length} thẻ`;
+      if (c) c.textContent = `${place[g].length} cards`;
     });
   }
 
@@ -221,8 +222,8 @@ export function initRitaOrderGame() {
     mode = m;
     qsa('.order-game__mode', modesEl).forEach((b) => b.classList.toggle('is-active', b.dataset.mode === m));
     viewBtn.hidden = m === 'test';
-    checkBtn.textContent = m === 'test' ? '📝 Nộp bài' : '✓ Kiểm tra';
-    modeHintEl.textContent = MODE_HINT[m];
+    checkBtn.textContent = m === 'test' ? '📝 Submit' : '✓ Check';
+    modeHintEl.innerHTML = MODE_HINT[m];
     clearBanner();
     liveHint();
   }
@@ -255,21 +256,22 @@ export function initRitaOrderGame() {
         }
       });
     });
-    scoreEl.textContent = `${correct} / ${TOTAL} đúng`;
+    scoreEl.textContent = `${correct} / ${TOTAL} correct`;
     const perfect = correct === TOTAL;
     const left = place.pool.length;
     bannerEl.className = 'order-game__banner is-show ' + (perfect ? 'is-ok' : 'is-bad');
     if (perfect) {
-      bannerEl.textContent = '✅ Hoàn hảo! Mọi bước đúng nhóm và đúng thứ tự.';
+      bannerEl.innerHTML =
+        '✅ Perfect! Every step is in the right group and order. <span class="vn-gloss">(Hoàn hảo — đúng hết!)</span>';
     } else {
-      const head = mode === 'test' ? '📝 Đã nộp — ' : '❌ Chưa đúng — ';
+      const head = mode === 'test' ? '📝 Submitted — ' : '❌ Not yet — ';
       bannerEl.textContent =
-        head + `${correct}/${TOTAL} đúng vị trí` + (left ? `, còn ${left} thẻ chưa xếp.` : ' (thẻ sai tô đỏ).');
+        head + `${correct}/${TOTAL} correct` + (left ? `, ${left} still in the Bank.` : ' (wrong cards in red).');
     }
   }
 
   function setViewBtn(on) {
-    viewBtn.textContent = on ? '↩ Về bài của tôi' : '👁 Xem đáp án';
+    viewBtn.textContent = on ? '↩ Back to my order' : '👁 View answer';
     viewBtn.classList.toggle('is-active-view', on);
     shuffleBtn.disabled = on;
     checkBtn.disabled = on;
@@ -287,7 +289,8 @@ export function initRitaOrderGame() {
       GROUPS.forEach((g) => (place[g] = RITA_ORDER[g].items.map((_, i) => `${g}:${i}`)));
       render();
       bannerEl.className = 'order-game__banner is-show is-info';
-      bannerEl.textContent = '📖 Đang xem thứ tự đúng theo Rita (chỉ đọc).';
+      bannerEl.innerHTML =
+        '📖 Showing the correct Rita order (read-only). <span class="vn-gloss">(Đang xem đáp án.)</span>';
       scoreEl.textContent = '';
     } else {
       viewing = false;
@@ -311,7 +314,7 @@ export function initRitaOrderGame() {
     const zones = qsa('.dz-zone', root);
     const anyOpen = zones.some((z) => !z.classList.contains('is-collapsed'));
     zones.forEach((z) => z.classList.toggle('is-collapsed', anyOpen));
-    foldBtn.textContent = anyOpen ? '🗂 Mở vùng' : '🗂 Thu gọn vùng';
+    foldBtn.textContent = anyOpen ? '🗂 Expand zones' : '🗂 Collapse zones';
   });
 
   shuffleBtn.addEventListener('click', reset);

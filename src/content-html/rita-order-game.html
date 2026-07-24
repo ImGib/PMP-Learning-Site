@@ -1,39 +1,39 @@
 <div class="shell" id="top">
   <aside class="sidebar" id="side">
-    <a class="sidebar__back" href="index.html">← Trang chủ</a>
-    <h4>Luyện Rita Chart</h4>
-    <a href="#ritaGame"><span class="sidebar__num">▦</span>Game kéo-thả</a>
-    <a href="rita-process-chart.html"><span class="sidebar__num">49</span>Bảng Process Chart</a>
-    <h4>Ôn thêm</h4>
-    <a href="part-2-topics.html"><span class="sidebar__num">II</span>8 chủ đề kiến thức</a>
-    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard &amp; Quiz</a>
-    <a href="mock-exam.html"><span class="sidebar__num">★</span>Đề thi thử</a>
+    <a class="sidebar__back" href="index.html">← Home</a>
+    <h4>Practise Rita's Chart</h4>
+    <a href="#ritaGame"><span class="sidebar__num">▦</span>Drag-and-drop game</a>
+    <a href="rita-process-chart.html"><span class="sidebar__num">49</span>Process Chart table</a>
+    <h4>More practice</h4>
+    <a href="part-2-topics.html"><span class="sidebar__num">II</span>8 knowledge topics</a>
+    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcards &amp; Quiz</a>
+    <a href="mock-exam.html"><span class="sidebar__num">★</span>Mock exam</a>
   </aside>
   <main>
     <div class="hero">
-      <span class="hero__eyebrow">Rita Process Chart · Game kéo-thả</span>
-      <h1>Kéo mỗi bước vào đúng Process Group &amp; đúng thứ tự</h1>
-      <p>Cả <b>91 bước</b> của Rita's Process Chart được trộn ngẫu nhiên trong <b>Kho đáp án</b>. Kéo từng thẻ thả vào một trong <b>5 vùng</b> Process Group, sắp xếp <b>đúng thứ tự</b> bên trong nhóm, rồi bấm <b>Kiểm tra</b>. Đây là cách luyện ghi nhớ dòng chảy 49 process theo bảng của Rita Mulcahy.</p>
+      <span class="hero__eyebrow">Rita Process Chart · Drag-and-drop game</span>
+      <h1>Drag each step into the right Process Group — in the right order</h1>
+      <p>All <b>91 steps</b> from Rita's Process Chart are shuffled in the <b>Answer Bank</b>. Drag each card into one of the <b>5 Process Group</b> zones, put them in the <b>correct order</b>, then hit <b>Check</b>. <span class="vn-gloss">(Kéo 91 bước vào đúng nhóm &amp; đúng thứ tự rồi bấm Check — theo bảng của Rita Mulcahy.)</span></p>
     </div>
 
     <section id="ritaGame" class="order-game">
       <div class="section__head">
-        <h2>Game kéo-thả</h2><span class="section__tag">5 vùng · 91 bước · tự chấm</span>
+        <h2>Drag-and-drop game</h2><span class="section__tag">5 zones · 91 steps · self-check</span>
       </div>
 
-      <div class="callout callout--tip"><span class="callout__label">Cách chơi</span>Nắm biểu tượng <b>⋮⋮</b> ở đầu mỗi thẻ để kéo. Thả vào đúng <b>Process Group</b> và xếp <b>đúng thứ tự</b> (số bên trái là vị trí hiện tại trong nhóm). Có thể kéo qua lại giữa các vùng hoặc trả về Kho. Trên điện thoại: chạm giữ ⋮⋮ rồi kéo (chạm vào chữ để cuộn).</div>
+      <div class="callout callout--tip"><span class="callout__label">How to play</span>Grab the <b>⋮⋮</b> handle to drag a card. Drop it into the correct <b>Process Group</b> and put it in the <b>right order</b> (the number on the left is its current position). You can move cards between zones or back to the Bank. On phones: press-and-hold ⋮⋮ to drag (tap the text to scroll). <span class="vn-gloss">(Kéo thẻ bằng ⋮⋮ vào đúng nhóm &amp; đúng thứ tự; trên điện thoại giữ ⋮⋮ để kéo, chạm chữ để cuộn.)</span></div>
 
-      <div class="order-game__modes" id="ogModes" role="group" aria-label="Chế độ chơi">
-        <button class="order-game__mode is-active" data-mode="study" type="button">📚 Học tập</button>
+      <div class="order-game__modes" id="ogModes" role="group" aria-label="Game mode">
+        <button class="order-game__mode is-active" data-mode="study" type="button">📚 Study</button>
         <button class="order-game__mode" data-mode="test" type="button">📝 Test</button>
       </div>
       <p class="order-game__modehint" id="ogModeHint"></p>
 
       <div class="order-game__toolbar">
-        <button class="btn" id="ogShuffle" type="button">🔀 Xáo trộn lại</button>
-        <button class="btn btn--primary" id="ogCheck" type="button">✓ Kiểm tra</button>
-        <button class="btn" id="ogView" type="button">👁 Xem đáp án</button>
-        <button class="btn" id="ogFold" type="button">🗂 Thu gọn vùng</button>
+        <button class="btn" id="ogShuffle" type="button">🔀 Shuffle</button>
+        <button class="btn btn--primary" id="ogCheck" type="button">✓ Check</button>
+        <button class="btn" id="ogView" type="button">👁 View answer</button>
+        <button class="btn" id="ogFold" type="button">🗂 Collapse zones</button>
         <span class="order-game__score" id="ogScore"></span>
       </div>
 
@@ -41,29 +41,29 @@
 
       <div class="dz-board">
         <div class="dz-pool">
-          <div class="dz-pool__head"><span>Kho đáp án</span><span class="dz-pool__count" id="ogPoolCount"></span></div>
+          <div class="dz-pool__head"><span>Answer Bank</span><span class="dz-pool__count" id="ogPoolCount"></span></div>
           <div class="dz-list dz-pool__list" data-droplist="pool" id="dzPool"></div>
         </div>
 
         <div class="dz-zones">
           <div class="dz-zone" data-g="init">
-            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Thu gọn/mở">▾</button><span class="dz-zone__name">Initiating</span><span class="dz-zone__count" data-count="init"></span></div>
+            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Collapse/expand">▾</button><span class="dz-zone__name">Initiating</span><span class="dz-zone__count" data-count="init"></span></div>
             <div class="dz-list dz-zone__list" data-droplist="init"></div>
           </div>
           <div class="dz-zone" data-g="plan">
-            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Thu gọn/mở">▾</button><span class="dz-zone__name">Planning</span><span class="dz-zone__count" data-count="plan"></span></div>
+            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Collapse/expand">▾</button><span class="dz-zone__name">Planning</span><span class="dz-zone__count" data-count="plan"></span></div>
             <div class="dz-list dz-zone__list" data-droplist="plan"></div>
           </div>
           <div class="dz-zone" data-g="exec">
-            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Thu gọn/mở">▾</button><span class="dz-zone__name">Executing</span><span class="dz-zone__count" data-count="exec"></span></div>
+            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Collapse/expand">▾</button><span class="dz-zone__name">Executing</span><span class="dz-zone__count" data-count="exec"></span></div>
             <div class="dz-list dz-zone__list" data-droplist="exec"></div>
           </div>
           <div class="dz-zone" data-g="mc">
-            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Thu gọn/mở">▾</button><span class="dz-zone__name">Monitoring &amp; Controlling</span><span class="dz-zone__count" data-count="mc"></span></div>
+            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Collapse/expand">▾</button><span class="dz-zone__name">Monitoring &amp; Controlling</span><span class="dz-zone__count" data-count="mc"></span></div>
             <div class="dz-list dz-zone__list" data-droplist="mc"></div>
           </div>
           <div class="dz-zone" data-g="close">
-            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Thu gọn/mở">▾</button><span class="dz-zone__name">Closing</span><span class="dz-zone__count" data-count="close"></span></div>
+            <div class="dz-zone__head"><button class="dz-zone__toggle" type="button" aria-label="Collapse/expand">▾</button><span class="dz-zone__name">Closing</span><span class="dz-zone__count" data-count="close"></span></div>
             <div class="dz-list dz-zone__list" data-droplist="close"></div>
           </div>
         </div>
@@ -71,7 +71,7 @@
     </section>
 
     <footer>
-      <b>Rita Process Chart · Game kéo-thả</b> · Nguồn: Rita Mulcahy — <i>PMP Exam Prep</i> Process Chart. Initiating/Planning/Closing tuyến tính theo Rita; Executing &amp; M&amp;C nhóm theo luồng công việc (không bắt buộc trình tự cứng). Xem bảng đầy đủ: <a href="rita-process-chart.html">49 Process Chart →</a>
+      <b>Rita Process Chart · Drag-and-drop game</b> · Source: Rita Mulcahy — <i>PMP Exam Prep</i> Process Chart. Initiating/Planning/Closing are linear per Rita; Executing &amp; M&amp;C are grouped by work-stream (no single strict sequence). Full table: <a href="rita-process-chart.html">49 Process Chart →</a> <span class="vn-gloss">(Nguồn: bảng Process Chart của Rita Mulcahy.)</span>
     </footer>
   </main>
 </div>

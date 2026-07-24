@@ -19,3 +19,11 @@
   font-size: 13px;
   color: var(--muted);
 }
+
+/* Gloss tiếng Việt — bổ sung/giải nghĩa cho nội dung tiếng Anh (English là chính).
+   Dùng bọc phần tiếng Việt đi kèm câu/nút/nhãn tiếng Anh. */
+.vn-gloss {
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 400;
+}
