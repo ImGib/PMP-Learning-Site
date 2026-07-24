@@ -38,6 +38,11 @@
 [data-lang='en'] [data-l='vi'] {
   display: none;
 }
+/* Bọc cả khối nội dung 1 ngôn ngữ mà KHÔNG tạo hộp layout (con hành xử như con trực tiếp).
+   Khi bị ẩn thì display:none của rule trên thắng (specificity cao hơn). */
+.i18n-block {
+  display: contents;
+}
 
 /* Nút chuyển ngôn ngữ trên navbar */
 .topbar__lang {

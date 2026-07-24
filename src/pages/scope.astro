@@ -1,9 +1,11 @@
 ---
 import TopicLayout from '../layouts/TopicLayout.astro';
-import content from '../content-html/scope.html?raw';
-const title = "Scope — Phạm vi — Phần II · Học PMP với PMBOK 8";
+import vi from '../content-html/scope.vi.html?raw';
+import en from '../content-html/scope.en.html?raw';
+const title = 'Scope — Phạm vi — Phần II · Học PMP với PMBOK 8';
 ---
 
 <TopicLayout page="scope" title={title}>
-  <Fragment set:html={content} />
+  <div class="i18n-block" data-l="vi" set:html={vi}></div>
+  <div class="i18n-block" data-l="en" set:html={en}></div>
 </TopicLayout>
