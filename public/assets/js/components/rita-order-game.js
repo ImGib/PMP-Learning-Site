@@ -24,6 +24,7 @@ export function initRitaOrderGame() {
   const shuffleBtn = qs('#ogShuffle', root);
   const checkBtn = qs('#ogCheck', root);
   const viewBtn = qs('#ogView', root);
+  const foldBtn = qs('#ogFold', root);
   const listOf = (key) => qs(`.dz-list[data-droplist="${key}"]`, root);
 
   // state
@@ -162,11 +163,17 @@ export function initRitaOrderGame() {
     drag = { id, ghost, offX: ev.clientX - r.left, offY: ev.clientY - r.top };
   }
 
-  function targetListAt(x, y) {
+  // Tìm ô đích dưới con trỏ. Vùng đã THU GỌN (list ẩn) → nhận drop qua thân vùng.
+  function resolveAt(x, y) {
     drag.ghost.style.display = 'none';
     const under = document.elementFromPoint(x, y);
     drag.ghost.style.display = '';
-    return under && under.closest('[data-droplist]');
+    if (!under) return null;
+    const list = under.closest('.dz-list[data-droplist]');
+    if (list) return { list };
+    const zone = under.closest('.dz-zone.is-collapsed');
+    if (zone) return { list: qs('.dz-list', zone), zone };
+    return null;
   }
 
   function clearHighlight() {
@@ -177,8 +184,8 @@ export function initRitaOrderGame() {
     drag.ghost.style.left = ev.clientX - drag.offX + 'px';
     drag.ghost.style.top = ev.clientY - drag.offY + 'px';
     clearHighlight();
-    const list = targetListAt(ev.clientX, ev.clientY);
-    if (list) list.classList.add('is-dragover');
+    const t = resolveAt(ev.clientX, ev.clientY);
+    if (t) (t.zone || t.list).classList.add('is-dragover');
   }
 
   function computeIndex(list, y, dragId) {
@@ -191,13 +198,14 @@ export function initRitaOrderGame() {
   }
 
   function endDrag(ev) {
-    const list = targetListAt(ev.clientX, ev.clientY);
+    const t = resolveAt(ev.clientX, ev.clientY);
     drag.ghost.remove();
     clearHighlight();
     qsa('.dz-card.is-dragging', root).forEach((c) => c.classList.remove('is-dragging'));
-    if (list) {
-      const key = list.dataset.droplist;
-      const index = computeIndex(list, ev.clientY, drag.id);
+    if (t) {
+      const key = t.list.dataset.droplist;
+      const index = computeIndex(t.list, ev.clientY, drag.id); // vùng gọn (ẩn) → nối cuối
+      if (t.zone) t.zone.classList.remove('is-collapsed'); // mở vùng khi thả vào
       removeId(drag.id);
       place[key].splice(index, 0, drag.id);
       clearBanner();
@@ -294,6 +302,18 @@ export function initRitaOrderGame() {
     const btn = e.target.closest('.order-game__mode');
     if (btn && !viewing) setMode(btn.dataset.mode);
   });
+  // Thu gọn/mở từng vùng (bấm vào header)
+  qsa('.dz-zone__head', root).forEach((h) =>
+    h.addEventListener('click', () => h.closest('.dz-zone').classList.toggle('is-collapsed'))
+  );
+  // Thu gọn / mở tất cả
+  foldBtn.addEventListener('click', () => {
+    const zones = qsa('.dz-zone', root);
+    const anyOpen = zones.some((z) => !z.classList.contains('is-collapsed'));
+    zones.forEach((z) => z.classList.toggle('is-collapsed', anyOpen));
+    foldBtn.textContent = anyOpen ? '🗂 Mở vùng' : '🗂 Thu gọn vùng';
+  });
+
   shuffleBtn.addEventListener('click', reset);
   checkBtn.addEventListener('click', checkOrder);
   viewBtn.addEventListener('click', toggleView);

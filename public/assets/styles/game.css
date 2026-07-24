@@ -187,9 +187,29 @@
 .dz-zone__head {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
   margin-bottom: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.dz-zone__toggle {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--zc);
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+.dz-zone.is-collapsed .dz-zone__toggle {
+  transform: rotate(-90deg);
 }
 .dz-zone__name {
   font-family: var(--mono);
@@ -202,6 +222,17 @@
   font-family: var(--mono);
   font-size: 11px;
   color: var(--faint);
+  margin-left: auto;
+}
+.dz-zone.is-collapsed .dz-zone__head {
+  margin-bottom: 0;
+}
+.dz-zone.is-collapsed .dz-zone__list {
+  display: none;
+}
+.dz-zone.is-dragover {
+  border-color: var(--zc);
+  background: var(--zw);
 }
 .dz-zone__list {
   display: flex;
