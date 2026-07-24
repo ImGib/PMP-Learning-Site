@@ -1,0 +1,329 @@
+/* game.css — Rita Process Chart: game KÉO-THẢ phân loại + xếp thứ tự (BEM, token chung) */
+
+/* ---- Chọn chế độ: Học tập / Test ---- */
+.order-game__modes {
+  display: inline-flex;
+  gap: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px;
+  background: var(--panel);
+  margin: 4px 0 8px;
+}
+.order-game__modes.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.order-game__mode {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 15px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: 0.15s;
+}
+.order-game__mode:hover {
+  color: var(--accent-ink);
+}
+.order-game__mode.is-active {
+  background: var(--accent);
+  color: #fff;
+}
+.order-game__modehint {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+/* ---- Toolbar / score / banner (dùng chung) ---- */
+.order-game__toolbar {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.order-game__score {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+.btn.is-active-view {
+  background: var(--gate);
+  border-color: var(--gate);
+  color: #fff;
+}
+.btn.is-active-view:hover {
+  color: #fff;
+}
+.order-game__banner {
+  padding: 11px 15px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+.order-game__banner.is-show {
+  display: flex;
+}
+.order-game__banner.is-ok {
+  background: var(--ok-wash);
+  color: var(--ok);
+  border: 1px solid var(--ok);
+}
+.order-game__banner.is-bad {
+  background: var(--bad-wash);
+  color: var(--bad);
+  border: 1px solid var(--bad);
+}
+.order-game__banner.is-info {
+  background: var(--gate-wash);
+  color: var(--gate);
+  border: 1px solid var(--gate);
+}
+
+/* ---- Board: kho (trái, sticky) + 5 vùng (phải) ---- */
+.dz-board {
+  display: grid;
+  grid-template-columns: minmax(230px, 300px) 1fr;
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 820px) {
+  .dz-board {
+    grid-template-columns: 1fr;
+  }
+  .dz-pool {
+    position: static !important;
+  }
+}
+
+/* Kho đáp án */
+.dz-pool {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 10px;
+  position: sticky;
+  top: 70px;
+}
+.dz-pool__head {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.dz-pool__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 2px;
+  border: 1px dashed transparent;
+  border-radius: 8px;
+}
+.dz-pool__list.is-dragover {
+  border-color: var(--accent);
+  background: var(--accent-wash);
+}
+.dz-pool__list:empty::before {
+  content: 'All placed — hit Check.';
+  color: var(--faint);
+  font-size: 12px;
+  font-style: italic;
+  padding: 8px;
+  display: block;
+}
+
+/* 5 vùng Process Group */
+.dz-zones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dz-zone {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--zc, var(--line));
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fff;
+}
+.dz-zone[data-g='init'] {
+  --zc: var(--flag);
+  --zw: var(--flag-wash);
+}
+.dz-zone[data-g='plan'] {
+  --zc: var(--accent);
+  --zw: var(--accent-wash);
+}
+.dz-zone[data-g='exec'] {
+  --zc: var(--gate);
+  --zw: var(--gate-wash);
+}
+.dz-zone[data-g='mc'] {
+  --zc: var(--tip);
+  --zw: var(--tip-wash);
+}
+.dz-zone[data-g='close'] {
+  --zc: var(--sub);
+  --zw: var(--sub-wash);
+}
+.dz-zone__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.dz-zone__toggle {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--zc);
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+.dz-zone.is-collapsed .dz-zone__toggle {
+  transform: rotate(-90deg);
+}
+.dz-zone__name {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--zc);
+  letter-spacing: 0.02em;
+}
+.dz-zone__count {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--faint);
+  margin-left: auto;
+}
+.dz-zone.is-collapsed .dz-zone__head {
+  margin-bottom: 0;
+}
+.dz-zone.is-collapsed .dz-zone__list {
+  display: none;
+}
+.dz-zone.is-dragover {
+  border-color: var(--zc);
+  background: var(--zw);
+}
+.dz-zone__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 46px;
+  border: 1px dashed transparent;
+  border-radius: 8px;
+  padding: 2px;
+}
+.dz-zone__list:empty::before {
+  content: "Drop this group's steps here…";
+  color: var(--faint);
+  font-size: 12px;
+  font-style: italic;
+  padding: 10px;
+  display: block;
+}
+.dz-zone__list.is-dragover {
+  border-color: var(--zc);
+  background: var(--zw);
+}
+
+/* ---- Thẻ đáp án ---- */
+.dz-card {
+  display: flex;
+  align-items: baseline; /* số thứ tự nằm đúng đường chữ của dòng đầu */
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 9px;
+  font-size: 13px;
+  line-height: 1.38;
+}
+.dz-card__grip {
+  flex: 0 0 auto;
+  align-self: flex-start; /* tay cầm giữ ở trên, không theo baseline */
+  cursor: grab;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.38;
+  padding: 0 2px;
+  touch-action: none;
+  user-select: none;
+}
+.dz-card__grip:active {
+  cursor: grabbing;
+}
+.dz-card__pos {
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--zc, var(--muted));
+  min-width: 15px;
+  text-align: right;
+}
+.dz-card__txt {
+  flex: 1;
+  color: var(--ink-soft);
+}
+.dz-card.is-dragging {
+  opacity: 0.4;
+}
+.dz-card.is-correct {
+  background: var(--ok-wash);
+  border-color: var(--ok);
+}
+.dz-card.is-correct .dz-card__pos {
+  color: var(--ok);
+}
+.dz-card.is-wrong {
+  background: var(--bad-wash);
+  border-color: var(--bad);
+}
+.dz-card.is-wrong .dz-card__pos {
+  color: var(--bad);
+}
+
+/* Bản sao "bóng" bay theo con trỏ khi kéo */
+.dz-ghost {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.95;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+  transform: rotate(1deg);
+  background: #fff;
+}
+body.dz-dragging {
+  user-select: none;
+  cursor: grabbing;
+}

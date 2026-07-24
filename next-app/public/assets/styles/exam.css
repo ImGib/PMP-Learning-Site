@@ -1,0 +1,347 @@
+/* exam.css — "Đề thi thử" (timed mock exam) */
+
+/* setup */
+.exam__setup {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 22px 24px;
+  max-width: 640px;
+}
+.exam__setup-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+.exam__setup-desc {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+.exam__fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.exam__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  min-width: 220px;
+  flex: 1;
+}
+.exam__field select {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--rail);
+  color: var(--ink);
+}
+
+/* running: sticky bar */
+.exam__bar {
+  position: sticky;
+  top: 60px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 11px 16px;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(160%) blur(12px);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+}
+.exam__timer {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--accent-ink);
+  min-width: 74px;
+}
+.exam__timer--warn {
+  color: var(--bad);
+}
+.exam__progress {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.exam__progress b {
+  color: var(--ink);
+}
+.exam__bar .btn {
+  margin-left: auto;
+}
+
+/* questions */
+.exam__q {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+.exam__qhead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.exam__qnum {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--faint);
+}
+.exam__qcat {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  padding: 2px 9px;
+  border-radius: 20px;
+  background: var(--accent-wash);
+  color: var(--accent-ink);
+}
+.exam__qtext {
+  font-size: 15.5px;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.exam__opts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.exam__opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: 0.12s;
+}
+.exam__opt:hover {
+  border-color: var(--accent);
+  background: var(--accent-wash);
+}
+.exam__opt.is-selected {
+  border-color: var(--accent);
+  background: var(--accent-wash);
+  color: var(--accent-ink);
+  font-weight: 500;
+}
+.exam__opt--review {
+  cursor: default;
+}
+.exam__opt--review:hover {
+  border-color: var(--line);
+  background: #fff;
+}
+.exam__opt.is-correct {
+  border-color: var(--ok);
+  background: var(--ok-wash);
+  color: var(--ok);
+}
+.exam__opt.is-wrong {
+  border-color: var(--bad);
+  background: var(--bad-wash);
+  color: var(--bad);
+}
+.exam__key {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  width: 20px;
+  flex: 0 0 20px;
+  text-align: center;
+  color: var(--faint);
+}
+.exam__tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 12px;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+.exam__tag--ok {
+  background: var(--ok);
+  color: #fff;
+}
+.exam__tag--bad {
+  background: var(--bad);
+  color: #fff;
+}
+.exam__expl {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-size: 13.3px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.exam__expl-label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-ink);
+  margin-right: 8px;
+}
+
+/* result */
+.exam__result {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+}
+.exam__result--pass {
+  border-left-color: var(--ok);
+  background: var(--ok-wash);
+}
+.exam__result--fail {
+  border-left-color: var(--bad);
+  background: var(--bad-wash);
+}
+.exam__score {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 1;
+  color: var(--ink);
+}
+.exam__result p {
+  margin: 8px 0 16px;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+.exam__reviewhead {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 18px;
+  margin: 22px 0 12px;
+}
+.exam__mark {
+  font-weight: 700;
+}
+.exam__mark.is-correct {
+  color: var(--ok);
+}
+.exam__mark.is-wrong {
+  color: var(--bad);
+}
+.exam__foot {
+  margin-top: 14px;
+}
+
+/* history & progress */
+.exam__history {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.exam__history-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.exam__history-head h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+}
+.exam__clear {
+  padding: 6px 12px;
+  font-size: 12.5px;
+}
+.exam__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.exam__stat {
+  flex: 1;
+  min-width: 90px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--rail);
+  padding: 11px 14px;
+  text-align: center;
+}
+.exam__stat b {
+  display: block;
+  font-family: var(--display);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--accent-ink);
+}
+.exam__stat span {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.exam__trend {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 66px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 14px;
+}
+.exam__bar {
+  flex: 1;
+  max-width: 28px;
+  min-height: 6px;
+  border-radius: 4px 4px 0 0;
+  background: var(--accent);
+}
+.exam__bar.is-pass {
+  background: var(--ok);
+}
+.exam__bar.is-fail {
+  background: var(--bad);
+}
+.exam__pct--pass {
+  color: var(--ok);
+}
+.exam__pct--fail {
+  color: var(--bad);
+}
+
+/* export / import row */
+.exam__io {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+.exam__io-btn {
+  padding: 7px 13px;
+  font-size: 12.8px;
+}

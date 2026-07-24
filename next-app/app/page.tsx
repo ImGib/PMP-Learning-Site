@@ -1,21 +1,9 @@
-'use client';
-import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
+// Trang chủ — render ĐÚNG NGUYÊN VĂN content-html/index.html (shell/sidebar/hero/sections/footer
+// gốc). Chưa song ngữ (ưu tiên khớp UI/UX trước); toggle VI/EN sẽ thêm sau như trang Scope.
 export default function Home() {
-  const { t } = useTranslation();
-  return (
-    <div className="hero">
-      <span className="hero__eyebrow">PMBOK 8 · Next.js + react-i18next</span>
-      <h1>PMBOK 8 — {t('nav.home')}</h1>
-      <p>
-        Bản dựng Next.js (React + TS). Bấm <b>VI / EN</b> trên navbar để đổi ngôn ngữ (react-i18next).
-      </p>
-      <p>
-        <Link className="btn btn--primary" href="/scope/">
-          → {t('nav.scope')}
-        </Link>
-      </p>
-    </div>
-  );
+  const html = readFileSync(join(process.cwd(), 'content', 'index.vi.html'), 'utf8');
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
 }

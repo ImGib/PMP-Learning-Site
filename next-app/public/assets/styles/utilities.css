@@ -1,0 +1,68 @@
+/* ============================================================
+   utilities.css — lớp tiện ích dùng chung (thay cho inline style)
+   Quy ước: utility đơn nhiệm, đặt tên theo chức năng.
+   Chỉ đưa vào đây thứ LẶP LẠI nhiều nơi; giá trị động (bar width,
+   màu riêng của từng diagram) vẫn để inline vì mỗi chỗ một khác.
+   ============================================================ */
+
+/* Link nhấn mạnh — dùng cho anchor trong .feature, danh sách điều hướng */
+.link-accent {
+  color: var(--accent-ink);
+}
+.link-accent--bold {
+  font-weight: 600;
+}
+
+/* Dòng chú thích nhỏ, màu mờ (hint dưới tiêu đề, ghi chú phụ) */
+.text-hint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Gloss tiếng Việt — bổ sung/giải nghĩa cho nội dung tiếng Anh (English là chính).
+   Dùng bọc phần tiếng Việt đi kèm câu/nút/nhãn tiếng Anh. */
+.vn-gloss {
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ============================================================
+   Song ngữ VI/EN — 1 nguồn, ẩn/hiện theo <html data-lang>.
+   Đánh dấu biến thể: data-l="vi" hoặc data-l="en".
+   ============================================================ */
+/* Phần tử data-l cũ (mobile drawer, gloss) — ẩn/hiện theo <html data-lang> bằng CSS.
+   Còn chuỗi qua từ điển (data-i18n / data-i18n-vi|en) do site.js apply. */
+[data-lang='vi'] [data-l='en'] {
+  display: none;
+}
+[data-lang='en'] [data-l='vi'] {
+  display: none;
+}
+
+/* Nút chuyển ngôn ngữ trên navbar */
+.topbar__lang {
+  display: inline-flex;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px;
+  margin-left: 6px;
+}
+.topbar__langbtn {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+.topbar__langbtn.is-active {
+  background: var(--accent);
+  color: #fff;
+}

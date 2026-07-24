@@ -1,0 +1,54 @@
+/* glossary.css — bilingual glossary with search (BEM) */
+.glossary {
+  display: grid;
+  gap: 10px;
+}
+.glossary__item {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 13px 17px;
+  background: #fff;
+}
+.glossary__item dt {
+  font-weight: 600;
+  color: var(--accent-ink);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  margin-bottom: 4px;
+}
+.glossary__en {
+  font-size: 13.6px;
+  color: var(--ink-soft);
+  margin: 0 0 4px;
+}
+.glossary__en b {
+  color: var(--flag);
+}
+.glossary__vn {
+  margin: 0;
+  font-size: 13.6px;
+  color: var(--muted);
+}
+.glossary__vn b {
+  color: var(--ink);
+}
+.glossary__filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 6px 0 20px;
+}
+#glossSearch {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink);
+}
+#glossSearch:focus {
+  outline: none;
+  border-color: var(--accent);
+}

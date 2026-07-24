@@ -1,4 +1,4 @@
-<p class="section__desc">Schedule trả lời <b>"khi nào xong?"</b>. Đây là chủ đề có Critical Path &amp; công thức ước lượng — cần luyện tay.</p>
+<p class="section__desc">Schedule trả lời <b>"khi nào xong?"</b>. Đây là chủ đề có Critical Path & công thức ước lượng — cần luyện tay.</p>
 
       <h3>Khái niệm nền</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Milestone</b> — a significant point or event in a project; it has zero duration. <i>(mốc quan trọng, duration = 0)</i></div>
@@ -23,7 +23,7 @@
 
       <h3>Ước lượng thời gian</h3>
       <div class="features">
-        <div class="feature"><b>Analogous (loại suy)</b><span>Dựa dự án tương tự trước đó. <b>Nhanh &amp; rẻ nhất, kém chính xác nhất</b> (top-down).</span></div>
+        <div class="feature"><b>Analogous (loại suy)</b><span>Dựa dự án tương tự trước đó. <b>Nhanh & rẻ nhất, kém chính xác nhất</b> (top-down).</span></div>
         <div class="feature"><b>Parametric</b><span>Dùng quan hệ thống kê (vd 10 giờ/mét). Chính xác hơn analogous.</span></div>
         <div class="feature"><b>Bottom-up</b><span>Cộng dồn từ chi tiết. <b>Chính xác nhất</b> (nhưng tốn công).</span></div>
         <div class="feature"><b>Three-point (PERT)</b><span>Dùng 3 giá trị: <b>O</b>ptimistic · <b>M</b>ost likely · <b>P</b>essimistic.</span></div>
@@ -33,15 +33,16 @@
         <div class="formula__row"><b>E</b> = ( <span class="formula__var">O</span> <span class="formula__op">+</span> 4<span class="formula__var">M</span> <span class="formula__op">+</span> <span class="formula__var">P</span> ) <span class="formula__op">/</span> 6</div>
         <div class="formula__row"><span class="formula__cm"># PERT — phân phối Triangular (trung bình đơn giản)</span></div>
         <div class="formula__row"><b>E</b> = ( <span class="formula__var">O</span> <span class="formula__op">+</span> <span class="formula__var">M</span> <span class="formula__op">+</span> <span class="formula__var">P</span> ) <span class="formula__op">/</span> 3</div>
-        <div class="formula__row"><span class="formula__cm"># Độ lệch chuẩn &amp; phương sai (chuẩn PMP)</span></div>
+        <div class="formula__row"><span class="formula__cm"># Độ lệch chuẩn & phương sai (chuẩn PMP)</span></div>
         <div class="formula__row"><b>SD</b> = ( <span class="formula__var">P</span> <span class="formula__op">−</span> <span class="formula__var">O</span> ) <span class="formula__op">/</span> 6&nbsp;&nbsp;&nbsp;&nbsp;<b>Variance</b> = SD²</div>
       </div>
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · PERT</span><b>Beta có số 4 (4M) và chia 6; Triangular chia 3.</b> Nhớ: "Beta 4-6, Tri-3". Beta chính xác hơn vì đặt trọng số lớn cho "khả năng nhất" (M).</div>
 
       <h3>Critical Path Method (CPM)</h3>
+      <div class="callout callout--note"><span class="callout__label">⭐ Tại sao Critical Path là "dài nhất" nhưng lại cho "thời gian ngắn nhất"?</span>Đây là câu hỏi gây lú nhất trong Schedule. Critical Path là <b>chuỗi hoạt động dài nhất</b> tính theo tổng duration — nó quyết định <b>thời gian tối thiểu</b> để hoàn thành dự án vì <b>dự án chỉ xong khi đường dài nhất xong</b>. Nếu đường găng dài 11 ngày, dù các việc khác xong sớm hơn, dự án vẫn mất 11 ngày. Vậy nên "dài nhất" trong số các đường = "ngắn nhất" có thể đạt được. <span class="badge badge--phase" style="background:#5a4be0;color:#fff;font-size:0.75em;padding:1px 6px;border-radius:3px">💡 Interpretation</span></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Critical Path</b> — the sequence of activities that represents the longest path through a project, which determines the shortest possible project duration. <i>(đường găng — Float = 0)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Total Float</b> — the amount of time an activity can be delayed from its early start date without delaying the project finish date. <i>(TF = LS − ES = LF − EF)</i></div>
-      <figure class="diagram"><div class="diagram__title">Sơ đồ mạng &amp; Đường găng — ES · EF · LS · LF · Float</div>
+      <figure class="diagram"><div class="diagram__title">Sơ đồ mạng & Đường găng — ES · EF · LS · LF · Float</div>
 <svg viewBox="0 0 540 240" role="img" aria-label="So do duong gang chi tiet" font-family="ui-monospace, monospace">
 <text x="10" y="14" font-size="9" fill="#76798a">Mỗi ô: [ES · Dur · EF] / Tên / [LS · Float · LF]</text>
 <!-- edges -->
@@ -102,15 +103,15 @@
       <ul>
         <li><b>Total Float</b> — số thời gian một việc có thể trễ mà <i>không</i> trễ cả dự án. Công thức: <code class="inline-code">TF = LS − ES = LF − EF</code>.</li>
         <li><b>Free Float</b> — trễ mà không ảnh hưởng việc kế tiếp (chỉ có khi 2+ việc chung 1 successor).</li>
-        <li><b>Forward Pass</b>: <code class="inline-code">EF = ES + Duration</code>. <b>Backward Pass</b>: <code class="inline-code">LS = LF − Duration</code>. <i>(quy ước "zero-based" — khớp sơ đồ &amp; bảng ở trên. Một số giáo trình đánh số ngày từ 1 nên viết <code class="inline-code">EF = ES + Dur − 1</code>; chỉ cần dùng nhất quán MỘT hệ trong cả bài toán.)</i></li>
+        <li><b>Forward Pass</b>: <code class="inline-code">EF = ES + Duration</code>. <b>Backward Pass</b>: <code class="inline-code">LS = LF − Duration</code>. <i>(quy ước "zero-based" — khớp sơ đồ & bảng ở trên. Một số giáo trình đánh số ngày từ 1 nên viết <code class="inline-code">EF = ES + Dur − 1</code>; chỉ cần dùng nhất quán MỘT hệ trong cả bài toán.)</i></li>
       </ul>
 
-      <h3>Rút ngắn &amp; tối ưu tài nguyên</h3>
+      <h3>Rút ngắn & tối ưu tài nguyên</h3>
       <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th>Kỹ thuật</th><th>Cách làm</th><th>Tác dụng phụ</th></tr></thead>
         <tbody>
           <tr><td><b>Crashing</b></td><td>Thêm tài nguyên vào việc trên đường găng</td><td><b>Tăng chi phí</b> (chọn cách rẻ nhất mà rút được nhiều nhất)</td></tr>
-          <tr><td><b>Fast Tracking</b></td><td>Làm <b>song song</b> các việc vốn tuần tự</td><td><b>Tăng rủi ro &amp; rework</b></td></tr>
+          <tr><td><b>Fast Tracking</b></td><td>Làm <b>song song</b> các việc vốn tuần tự</td><td><b>Tăng rủi ro & rework</b></td></tr>
           <tr><td><b>Resource Leveling</b></td><td>Cân bằng khi tài nguyên bị quá tải/giới hạn</td><td><b>Đường găng có thể ĐỔI</b> (thường dài ra)</td></tr>
           <tr><td><b>Resource Smoothing</b></td><td>Điều chỉnh trong phạm vi float</td><td><b>KHÔNG đổi</b> đường găng / ngày kết thúc</td></tr>
         </tbody>
@@ -118,7 +119,7 @@
       <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Crash vs Fast Track</span><b>Crashing = "đổ tiền/người"</b> (Cost↑). <b>Fast Tracking = "làm chồng lên nhau"</b> (Risk↑). Còn <b>Leveling đổi critical path, Smoothing KHÔNG</b> — nhớ "Level = làm phẳng, dời đường; Smooth = mượt trong khe float".</div>
       <div class="callout callout--warn"><span class="callout__label">Đường găng dễ bẫy</span>Critical Path là đường <b>dài nhất</b> nhưng cho ra <b>thời gian ngắn nhất</b> của dự án. Có thể có <b>nhiều hơn 1</b> đường găng (→ rủi ro cao hơn). Ước lượng thời lượng hoạt động <b>không</b> bao gồm lag.</div>
       <div class="callout callout--note"><span class="callout__label">Free Float vs Total Float (công thức)</span><b>Total Float</b> = LS − ES = LF − EF (được trễ mà không trễ <i>dự án</i>). <b>Free Float</b> = ES(việc-sau sớm nhất) − EF(việc này) − lag (được trễ mà không trễ <i>việc kế tiếp</i>). Ví dụ với sơ đồ trên: B có EF=7, successor D có ES=9 ⇒ <b>Free Float B = 9 − 7 = 2</b>. Trên đường găng cả hai loại float = 0.</div>
-      <div class="callout callout--tip"><span class="callout__label">Lịch trong Agile/Hybrid</span>Dự án adaptive không dùng Gantt/CPM chi tiết mà lập lịch theo <b>iteration</b>: ước lượng bằng <b>story points</b>, đo <b>velocity</b> (điểm/iteration), lập <b>Release Plan</b> (nhiều iteration) &amp; <b>Iteration Plan</b>. Dự báo ngày xong ≈ <i>backlog còn lại ÷ velocity</i>. Xem thêm <a href="part-3-agile.html" class="link-accent link-accent--bold">Phần III · Agile ↗</a>.</div>
+      <div class="callout callout--tip"><span class="callout__label">Lịch trong Agile/Hybrid</span>Dự án adaptive không dùng Gantt/CPM chi tiết mà lập lịch theo <b>iteration</b>: ước lượng bằng <b>story points</b>, đo <b>velocity</b> (điểm/iteration), lập <b>Release Plan</b> (nhiều iteration) & <b>Iteration Plan</b>. Dự báo ngày xong ≈ <i>backlog còn lại ÷ velocity</i>. Xem thêm <a href="part-3-agile.html" class="link-accent link-accent--bold">Phần III · Agile ↗</a>.</div>
 
       <h3>Biểu đồ Gantt (Bar Chart)</h3>
       <figure class="diagram"><div class="diagram__title">Gantt — thanh ngang theo thời gian (cùng dữ liệu A/B/C/D)</div>
@@ -143,9 +144,9 @@
         <div class="principle"><span class="principle__num">3</span><span class="principle__title">Murphy's Law</span><span class="principle__desc">"What can go wrong, will go wrong" — điều gì có thể sai thì sẽ sai.</span></div>
         <div class="principle"><span class="principle__num">4</span><span class="principle__title">Padding</span><span class="principle__desc">Team <b>độn thêm</b> giờ vào ước lượng để "phòng thân" → nên tách riêng thành reserve minh bạch.</span></div>
       </div>
-      <div class="callout callout--note"><span class="callout__label">Critical Chain Method (CCM) &amp; Buffers</span>CCM = biến thể của CPM có tính tới <b>giới hạn tài nguyên</b>. Thay vì độn giờ vào từng việc (chống Padding &amp; Student Syndrome), CCM <b>gom dự phòng</b> thành các <b>buffer</b> minh bạch: <b>Project Buffer</b> (đặt cuối chuỗi găng — bảo vệ ngày kết thúc) &amp; <b>Feeding Buffer</b> (bảo vệ chuỗi găng khỏi chậm trễ của các nhánh phụ nhập vào). Quản lý lịch trở thành <b>quản lý mức tiêu hao buffer</b>, không bám từng activity riêng lẻ.</div>
+      <div class="callout callout--note"><span class="callout__label">Critical Chain Method (CCM) & Buffers</span>CCM = biến thể của CPM có tính tới <b>giới hạn tài nguyên</b>. Thay vì độn giờ vào từng việc (chống Padding & Student Syndrome), CCM <b>gom dự phòng</b> thành các <b>buffer</b> minh bạch: <b>Project Buffer</b> (đặt cuối chuỗi găng — bảo vệ ngày kết thúc) & <b>Feeding Buffer</b> (bảo vệ chuỗi găng khỏi chậm trễ của các nhánh phụ nhập vào). Quản lý lịch trở thành <b>quản lý mức tiêu hao buffer</b>, không bám từng activity riêng lẻ.</div>
 
-      <h3>Rolling Wave &amp; Planning Package</h3>
+      <h3>Rolling Wave & Planning Package</h3>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Rolling Wave Planning</b> — an iterative planning technique in which the work in the near term is planned in detail while work in the future is planned at a higher level. <i>(lập kế hoạch cuốn chiếu)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Planning Package</b> — a WBS component below the control account with known work content but without detailed schedule activities. <i>(gói kế hoạch — chưa phân rã thành activity)</i></div>
       <p>Việc gần thì lập kế hoạch <b>chi tiết</b>, việc xa để <b>khái quát</b>, tới gần mới làm chi tiết. Việc xa để ở dạng <b>Planning Package</b> (chưa có activity); khi rõ hơn thì phân rã thành <b>Work Package</b>.</p>

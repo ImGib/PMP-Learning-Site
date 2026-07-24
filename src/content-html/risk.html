@@ -1,15 +1,16 @@
-<p class="section__desc">Risk = sự kiện <b>chưa chắc chắn ở tương lai</b>, nếu xảy ra sẽ ảnh hưởng mục tiêu. PMP nhìn rủi ro cả 2 chiều: xấu (Threat) &amp; tốt (Opportunity).</p>
+<p class="section__desc">Risk = sự kiện <b>chưa chắc chắn ở tương lai</b>, nếu xảy ra sẽ ảnh hưởng mục tiêu. PMP nhìn rủi ro cả 2 chiều: xấu (Threat) & tốt (Opportunity).</p>
 
-      <h3>Khái niệm nền &amp; các cặp dễ nhầm</h3>
+      <h3>Khái niệm nền & các cặp dễ nhầm</h3>
+      <div class="callout callout--note"><span class="callout__label">⭐ Tại sao Risk ≠ Issue?</span>Vì <b>Risk</b> là sự kiện <b>chưa xảy ra</b> (xác suất > 0% và < 100%) — ta có thể lập kế hoạch ứng phó từ trước. <b>Issue</b> là sự kiện <b>đã xảy ra rồi</b> — không còn "nếu" nữa, phải xử lý ngay. Phân biệt rất quan trọng vì cách xử lý khác nhau: Risk dùng <b>risk response</b> (chủ động), Issue dùng <b>issue log</b> & <b>workaround</b> (phản ứng). Đề PMP hay hỏi: "đây là risk hay issue?" — nhìn thì giống nhau nhưng khác ở thì. <span class="badge badge--phase" style="background:#5a4be0;color:#fff;font-size:0.75em;padding:1px 6px;border-radius:3px">💡 Interpretation</span></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Risk</b> — an uncertain event or condition that, if it occurs, has a positive or negative effect on one or more project objectives. <i>(tương lai, chưa xảy ra)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Issue</b> — a current condition or situation that has already occurred and may impact the project objectives. <i>(rủi ro đã xảy ra)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Secondary Risk</b> — a new risk that arises as a direct result of implementing a risk response. <i>(rủi ro mới sinh ra TỪ một response)</i></div>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Residual Risk</b> — the risk that remains after risk responses have been implemented. <i>(rủi ro còn lại SAU khi xử lý)</i></div>
       <ul>
-        <li><b>Risk vs Issue</b>: Risk = <i>tương lai, chưa xảy ra</i> (xác suất &gt;0% &amp; &lt;100%). <b>Issue</b> = risk <i>đã xảy ra</i> (thành sự thật). <b>Risk Trigger</b> = dấu hiệu risk sắp/đang xảy ra.</li>
+        <li><b>Risk vs Issue</b>: Risk = <i>tương lai, chưa xảy ra</i> (xác suất >0% & <100%). <b>Issue</b> = risk <i>đã xảy ra</i> (thành sự thật). <b>Risk Trigger</b> = dấu hiệu risk sắp/đang xảy ra.</li>
         <li><b>Threat</b> (rủi ro tiêu cực) vs <b>Opportunity</b> (rủi ro tích cực).</li>
         <li><b>Individual risk</b> (rủi ro đơn lẻ, ghi ở Risk Register) vs <b>Overall risk</b> (rủi ro tổng thể dự án, ghi ở Risk Report).</li>
-        <li><b>Secondary risk</b> = rủi ro <i>mới sinh ra TỪ</i> một response. <b>Residual risk</b> = rủi ro <i>còn lại SAU</i> khi đã xử lý.</li>
+        <li><b>Secondary risk</b> = rủi ro <i>mới sinh ra TỪ</i> một response. <b>Residual risk</b> = rủi ro <i>còn lại SAU</i> khi đã xử lý. <span class="badge badge--phase" style="background:#e67e22;color:#fff;font-size:0.75em;padding:1px 6px;border-radius:3px">📖 Prep Knowledge</span> <i>Secondary & Residual risk không có trong văn bản PMBOK 8, nhưng vẫn là kiến thức thi ECO.</i></li>
       </ul>
       <div class="callout callout--note"><span class="callout__label">Appetite · Tolerance · Threshold</span><b>Risk Appetite</b> = mức rủi ro tổ chức <i>sẵn sàng</i> chấp nhận (chung chung). <b>Risk Tolerance</b> = mức tối đa <i>cụ thể</i> chịu được. <b>Risk Threshold</b> = <i>điểm</i> mà tại đó rủi ro trở nên KHÔNG chấp nhận được.</div>
 
@@ -18,10 +19,10 @@
       <figure class="diagram"><div class="diagram__title">Ma trận Probability–Impact</div>
         <div class="diagram-quad"><div class="diagram-quad__yaxis">Xác suất: thấp → cao</div><div><div class="diagram-quad__grid"><div class="diagram-quad__cell"><b>P cao / I thấp</b>theo dõi</div><div class="diagram-quad__cell diagram-quad__cell--hi"><b>P cao / I cao</b>ƯU TIÊN xử lý</div><div class="diagram-quad__cell"><b>P thấp / I thấp</b>chấp nhận</div><div class="diagram-quad__cell diagram-quad__cell--mid"><b>P thấp / I cao</b>lập kế hoạch dự phòng</div></div><div class="diagram-quad__xaxis">Tác động: thấp → cao</div></div></div>
         <figcaption>Ô Xác suất cao × Tác động cao là nhóm cần xử lý ưu tiên nhất</figcaption></figure>
-      <div class="callout callout--note"><span class="callout__label">Trước khi ưu tiên hoá · Risk Data Quality Assessment</span>Trước Qualitative Analysis, đánh giá <b>độ tin cậy của dữ liệu rủi ro</b> (chính xác, đầy đủ, khách quan, kịp thời) — dữ liệu kém thì kết quả ưu tiên hoá vô nghĩa. Đi kèm <b>Risk Categorization</b> (nhóm theo RBS/nguồn) &amp; đánh giá <b>độ khẩn (urgency)</b> của rủi ro.</div>
+      <div class="callout callout--note"><span class="callout__label">Trước khi ưu tiên hoá · Risk Data Quality Assessment</span>Trước Qualitative Analysis, đánh giá <b>độ tin cậy của dữ liệu rủi ro</b> (chính xác, đầy đủ, khách quan, kịp thời) — dữ liệu kém thì kết quả ưu tiên hoá vô nghĩa. Đi kèm <b>Risk Categorization</b> (nhóm theo RBS/nguồn) & đánh giá <b>độ khẩn (urgency)</b> của rủi ro.</div>
 
       <h3>⭐ EMV — Expected Monetary Value</h3>
-      <div class="callout callout--en"><span class="callout__label">EN</span><b>Expected Monetary Value (EMV)</b> — a statistical technique that calculates the average (expected) outcome when the future includes scenarios that may or may not happen: probability × impact. <i>(dùng cho Contingency Reserve &amp; Decision Tree)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Expected Monetary Value (EMV)</b> — a statistical technique that calculates the average (expected) outcome when the future includes scenarios that may or may not happen: probability × impact. <i>(dùng cho Contingency Reserve & Decision Tree)</i></div>
       <div class="formula">
         <div class="formula__row"><b>EMV</b> = <span class="formula__var">Probability</span> <span class="formula__op">×</span> <span class="formula__var">Impact</span></div>
         <div class="formula__row"><span class="formula__cm"># Threat: Impact ÂM (tổn thất). Opportunity: Impact DƯƠNG (lợi ích).</span></div>
@@ -38,7 +39,7 @@
             <tr><td>R-4</td><td>Đổi luật thuế → phải sửa hóa đơn</td><td>Threat</td><td>0.3</td><td>5</td><td>1.5</td><td><b>Accept (active)</b>: contingency plan</td><td>Legal</td></tr>
           </tbody>
         </table></div>
-        <figcaption>Mỗi rủi ro có <b>owner</b> &amp; chiến lược; Điểm = P × I để ưu tiên. Là output lõi của Identify Risks, cập nhật xuyên suốt.</figcaption></figure>
+        <figcaption>Mỗi rủi ro có <b>owner</b> & chiến lược; Điểm = P × I để ưu tiên. Là output lõi của Identify Risks, cập nhật xuyên suốt.</figcaption></figure>
 
       <h3>Chiến lược ứng phó rủi ro</h3>
       <div class="tbl-wrap"><table class="tbl">
@@ -51,9 +52,9 @@
           <tr><td colspan="2" style="text-align:center"><b>Accept</b> (chấp nhận)</td><td>Passive (không làm gì) hoặc Active (lập <b>contingency plan</b>)</td></tr>
         </tbody>
       </table></div>
-      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · cặp đối xứng</span>Threat và Opportunity đối xứng nhau: <b>Avoid ↔ Exploit</b> (triệt để), <b>Transfer ↔ Share</b> (giao bên khác), <b>Mitigate ↔ Enhance</b> (điều chỉnh). Còn <b>Escalate &amp; Accept</b> dùng chung cho cả hai. <b>Contingency plan</b> (khi trigger xảy ra) khác <b>Fallback plan</b> (khi contingency plan thất bại).</div>
-      <div class="callout callout--note"><span class="callout__label">Công cụ &amp; Prompt list</span>Nhận diện rủi ro bằng <b>SWOT</b>, <b>PESTLE</b> (Political/Economic/Social/Technological/Legal/Environmental), TECOP, VUCA. Định lượng bằng <b>Monte Carlo</b> (mô phỏng "what-if"), <b>Decision Tree</b>, <b>Sensitivity Analysis → Tornado diagram</b>.</div>
-      <div class="callout callout--note"><span class="callout__label">Watchlist &amp; Reserve Analysis</span><b>Watchlist</b> = danh sách rủi ro <b>ưu tiên thấp</b> — không xử lý ngay, chỉ <b>theo dõi</b> (ghi trong Risk Register). <b>Reserve Analysis</b> = so sánh <b>reserve còn lại</b> với <b>rủi ro còn lại</b> để kiểm tra còn đủ dự phòng không (làm trong Monitor Risks &amp; Control Costs).</div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · cặp đối xứng</span>Threat và Opportunity đối xứng nhau: <b>Avoid ↔ Exploit</b> (triệt để), <b>Transfer ↔ Share</b> (giao bên khác), <b>Mitigate ↔ Enhance</b> (điều chỉnh). Còn <b>Escalate & Accept</b> dùng chung cho cả hai. <b>Contingency plan</b> (khi trigger xảy ra) khác <b>Fallback plan</b> (khi contingency plan thất bại).</div>
+      <div class="callout callout--note"><span class="callout__label">Công cụ & Prompt list</span>Nhận diện rủi ro bằng <b>SWOT</b>, <b>PESTLE</b> (Political/Economic/Social/Technological/Legal/Environmental), TECOP, VUCA. Định lượng bằng <b>Monte Carlo</b> (mô phỏng "what-if"), <b>Decision Tree</b>, <b>Sensitivity Analysis → Tornado diagram</b>.</div>
+      <div class="callout callout--note"><span class="callout__label">Watchlist & Reserve Analysis</span><b>Watchlist</b> = danh sách rủi ro <b>ưu tiên thấp</b> — không xử lý ngay, chỉ <b>theo dõi</b> (ghi trong Risk Register). <b>Reserve Analysis</b> = so sánh <b>reserve còn lại</b> với <b>rủi ro còn lại</b> để kiểm tra còn đủ dự phòng không (làm trong Monitor Risks & Control Costs).</div>
       <figure class="diagram"><div class="diagram__title">Tornado Diagram (Sensitivity Analysis)</div>
 <svg viewBox="0 0 470 190" role="img" aria-label="Tornado diagram" font-family="ui-monospace, monospace">
 <line x1="235" y1="22" x2="235" y2="168" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
@@ -86,7 +87,7 @@
         <thead><tr><th>Khái niệm</th><th>Nghĩa</th></tr></thead>
         <tbody>
           <tr><td><b>Passive Acceptance</b></td><td><b>Không làm gì</b> trước; xử lý khi rủi ro xảy ra.</td></tr>
-          <tr><td><b>Active Acceptance</b></td><td>Lập sẵn <b>Contingency Plan</b> &amp; contingency reserve để dùng khi trigger.</td></tr>
+          <tr><td><b>Active Acceptance</b></td><td>Lập sẵn <b>Contingency Plan</b> & contingency reserve để dùng khi trigger.</td></tr>
           <tr><td><b>Contingency Plan</b></td><td>Kế hoạch chạy khi <b>trigger</b> xảy ra (rủi ro thành hiện thực).</td></tr>
           <tr><td><b>Fallback Plan</b></td><td>"Kế hoạch B" chạy khi <b>Contingency Plan thất bại</b>.</td></tr>
         </tbody>
@@ -101,20 +102,20 @@
           <div class="diagram-steps__step"><span class="diagram-steps__num">4</span>Quantitative Analysis</div><div class="diagram-steps__arrow">›</div>
           <div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">5</span>Plan Risk Responses</div><div class="diagram-steps__arrow">›</div>
           <div class="diagram-steps__step diagram-steps__step--alt"><span class="diagram-steps__num">6 · Exec</span>Implement Responses</div><div class="diagram-steps__arrow">›</div>
-          <div class="diagram-steps__step"><span class="diagram-steps__num">7 · M&amp;C</span>Monitor Risks</div>
+          <div class="diagram-steps__step"><span class="diagram-steps__num">7 · M&C</span>Monitor Risks</div>
         </div>
-        <div class="diagram-steps__note">Bước 1–5 = Planning · 6 = Executing · 7 = Monitoring &amp; Controlling. Output lõi: Risk Register (bước 2), cập nhật suốt quá trình.</div>
+        <div class="diagram-steps__note">Bước 1–5 = Planning · 6 = Executing · 7 = Monitoring & Controlling. Output lõi: Risk Register (bước 2), cập nhật suốt quá trình.</div>
       </figure>
       <div class="callout callout--en"><span class="callout__label">EN</span><b>Risk Register</b> — a repository where the outputs of risk-management processes are recorded: identified risks, owners, analysis and planned responses. <i>(sổ đăng ký rủi ro — hồ sơ trung tâm)</i></div>
 
       <h3>Chọn Risk Response thế nào? (logic)</h3>
       <div class="callout callout--note"><span class="callout__label">Thứ tự cân nhắc cho MỖI rủi ro</span>
         <ol>
-          <li><b>Ngoài thẩm quyền / scope?</b> → <b>Escalate</b> (cho cả threat &amp; opportunity); team không xử lý tiếp nhưng <b>vẫn ghi nhận trong register</b>.</li>
+          <li><b>Ngoài thẩm quyền / scope?</b> → <b>Escalate</b> (cho cả threat & opportunity); team không xử lý tiếp nhưng <b>vẫn ghi nhận trong register</b>.</li>
           <li><b>Threat</b>: <b>Avoid</b> (loại bỏ nguyên nhân, đưa xác suất về 0) → <b>Transfer</b> (chuyển bên thứ ba: bảo hiểm/bảo hành/FP contract) → <b>Mitigate</b> (giảm xác suất/impact xuống mức chấp nhận) → <b>Accept</b> (passive: không làm gì / active: lập contingency reserve + plan).</li>
           <li><b>Opportunity</b> (đối xứng): <b>Exploit</b> (chắc chắn hóa ~100%) → <b>Share</b> (bắt tay đối tác giỏi hơn) → <b>Enhance</b> (tăng xác suất/impact) → <b>Accept</b>.</li>
         </ol>
-        Mỗi response phải có <b>owner</b>; cân nhắc mức nghiêm trọng, chi phí–hiệu quả &amp; tính khả thi.</div>
+        Mỗi response phải có <b>owner</b>; cân nhắc mức nghiêm trọng, chi phí–hiệu quả & tính khả thi.</div>
       <div class="callout callout--warn"><span class="callout__label">Contingency vs Fallback vs Workaround</span><b>Contingency plan</b> = kích hoạt bởi <b>trigger</b> (rủi ro đã biết). <b>Fallback plan</b> = "kế hoạch B" khi contingency thất bại. <b>Workaround</b> = phản ứng <b>không lập trước</b>, cho rủi ro chưa lường / đã chấp nhận thụ động.</div>
-      <div class="callout callout--tip"><span class="callout__label">Rủi ro trong Agile/Hybrid</span>Đưa rủi ro vào <b>risk-adjusted backlog</b> (ưu tiên cả value lẫn risk); theo dõi bằng <b>risk burndown chart</b>; review rủi ro mỗi <b>iteration/retrospective</b>. Vòng lặp ngắn giúp <b>lộ &amp; giảm rủi ro sớm</b> nhờ phản hồi liên tục.</div>
-      <div class="callout callout--note"><span class="callout__label">Risk Review vs Risk Audit</span><b>Risk Review</b> = họp định kỳ đánh giá lại rủi ro &amp; response (còn hiệu quả không, có rủi ro mới không). <b>Risk Audit</b> = kiểm tra <b>hiệu quả của cả quy trình quản lý rủi ro</b> ("làm đúng cách chưa"). Cả hai thuộc <b>Monitor Risks</b>.</div>
+      <div class="callout callout--tip"><span class="callout__label">Rủi ro trong Agile/Hybrid</span>Đưa rủi ro vào <b>risk-adjusted backlog</b> (ưu tiên cả value lẫn risk); theo dõi bằng <b>risk burndown chart</b>; review rủi ro mỗi <b>iteration/retrospective</b>. Vòng lặp ngắn giúp <b>lộ & giảm rủi ro sớm</b> nhờ phản hồi liên tục.</div>
+      <div class="callout callout--note"><span class="callout__label">Risk Review vs Risk Audit</span><b>Risk Review</b> = họp định kỳ đánh giá lại rủi ro & response (còn hiệu quả không, có rủi ro mới không). <b>Risk Audit</b> = kiểm tra <b>hiệu quả của cả quy trình quản lý rủi ro</b> ("làm đúng cách chưa"). Cả hai thuộc <b>Monitor Risks</b>.</div>
