@@ -1,0 +1,9 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import content from '../content-html/formulas-and-examples.html?raw';
+const title = "Công thức &amp; Ví dụ giải từng bước — Học PMP với PMBOK 8";
+---
+
+<PageLayout title={title} pageFile="formulas-and-examples.html">
+  <Fragment set:html={content} />
+</PageLayout>

@@ -1,0 +1,9 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import content from '../content-html/part-4-exam-prep.html?raw';
+const title = "Phần IV · Ôn thi — Học PMP với PMBOK 8";
+---
+
+<PageLayout title={title} pageFile="part-4-exam-prep.html">
+  <Fragment set:html={content} />
+</PageLayout>

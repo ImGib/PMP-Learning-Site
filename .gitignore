@@ -10,6 +10,12 @@ docs-src/
 PMP_Slides_extracted/
 txt/
 
+# Astro / Node
+node_modules/
+dist/
+.astro/
+npm-debug.log*
+
 # OS
 Thumbs.db
 .DS_Store

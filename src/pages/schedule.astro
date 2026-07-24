@@ -1,0 +1,9 @@
+---
+import TopicLayout from '../layouts/TopicLayout.astro';
+import content from '../content-html/schedule.html?raw';
+const title = "Schedule — Tiến độ — Phần II · Học PMP với PMBOK 8";
+---
+
+<TopicLayout page="schedule" title={title}>
+  <Fragment set:html={content} />
+</TopicLayout>

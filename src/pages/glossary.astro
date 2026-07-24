@@ -1,0 +1,9 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import content from '../content-html/glossary.html?raw';
+const title = "Từ điển thuật ngữ song ngữ — Học PMP với PMBOK 8";
+---
+
+<PageLayout title={title} pageFile="glossary.html">
+  <Fragment set:html={content} />
+</PageLayout>

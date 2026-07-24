@@ -1,0 +1,169 @@
+<p class="section__desc">Schedule trả lời <b>"khi nào xong?"</b>. Đây là chủ đề có Critical Path &amp; công thức ước lượng — cần luyện tay.</p>
+
+      <h3>Khái niệm nền</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Milestone</b> — a significant point or event in a project; it has zero duration. <i>(mốc quan trọng, duration = 0)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Lead</b> — the amount of time a successor activity can be advanced with respect to a predecessor activity (overlap). <i>(việc sau bắt đầu sớm/chồng lấn)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Lag</b> — the amount of time a successor activity is delayed with respect to a predecessor activity (waiting time). <i>(thời gian chờ giữa 2 việc)</i></div>
+      <ul>
+        <li><b>Activity (Task)</b> — công việc cần làm để hoàn thành 1 work package. <b>Milestone</b> = mốc quan trọng, <b>duration = 0</b> (không tốn thời gian).</li>
+        <li><b>Dependencies</b> (quan hệ phụ thuộc): <b>Mandatory</b> = Hard Logic (bắt buộc, do luật/tự nhiên) · <b>Discretionary</b> = Soft Logic (tùy chọn, do kinh nghiệm).</li>
+        <li><b>Lead</b> = việc sau được <i>bắt đầu sớm/chồng lấn</i> (tăng tốc). <b>Lag</b> = thời gian <i>chờ</i> giữa 2 việc (trì hoãn).</li>
+      </ul>
+
+      <h3>PDM — 4 quan hệ trước-sau</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Quan hệ</th><th>Nghĩa</th><th>Tần suất</th></tr></thead>
+        <tbody>
+          <tr><td><b>Finish-to-Start (FS)</b></td><td>A xong thì B mới bắt đầu</td><td><b>Phổ biến nhất</b></td></tr>
+          <tr><td><b>Start-to-Start (SS)</b></td><td>A bắt đầu thì B mới được bắt đầu</td><td>Thường</td></tr>
+          <tr><td><b>Finish-to-Finish (FF)</b></td><td>A xong thì B mới được xong</td><td>Thường</td></tr>
+          <tr><td><b>Start-to-Finish (SF)</b></td><td>A bắt đầu thì B mới được kết thúc</td><td><b>Hiếm nhất</b></td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Ước lượng thời gian</h3>
+      <div class="features">
+        <div class="feature"><b>Analogous (loại suy)</b><span>Dựa dự án tương tự trước đó. <b>Nhanh &amp; rẻ nhất, kém chính xác nhất</b> (top-down).</span></div>
+        <div class="feature"><b>Parametric</b><span>Dùng quan hệ thống kê (vd 10 giờ/mét). Chính xác hơn analogous.</span></div>
+        <div class="feature"><b>Bottom-up</b><span>Cộng dồn từ chi tiết. <b>Chính xác nhất</b> (nhưng tốn công).</span></div>
+        <div class="feature"><b>Three-point (PERT)</b><span>Dùng 3 giá trị: <b>O</b>ptimistic · <b>M</b>ost likely · <b>P</b>essimistic.</span></div>
+      </div>
+      <div class="formula">
+        <div class="formula__row"><span class="formula__cm"># PERT — phân phối Beta (hay dùng, nhấn mạnh M)</span></div>
+        <div class="formula__row"><b>E</b> = ( <span class="formula__var">O</span> <span class="formula__op">+</span> 4<span class="formula__var">M</span> <span class="formula__op">+</span> <span class="formula__var">P</span> ) <span class="formula__op">/</span> 6</div>
+        <div class="formula__row"><span class="formula__cm"># PERT — phân phối Triangular (trung bình đơn giản)</span></div>
+        <div class="formula__row"><b>E</b> = ( <span class="formula__var">O</span> <span class="formula__op">+</span> <span class="formula__var">M</span> <span class="formula__op">+</span> <span class="formula__var">P</span> ) <span class="formula__op">/</span> 3</div>
+        <div class="formula__row"><span class="formula__cm"># Độ lệch chuẩn &amp; phương sai (chuẩn PMP)</span></div>
+        <div class="formula__row"><b>SD</b> = ( <span class="formula__var">P</span> <span class="formula__op">−</span> <span class="formula__var">O</span> ) <span class="formula__op">/</span> 6&nbsp;&nbsp;&nbsp;&nbsp;<b>Variance</b> = SD²</div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · PERT</span><b>Beta có số 4 (4M) và chia 6; Triangular chia 3.</b> Nhớ: "Beta 4-6, Tri-3". Beta chính xác hơn vì đặt trọng số lớn cho "khả năng nhất" (M).</div>
+
+      <h3>Critical Path Method (CPM)</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Critical Path</b> — the sequence of activities that represents the longest path through a project, which determines the shortest possible project duration. <i>(đường găng — Float = 0)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Total Float</b> — the amount of time an activity can be delayed from its early start date without delaying the project finish date. <i>(TF = LS − ES = LF − EF)</i></div>
+      <figure class="diagram"><div class="diagram__title">Sơ đồ mạng &amp; Đường găng — ES · EF · LS · LF · Float</div>
+<svg viewBox="0 0 540 240" role="img" aria-label="So do duong gang chi tiet" font-family="ui-monospace, monospace">
+<text x="10" y="14" font-size="9" fill="#76798a">Mỗi ô: [ES · Dur · EF] / Tên / [LS · Float · LF]</text>
+<!-- edges -->
+<line x1="116" y1="118" x2="222" y2="51" stroke="#c5c5cf" stroke-width="2"/>
+<line x1="116" y1="132" x2="222" y2="199" stroke="#d2604a" stroke-width="3"/>
+<line x1="318" y1="51" x2="424" y2="118" stroke="#c5c5cf" stroke-width="2"/>
+<line x1="318" y1="199" x2="424" y2="132" stroke="#d2604a" stroke-width="3"/>
+<!-- node A (critical) -->
+<g font-size="8.5" fill="#76798a" text-anchor="middle">
+<rect x="20" y="98" width="96" height="54" rx="6" fill="#fff" stroke="#d2604a" stroke-width="2"/>
+<line x1="20" y1="116" x2="116" y2="116" stroke="#e8e8ee"/><line x1="20" y1="134" x2="116" y2="134" stroke="#e8e8ee"/>
+<line x1="52" y1="98" x2="52" y2="116" stroke="#e8e8ee"/><line x1="84" y1="98" x2="84" y2="116" stroke="#e8e8ee"/>
+<line x1="52" y1="134" x2="52" y2="152" stroke="#e8e8ee"/><line x1="84" y1="134" x2="84" y2="152" stroke="#e8e8ee"/>
+<text x="36" y="111">0</text><text x="68" y="111">3</text><text x="100" y="111">3</text>
+<text x="68" y="131" font-size="13" font-weight="700" fill="#b0125e">A</text>
+<text x="36" y="147">0</text><text x="68" y="147">0</text><text x="100" y="147">3</text></g>
+<!-- node B (float 2) -->
+<g font-size="8.5" fill="#76798a" text-anchor="middle">
+<rect x="222" y="24" width="96" height="54" rx="6" fill="#fff" stroke="#c5c5cf" stroke-width="2"/>
+<line x1="222" y1="42" x2="318" y2="42" stroke="#e8e8ee"/><line x1="222" y1="60" x2="318" y2="60" stroke="#e8e8ee"/>
+<line x1="254" y1="24" x2="254" y2="42" stroke="#e8e8ee"/><line x1="286" y1="24" x2="286" y2="42" stroke="#e8e8ee"/>
+<line x1="254" y1="60" x2="254" y2="78" stroke="#e8e8ee"/><line x1="286" y1="60" x2="286" y2="78" stroke="#e8e8ee"/>
+<text x="238" y="37">3</text><text x="270" y="37">4</text><text x="302" y="37">7</text>
+<text x="270" y="57" font-size="13" font-weight="700" fill="#3c3e46">B</text>
+<text x="238" y="73">5</text><text x="270" y="73" font-weight="700" fill="#b0125e">2</text><text x="302" y="73">9</text></g>
+<!-- node C (critical) -->
+<g font-size="8.5" fill="#76798a" text-anchor="middle">
+<rect x="222" y="172" width="96" height="54" rx="6" fill="#fff" stroke="#d2604a" stroke-width="2"/>
+<line x1="222" y1="190" x2="318" y2="190" stroke="#e8e8ee"/><line x1="222" y1="208" x2="318" y2="208" stroke="#e8e8ee"/>
+<line x1="254" y1="172" x2="254" y2="190" stroke="#e8e8ee"/><line x1="286" y1="172" x2="286" y2="190" stroke="#e8e8ee"/>
+<line x1="254" y1="208" x2="254" y2="226" stroke="#e8e8ee"/><line x1="286" y1="208" x2="286" y2="226" stroke="#e8e8ee"/>
+<text x="238" y="185">3</text><text x="270" y="185">6</text><text x="302" y="185">9</text>
+<text x="270" y="205" font-size="13" font-weight="700" fill="#b0125e">C</text>
+<text x="238" y="221">3</text><text x="270" y="221">0</text><text x="302" y="221">9</text></g>
+<!-- node D (critical) -->
+<g font-size="8.5" fill="#76798a" text-anchor="middle">
+<rect x="424" y="98" width="96" height="54" rx="6" fill="#fff" stroke="#d2604a" stroke-width="2"/>
+<line x1="424" y1="116" x2="520" y2="116" stroke="#e8e8ee"/><line x1="424" y1="134" x2="520" y2="134" stroke="#e8e8ee"/>
+<line x1="456" y1="98" x2="456" y2="116" stroke="#e8e8ee"/><line x1="488" y1="98" x2="488" y2="116" stroke="#e8e8ee"/>
+<line x1="456" y1="134" x2="456" y2="152" stroke="#e8e8ee"/><line x1="488" y1="134" x2="488" y2="152" stroke="#e8e8ee"/>
+<text x="440" y="111">9</text><text x="472" y="111">2</text><text x="504" y="111">11</text>
+<text x="472" y="131" font-size="13" font-weight="700" fill="#b0125e">D</text>
+<text x="440" y="147">9</text><text x="472" y="147">0</text><text x="504" y="147">11</text></g>
+</svg>
+<div class="diagram__key"><span><i style="background:#d2604a"></i>Đường găng (Float = 0)</span><span><i style="background:#c5c5cf"></i>Có Float (dư địa trễ)</span></div>
+<figcaption>Forward pass → ES/EF (trái sang phải) · Backward pass → LS/LF (phải sang trái) · Float = LS−ES = LF−EF</figcaption></figure>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Hoạt động</th><th>Trước đó</th><th>Dur</th><th>ES</th><th>EF</th><th>LS</th><th>LF</th><th>Total Float</th><th>Đường găng?</th></tr></thead>
+        <tbody>
+          <tr><td><b>A</b></td><td>—</td><td>3</td><td>0</td><td>3</td><td>0</td><td>3</td><td>0</td><td>✅</td></tr>
+          <tr><td><b>B</b></td><td>A</td><td>4</td><td>3</td><td>7</td><td>5</td><td>9</td><td><b>2</b></td><td>—</td></tr>
+          <tr><td><b>C</b></td><td>A</td><td>6</td><td>3</td><td>9</td><td>3</td><td>9</td><td>0</td><td>✅</td></tr>
+          <tr><td><b>D</b></td><td>B, C</td><td>2</td><td>9</td><td>11</td><td>9</td><td>11</td><td>0</td><td>✅</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout callout--note"><span class="callout__label">Cách đọc</span><b>Forward pass</b> (tiến): ES việc đầu = 0, <b>EF = ES + Duration</b>, ES việc sau = EF lớn nhất của việc trước. <b>Backward pass</b> (lùi): LF việc cuối = EF dự án, <b>LS = LF − Duration</b>. <b>Total Float = LS − ES = LF − EF</b>; Float = 0 → nằm trên <b>đường găng</b> A→C→D = 11 ngày. B có <b>Float = 2</b> (được trễ 2 ngày không ảnh hưởng dự án).</div>
+      <p><b>Critical Path</b> (đường găng) = chuỗi hoạt động <b>DÀI NHẤT</b> qua sơ đồ → chính là <b>thời gian ngắn nhất</b> có thể hoàn thành dự án. Trên đường găng, <b>Float (Slack) = 0</b> → không được trễ, trễ là trễ cả dự án.</p>
+      <ul>
+        <li><b>Total Float</b> — số thời gian một việc có thể trễ mà <i>không</i> trễ cả dự án. Công thức: <code class="inline-code">TF = LS − ES = LF − EF</code>.</li>
+        <li><b>Free Float</b> — trễ mà không ảnh hưởng việc kế tiếp (chỉ có khi 2+ việc chung 1 successor).</li>
+        <li><b>Forward Pass</b>: <code class="inline-code">EF = ES + Duration</code>. <b>Backward Pass</b>: <code class="inline-code">LS = LF − Duration</code>. <i>(quy ước "zero-based" — khớp sơ đồ &amp; bảng ở trên. Một số giáo trình đánh số ngày từ 1 nên viết <code class="inline-code">EF = ES + Dur − 1</code>; chỉ cần dùng nhất quán MỘT hệ trong cả bài toán.)</i></li>
+      </ul>
+
+      <h3>Rút ngắn &amp; tối ưu tài nguyên</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Kỹ thuật</th><th>Cách làm</th><th>Tác dụng phụ</th></tr></thead>
+        <tbody>
+          <tr><td><b>Crashing</b></td><td>Thêm tài nguyên vào việc trên đường găng</td><td><b>Tăng chi phí</b> (chọn cách rẻ nhất mà rút được nhiều nhất)</td></tr>
+          <tr><td><b>Fast Tracking</b></td><td>Làm <b>song song</b> các việc vốn tuần tự</td><td><b>Tăng rủi ro &amp; rework</b></td></tr>
+          <tr><td><b>Resource Leveling</b></td><td>Cân bằng khi tài nguyên bị quá tải/giới hạn</td><td><b>Đường găng có thể ĐỔI</b> (thường dài ra)</td></tr>
+          <tr><td><b>Resource Smoothing</b></td><td>Điều chỉnh trong phạm vi float</td><td><b>KHÔNG đổi</b> đường găng / ngày kết thúc</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · Crash vs Fast Track</span><b>Crashing = "đổ tiền/người"</b> (Cost↑). <b>Fast Tracking = "làm chồng lên nhau"</b> (Risk↑). Còn <b>Leveling đổi critical path, Smoothing KHÔNG</b> — nhớ "Level = làm phẳng, dời đường; Smooth = mượt trong khe float".</div>
+      <div class="callout callout--warn"><span class="callout__label">Đường găng dễ bẫy</span>Critical Path là đường <b>dài nhất</b> nhưng cho ra <b>thời gian ngắn nhất</b> của dự án. Có thể có <b>nhiều hơn 1</b> đường găng (→ rủi ro cao hơn). Ước lượng thời lượng hoạt động <b>không</b> bao gồm lag.</div>
+      <div class="callout callout--note"><span class="callout__label">Free Float vs Total Float (công thức)</span><b>Total Float</b> = LS − ES = LF − EF (được trễ mà không trễ <i>dự án</i>). <b>Free Float</b> = ES(việc-sau sớm nhất) − EF(việc này) − lag (được trễ mà không trễ <i>việc kế tiếp</i>). Ví dụ với sơ đồ trên: B có EF=7, successor D có ES=9 ⇒ <b>Free Float B = 9 − 7 = 2</b>. Trên đường găng cả hai loại float = 0.</div>
+      <div class="callout callout--tip"><span class="callout__label">Lịch trong Agile/Hybrid</span>Dự án adaptive không dùng Gantt/CPM chi tiết mà lập lịch theo <b>iteration</b>: ước lượng bằng <b>story points</b>, đo <b>velocity</b> (điểm/iteration), lập <b>Release Plan</b> (nhiều iteration) &amp; <b>Iteration Plan</b>. Dự báo ngày xong ≈ <i>backlog còn lại ÷ velocity</i>. Xem thêm <a href="part-3-agile.html" class="link-accent link-accent--bold">Phần III · Agile ↗</a>.</div>
+
+      <h3>Biểu đồ Gantt (Bar Chart)</h3>
+      <figure class="diagram"><div class="diagram__title">Gantt — thanh ngang theo thời gian (cùng dữ liệu A/B/C/D)</div>
+<svg viewBox="0 0 470 195" role="img" aria-label="Gantt chart" font-family="ui-monospace, monospace">
+<line x1="70" y1="150" x2="410" y2="150" stroke="#d8d8e0" stroke-width="1.2"/>
+<g font-size="8" fill="#9aa0b5" text-anchor="middle">
+<text x="70" y="164">0</text><text x="130" y="164">2</text><text x="190" y="164">4</text><text x="250" y="164">6</text><text x="310" y="164">8</text><text x="370" y="164">10</text><text x="400" y="164">11</text></g>
+<text x="240" y="184" font-size="10" fill="#76798a" text-anchor="middle">Ngày →</text>
+<g font-size="11" font-weight="600">
+<text x="60" y="46" fill="#3c3e46" text-anchor="end">A</text><rect x="70" y="35" width="90" height="16" rx="3" fill="#5a4be0"/>
+<text x="60" y="76" fill="#3c3e46" text-anchor="end">B</text><rect x="160" y="65" width="120" height="16" rx="3" fill="#c5c5cf"/>
+<text x="60" y="106" fill="#3c3e46" text-anchor="end">C</text><rect x="160" y="95" width="180" height="16" rx="3" fill="#5a4be0"/>
+<text x="60" y="136" fill="#3c3e46" text-anchor="end">D</text><rect x="340" y="125" width="60" height="16" rx="3" fill="#5a4be0"/>
+</g>
+<path d="M400,120 l7,7 l-7,7 l-7,-7 z" fill="#b0125e"/><text x="400" y="118" font-size="8" fill="#b0125e" text-anchor="middle">🏁</text>
+</svg>
+<figcaption>Gantt trực quan hóa lịch theo thời gian (báo cáo cho team). Thanh <span style="color:#5a4be0;font-weight:600">tím</span> = đường găng A→C→D; B có float (xám); ◆ = milestone.</figcaption></figure>
+      <h3>4 "quy luật" ảnh hưởng ước lượng thời gian</h3>
+      <div class="principles">
+        <div class="principle"><span class="principle__num">1</span><span class="principle__title">Parkinson's Law</span><span class="principle__desc">"Work expands to fill the available time" — việc <b>phình ra</b> cho vừa thời gian được cấp. Cho dư giờ → xong đúng hạn chót chứ không sớm.</span></div>
+        <div class="principle"><span class="principle__num">2</span><span class="principle__title">Student Syndrome</span><span class="principle__desc">Chần chừ tới <b>phút chót</b> mới bắt đầu (nước tới chân mới nhảy).</span></div>
+        <div class="principle"><span class="principle__num">3</span><span class="principle__title">Murphy's Law</span><span class="principle__desc">"What can go wrong, will go wrong" — điều gì có thể sai thì sẽ sai.</span></div>
+        <div class="principle"><span class="principle__num">4</span><span class="principle__title">Padding</span><span class="principle__desc">Team <b>độn thêm</b> giờ vào ước lượng để "phòng thân" → nên tách riêng thành reserve minh bạch.</span></div>
+      </div>
+      <div class="callout callout--note"><span class="callout__label">Critical Chain Method (CCM) &amp; Buffers</span>CCM = biến thể của CPM có tính tới <b>giới hạn tài nguyên</b>. Thay vì độn giờ vào từng việc (chống Padding &amp; Student Syndrome), CCM <b>gom dự phòng</b> thành các <b>buffer</b> minh bạch: <b>Project Buffer</b> (đặt cuối chuỗi găng — bảo vệ ngày kết thúc) &amp; <b>Feeding Buffer</b> (bảo vệ chuỗi găng khỏi chậm trễ của các nhánh phụ nhập vào). Quản lý lịch trở thành <b>quản lý mức tiêu hao buffer</b>, không bám từng activity riêng lẻ.</div>
+
+      <h3>Rolling Wave &amp; Planning Package</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Rolling Wave Planning</b> — an iterative planning technique in which the work in the near term is planned in detail while work in the future is planned at a higher level. <i>(lập kế hoạch cuốn chiếu)</i></div>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Planning Package</b> — a WBS component below the control account with known work content but without detailed schedule activities. <i>(gói kế hoạch — chưa phân rã thành activity)</i></div>
+      <p>Việc gần thì lập kế hoạch <b>chi tiết</b>, việc xa để <b>khái quát</b>, tới gần mới làm chi tiết. Việc xa để ở dạng <b>Planning Package</b> (chưa có activity); khi rõ hơn thì phân rã thành <b>Work Package</b>.</p>
+
+      <h3>4 loại Dependency (bổ sung)</h3>
+      <p>Ngoài <b>Mandatory</b> (Hard Logic) vs <b>Discretionary</b> (Soft Logic), còn phân theo nguồn:</p>
+      <div class="features">
+        <div class="feature"><b>Internal</b><span>Phụ thuộc <b>trong</b> tầm kiểm soát của nhóm dự án (vd chờ team thiết kế xong).</span></div>
+        <div class="feature"><b>External</b><span>Phụ thuộc <b>ngoài</b> tầm kiểm soát (nhà cung cấp, cơ quan pháp luật, dự án khác).</span></div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo ghi nhớ · dependency</span>Hai trục ghép thành <b>4 tổ hợp</b>: Mandatory-Internal, Mandatory-External, Discretionary-Internal, Discretionary-External. Trục 1 = <b>bắt buộc hay tùy chọn</b>; trục 2 = <b>trong hay ngoài</b> tầm kiểm soát.</div>
+
+      <h3>Project Float · Gantt vs Milestone Chart</h3>
+      <div class="callout callout--en"><span class="callout__label">EN</span><b>Project Float</b> — the amount of time a project can be delayed without delaying an externally imposed completion date. <i>(khác Total/Free Float — tính ở cấp toàn dự án)</i></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Loại biểu đồ</th><th>Dùng để</th><th>Báo cho ai</th></tr></thead>
+        <tbody>
+          <tr><td><b>Gantt / Bar Chart</b></td><td>Theo dõi tiến độ chi tiết từng activity</td><td><b>Nhóm dự án</b> (tracking)</td></tr>
+          <tr><td><b>Milestone Chart</b></td><td>Chỉ hiển thị các <b>mốc lớn</b> (duration 0)</td><td><b>Lãnh đạo cấp cao</b> (báo cáo)</td></tr>
+        </tbody>
+      </table></div>

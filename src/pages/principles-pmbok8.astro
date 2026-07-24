@@ -1,0 +1,9 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import content from '../content-html/principles-pmbok8.html?raw';
+const title = "PMBOK 8 — Mindset, 6 Nguyên lý &amp; 7 Performance Domains — Học PMP";
+---
+
+<PageLayout title={title} pageFile="principles-pmbok8.html">
+  <Fragment set:html={content} />
+</PageLayout>

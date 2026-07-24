@@ -1,0 +1,18 @@
+---
+// PageLayout.astro — khung cho các trang KHÔNG phải chủ đề (index, hub, agile,
+// glossary, exam…). Chúng có sidebar/nội dung riêng → chỉ cần bọc head + navbar,
+// phần thân giữ nguyên (inject qua <slot/> hoặc set:html).
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+
+interface Props {
+  title: string;
+  pageFile: string;
+}
+const { title, pageFile } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <Navbar pageFile={pageFile} />
+  <slot />
+</BaseLayout>

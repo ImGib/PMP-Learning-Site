@@ -1,0 +1,9 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import content from '../content-html/part-3-agile.html?raw';
+const title = "Phần III · Agile &amp; Adaptive — Học PMP với PMBOK 8";
+---
+
+<PageLayout title={title} pageFile="part-3-agile.html">
+  <Fragment set:html={content} />
+</PageLayout>

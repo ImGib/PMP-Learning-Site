@@ -1,0 +1,236 @@
+<div class="shell" id="top">
+  <aside class="sidebar" id="side">
+    <a class="sidebar__back" href="index.html">← Trang chủ</a>
+    <h4>Bảng công thức</h4>
+    <a href="#cheatsheet"><span class="sidebar__num">∑</span>Tất cả công thức</a>
+    <a href="#logic"><span class="sidebar__num">◆</span>Nhớ theo logic</a>
+    <h4>Ví dụ giải từng bước</h4>
+    <a href="#ex-evm"><span class="sidebar__num">01</span>EVM — Earned Value</a>
+    <a href="#ex-pert"><span class="sidebar__num">02</span>PERT — 3 điểm</a>
+    <a href="#ex-emv"><span class="sidebar__num">03</span>EMV &amp; Decision Tree</a>
+    <a href="#ex-cpm"><span class="sidebar__num">04</span>CPM — Critical Path &amp; Float</a>
+    <a href="#ex-comm"><span class="sidebar__num">05</span>Communication Channels</a>
+    <a href="#ex-little"><span class="sidebar__num">06</span>Little's Law &amp; Velocity</a>
+    <a href="#ex-pta"><span class="sidebar__num">07</span>PTA — Hợp đồng FPIF</a>
+    <h4>Luyện tập</h4>
+    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Quiz tính toán →</a>
+  </aside>
+  <main>
+    <div class="hero">
+      <span class="hero__eyebrow">Công thức trọng tâm · mỗi bài giải chi tiết từng bước</span>
+      <h1>Công thức &amp; ví dụ tính toán</h1>
+      <p>Đề PMP chỉ có ~2 câu tính toán (chủ yếu <b>EVM</b>), nhưng đó là điểm "ăn chắc" nếu bạn thuộc công thức. Trang này gom mọi công thức + <b>7 ví dụ giải từng bước</b> theo đúng cách bạn nên trình bày trong phòng thi.</p>
+      <div class="hero__jump">
+        <a href="#ex-evm"><span class="hero__jump-num">01</span>EVM</a>
+        <a href="#ex-pert"><span class="hero__jump-num">02</span>PERT</a>
+        <a href="#ex-emv"><span class="hero__jump-num">03</span>EMV</a>
+        <a href="#ex-cpm"><span class="hero__jump-num">04</span>CPM</a>
+        <a href="#ex-pta"><span class="hero__jump-num">07</span>PTA</a>
+      </div>
+    </div>
+
+    <!-- CHEATSHEET -->
+    <section id="cheatsheet">
+      <div class="section__head"><h2>Bảng công thức đầy đủ</h2><span class="section__tag">brain dump trước khi thi</span></div>
+      <p class="section__desc">Ngay khi vào phòng thi, được phát giấy nháp → chép ngay khối này ra. Sau đó chỉ việc nhìn giấy.</p>
+      <div class="formula">
+        <div class="formula__row"><b>═══ EVM — Earned Value ═══</b></div>
+        <div class="formula__row"><b>SV</b> = EV − PV&nbsp;&nbsp;&nbsp;&nbsp;<b>CV</b> = EV − AC&nbsp;&nbsp;&nbsp;&nbsp;<span class="formula__cm">(&lt;0 = xấu)</span></div>
+        <div class="formula__row"><b>SPI</b> = EV / PV&nbsp;&nbsp;&nbsp;<b>CPI</b> = EV / AC&nbsp;&nbsp;&nbsp;<span class="formula__cm">(&lt;1 = xấu)</span></div>
+        <div class="formula__row"><b>EAC</b> = BAC / CPI&nbsp;&nbsp;<span class="formula__cm">(sai lệch tiếp diễn — mặc định)</span></div>
+        <div class="formula__row"><b>EAC</b> = AC + (BAC − EV)&nbsp;&nbsp;<span class="formula__cm">(phần còn lại đúng kế hoạch)</span></div>
+        <div class="formula__row"><b>EAC</b> = AC + (BAC − EV)/(CPI × SPI)&nbsp;&nbsp;<span class="formula__cm">(giữ deadline)</span></div>
+        <div class="formula__row"><b>ETC</b> = EAC − AC&nbsp;&nbsp;&nbsp;&nbsp;<b>VAC</b> = BAC − EAC</div>
+        <div class="formula__row"><b>TCPI</b> = (BAC − EV)/(BAC − AC)&nbsp;&nbsp;<span class="formula__cm">(&gt;1 = khó hơn)</span></div>
+        <div class="formula__row"> </div>
+        <div class="formula__row"><b>═══ PERT (Schedule &amp; Cost) ═══</b></div>
+        <div class="formula__row"><b>Beta</b>&nbsp;&nbsp;E = (O + 4M + P) / 6</div>
+        <div class="formula__row"><b>Triangular</b>&nbsp;&nbsp;E = (O + M + P) / 3</div>
+        <div class="formula__row"><b>SD</b> = (P − O) / 6&nbsp;&nbsp;&nbsp;<b>Variance</b> = SD²</div>
+        <div class="formula__row"> </div>
+        <div class="formula__row"><b>═══ Schedule / CPM ═══</b></div>
+        <div class="formula__row"><b>EF</b> = ES + Duration − 1&nbsp;&nbsp;&nbsp;<b>LS</b> = LF − Duration + 1</div>
+        <div class="formula__row"><b>Total Float</b> = LS − ES = LF − EF</div>
+        <div class="formula__row"> </div>
+        <div class="formula__row"><b>═══ Risk · Communication · Agile ═══</b></div>
+        <div class="formula__row"><b>EMV</b> = Probability × Impact</div>
+        <div class="formula__row"><b>Channels</b> = N(N − 1) / 2</div>
+        <div class="formula__row"><b>Cycle Time</b> = WIP / Throughput&nbsp;&nbsp;<span class="formula__cm">(Little's Law)</span></div>
+        <div class="formula__row"><b>Velocity</b> = Story Points / iteration</div>
+        <div class="formula__row"> </div>
+        <div class="formula__row"><b>═══ Procurement ═══</b></div>
+        <div class="formula__row"><b>PTA</b> = (Ceiling − Target Price)/Buyer share + Target Cost</div>
+      </div>
+    </section>
+
+    <!-- LOGIC -->
+    <section id="logic">
+      <div class="section__head"><h2>Nhớ công thức theo LOGIC (không học vẹt)</h2><span class="section__tag">hiểu &amp; suy ra</span></div>
+      <p class="section__desc">Đừng nhồi nhét. Hiểu <b>vì sao</b> công thức có dạng đó → tự suy lại được cả khi quên.</p>
+
+      <h3>① EVM — chỉ cần 1 quy tắc gốc</h3>
+      <div class="callout callout--tip"><span class="callout__label">Quy tắc vàng · EVM</span><b>"EV luôn đứng đầu; so với PV là TIẾN ĐỘ, so với AC là CHI PHÍ."</b> Từ đó suy ra tất cả:
+      <ul>
+        <li><b>Variance = phép TRỪ</b> (chênh lệch tuyệt đối): SV = EV−PV, CV = EV−AC.</li>
+        <li><b>Index = phép CHIA</b> (tỷ lệ hiệu quả): SPI = EV/PV, CPI = EV/AC.</li>
+        <li><b>Dương / &gt;1 = TỐT</b> (đạt nhiều hơn tiêu/kế hoạch), <b>âm / &lt;1 = XẤU</b>.</li>
+      </ul></div>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Muốn biết</th><th>So EV với</th><th>Variance (trừ)</th><th>Index (chia)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Tiến độ</b> (Schedule)</td><td><b>PV</b></td><td>SV = EV − PV</td><td>SPI = EV / PV</td></tr>
+          <tr><td><b>Chi phí</b> (Cost)</td><td><b>AC</b></td><td>CV = EV − AC</td><td>CPI = EV / AC</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout callout--note"><span class="callout__label">Chọn công thức EAC nào?</span>Hỏi 1 câu: <b>"Sai lệch hiện tại có tiếp diễn không?"</b>
+      <ul>
+        <li><b>Có, theo tỷ lệ CPI</b> (thường gặp) → <b>EAC = BAC / CPI</b>.</li>
+        <li><b>Không, phần còn lại đúng kế hoạch</b> → <b>EAC = AC + (BAC − EV)</b>.</li>
+        <li><b>Vừa chậm vừa vượt chi, phải kịp deadline</b> → chia cho <b>CPI × SPI</b>.</li>
+      </ul>
+      Nhớ: <b>ETC</b> = "còn phải chi" = EAC − AC; <b>VAC</b> = "lệch cuối cùng" = BAC − EAC.</div>
+
+      <h3>② PERT — trung bình có trọng số</h3>
+      <div class="callout callout--tip"><span class="callout__label">Logic · PERT</span>Chỉ là <b>trung bình</b> của 3 kịch bản O/M/P, nhưng <b>tin "khả năng nhất" (M) gấp 4 lần</b> → nhân 4M, cộng O và P, chia tổng trọng số <b>(4+1+1)=6</b>: <b>E = (O + 4M + P) / 6</b>. Độ lệch chuẩn = <b>khoảng dao động chia 6</b>: <b>SD = (P − O) / 6</b> (P và O cách nhau ~6σ). Triangular = tin đều 3 kịch bản → chia 3.</div>
+
+      <h3>③ EMV, kênh giao tiếp, Little's Law</h3>
+      <div class="features">
+        <div class="feature"><b>EMV = P × Impact</b><span>Giá trị <i>kỳ vọng</i> = xác suất × hậu quả. Threat mang dấu âm, opportunity dương. Nhiều rủi ro → cộng lại.</span></div>
+        <div class="feature"><b>Channels = n(n−1)/2</b><span>Đếm số <i>cặp</i> người: mỗi người nối n−1 người khác → n(n−1), chia 2 vì cặp A-B = B-A. "Thêm bao nhiêu" → lấy hiệu.</span></div>
+        <div class="feature"><b>Cycle Time = WIP / Throughput</b><span>Little's Law: hàng dài (WIP) chia tốc độ xử lý (throughput) = thời gian chờ. Muốn nhanh → giảm WIP hoặc tăng throughput.</span></div>
+        <div class="feature"><b>Float = LS − ES</b><span>Dư địa trễ = "muộn nhất được phép" − "sớm nhất có thể". Bằng 0 → nằm trên đường găng.</span></div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo phòng thi</span>Đầu giờ, chép <b>1 quy tắc gốc EVM</b> + <b>công thức PERT</b> ra giấy nháp. Mọi công thức còn lại suy ra được → không cần thuộc lòng 15 công thức rời rạc.</div>
+    </section>
+
+    <!-- EVM -->
+    <section id="ex-evm">
+      <div class="section__head"><h2>01 · EVM — Earned Value</h2><span class="section__tag">⭐ chắc chắn ra thi</span></div>
+      <p class="section__desc">Bài EVM luôn cho 3 con số (hoặc dữ kiện suy ra 3 con số): <b>PV, EV, AC</b>. Tìm được 3 số này là giải được tất cả.</p>
+      <div class="example">
+        <div class="example__prompt"><b>Đề:</b> Dự án ngân sách <b>BAC = $100,000</b>, kéo dài 10 tháng, kế hoạch chi đều. Cuối <b>tháng 4</b>, bạn đã hoàn thành <b>30%</b> khối lượng công việc và đã chi <b>$35,000</b>. Tính SV, CV, SPI, CPI, EAC, ETC, VAC, TCPI và nhận xét.</div>
+        <div class="steps">
+          <div class="steps__step"><b>Tính 3 giá trị lõi.</b><br><span class="steps__calc">PV = 100,000 × (4/10) = $40,000</span> &nbsp; <span class="steps__calc">EV = 100,000 × 30% = $30,000</span> &nbsp; <span class="steps__calc">AC = $35,000 (đề cho)</span></div>
+          <div class="steps__step"><b>Variance (phép TRỪ, EV đứng đầu).</b><br><span class="steps__calc">SV = EV − PV = 30,000 − 40,000 = −$10,000</span> → âm = <b>chậm tiến độ</b><br><span class="steps__calc">CV = EV − AC = 30,000 − 35,000 = −$5,000</span> → âm = <b>vượt ngân sách</b></div>
+          <div class="steps__step"><b>Index (phép CHIA, EV ở tử).</b><br><span class="steps__calc">SPI = EV/PV = 30,000/40,000 = 0.75</span> → &lt;1, chậm<br><span class="steps__calc">CPI = EV/AC = 30,000/35,000 ≈ 0.857</span> → &lt;1, đắt</div>
+          <div class="steps__step"><b>Dự báo tổng chi phí (EAC) — dùng công thức mặc định "sai lệch tiếp diễn".</b><br><span class="steps__calc">EAC = BAC/CPI = 100,000 / 0.857 ≈ $116,667</span></div>
+          <div class="steps__step"><b>ETC (còn phải chi) &amp; VAC (lệch dự báo).</b><br><span class="steps__calc">ETC = EAC − AC = 116,667 − 35,000 = $81,667</span><br><span class="steps__calc">VAC = BAC − EAC = 100,000 − 116,667 = −$16,667</span> → sẽ vượt ~$16.7k</div>
+          <div class="steps__step"><b>TCPI (hiệu suất cần cho phần còn lại, bám BAC).</b><br><span class="steps__calc">TCPI = (BAC−EV)/(BAC−AC) = (100,000−30,000)/(100,000−35,000) = 70,000/65,000 ≈ 1.08</span></div>
+          <div class="steps__step"><b>Kết luận.</b><br><span class="steps__ans">Dự án CHẬM tiến độ &amp; VƯỢT chi phí. Muốn về đúng ngân sách gốc phải làm hiệu quả hơn 8% (TCPI ≈ 1.08).</span></div>
+        </div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo phòng thi</span>Luôn viết PV, EV, AC ra trước. Nhớ: <b>"P đi với Schedule (SV/SPI), A đi với Cost (CV/CPI)"</b>. Nếu đề nói "cứ đà này" → EAC = BAC/CPI. Nếu nói "phần còn lại theo kế hoạch" → EAC = AC + (BAC−EV).</div>
+    </section>
+
+    <!-- PERT -->
+    <section id="ex-pert">
+      <div class="section__head"><h2>02 · PERT — Ước lượng 3 điểm</h2><span class="section__tag">Schedule / Cost</span></div>
+      <p class="section__desc">PERT dùng 3 giá trị Optimistic (O), Most likely (M), Pessimistic (P) để ra ước lượng có trọng số.</p>
+      <div class="example">
+        <div class="example__prompt"><b>Đề:</b> Một công việc ước tính: lạc quan <b>O = 8</b> ngày, khả năng nhất <b>M = 14</b> ngày, bi quan <b>P = 26</b> ngày. Tính ước lượng PERT (Beta), độ lệch chuẩn, và khoảng tin cậy ±1σ.</div>
+        <div class="steps">
+          <div class="steps__step"><b>PERT Beta (nhấn trọng số 4 cho M).</b><br><span class="steps__calc">E = (O + 4M + P)/6 = (8 + 4×14 + 26)/6 = (8 + 56 + 26)/6 = 90/6 = 15 ngày</span></div>
+          <div class="steps__step"><b>Độ lệch chuẩn (Standard Deviation).</b><br><span class="steps__calc">SD = (P − O)/6 = (26 − 8)/6 = 18/6 = 3 ngày</span></div>
+          <div class="steps__step"><b>Khoảng ±1σ (≈68% khả năng nằm trong khoảng này).</b><br><span class="steps__calc">15 − 3 = 12 ngày &nbsp;→&nbsp; 15 + 3 = 18 ngày</span><br><span class="steps__ans">Ước lượng PERT = 15 ngày; nhiều khả năng công việc hoàn thành trong 12–18 ngày.</span></div>
+          <div class="steps__step"><b>(So sánh) nếu đề hỏi Triangular thay vì Beta:</b><br><span class="steps__calc">E = (O + M + P)/3 = (8 + 14 + 26)/3 = 48/3 = 16 ngày</span></div>
+        </div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo phòng thi</span>Đọc kỹ đề hỏi <b>Beta</b> (chia 6, có 4M) hay <b>Triangular</b> (chia 3). Mặc định "PERT" = Beta. SD luôn = (P−O)/6. Nếu hỏi phương sai (variance) thì bình phương SD.</div>
+    </section>
+
+    <!-- EMV -->
+    <section id="ex-emv">
+      <div class="section__head"><h2>03 · EMV &amp; Decision Tree</h2><span class="section__tag">Risk</span></div>
+      <p class="section__desc">EMV = Xác suất × Tác động. Threat để dấu âm, Opportunity để dấu dương.</p>
+      <div class="example">
+        <div class="example__prompt"><b>Đề A (Contingency Reserve):</b> Risk register có: Risk 1 (threat) 30% × −$50,000; Risk 2 (threat) 20% × −$20,000; Opportunity 3: 40% × +$25,000. Tính EMV từng cái, dự phòng cho threats, và EMV tổng.</div>
+        <div class="steps">
+          <div class="steps__step"><b>EMV từng rủi ro.</b><br><span class="steps__calc">Risk 1 = 0.30 × (−50,000) = −$15,000</span><br><span class="steps__calc">Risk 2 = 0.20 × (−20,000) = −$4,000</span><br><span class="steps__calc">Opp 3 = 0.40 × (+25,000) = +$10,000</span></div>
+          <div class="steps__step"><b>Contingency Reserve cho threats.</b><br><span class="steps__calc">|−15,000| + |−4,000| = $19,000</span> → nên dành <b>$19,000</b> dự phòng cho 2 threat.</div>
+          <div class="steps__step"><b>EMV tổng (gộp cả cơ hội).</b><br><span class="steps__calc">−15,000 − 4,000 + 10,000 = −$9,000</span><br><span class="steps__ans">Kỳ vọng ròng −$9,000. Dự phòng rủi ro (threats) = $19,000.</span></div>
+        </div>
+      </div>
+      <div class="example">
+        <div class="example__prompt"><b>Đề B (Decision Tree — Build vs Buy):</b> <b>Build</b>: chi phí $200k; 60% thành công → thu $500k, 40% thất bại → thu $100k. <b>Buy</b>: chi phí $120k; 80% thành công → thu $400k, 20% thất bại → thu $150k. Chọn phương án nào?</div>
+        <div class="steps">
+          <div class="steps__step"><b>EMV nhánh Build (thu kỳ vọng − chi phí).</b><br><span class="steps__calc">Thu = 0.6×500k + 0.4×100k = 300k + 40k = 340k</span><br><span class="steps__calc">Net = 340k − 200k = $140,000</span></div>
+          <div class="steps__step"><b>EMV nhánh Buy.</b><br><span class="steps__calc">Thu = 0.8×400k + 0.2×150k = 320k + 30k = 350k</span><br><span class="steps__calc">Net = 350k − 120k = $230,000</span></div>
+          <div class="steps__step"><b>So sánh &amp; chọn.</b><br><span class="steps__ans">Buy ($230k) &gt; Build ($140k) → chọn BUY.</span></div>
+        </div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo phòng thi</span>Trong Decision Tree nhớ <b>trừ chi phí đầu tư của mỗi nhánh</b> — kết quả có thể đảo ngược so với khi chỉ nhìn EMV thu về. Threat luôn mang dấu âm.</div>
+    </section>
+
+    <!-- CPM -->
+    <section id="ex-cpm">
+      <div class="section__head"><h2>04 · CPM — Critical Path &amp; Float</h2><span class="section__tag">Schedule</span></div>
+      <p class="section__desc">Critical Path = đường DÀI NHẤT = thời gian ngắn nhất của dự án. Float = thời gian một việc được trễ.</p>
+      <div class="example">
+        <div class="example__prompt"><b>Đề:</b> 4 hoạt động — A(3 ngày, không có việc trước) · B(4, sau A) · C(6, sau A) · D(2, sau B và C). Tìm critical path, thời lượng dự án, và float của B.</div>
+        <div class="steps">
+          <div class="steps__step"><b>Liệt kê các đường &amp; tính tổng thời lượng.</b><br><span class="steps__calc">Đường 1: A→B→D = 3+4+2 = 9 ngày</span><br><span class="steps__calc">Đường 2: A→C→D = 3+6+2 = 11 ngày</span></div>
+          <div class="steps__step"><b>Critical Path = đường DÀI NHẤT.</b><br><span class="steps__ans">Critical Path = A → C → D = 11 ngày (float = 0). Dự án ngắn nhất là 11 ngày.</span></div>
+          <div class="steps__step"><b>Forward Pass (ES/EF, bắt đầu ngày 0).</b><br><span class="steps__calc">A: ES0 EF3 · B: ES3 EF7 · C: ES3 EF9 · D: ES9 (=max EF của B,C) EF11</span></div>
+          <div class="steps__step"><b>Backward Pass (LS/LF, LF của D = 11).</b><br><span class="steps__calc">D: LF11 LS9 · C: LF9 LS3 · B: LF9 (=LS của D) LS5 · A: LF3 LS0</span></div>
+          <div class="steps__step"><b>Float của B = LS − ES = LF − EF.</b><br><span class="steps__calc">Total Float(B) = 5 − 3 = 2 (hoặc 9 − 7 = 2)</span><br><span class="steps__ans">B có 2 ngày float — được trễ tối đa 2 ngày mà không trễ dự án. A, C, D nằm trên đường găng → float = 0.</span></div>
+        </div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo phòng thi</span>Cách nhanh tìm float của một việc không nằm trên critical path: <b>Float = (độ dài critical path) − (độ dài đường dài nhất đi qua việc đó)</b>. Ở đây đường qua B dài 9, critical path 11 → float B = 2.</div>
+    </section>
+
+    <!-- COMM -->
+    <section id="ex-comm">
+      <div class="section__head"><h2>05 · Communication Channels</h2><span class="section__tag">Stakeholder &amp; Communication</span></div>
+      <p class="section__desc">Số kênh giao tiếp = N(N−1)/2. Bẫy hay gặp: "thêm bao nhiêu kênh" → phải lấy HIỆU.</p>
+      <div class="example">
+        <div class="example__prompt"><b>Đề:</b> Dự án đang có <b>6</b> thành viên. Bổ sung thêm <b>2</b> người nữa. Hỏi tổng số kênh giao tiếp tăng thêm bao nhiêu?</div>
+        <div class="steps">
+          <div class="steps__step"><b>Kênh ban đầu (N = 6).</b><br><span class="steps__calc">6 × (6−1) / 2 = 6 × 5 / 2 = 15 kênh</span></div>
+          <div class="steps__step"><b>Kênh sau khi thêm (N = 8).</b><br><span class="steps__calc">8 × (8−1) / 2 = 8 × 7 / 2 = 28 kênh</span></div>
+          <div class="steps__step"><b>Số kênh TĂNG THÊM = hiệu hai giá trị.</b><br><span class="steps__calc">28 − 15 = 13 kênh</span><br><span class="steps__ans">Tăng thêm 13 kênh (KHÔNG phải 28).</span></div>
+        </div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo phòng thi</span>Nếu đề nhắc "gồm cả bạn / cả PM / cả giảng viên" → nhớ cộng người đó vào N. Câu hỏi "tăng thêm" luôn lấy hiệu, đừng khoanh nhầm tổng mới.</div>
+    </section>
+
+    <!-- LITTLE -->
+    <section id="ex-little">
+      <div class="section__head"><h2>06 · Little's Law &amp; Velocity</h2><span class="section__tag">Agile</span></div>
+      <p class="section__desc">Cycle Time = WIP / Throughput. Velocity = story points hoàn thành mỗi sprint.</p>
+      <div class="example">
+        <div class="example__prompt"><b>Đề A (Little's Law):</b> Hệ thống có <b>WIP = 20</b> hạng mục, <b>Throughput = 4</b> hạng mục/tuần. Cycle time trung bình bao lâu?</div>
+        <div class="steps">
+          <div class="steps__step"><b>Áp dụng Little's Law.</b><br><span class="steps__calc">Cycle Time = WIP / Throughput = 20 / 4 = 5 tuần</span><br><span class="steps__ans">Trung bình mỗi hạng mục mất 5 tuần từ lúc bắt đầu tới lúc xong.</span></div>
+        </div>
+      </div>
+      <div class="example">
+        <div class="example__prompt"><b>Đề B (Velocity):</b> Velocity 4 sprint gần nhất: 22, 26, 24, 28 điểm. Product backlog còn <b>200</b> story points. Cần bao nhiêu sprint nữa để hoàn thành?</div>
+        <div class="steps">
+          <div class="steps__step"><b>Velocity trung bình.</b><br><span class="steps__calc">(22 + 26 + 24 + 28) / 4 = 100 / 4 = 25 điểm/sprint</span></div>
+          <div class="steps__step"><b>Số sprint còn lại.</b><br><span class="steps__calc">200 / 25 = 8 sprint</span><br><span class="steps__ans">Cần khoảng 8 sprint nữa.</span></div>
+        </div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo phòng thi</span>Giảm cycle time = giảm WIP hoặc tăng throughput. <b>Không so sánh velocity giữa 2 team</b> — story point là tương đối, mỗi team tự định nghĩa.</div>
+    </section>
+
+    <!-- PTA -->
+    <section id="ex-pta">
+      <div class="section__head"><h2>07 · PTA — Point of Total Assumption</h2><span class="section__tag">Procurement · chỉ cho FPIF</span></div>
+      <p class="section__desc">PTA = điểm chi phí mà từ đó <b>seller gánh 100%</b> mọi chi phí vượt thêm (chỉ áp dụng cho hợp đồng FPIF).</p>
+      <div class="example">
+        <div class="example__prompt"><b>Đề:</b> Hợp đồng FPIF: Target Cost = $200,000; Target Fee = $30,000 (→ Target Price = $230,000); Ceiling Price = $270,000; tỷ lệ chia (buyer:seller) = <b>60:40</b>, tức Buyer share = 60%. Tính PTA.</div>
+        <div class="steps">
+          <div class="steps__step"><b>Xác định các thành phần.</b><br><span class="steps__calc">Ceiling Price = 270,000 · Target Price = 230,000 · Target Cost = 200,000 · Buyer share = 0.60</span></div>
+          <div class="steps__step"><b>Áp dụng công thức PTA.</b><br><span class="steps__calc">PTA = (Ceiling − Target Price)/Buyer share + Target Cost</span></div>
+          <div class="steps__step"><b>Thay số.</b><br><span class="steps__calc">= (270,000 − 230,000)/0.60 + 200,000 = 40,000/0.60 + 200,000</span><br><span class="steps__calc">= 66,667 + 200,000 = $266,667</span></div>
+          <div class="steps__step"><b>Ý nghĩa.</b><br><span class="steps__ans">Nếu chi phí thực tế vượt $266,667, mọi đồng vượt thêm seller chịu 100%. PTA luôn ≤ Ceiling Price.</span></div>
+        </div>
+      </div>
+      <div class="callout callout--tip"><span class="callout__label">Mẹo phòng thi</span>Chỉ FPIF mới có PTA. Nhớ mẫu số là <b>Buyer's share ratio</b> (phần buyer gánh khi vượt chi). PTA cao hơn Target Cost và không vượt quá Ceiling Price.</div>
+    </section>
+
+    <footer>
+      <b>Công thức &amp; ví dụ</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP. Con số trong ví dụ là minh họa để luyện phương pháp. Luyện thêm: <a href="flashcard-quiz.html">Flashcard &amp; Quiz →</a>
+    </footer>
+  </main>
+</div>

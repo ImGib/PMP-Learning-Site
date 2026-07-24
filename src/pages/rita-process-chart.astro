@@ -1,0 +1,9 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import content from '../content-html/rita-process-chart.html?raw';
+const title = "Rita Process Chart — 49 Process — Học PMP với PMBOK 8";
+---
+
+<PageLayout title={title} pageFile="rita-process-chart.html">
+  <Fragment set:html={content} />
+</PageLayout>

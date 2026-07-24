@@ -1,0 +1,62 @@
+---
+// TopicLayout.astro — chrome của một trang chủ đề Phần II (sidebar + hero + footer),
+// render TỪ DATA lúc build. Thay cho topic-chrome.js chạy lúc runtime.
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import { TOPICS } from '../data/site';
+
+interface Props {
+  page: string;
+  title: string;
+}
+const { page, title } = Astro.props;
+
+const idx = TOPICS.findIndex((t) => t.id === page);
+const t = TOPICS[idx];
+const prev = idx > 0 ? TOPICS[idx - 1] : null;
+const next = idx < TOPICS.length - 1 ? TOPICS[idx + 1] : null;
+---
+
+<BaseLayout title={title} page={page}>
+  <Navbar pageFile={`${page}.html`} />
+  <div class="shell" id="top">
+    <aside class="sidebar" id="side">
+      <a class="sidebar__back" href="part-2-topics.html">← Phần II · Mục lục</a>
+      <h4>8 chủ đề kiến thức</h4>
+      {
+        TOPICS.map((x) => (
+          <a href={`${x.id}.html`} class:list={[{ 'is-active': x.id === page }]}>
+            <span class="sidebar__num">{x.num}</span>
+            {x.short}
+          </a>
+        ))
+      }
+      <h4>Liên quan</h4>
+      <a href="formulas-and-examples.html"><span class="sidebar__num">∑</span>Công thức & ví dụ</a>
+      <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard & Quiz</a>
+    </aside>
+    <main>
+      <div class="hero" id="topic-hero">
+        <span class="hero__eyebrow">Phần II · Chủ đề {t.num}/08 — 8 chủ đề kiến thức</span>
+        <h1>{t.title}</h1>
+        <p>{t.blurb}</p>
+      </div>
+      <section id={page}>
+        <slot />
+      </section>
+      <section id="miniQuiz" class="mini-quiz"></section>
+      <footer id="topic-footer">
+        <b>Phần II · {t.title}</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.<br />
+        {prev && <a href={`${prev.id}.html`}>← {prev.title}</a>}
+        {prev && next && ' · '}
+        {
+          next ? (
+            <a href={`${next.id}.html`}>{next.title} →</a>
+          ) : (
+            <a href="part-3-agile.html">Phần III — Agile →</a>
+          )
+        }
+      </footer>
+    </main>
+  </div>
+</BaseLayout>

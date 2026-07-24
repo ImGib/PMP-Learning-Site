@@ -1,0 +1,9 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import content from '../content-html/mock-exam.html?raw';
+const title = "Đề thi thử PMP — random, tính giờ, chấm điểm";
+---
+
+<PageLayout title={title} pageFile="mock-exam.html">
+  <Fragment set:html={content} />
+</PageLayout>

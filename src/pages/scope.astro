@@ -1,0 +1,9 @@
+---
+import TopicLayout from '../layouts/TopicLayout.astro';
+import content from '../content-html/scope.html?raw';
+const title = "Scope — Phạm vi — Phần II · Học PMP với PMBOK 8";
+---
+
+<TopicLayout page="scope" title={title}>
+  <Fragment set:html={content} />
+</TopicLayout>

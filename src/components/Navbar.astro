@@ -1,0 +1,59 @@
+---
+// Navbar.astro — navbar render lúc BUILD (trước đây inject bằng JS lúc chạy → FOUC).
+// Cùng data, cùng class BEM → HTML xuất ra y hệt bản renderNavbar().
+import { NAV, PART2_TOPICS, isGroup } from '../data/nav';
+
+interface Props {
+  pageFile?: string;
+}
+const { pageFile = 'index.html' } = Astro.props;
+
+const isActive = (href: string): boolean =>
+  href === pageFile || (href === 'phan-2-chu-de.html' && PART2_TOPICS.has(pageFile));
+---
+
+<div class="topbar">
+  <a class="topbar__brand" href="index.html">
+    <span class="topbar__brand-mark">P</span> PMBOK 8
+    <small class="topbar__brand-tag">học PMP · v3</small>
+  </a>
+  <nav class="topbar__nav">
+    {
+      NAV.map((item) =>
+        isGroup(item) ? (
+          <div class="topbar__group">
+            <button
+              class:list={[
+                'topbar__grouptop',
+                { 'topbar__grouptop--current': item.children.some((c) => isActive(c.href)) },
+              ]}
+              type="button"
+              aria-haspopup="true"
+            >
+              {item.label}
+              <span class="topbar__caret">▾</span>
+            </button>
+            <div class="topbar__panel">
+              {item.children.map((c) => (
+                <a
+                  class:list={['topbar__panellink', { 'topbar__panellink--current': isActive(c.href) }]}
+                  href={c.href}
+                >
+                  {c.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            class:list={['topbar__link', { 'topbar__link--current': isActive(item.href) }]}
+            href={item.href}
+          >
+            {item.label}
+          </a>
+        )
+      )
+    }
+  </nav>
+  <button class="topbar__menu" id="menuBtn" aria-label="menu">☰</button>
+</div>

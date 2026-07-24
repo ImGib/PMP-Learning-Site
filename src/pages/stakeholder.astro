@@ -1,0 +1,9 @@
+---
+import TopicLayout from '../layouts/TopicLayout.astro';
+import content from '../content-html/stakeholder.html?raw';
+const title = "Stakeholder & Communication — Phần II · Học PMP với PMBOK 8";
+---
+
+<TopicLayout page="stakeholder" title={title}>
+  <Fragment set:html={content} />
+</TopicLayout>

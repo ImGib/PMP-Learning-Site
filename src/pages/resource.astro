@@ -1,0 +1,9 @@
+---
+import TopicLayout from '../layouts/TopicLayout.astro';
+import content from '../content-html/resource.html?raw';
+const title = "Resource — Nguồn lực & Con người — Phần II · Học PMP với PMBOK 8";
+---
+
+<TopicLayout page="resource" title={title}>
+  <Fragment set:html={content} />
+</TopicLayout>

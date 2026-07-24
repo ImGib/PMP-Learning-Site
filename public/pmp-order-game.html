@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP Process Groups — Order Game</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root{
+  --ink:#101820;
+  --paper:#F6F3EC;
+  --paper-dim:#EDE9DE;
+  --teal:#1E6E64;
+  --sky:#2C6E8E;
+  --amber:#B5722A;
+  --rose:#A6453F;
+  --violet:#4A4479;
+  --gold:#B6862C;
+  --gold-glow:#F4E3B8;
+  --line:#C9C2AF;
+  --muted:#6B655A;
+  --green:#2F7D4F;
+  --green-bg:#E4F3E9;
+  --red:#B23B3B;
+  --red-bg:#FBE7E5;
+  --accent:var(--teal);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;
+  padding:24px 18px 60px;
+}
+.wrap{max-width:720px;margin:0 auto;}
+
+.top .eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;transition:color .2s ease;
+}
+.top h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(22px,4vw,28px);margin:8px 0 6px;}
+.top p{font-size:13.5px;color:var(--muted);margin:0 0 18px;line-height:1.5;max-width:600px;}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+.tab{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;
+  padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);
+  background:#fff;color:var(--muted);cursor:pointer;transition:all .15s ease;
+}
+.tab:hover{border-color:var(--ink);}
+.tab.active{color:#fff;border-color:transparent;}
+.tab[data-g="init"].active{background:var(--teal);}
+.tab[data-g="plan"].active{background:var(--sky);}
+.tab[data-g="exec"].active{background:var(--amber);}
+.tab[data-g="mc"].active{background:var(--rose);}
+.tab[data-g="close"].active{background:var(--violet);}
+
+.note{
+  font-size:12px;color:var(--muted);background:var(--paper-dim);
+  padding:9px 12px;border-radius:8px;margin-bottom:14px;line-height:1.5;
+  border-left:3px solid var(--accent);transition:border-color .2s ease;
+}
+.howto{
+  font-size:12px;color:#6b5313;background:var(--gold-glow);
+  padding:9px 12px;border-radius:8px;margin-bottom:14px;line-height:1.5;
+  border-left:3px solid var(--gold);
+}
+
+.toolbar{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center;}
+.btn{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;
+  padding:9px 16px;border-radius:8px;border:1.5px solid var(--ink);
+  background:#fff;color:var(--ink);cursor:pointer;transition:all .15s ease;
+}
+.btn:hover:not(:disabled){background:var(--ink);color:#fff;}
+.btn:disabled{opacity:.35;cursor:default;}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+.btn.primary:hover:not(:disabled){filter:brightness(1.1);}
+.btn.ghost{background:var(--paper-dim);}
+.btn.active-view{background:var(--gold);border-color:var(--gold);color:#fff;}
+.score{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+
+.banner{
+  padding:11px 14px;border-radius:10px;margin-bottom:12px;font-size:13.5px;font-weight:600;
+  display:none;align-items:center;gap:8px;
+}
+.banner.show{display:flex;}
+.banner.ok{background:var(--green-bg);color:var(--green);border:1.5px solid var(--green);}
+.banner.bad{background:var(--red-bg);color:var(--red);border:1.5px solid var(--red);}
+.banner.info{background:var(--gold-glow);color:#6b5313;border:1.5px solid var(--gold);}
+
+.list{
+  display:flex;flex-direction:column;gap:6px;
+  max-height:64vh;overflow-y:auto;padding:4px 2px;
+}
+.card{
+  display:flex;align-items:center;gap:10px;
+  background:#fff;border:1.5px solid var(--line);border-radius:9px;
+  padding:8px 10px;font-size:13px;line-height:1.35;
+  transition:background .2s ease, border-color .2s ease;
+}
+.card .posInput{
+  flex:0 0 auto;width:38px;height:32px;text-align:center;
+  font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;
+  border:1.5px solid var(--line);border-radius:7px;background:var(--paper-dim);color:var(--ink);
+  -moz-appearance:textfield;
+}
+.card .posInput::-webkit-outer-spin-button,
+.card .posInput::-webkit-inner-spin-button{
+  -webkit-appearance:none;margin:0;
+}
+.card .posInput:focus{outline:none;border-color:var(--accent);background:#fff;}
+.card .stepBtns{flex:0 0 auto;display:flex;flex-direction:column;gap:2px;}
+.card .stepBtns button{
+  width:22px;height:15px;border:1px solid var(--line);background:var(--paper-dim);
+  border-radius:4px;cursor:pointer;font-size:9px;line-height:1;color:var(--muted);
+  display:flex;align-items:center;justify-content:center;
+}
+.card .stepBtns button:disabled{opacity:.25;cursor:default;}
+.card .stepBtns button:not(:disabled):hover{background:var(--ink);color:#fff;}
+.card .posLabel{
+  flex:0 0 auto;width:42px;height:32px;display:flex;align-items:center;justify-content:center;
+  font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--muted);
+  border:1.5px dashed var(--line);border-radius:7px;background:var(--paper-dim);
+}
+.card .txt{flex:1;color:#2c281f;}
+
+.card.correct{background:var(--green-bg);border-color:var(--green);}
+.card.correct .posInput{border-color:var(--green);color:var(--green);}
+.card.wrong{background:var(--red-bg);border-color:var(--red);animation:shake .3s ease;}
+.card.wrong .posInput{border-color:var(--red);color:var(--red);}
+.card.locked{background:var(--paper-dim);border-style:dashed;}
+
+@keyframes shake{
+  0%,100%{transform:translateX(0);}
+  25%{transform:translateX(-3px);}
+  75%{transform:translateX(3px);}
+}
+
+@media(max-width:480px){
+  .card{font-size:12.3px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <span class="eyebrow" id="eyebrow">PMP · Order Game</span>
+    <h1>Arrange the steps in the correct order</h1>
+    <p>Pick a process group, then set the position number for each step in the box on the left — the list re-sorts automatically. Hit <b>Check Order</b> when done.</p>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <button class="tab" data-g="init">Initiating</button>
+    <button class="tab" data-g="plan">Planning</button>
+    <button class="tab" data-g="exec">Executing</button>
+    <button class="tab" data-g="mc">Monitoring &amp; Controlling</button>
+    <button class="tab" data-g="close">Closing</button>
+  </div>
+
+  <div class="note" id="note"></div>
+  <div class="howto">🔢 Type a position number and press <b>Enter</b> to jump straight there — or use the small <b>▲ / ▼</b> buttons to nudge a step up/down one spot at a time (▲ always moves it up the list, ▼ always moves it down).</div>
+
+  <div class="toolbar">
+    <button class="btn" id="shuffleBtn">🔀 Shuffle</button>
+    <button class="btn primary" id="checkBtn">✓ Check Order</button>
+    <button class="btn ghost" id="viewBtn">👁 View Correct Order</button>
+    <span class="score" id="score"></span>
+  </div>
+
+  <div class="banner" id="banner"></div>
+
+  <div class="list" id="list"></div>
+
+</div>
+
+<script>
+const DATA = {
+  init: {
+    label:"Initiating",
+    color:"var(--teal)",
+    note:"Rita's Chart order — a single linear chain, each step is required input for the next.",
+    items:[
+      "Create measurable objectives and success criteria",
+      "Develop assumption log",
+      "Collect processes, procedures, and historical information",
+      "Determine company culture and existing systems",
+      "Divide large projects into phases or smaller projects",
+      "Uncover initial requirements, assumptions, risks, constraints, and existing agreements",
+      "Understand the business case and benefits management plan",
+      "Assess project and product feasibility within the given constraints",
+      "Develop project charter",
+      "Request changes",
+      "Select project manager",
+      "Develop stakeholder register",
+      "Identify stakeholders and determine their expectations, interest, influence, and impact"
+    ]
+  },
+  plan: {
+    label:"Planning",
+    color:"var(--sky)",
+    note:"Rita's Chart order — from approach, to estimating, to risk, converging into the PM Plan.",
+    items:[
+      "Determine development approach, life cycle, and how you will plan for each knowledge area",
+      "Define and prioritize requirements",
+      "Create project scope statement",
+      "Assess what to purchase and create procurement documents",
+      "Determine planning team",
+      "Create WBS and WBS dictionary",
+      "Create activity list",
+      "Create network diagram",
+      "Estimate resource requirements",
+      "Estimate activity durations and costs",
+      "Determine critical path",
+      "Develop schedule",
+      "Develop budget",
+      "Determine quality standards, processes, and metrics",
+      "Determine team charter and all roles and responsibilities",
+      "Plan communications and stakeholder engagement",
+      "Perform risk identification, qualitative and quantitative risk analysis, and risk response planning",
+      "Go back - iterations",
+      "Finalize procurement strategy and documents",
+      "Create change and configuration management plans",
+      "Finalize all management plans",
+      "Develop realistic and sufficient project management plan and baselines",
+      "Gain formal approval of the plan",
+      "Hold kickoff meeting",
+      "Request changes"
+    ]
+  },
+  exec: {
+    label:"Executing",
+    color:"var(--amber)",
+    note:"Grouped by work-stream (anchor → people → communication → quality → procurement/risk) — PMBOK does not mandate a single strict sequence here, but this is the reference order used in the full walkthrough.",
+    items:[
+      "Execute work according to the project management plan",
+      "Acquire final team and physical resources",
+      "Follow processes",
+      "Produce product deliverables (product scope)",
+      "Manage people",
+      "Evaluate team and individual performance; provide training",
+      "Hold team-building activities",
+      "Facilitate conflict resolution",
+      "Give recognition and rewards",
+      "Facilitate stakeholder engagement and manage expectations",
+      "Hold meetings",
+      "Send and receive information, and solicit feedback",
+      "Use and share project knowledge",
+      "Report on project performance",
+      "Determine whether quality plan and processes are correct and effective",
+      "Perform quality audits and issue quality report",
+      "Continuously improve; perform progressive elaboration",
+      "Evaluate sellers; negotiate and contract with sellers",
+      "Implement only approved changes",
+      "Request changes",
+      "Execute contingency plans",
+      "Use issue logs",
+      "Gather work performance data",
+      "Release resources as work is completed"
+    ]
+  },
+  mc: {
+    label:"Monitoring & Controlling",
+    color:"var(--rose)",
+    note:"Grouped as a cycle: measure → analyze/forecast → integrated change control → update → acceptance/procurement close.",
+    items:[
+      "Perform quality control",
+      "Measure performance against performance measurement baseline",
+      "Measure performance against other metrics in the project management plan",
+      "Evaluate use of physical resources",
+      "Monitor stakeholder engagement",
+      "Analyze and evaluate data and performance",
+      "Create forecasts",
+      "Perform risk reviews, reassessments, and audits",
+      "Confirm configuration compliance",
+      "Determine if variances warrant a corrective action or other change request(s)",
+      "Request changes",
+      "Perform integrated change control",
+      "Approve or reject changes",
+      "Influence the factors that cause change",
+      "Update project management plan and project documents",
+      "Update project management plan and project documents",
+      "Inform stakeholders of all change request results",
+      "Take action to monitor and control the project",
+      "Manage reserves",
+      "Gain customer's acceptance of interim deliverables",
+      "Manage, evaluate, and close procurements"
+    ]
+  },
+  close: {
+    label:"Closing",
+    color:"var(--violet)",
+    note:"Rita's Chart order — linear and final, no loops: confirm → accept → hand off → close out → archive.",
+    items:[
+      "Confirm work is done to requirements",
+      "Gain final acceptance of the product",
+      "Hand off completed product",
+      "Solicit customer's feedback about the project",
+      "Complete final procurement closure",
+      "Complete financial closure",
+      "Complete final performance reporting",
+      "Gather final lessons learned and update knowledge bases",
+      "Index and archive records"
+    ]
+  }
+};
+
+let currentGroup = 'init';
+let order = [];           // array of ids, index = display position
+let viewingAnswer = false;
+let savedOrder = null;
+
+const listEl = document.getElementById('list');
+const bannerEl = document.getElementById('banner');
+const scoreEl = document.getElementById('score');
+const noteEl = document.getElementById('note');
+const eyebrowEl = document.getElementById('eyebrow');
+const tabsEl = document.getElementById('tabs');
+const shuffleBtn = document.getElementById('shuffleBtn');
+const checkBtn = document.getElementById('checkBtn');
+const viewBtn = document.getElementById('viewBtn');
+
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function setGroup(g){
+  currentGroup = g;
+  viewingAnswer = false;
+  savedOrder = null;
+  viewBtn.textContent = '👁 View Correct Order';
+  viewBtn.classList.remove('active-view');
+  shuffleBtn.disabled = false;
+  checkBtn.disabled = false;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active', t.dataset.g===g));
+  const cfg = DATA[g];
+  document.documentElement.style.setProperty('--accent', cfg.color);
+  eyebrowEl.textContent = `PMP · Order Game — ${cfg.label}`;
+  noteEl.textContent = cfg.note;
+  order = shuffleArray(cfg.items.map((_,i)=>i));
+  render();
+  clearBanner();
+}
+
+function render(){
+  const cfg = DATA[currentGroup];
+  const locked = viewingAnswer;
+  listEl.innerHTML = '';
+  order.forEach((id, i)=>{
+    const card = document.createElement('div');
+    card.className = 'card' + (locked ? ' locked' : '');
+    card.dataset.id = id;
+    if(locked){
+      card.innerHTML = `
+        <span class="posLabel">${i+1}</span>
+        <span class="txt">${cfg.items[id]}</span>
+      `;
+    } else {
+      card.innerHTML = `
+        <input type="number" class="posInput" min="1" max="${order.length}" value="${i+1}" inputmode="numeric">
+        <span class="stepBtns">
+          <button class="stepUp" title="Move up" ${i===0?'disabled':''}>▲</button>
+          <button class="stepDown" title="Move down" ${i===order.length-1?'disabled':''}>▼</button>
+        </span>
+        <span class="txt">${cfg.items[id]}</span>
+      `;
+    }
+    listEl.appendChild(card);
+  });
+  if(!locked){
+    attachInputHandlers();
+  }
+}
+
+function attachInputHandlers(){
+  listEl.querySelectorAll('.posInput').forEach(inp=>{
+    inp.addEventListener('focus', e=>e.target.select());
+    inp.addEventListener('keydown', e=>{
+      if(e.key==='Enter'){ e.preventDefault(); e.target.blur(); }
+    });
+    inp.addEventListener('change', onPosChange);
+  });
+  listEl.querySelectorAll('.stepUp').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const card = e.target.closest('.card');
+      const id = Number(card.dataset.id);
+      const idx = order.indexOf(id);
+      if(idx > 0){
+        [order[idx-1], order[idx]] = [order[idx], order[idx-1]];
+        clearBanner();
+        render();
+      }
+    });
+  });
+  listEl.querySelectorAll('.stepDown').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const card = e.target.closest('.card');
+      const id = Number(card.dataset.id);
+      const idx = order.indexOf(id);
+      if(idx < order.length-1){
+        [order[idx+1], order[idx]] = [order[idx], order[idx+1]];
+        clearBanner();
+        render();
+      }
+    });
+  });
+}
+
+function onPosChange(e){
+  const card = e.target.closest('.card');
+  const id = Number(card.dataset.id);
+  const n = order.length;
+  let newPos = parseInt(e.target.value, 10);
+  if(isNaN(newPos)){
+    render();
+    return;
+  }
+  newPos = Math.min(Math.max(newPos, 1), n);
+  const oldIndex = order.indexOf(id);
+  order.splice(oldIndex, 1);
+  order.splice(newPos - 1, 0, id);
+  clearBanner();
+  render();
+  // keep focus on the moved card's input for fast successive entry
+  const movedCard = listEl.children[newPos - 1];
+  if(movedCard){
+    const inp = movedCard.querySelector('.posInput');
+    if(inp) inp.focus();
+  }
+}
+
+function clearBanner(){
+  bannerEl.className = 'banner';
+  bannerEl.textContent = '';
+  scoreEl.textContent = '';
+  listEl.querySelectorAll('.card').forEach(c=>c.classList.remove('correct','wrong'));
+}
+
+function checkOrder(){
+  if(viewingAnswer) return;
+  const cards = [...listEl.children];
+  let correctCount = 0;
+  cards.forEach((card, i)=>{
+    const id = Number(card.dataset.id);
+    card.classList.remove('correct','wrong');
+    if(id === i){
+      card.classList.add('correct');
+      correctCount++;
+    } else {
+      card.classList.add('wrong');
+    }
+  });
+  const total = cards.length;
+  scoreEl.textContent = `${correctCount} / ${total} correct`;
+  bannerEl.className = 'banner show ' + (correctCount===total ? 'ok' : 'bad');
+  bannerEl.textContent = correctCount===total
+    ? '✅ Perfect! The order is correct.'
+    : `❌ Not quite — ${total-correctCount} step(s) are in the wrong position (highlighted in red).`;
+}
+
+function toggleViewAnswer(){
+  const cfg = DATA[currentGroup];
+  if(!viewingAnswer){
+    savedOrder = order.slice();
+    viewingAnswer = true;
+    order = cfg.items.map((_,i)=>i);
+    viewBtn.textContent = '↩ Back to My Order';
+    viewBtn.classList.add('active-view');
+    shuffleBtn.disabled = true;
+    checkBtn.disabled = true;
+    render();
+    bannerEl.className = 'banner show info';
+    bannerEl.textContent = '📖 Showing the correct reference order — this is read-only.';
+    scoreEl.textContent = '';
+  } else {
+    viewingAnswer = false;
+    order = savedOrder;
+    viewBtn.textContent = '👁 View Correct Order';
+    viewBtn.classList.remove('active-view');
+    shuffleBtn.disabled = false;
+    checkBtn.disabled = false;
+    render();
+    clearBanner();
+  }
+}
+
+shuffleBtn.addEventListener('click', ()=>{
+  const cfg = DATA[currentGroup];
+  order = shuffleArray(cfg.items.map((_,i)=>i));
+  viewingAnswer = false;
+  viewBtn.textContent = '👁 View Correct Order';
+  viewBtn.classList.remove('active-view');
+  shuffleBtn.disabled = false;
+  checkBtn.disabled = false;
+  render();
+  clearBanner();
+});
+checkBtn.addEventListener('click', checkOrder);
+viewBtn.addEventListener('click', toggleViewAnswer);
+tabsEl.addEventListener('click', e=>{
+  const btn = e.target.closest('.tab');
+  if(btn) setGroup(btn.dataset.g);
+});
+
+setGroup('init');
+</script>
+</body>
+</html>

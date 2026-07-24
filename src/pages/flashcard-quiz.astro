@@ -1,0 +1,9 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import content from '../content-html/flashcard-quiz.html?raw';
+const title = "Flashcard &amp; Quiz — Học PMP với PMBOK 8";
+---
+
+<PageLayout title={title} pageFile="flashcard-quiz.html">
+  <Fragment set:html={content} />
+</PageLayout>
