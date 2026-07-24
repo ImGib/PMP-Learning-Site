@@ -32,16 +32,13 @@
    Song ngữ VI/EN — 1 nguồn, ẩn/hiện theo <html data-lang>.
    Đánh dấu biến thể: data-l="vi" hoặc data-l="en".
    ============================================================ */
+/* Phần tử data-l cũ (mobile drawer, gloss) — ẩn/hiện theo <html data-lang> bằng CSS.
+   Còn chuỗi qua từ điển (data-i18n / data-i18n-vi|en) do site.js apply. */
 [data-lang='vi'] [data-l='en'] {
   display: none;
 }
 [data-lang='en'] [data-l='vi'] {
   display: none;
-}
-/* Bọc cả khối nội dung 1 ngôn ngữ mà KHÔNG tạo hộp layout (con hành xử như con trực tiếp).
-   Khi bị ẩn thì display:none của rule trên thắng (specificity cao hơn). */
-.i18n-block {
-  display: contents;
 }
 
 /* Nút chuyển ngôn ngữ trên navbar */

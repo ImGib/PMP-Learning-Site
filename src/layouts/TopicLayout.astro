@@ -1,11 +1,11 @@
 ---
 // TopicLayout.astro — chrome trang chủ đề Phần II (sidebar + hero + footer), render TỪ DATA
-// lúc build, SONG NGỮ VI/EN qua <Bi> + từ điển i18n/ui.ts. Thay cho topic-chrome.js.
+// lúc build, SONG NGỮ VI/EN qua <T> + từ điển i18n/strings.ts. Thay cho topic-chrome.js.
 import BaseLayout from './BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
-import Bi from '../components/Bi.astro';
+import T from '../components/T.astro';
 import { TOPICS } from '../data/site';
-import { UI } from '../i18n/ui';
+import { STRINGS } from '../i18n/strings';
 
 interface Props {
   page: string;
@@ -23,8 +23,8 @@ const next = idx < TOPICS.length - 1 ? TOPICS[idx + 1] : null;
   <Navbar pageFile={`${page}.html`} />
   <div class="shell" id="top">
     <aside class="sidebar" id="side">
-      <a class="sidebar__back" href="part-2-topics.html"><Bi k="topicBack" /></a>
-      <h4><Bi k="topics" /></h4>
+      <a class="sidebar__back" href="part-2-topics.html"><T k="topic.back" /></a>
+      <h4><T k="topic.topics" /></h4>
       {
         TOPICS.map((x) => (
           <a href={`${x.id}.html`} class:list={[{ 'is-active': x.id === page }]}>
@@ -33,32 +33,32 @@ const next = idx < TOPICS.length - 1 ? TOPICS[idx + 1] : null;
           </a>
         ))
       }
-      <h4><Bi k="related" /></h4>
-      <a href="formulas-and-examples.html"><span class="sidebar__num">∑</span><Bi k="relFormulas" /></a>
-      <a href="flashcard-quiz.html"><span class="sidebar__num">?</span><Bi k="relFlashquiz" /></a>
+      <h4><T k="topic.related" /></h4>
+      <a href="formulas-and-examples.html"><span class="sidebar__num">∑</span><T k="rel.formulas" /></a>
+      <a href="flashcard-quiz.html"><span class="sidebar__num">?</span><T k="rel.flashquiz" /></a>
     </aside>
     <main>
       <div class="hero" id="topic-hero">
         <span class="hero__eyebrow">
-          <Bi
+          <T
             vi={`Phần II · Chủ đề ${t.num}/08 — 8 chủ đề kiến thức`}
             en={`Part II · Topic ${t.num}/08 — 8 knowledge topics`}
           />
         </span>
-        <h1><Bi vi={t.title} en={t.titleEn} /></h1>
-        <p><Bi vi={t.blurb} en={t.blurbEn} /></p>
+        <h1><T vi={t.title} en={t.titleEn} /></h1>
+        <p><T vi={t.blurb} en={t.blurbEn} /></p>
       </div>
       <section id={page}>
         <slot />
       </section>
       <section id="miniQuiz" class="mini-quiz"></section>
       <footer id="topic-footer">
-        <b><Bi vi={`${UI.vi.partII} · ${t.title}`} en={`${UI.en.partII} · ${t.titleEn}`} /></b>
-        <Bi k="source" /><br />
+        <b><T vi={`${STRINGS.vi['topic.partII']} · ${t.title}`} en={`${STRINGS.en['topic.partII']} · ${t.titleEn}`} /></b>
+        <T k="topic.source" /><br />
         {
           prev && (
             <a href={`${prev.id}.html`}>
-              <Bi vi={`← ${prev.title}`} en={`← ${prev.titleEn}`} />
+              <T vi={`← ${prev.title}`} en={`← ${prev.titleEn}`} />
             </a>
           )
         }
@@ -66,11 +66,11 @@ const next = idx < TOPICS.length - 1 ? TOPICS[idx + 1] : null;
         {
           next ? (
             <a href={`${next.id}.html`}>
-              <Bi vi={`${next.title} →`} en={`${next.titleEn} →`} />
+              <T vi={`${next.title} →`} en={`${next.titleEn} →`} />
             </a>
           ) : (
             <a href="part-3-agile.html">
-              <Bi k="nextAgile" />
+              <T k="topic.nextAgile" />
             </a>
           )
         }

@@ -1,0 +1,27 @@
+---
+// T.astro — render một chuỗi từ TỪ ĐIỂN i18n. Build-time hiện ngôn ngữ mặc định (không FOUC),
+// gắn key/attr để site.js apply lại khi đổi ngôn ngữ (chỉ 1 ngôn ngữ trong DOM tại một thời điểm).
+//   <T k="topic.back" />        → tra từ điển theo key (data-i18n)
+//   <T vi="…" en="…" />         → chuỗi động (title/blurb theo trang) (data-i18n-vi/en)
+import { STRINGS, DEFAULT_LANG } from '../i18n/strings';
+
+interface Props {
+  k?: string;
+  vi?: string;
+  en?: string;
+}
+const { k, vi, en } = Astro.props;
+
+let def = '';
+const attrs: Record<string, string> = {};
+if (k) {
+  def = STRINGS[DEFAULT_LANG][k] ?? k;
+  attrs['data-i18n'] = k;
+} else {
+  def = (DEFAULT_LANG === 'vi' ? vi : en) ?? vi ?? en ?? '';
+  attrs['data-i18n-vi'] = vi ?? '';
+  attrs['data-i18n-en'] = en ?? '';
+}
+---
+
+<span {...attrs} set:html={def}></span>

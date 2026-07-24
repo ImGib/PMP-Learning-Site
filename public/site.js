@@ -10,6 +10,7 @@ import { initMiniQuiz } from './assets/js/components/mini-quiz.js';
 import { initExam } from './assets/js/components/exam.js';
 import { initGlossary } from './assets/js/components/glossary.js';
 import { initRitaOrderGame } from './assets/js/components/rita-order-game.js';
+import { STRINGS } from './i18n-strings.js';
 
 // Dropdown navbar (server-rendered): click-to-toggle. Click ra ngoài thì đóng.
 // (Hover mở qua CSS như cũ.)
@@ -26,23 +27,33 @@ groups.forEach((g) => {
 });
 document.addEventListener('click', () => groups.forEach((g) => g.classList.remove('is-open')));
 
-// Chuyển ngôn ngữ VI/EN (đã áp sớm ở <head>; đây là gắn nút + lưu lựa chọn).
+// Chuyển ngôn ngữ VI/EN theo mô hình từ điển (như react-i18next):
+// apply STRINGS[lang] vào các phần tử [data-i18n] / [data-i18n-vi|en].
+// (Phần tử data-l cũ — mobile drawer, gloss — vẫn do CSS xử lý theo <html data-lang>.)
 const langBtns = Array.from(document.querySelectorAll('.topbar__langbtn'));
-function syncLangUI() {
-  const cur = document.documentElement.dataset.lang || 'vi';
-  langBtns.forEach((b) => b.classList.toggle('is-active', b.dataset.langSet === cur));
+function applyLang(lang) {
+  if (lang !== 'vi' && lang !== 'en') lang = 'vi';
+  document.documentElement.dataset.lang = lang;
+  const dict = STRINGS[lang] || {};
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const v = dict[el.dataset.i18n];
+    if (v != null) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-vi]').forEach((el) => {
+    el.innerHTML = lang === 'en' ? el.dataset.i18nEn : el.dataset.i18nVi;
+  });
+  langBtns.forEach((b) => b.classList.toggle('is-active', b.dataset.langSet === lang));
 }
 langBtns.forEach((b) =>
   b.addEventListener('click', () => {
     const l = b.dataset.langSet;
-    document.documentElement.dataset.lang = l;
     try {
       localStorage.setItem('pmp-lang', l);
     } catch (e) {}
-    syncLangUI();
+    applyLang(l);
   })
 );
-syncLangUI();
+applyLang(document.documentElement.dataset.lang || 'vi');
 
 mountMobileNav(); // chèn full site-nav vào sidebar cho mobile drawer
 initSidebar();

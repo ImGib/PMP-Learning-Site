@@ -1,11 +1,9 @@
 ---
 import TopicLayout from '../layouts/TopicLayout.astro';
-import vi from '../content-html/scope.vi.html?raw';
-import en from '../content-html/scope.en.html?raw';
+import { STRINGS, DEFAULT_LANG } from '../i18n/strings';
 const title = 'Scope — Phạm vi — Phần II · Học PMP với PMBOK 8';
 ---
 
 <TopicLayout page="scope" title={title}>
-  <div class="i18n-block" data-l="vi" set:html={vi}></div>
-  <div class="i18n-block" data-l="en" set:html={en}></div>
+  <div data-i18n="scope.body" set:html={STRINGS[DEFAULT_LANG]['scope.body']}></div>
 </TopicLayout>

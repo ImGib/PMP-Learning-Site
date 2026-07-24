@@ -1,6 +1,7 @@
 ---
-// Navbar.astro — navbar render lúc BUILD, song ngữ VI/EN (ẩn/hiện qua <html data-lang>).
+// Navbar.astro — navbar render lúc BUILD, song ngữ VI/EN qua <T> (từ điển i18n, JS apply).
 import { NAV, PART2_TOPICS, isGroup } from '../data/nav';
+import T from './T.astro';
 
 interface Props {
   pageFile?: string;
@@ -14,9 +15,7 @@ const isActive = (href: string): boolean =>
 <div class="topbar">
   <a class="topbar__brand" href="index.html">
     <span class="topbar__brand-mark">P</span> PMBOK 8
-    <small class="topbar__brand-tag"
-      ><span data-l="vi">học PMP · v3</span><span data-l="en">learn PMP · v3</span></small
-    >
+    <small class="topbar__brand-tag"><T vi="học PMP · v3" en="learn PMP · v3" /></small>
   </a>
   <nav class="topbar__nav">
     {
@@ -31,8 +30,7 @@ const isActive = (href: string): boolean =>
               type="button"
               aria-haspopup="true"
             >
-              <span data-l="vi">{item.label}</span>
-              <span data-l="en">{item.en}</span>
+              <T vi={item.label} en={item.en} />
               <span class="topbar__caret">▾</span>
             </button>
             <div class="topbar__panel">
@@ -41,8 +39,7 @@ const isActive = (href: string): boolean =>
                   class:list={['topbar__panellink', { 'topbar__panellink--current': isActive(c.href) }]}
                   href={c.href}
                 >
-                  <span data-l="vi">{c.label}</span>
-                  <span data-l="en">{c.en}</span>
+                  <T vi={c.label} en={c.en} />
                 </a>
               ))}
             </div>
@@ -52,8 +49,7 @@ const isActive = (href: string): boolean =>
             class:list={['topbar__link', { 'topbar__link--current': isActive(item.href) }]}
             href={item.href}
           >
-            <span data-l="vi">{item.label}</span>
-            <span data-l="en">{item.en}</span>
+            <T vi={item.label} en={item.en} />
           </a>
         )
       )
