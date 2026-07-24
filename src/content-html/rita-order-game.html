@@ -1,0 +1,50 @@
+<div class="shell" id="top">
+  <aside class="sidebar" id="side">
+    <a class="sidebar__back" href="index.html">← Trang chủ</a>
+    <h4>Luyện Rita Chart</h4>
+    <a href="#ritaGame"><span class="sidebar__num">▦</span>Game xếp thứ tự</a>
+    <a href="rita-process-chart.html"><span class="sidebar__num">49</span>Bảng Process Chart</a>
+    <h4>Ôn thêm</h4>
+    <a href="part-2-topics.html"><span class="sidebar__num">II</span>8 chủ đề kiến thức</a>
+    <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard &amp; Quiz</a>
+    <a href="mock-exam.html"><span class="sidebar__num">★</span>Đề thi thử</a>
+  </aside>
+  <main>
+    <div class="hero">
+      <span class="hero__eyebrow">Rita Process Chart · Game xếp thứ tự</span>
+      <h1>Xếp đúng thứ tự các bước theo Rita's Process Chart</h1>
+      <p>Chọn một <b>Process Group</b>, rồi đặt số thứ tự cho từng bước ở ô bên trái — danh sách tự sắp xếp lại. Bấm <b>Kiểm tra thứ tự</b> khi xong. Đây là cách luyện ghi nhớ dòng chảy 49 process theo bảng của Rita Mulcahy.</p>
+    </div>
+
+    <section id="ritaGame" class="order-game">
+      <div class="section__head">
+        <h2>Game xếp thứ tự</h2><span class="section__tag">5 Process Groups · tự chấm</span>
+      </div>
+
+      <div class="order-game__tabs" id="ogTabs">
+        <button class="order-game__tab" data-g="init" type="button">Initiating</button>
+        <button class="order-game__tab" data-g="plan" type="button">Planning</button>
+        <button class="order-game__tab" data-g="exec" type="button">Executing</button>
+        <button class="order-game__tab" data-g="mc" type="button">Monitoring &amp; Controlling</button>
+        <button class="order-game__tab" data-g="close" type="button">Closing</button>
+      </div>
+
+      <div class="callout callout--note"><span class="callout__label">Gợi ý nhóm</span><span id="ogNote"></span></div>
+      <div class="callout callout--tip"><span class="callout__label">Cách chơi</span>Gõ số vị trí rồi bấm <b>Enter</b> để nhảy thẳng tới đó — hoặc dùng nút <b>▲ / ▼</b> để dịch một bước lên/xuống từng nấc (▲ luôn lên, ▼ luôn xuống).</div>
+
+      <div class="order-game__toolbar">
+        <button class="btn" id="ogShuffle" type="button">🔀 Xáo trộn</button>
+        <button class="btn btn--primary" id="ogCheck" type="button">✓ Kiểm tra thứ tự</button>
+        <button class="btn" id="ogView" type="button">👁 Xem đáp án</button>
+        <span class="order-game__score" id="ogScore"></span>
+      </div>
+
+      <div class="order-game__banner" id="ogBanner"></div>
+      <div class="order-game__list" id="ogList"></div>
+    </section>
+
+    <footer>
+      <b>Rita Process Chart · Game xếp thứ tự</b> · Nguồn: Rita Mulcahy — <i>PMP Exam Prep</i> Process Chart. Thứ tự Initiating/Planning/Closing là tuyến tính theo Rita; Executing &amp; M&amp;C nhóm theo luồng công việc (không bắt buộc trình tự cứng). Xem bảng đầy đủ: <a href="rita-process-chart.html">49 Process Chart →</a>
+    </footer>
+  </main>
+</div>

@@ -26,7 +26,7 @@ export const NAV: NavItem[] = [
       { href: 'part-4-exam-prep.html', label: 'IV · Chiến lược & Ethics' },
       { href: 'mock-exam.html', label: 'Đề thi thử' },
       { href: 'flashcard-quiz.html', label: 'Flashcard & Quiz' },
-      { href: 'pmp-order-game.html', label: 'Game · Xếp Process Groups' },
+      { href: 'rita-order-game.html', label: 'Game · Rita Process Chart' },
     ],
   },
   {

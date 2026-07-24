@@ -9,6 +9,7 @@ import { initQuiz } from './assets/js/components/quiz.js';
 import { initMiniQuiz } from './assets/js/components/mini-quiz.js';
 import { initExam } from './assets/js/components/exam.js';
 import { initGlossary } from './assets/js/components/glossary.js';
+import { initRitaOrderGame } from './assets/js/components/rita-order-game.js';
 
 // Dropdown navbar (server-rendered): click-to-toggle. Click ra ngoài thì đóng.
 // (Hover mở qua CSS như cũ.)
@@ -32,3 +33,4 @@ initQuiz();
 initMiniQuiz();
 initExam();
 initGlossary();
+initRitaOrderGame(); // no-op nếu không có #ritaGame
