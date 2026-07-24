@@ -27,3 +27,40 @@
   font-style: italic;
   font-weight: 400;
 }
+
+/* ============================================================
+   Song ngữ VI/EN — 1 nguồn, ẩn/hiện theo <html data-lang>.
+   Đánh dấu biến thể: data-l="vi" hoặc data-l="en".
+   ============================================================ */
+[data-lang='vi'] [data-l='en'] {
+  display: none;
+}
+[data-lang='en'] [data-l='vi'] {
+  display: none;
+}
+
+/* Nút chuyển ngôn ngữ trên navbar */
+.topbar__lang {
+  display: inline-flex;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px;
+  margin-left: 6px;
+}
+.topbar__langbtn {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+.topbar__langbtn.is-active {
+  background: var(--accent);
+  color: #fff;
+}

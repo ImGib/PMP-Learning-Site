@@ -1,6 +1,5 @@
 ---
-// Navbar.astro — navbar render lúc BUILD (trước đây inject bằng JS lúc chạy → FOUC).
-// Cùng data, cùng class BEM → HTML xuất ra y hệt bản renderNavbar().
+// Navbar.astro — navbar render lúc BUILD, song ngữ VI/EN (ẩn/hiện qua <html data-lang>).
 import { NAV, PART2_TOPICS, isGroup } from '../data/nav';
 
 interface Props {
@@ -15,7 +14,9 @@ const isActive = (href: string): boolean =>
 <div class="topbar">
   <a class="topbar__brand" href="index.html">
     <span class="topbar__brand-mark">P</span> PMBOK 8
-    <small class="topbar__brand-tag">học PMP · v3</small>
+    <small class="topbar__brand-tag"
+      ><span data-l="vi">học PMP · v3</span><span data-l="en">learn PMP · v3</span></small
+    >
   </a>
   <nav class="topbar__nav">
     {
@@ -30,7 +31,8 @@ const isActive = (href: string): boolean =>
               type="button"
               aria-haspopup="true"
             >
-              {item.label}
+              <span data-l="vi">{item.label}</span>
+              <span data-l="en">{item.en}</span>
               <span class="topbar__caret">▾</span>
             </button>
             <div class="topbar__panel">
@@ -39,7 +41,8 @@ const isActive = (href: string): boolean =>
                   class:list={['topbar__panellink', { 'topbar__panellink--current': isActive(c.href) }]}
                   href={c.href}
                 >
-                  {c.label}
+                  <span data-l="vi">{c.label}</span>
+                  <span data-l="en">{c.en}</span>
                 </a>
               ))}
             </div>
@@ -49,11 +52,16 @@ const isActive = (href: string): boolean =>
             class:list={['topbar__link', { 'topbar__link--current': isActive(item.href) }]}
             href={item.href}
           >
-            {item.label}
+            <span data-l="vi">{item.label}</span>
+            <span data-l="en">{item.en}</span>
           </a>
         )
       )
     }
   </nav>
+  <div class="topbar__lang" role="group" aria-label="Language / Ngôn ngữ">
+    <button class="topbar__langbtn" data-lang-set="vi" type="button">VI</button>
+    <button class="topbar__langbtn" data-lang-set="en" type="button">EN</button>
+  </div>
   <button class="topbar__menu" id="menuBtn" aria-label="menu">☰</button>
 </div>

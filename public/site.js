@@ -26,6 +26,24 @@ groups.forEach((g) => {
 });
 document.addEventListener('click', () => groups.forEach((g) => g.classList.remove('is-open')));
 
+// Chuyển ngôn ngữ VI/EN (đã áp sớm ở <head>; đây là gắn nút + lưu lựa chọn).
+const langBtns = Array.from(document.querySelectorAll('.topbar__langbtn'));
+function syncLangUI() {
+  const cur = document.documentElement.dataset.lang || 'vi';
+  langBtns.forEach((b) => b.classList.toggle('is-active', b.dataset.langSet === cur));
+}
+langBtns.forEach((b) =>
+  b.addEventListener('click', () => {
+    const l = b.dataset.langSet;
+    document.documentElement.dataset.lang = l;
+    try {
+      localStorage.setItem('pmp-lang', l);
+    } catch (e) {}
+    syncLangUI();
+  })
+);
+syncLangUI();
+
 mountMobileNav(); // chèn full site-nav vào sidebar cho mobile drawer
 initSidebar();
 initFlashcards();

@@ -1,6 +1,6 @@
 ---
-// TopicLayout.astro — chrome của một trang chủ đề Phần II (sidebar + hero + footer),
-// render TỪ DATA lúc build. Thay cho topic-chrome.js chạy lúc runtime.
+// TopicLayout.astro — chrome trang chủ đề Phần II (sidebar + hero + footer), render TỪ DATA
+// lúc build, SONG NGỮ VI/EN (ẩn/hiện qua <html data-lang>). Thay cho topic-chrome.js.
 import BaseLayout from './BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import { TOPICS } from '../data/site';
@@ -21,8 +21,10 @@ const next = idx < TOPICS.length - 1 ? TOPICS[idx + 1] : null;
   <Navbar pageFile={`${page}.html`} />
   <div class="shell" id="top">
     <aside class="sidebar" id="side">
-      <a class="sidebar__back" href="part-2-topics.html">← Phần II · Mục lục</a>
-      <h4>8 chủ đề kiến thức</h4>
+      <a class="sidebar__back" href="part-2-topics.html"
+        ><span data-l="vi">← Phần II · Mục lục</span><span data-l="en">← Part II · Contents</span></a
+      >
+      <h4><span data-l="vi">8 chủ đề kiến thức</span><span data-l="en">8 knowledge topics</span></h4>
       {
         TOPICS.map((x) => (
           <a href={`${x.id}.html`} class:list={[{ 'is-active': x.id === page }]}>
@@ -31,29 +33,55 @@ const next = idx < TOPICS.length - 1 ? TOPICS[idx + 1] : null;
           </a>
         ))
       }
-      <h4>Liên quan</h4>
-      <a href="formulas-and-examples.html"><span class="sidebar__num">∑</span>Công thức & ví dụ</a>
-      <a href="flashcard-quiz.html"><span class="sidebar__num">?</span>Flashcard & Quiz</a>
+      <h4><span data-l="vi">Liên quan</span><span data-l="en">Related</span></h4>
+      <a href="formulas-and-examples.html"
+        ><span class="sidebar__num">∑</span><span data-l="vi">Công thức & ví dụ</span><span data-l="en"
+          >Formulas & Examples</span
+        ></a
+      >
+      <a href="flashcard-quiz.html"
+        ><span class="sidebar__num">?</span><span data-l="vi">Flashcard & Quiz</span><span data-l="en"
+          >Flashcards & Quiz</span
+        ></a
+      >
     </aside>
     <main>
       <div class="hero" id="topic-hero">
-        <span class="hero__eyebrow">Phần II · Chủ đề {t.num}/08 — 8 chủ đề kiến thức</span>
-        <h1>{t.title}</h1>
-        <p>{t.blurb}</p>
+        <span class="hero__eyebrow">
+          <span data-l="vi">Phần II · Chủ đề {t.num}/08 — 8 chủ đề kiến thức</span>
+          <span data-l="en">Part II · Topic {t.num}/08 — 8 knowledge topics</span>
+        </span>
+        <h1><span data-l="vi">{t.title}</span><span data-l="en">{t.titleEn}</span></h1>
+        <p><span data-l="vi">{t.blurb}</span><span data-l="en">{t.blurbEn}</span></p>
       </div>
       <section id={page}>
         <slot />
       </section>
       <section id="miniQuiz" class="mini-quiz"></section>
       <footer id="topic-footer">
-        <b>Phần II · {t.title}</b> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.<br />
-        {prev && <a href={`${prev.id}.html`}>← {prev.title}</a>}
+        <b><span data-l="vi">Phần II · {t.title}</span><span data-l="en">Part II · {t.titleEn}</span></b>
+        <span data-l="vi"> · Nguồn: PMBOK® Guide 8th Ed. (2025) + slide PMP.</span>
+        <span data-l="en"> · Source: PMBOK® Guide 8th Ed. (2025) + PMP slides.</span><br />
+        {
+          prev && (
+            <a href={`${prev.id}.html`}>
+              <span data-l="vi">← {prev.title}</span>
+              <span data-l="en">← {prev.titleEn}</span>
+            </a>
+          )
+        }
         {prev && next && ' · '}
         {
           next ? (
-            <a href={`${next.id}.html`}>{next.title} →</a>
+            <a href={`${next.id}.html`}>
+              <span data-l="vi">{next.title} →</span>
+              <span data-l="en">{next.titleEn} →</span>
+            </a>
           ) : (
-            <a href="part-3-agile.html">Phần III — Agile →</a>
+            <a href="part-3-agile.html">
+              <span data-l="vi">Phần III — Agile →</span>
+              <span data-l="en">Part III — Agile →</span>
+            </a>
           )
         }
       </footer>

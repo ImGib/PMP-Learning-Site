@@ -12,11 +12,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
 ---
 
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <!-- Áp ngôn ngữ đã lưu THẬT SỚM (trước khi body vẽ) để không nhấp nháy VI↔EN. -->
+    <script is:inline>
+      (function () {
+        try {
+          var l = localStorage.getItem('pmp-lang');
+          if (l === 'en' || l === 'vi') document.documentElement.dataset.lang = l;
+        } catch (e) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
